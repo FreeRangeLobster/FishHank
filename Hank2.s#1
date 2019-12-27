@@ -8458,8 +8458,7 @@ Es handelt sich hierbei um AK500 in horizontaler Ausführung.&lt;p&gt;
 <text x="17.78" y="53.34" size="1.778" layer="95">TO DO:
 -Add connections to Microcontroller
 -Add 3.3V Power Supply Regulator
--Add 5V low drop regulator
-+DONE: Add the SSR Circuit</text>
+-Add the SSR Circuit</text>
 <text x="17.78" y="7.62" size="1.778" layer="95">Arduino Pro Mini Design by Spark Fun Electronics</text>
 </plain>
 <instances>

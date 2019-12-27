@@ -5462,6 +5462,13 @@ Please make sure your boards conform to these design rules.</description>
 <element name="U$6" library="HankLibraries" package="RTC_FOOTPRINT" value="RTC" x="-19.623025" y="-39.212215625"/>
 <element name="U$7" library="HankLibraries" package="SD_CARD_READER_FOOTPRINT" value="SD_CARD_READER" x="-25.97513125" y="-51.3159"/>
 <element name="U$8" library="HankLibraries" package="SSR_FOOTPRINT" value="SSR" x="-20.891753125" y="-67.225775"/>
+<element name="U$9" library="HankLibraries" package="SSR_FOOTPRINT" value="SSR" x="-20.891753125" y="-76.783540625"/>
+<element name="U$10" library="HankLibraries" package="SSR_FOOTPRINT" value="SSR" x="-20.891753125" y="-86.34130625"/>
+<element name="U$11" library="HankLibraries" package="SSR_FOOTPRINT" value="SSR" x="-20.891753125" y="-95.899071875"/>
+<element name="U$12" library="HankLibraries" package="SSR_FOOTPRINT" value="SSR" x="-20.891753125" y="-105.4568375"/>
+<element name="U$13" library="HankLibraries" package="SSR_FOOTPRINT" value="SSR" x="-20.891753125" y="-115.014603125"/>
+<element name="U$14" library="HankLibraries" package="SSR_FOOTPRINT" value="SSR" x="-20.891753125" y="-124.57236875"/>
+<element name="U$15" library="HankLibraries" package="SSR_FOOTPRINT" value="SSR" x="-20.891753125" y="-134.130134375"/>
 <element name="C5" library="rcl" package="C025-024X044" value="" x="-23.386921875" y="-145.00738125"/>
 <element name="C6" library="rcl" package="C025-024X044" value="" x="-23.386921875" y="-157.20410625"/>
 <element name="C7" library="rcl" package="C025-024X044" value="" x="-23.386921875" y="-169.400828125"/>
@@ -5555,7 +5562,6 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="OK2" pad="13"/>
 <contactref element="OK2" pad="11"/>
 <contactref element="OK2" pad="9"/>
-<contactref element="U$1" pad="GND"/>
 <wire x1="-24.65100625" y1="-536.90961875" x2="-24.65100625" y2="-483.14084375" width="0" layer="19" extent="1-1"/>
 <wire x1="-24.65100625" y1="-590.678396875" x2="-24.65100625" y2="-536.90961875" width="0" layer="19" extent="1-1"/>
 <wire x1="-24.65100625" y1="-644.447175" x2="-24.65100625" y2="-590.678396875" width="0" layer="19" extent="1-1"/>
@@ -5578,8 +5584,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="-25.97513125" y1="-51.3159" x2="-22.116921875" y2="-145.00738125" width="0" layer="19" extent="1-1"/>
 <wire x1="-13.273025" y1="-34.132215625" x2="-25.97513125" y2="-51.3159" width="0" layer="19" extent="1-1"/>
 <wire x1="-2.072690625" y1="-24.57488125" x2="-13.273025" y2="-34.132215625" width="0" layer="19" extent="1-1"/>
-<wire x1="-25.9755625" y1="-9.331503125" x2="-13.273025" y2="-34.132215625" width="0" layer="19" extent="1-1"/>
-<wire x1="15.875" y1="38.1" x2="-25.9755625" y2="-9.331503125" width="0" layer="19" extent="1-1"/>
+<wire x1="15.875" y1="38.1" x2="-2.072690625" y2="-24.57488125" width="0" layer="19" extent="1-1"/>
 <wire x1="15.875" y1="43.18" x2="15.875" y2="38.1" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="RESET">
@@ -5621,14 +5626,12 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="C6" pad="1"/>
 <contactref element="U$6" pad="+3.3V"/>
 <contactref element="U$4" pad="+3.3"/>
-<contactref element="U$1" pad="VCC"/>
 <wire x1="-24.656921875" y1="-169.400828125" x2="-22.116921875" y2="-181.597553125" width="0" layer="19" extent="1-1"/>
 <wire x1="-24.656921875" y1="-157.20410625" x2="-24.656921875" y2="-169.400828125" width="0" layer="19" extent="1-1"/>
 <wire x1="-24.656921875" y1="-145.00738125" x2="-24.656921875" y2="-157.20410625" width="0" layer="19" extent="1-1"/>
 <wire x1="-25.97513125" y1="-52.5859" x2="-24.656921875" y2="-145.00738125" width="0" layer="19" extent="1-1"/>
 <wire x1="-13.273025" y1="-36.672215625" x2="-25.97513125" y2="-52.5859" width="0" layer="19" extent="1-1"/>
 <wire x1="-2.072690625" y1="-22.03488125" x2="-13.273025" y2="-36.672215625" width="0" layer="19" extent="1-1"/>
-<wire x1="-25.9755625" y1="-6.791503125" x2="-2.072690625" y2="-22.03488125" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SD_CS">
 <contactref element="U$7" pad="CS"/>
@@ -5837,24 +5840,6 @@ Please make sure your boards conform to these design rules.</description>
 </signal>
 <signal name="N$43">
 <contactref element="OK2" pad="7"/>
-</signal>
-<signal name="FLASH_CS">
-<contactref element="U$1" pad="CS"/>
-</signal>
-<signal name="CLK">
-<contactref element="U$1" pad="CLK"/>
-</signal>
-<signal name="DI">
-<contactref element="U$1" pad="DI"/>
-</signal>
-<signal name="DO">
-<contactref element="U$1" pad="DO"/>
-</signal>
-<signal name="WP">
-<contactref element="U$1" pad="WP"/>
-</signal>
-<signal name="N$23">
-<contactref element="U$1" pad="HOLD"/>
 </signal>
 </signals>
 </board>

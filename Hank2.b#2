@@ -5462,6 +5462,13 @@ Please make sure your boards conform to these design rules.</description>
 <element name="U$6" library="HankLibraries" package="RTC_FOOTPRINT" value="RTC" x="-19.623025" y="-39.212215625"/>
 <element name="U$7" library="HankLibraries" package="SD_CARD_READER_FOOTPRINT" value="SD_CARD_READER" x="-25.97513125" y="-51.3159"/>
 <element name="U$8" library="HankLibraries" package="SSR_FOOTPRINT" value="SSR" x="-20.891753125" y="-67.225775"/>
+<element name="U$9" library="HankLibraries" package="SSR_FOOTPRINT" value="SSR" x="-20.891753125" y="-76.783540625"/>
+<element name="U$10" library="HankLibraries" package="SSR_FOOTPRINT" value="SSR" x="-20.891753125" y="-86.34130625"/>
+<element name="U$11" library="HankLibraries" package="SSR_FOOTPRINT" value="SSR" x="-20.891753125" y="-95.899071875"/>
+<element name="U$12" library="HankLibraries" package="SSR_FOOTPRINT" value="SSR" x="-20.891753125" y="-105.4568375"/>
+<element name="U$13" library="HankLibraries" package="SSR_FOOTPRINT" value="SSR" x="-20.891753125" y="-115.014603125"/>
+<element name="U$14" library="HankLibraries" package="SSR_FOOTPRINT" value="SSR" x="-20.891753125" y="-124.57236875"/>
+<element name="U$15" library="HankLibraries" package="SSR_FOOTPRINT" value="SSR" x="-20.891753125" y="-134.130134375"/>
 <element name="C5" library="rcl" package="C025-024X044" value="" x="-23.386921875" y="-145.00738125"/>
 <element name="C6" library="rcl" package="C025-024X044" value="" x="-23.386921875" y="-157.20410625"/>
 <element name="C7" library="rcl" package="C025-024X044" value="" x="-23.386921875" y="-169.400828125"/>
@@ -5499,18 +5506,42 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="MPN" value="" x="-0.828903125" y="-435.123640625" size="1.778" layer="27" display="off"/>
 <attribute name="OC_NEWARK" value="unknown" x="-0.828903125" y="-435.123640625" size="1.778" layer="27" display="off"/>
 </element>
+<element name="OK3" library="optocoupler" package="DIL16" value="PC847" x="-15.766084375" y="-454.941203125">
+<attribute name="MF" value="" x="-15.766084375" y="-454.941203125" size="1.778" layer="27" display="off"/>
+<attribute name="OC_FARNELL" value="9707735" x="-15.766084375" y="-454.941203125" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="-15.766084375" y="-454.941203125" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="-15.766084375" y="-454.941203125" size="1.778" layer="27" display="off"/>
+</element>
 <element name="U$19" library="HankLibraries" package="SSR_FOOTPRINT" value="SSR" x="-20.891753125" y="-494.0180875"/>
 <element name="R16" library="rcl" package="0204/7" value="" x="-20.84100625" y="-470.94411875"/>
 <element name="LED5" library="led" package="LED3MM" value="" x="-3.560903125" y="-483.14084375"/>
 <element name="R17" library="rcl" package="0204/7" value="" x="-20.84100625" y="-483.14084375"/>
+<element name="OK4" library="optocoupler" package="DIL16" value="PC847" x="-15.766084375" y="-508.70998125">
+<attribute name="MF" value="" x="-15.766084375" y="-508.70998125" size="1.778" layer="27" display="off"/>
+<attribute name="OC_FARNELL" value="9707735" x="-15.766084375" y="-508.70998125" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="-15.766084375" y="-508.70998125" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="-15.766084375" y="-508.70998125" size="1.778" layer="27" display="off"/>
+</element>
 <element name="U$20" library="HankLibraries" package="SSR_FOOTPRINT" value="SSR" x="-20.891753125" y="-547.786865625"/>
 <element name="R18" library="rcl" package="0204/7" value="" x="-20.84100625" y="-524.71289375"/>
 <element name="LED6" library="led" package="LED3MM" value="" x="-3.560903125" y="-536.90961875"/>
 <element name="R19" library="rcl" package="0204/7" value="" x="-20.84100625" y="-536.90961875"/>
+<element name="OK5" library="optocoupler" package="DIL16" value="PC847" x="-15.766084375" y="-562.478759375">
+<attribute name="MF" value="" x="-15.766084375" y="-562.478759375" size="1.778" layer="27" display="off"/>
+<attribute name="OC_FARNELL" value="9707735" x="-15.766084375" y="-562.478759375" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="-15.766084375" y="-562.478759375" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="-15.766084375" y="-562.478759375" size="1.778" layer="27" display="off"/>
+</element>
 <element name="U$21" library="HankLibraries" package="SSR_FOOTPRINT" value="SSR" x="-20.891753125" y="-601.55564375"/>
 <element name="R20" library="rcl" package="0204/7" value="" x="-20.84100625" y="-578.481671875"/>
 <element name="LED7" library="led" package="LED3MM" value="" x="-3.560903125" y="-590.678396875"/>
 <element name="R21" library="rcl" package="0204/7" value="" x="-20.84100625" y="-590.678396875"/>
+<element name="OK6" library="optocoupler" package="DIL16" value="PC847" x="-15.766084375" y="-616.247534375">
+<attribute name="MF" value="" x="-15.766084375" y="-616.247534375" size="1.778" layer="27" display="off"/>
+<attribute name="OC_FARNELL" value="9707735" x="-15.766084375" y="-616.247534375" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="-15.766084375" y="-616.247534375" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="-15.766084375" y="-616.247534375" size="1.778" layer="27" display="off"/>
+</element>
 <element name="U$22" library="HankLibraries" package="SSR_FOOTPRINT" value="SSR" x="-20.891753125" y="-655.32441875"/>
 <element name="R22" library="rcl" package="0204/7" value="" x="-20.84100625" y="-632.25045"/>
 <element name="LED8" library="led" package="LED3MM" value="" x="-3.560903125" y="-644.447175"/>
@@ -5547,27 +5578,26 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="OK1" pad="13"/>
 <contactref element="OK1" pad="11"/>
 <contactref element="OK1" pad="9"/>
+<contactref element="OK3" pad="13"/>
 <contactref element="R17" pad="1"/>
+<contactref element="OK4" pad="13"/>
 <contactref element="R19" pad="1"/>
+<contactref element="OK5" pad="13"/>
 <contactref element="R21" pad="1"/>
+<contactref element="OK6" pad="13"/>
 <contactref element="R23" pad="1"/>
-<contactref element="OK2" pad="15"/>
-<contactref element="OK2" pad="13"/>
-<contactref element="OK2" pad="11"/>
-<contactref element="OK2" pad="9"/>
-<contactref element="U$1" pad="GND"/>
-<wire x1="-24.65100625" y1="-536.90961875" x2="-24.65100625" y2="-483.14084375" width="0" layer="19" extent="1-1"/>
-<wire x1="-24.65100625" y1="-590.678396875" x2="-24.65100625" y2="-536.90961875" width="0" layer="19" extent="1-1"/>
-<wire x1="-24.65100625" y1="-644.447175" x2="-24.65100625" y2="-590.678396875" width="0" layer="19" extent="1-1"/>
-<wire x1="-24.65100625" y1="-409.554503125" x2="-24.65100625" y2="-483.14084375" width="0" layer="19" extent="1-1"/>
+<wire x1="-17.036084375" y1="-504.89998125" x2="-24.65100625" y2="-483.14084375" width="0" layer="19" extent="1-1"/>
+<wire x1="-17.036084375" y1="-451.131203125" x2="-24.65100625" y2="-483.14084375" width="0" layer="19" extent="1-1"/>
+<wire x1="-24.65100625" y1="-536.90961875" x2="-17.036084375" y2="-504.89998125" width="0" layer="19" extent="1-1"/>
+<wire x1="-17.036084375" y1="-558.668759375" x2="-24.65100625" y2="-536.90961875" width="0" layer="19" extent="1-1"/>
+<wire x1="-24.65100625" y1="-590.678396875" x2="-17.036084375" y2="-558.668759375" width="0" layer="19" extent="1-1"/>
+<wire x1="-17.036084375" y1="-612.437534375" x2="-24.65100625" y2="-590.678396875" width="0" layer="19" extent="1-1"/>
+<wire x1="-24.65100625" y1="-644.447175" x2="-17.036084375" y2="-612.437534375" width="0" layer="19" extent="1-1"/>
+<wire x1="-24.65100625" y1="-409.554503125" x2="-17.036084375" y2="-451.131203125" width="0" layer="19" extent="1-1"/>
 <wire x1="-24.65100625" y1="-355.785725" x2="-24.65100625" y2="-409.554503125" width="0" layer="19" extent="1-1"/>
 <wire x1="-24.65100625" y1="-302.016946875" x2="-24.65100625" y2="-355.785725" width="0" layer="19" extent="1-1"/>
 <wire x1="-24.65100625" y1="-257.81439375" x2="-24.65100625" y2="-302.016946875" width="0" layer="19" extent="1-1"/>
-<wire x1="-22.116084375" y1="-213.60803125" x2="-24.65100625" y2="-257.81439375" width="0" layer="19" extent="1-1"/>
-<wire x1="-17.036084375" y1="-213.60803125" x2="-22.116084375" y2="-213.60803125" width="0" layer="19" extent="1-1"/>
-<wire x1="-11.956084375" y1="-213.60803125" x2="-17.036084375" y2="-213.60803125" width="0" layer="19" extent="1-1"/>
-<wire x1="-6.876084375" y1="-213.60803125" x2="-11.956084375" y2="-213.60803125" width="0" layer="19" extent="1-1"/>
-<wire x1="-22.116084375" y1="-193.79046875" x2="-22.116084375" y2="-213.60803125" width="0" layer="19" extent="1-1"/>
+<wire x1="-22.116084375" y1="-193.79046875" x2="-24.65100625" y2="-257.81439375" width="0" layer="19" extent="1-1"/>
 <wire x1="-17.036084375" y1="-193.79046875" x2="-22.116084375" y2="-193.79046875" width="0" layer="19" extent="1-1"/>
 <wire x1="-11.956084375" y1="-193.79046875" x2="-17.036084375" y2="-193.79046875" width="0" layer="19" extent="1-1"/>
 <wire x1="-6.876084375" y1="-193.79046875" x2="-11.956084375" y2="-193.79046875" width="0" layer="19" extent="1-1"/>
@@ -5578,8 +5608,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="-25.97513125" y1="-51.3159" x2="-22.116921875" y2="-145.00738125" width="0" layer="19" extent="1-1"/>
 <wire x1="-13.273025" y1="-34.132215625" x2="-25.97513125" y2="-51.3159" width="0" layer="19" extent="1-1"/>
 <wire x1="-2.072690625" y1="-24.57488125" x2="-13.273025" y2="-34.132215625" width="0" layer="19" extent="1-1"/>
-<wire x1="-25.9755625" y1="-9.331503125" x2="-13.273025" y2="-34.132215625" width="0" layer="19" extent="1-1"/>
-<wire x1="15.875" y1="38.1" x2="-25.9755625" y2="-9.331503125" width="0" layer="19" extent="1-1"/>
+<wire x1="15.875" y1="38.1" x2="-2.072690625" y2="-24.57488125" width="0" layer="19" extent="1-1"/>
 <wire x1="15.875" y1="43.18" x2="15.875" y2="38.1" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="RESET">
@@ -5621,14 +5650,12 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="C6" pad="1"/>
 <contactref element="U$6" pad="+3.3V"/>
 <contactref element="U$4" pad="+3.3"/>
-<contactref element="U$1" pad="VCC"/>
 <wire x1="-24.656921875" y1="-169.400828125" x2="-22.116921875" y2="-181.597553125" width="0" layer="19" extent="1-1"/>
 <wire x1="-24.656921875" y1="-157.20410625" x2="-24.656921875" y2="-169.400828125" width="0" layer="19" extent="1-1"/>
 <wire x1="-24.656921875" y1="-145.00738125" x2="-24.656921875" y2="-157.20410625" width="0" layer="19" extent="1-1"/>
 <wire x1="-25.97513125" y1="-52.5859" x2="-24.656921875" y2="-145.00738125" width="0" layer="19" extent="1-1"/>
 <wire x1="-13.273025" y1="-36.672215625" x2="-25.97513125" y2="-52.5859" width="0" layer="19" extent="1-1"/>
 <wire x1="-2.072690625" y1="-22.03488125" x2="-13.273025" y2="-36.672215625" width="0" layer="19" extent="1-1"/>
-<wire x1="-25.9755625" y1="-6.791503125" x2="-2.072690625" y2="-22.03488125" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SD_CS">
 <contactref element="U$7" pad="CS"/>
@@ -5766,14 +5793,17 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="N$30">
 <contactref element="LED5" pad="K"/>
 <contactref element="U$19" pad="4"/>
-<contactref element="OK2" pad="16"/>
-<wire x1="-2.290903125" y1="-483.14084375" x2="-24.656084375" y2="-213.60803125" width="0" layer="19" extent="1-1"/>
+<contactref element="OK3" pad="14"/>
 <wire x1="-25.971753125" y1="-494.0180875" x2="-2.290903125" y2="-483.14084375" width="0" layer="19" extent="1-1"/>
+<wire x1="-19.576084375" y1="-451.131203125" x2="-2.290903125" y2="-483.14084375" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$31">
+<contactref element="OK3" pad="3"/>
 </signal>
 <signal name="N$32">
 <contactref element="R17" pad="2"/>
-<contactref element="OK2" pad="2"/>
-<wire x1="-22.116084375" y1="-221.22803125" x2="-17.03100625" y2="-483.14084375" width="0" layer="19" extent="1-1"/>
+<contactref element="OK3" pad="4"/>
+<wire x1="-17.036084375" y1="-458.751203125" x2="-17.03100625" y2="-483.14084375" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$33">
 <contactref element="R18" pad="1"/>
@@ -5783,14 +5813,17 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="N$34">
 <contactref element="LED6" pad="K"/>
 <contactref element="U$20" pad="4"/>
-<contactref element="OK2" pad="14"/>
-<wire x1="-2.290903125" y1="-536.90961875" x2="-19.576084375" y2="-213.60803125" width="0" layer="19" extent="1-1"/>
-<wire x1="-25.971753125" y1="-547.786865625" x2="-2.290903125" y2="-536.90961875" width="0" layer="19" extent="1-1"/>
+<contactref element="OK4" pad="14"/>
+<wire x1="-2.290903125" y1="-536.90961875" x2="-25.971753125" y2="-547.786865625" width="0" layer="19" extent="1-1"/>
+<wire x1="-19.576084375" y1="-504.89998125" x2="-2.290903125" y2="-536.90961875" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$35">
+<contactref element="OK4" pad="3"/>
 </signal>
 <signal name="N$36">
 <contactref element="R19" pad="2"/>
-<contactref element="OK2" pad="4"/>
-<wire x1="-17.03100625" y1="-536.90961875" x2="-17.036084375" y2="-221.22803125" width="0" layer="19" extent="1-1"/>
+<contactref element="OK4" pad="4"/>
+<wire x1="-17.036084375" y1="-512.51998125" x2="-17.03100625" y2="-536.90961875" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$37">
 <contactref element="R20" pad="1"/>
@@ -5800,14 +5833,17 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="N$38">
 <contactref element="LED7" pad="K"/>
 <contactref element="U$21" pad="4"/>
-<contactref element="OK2" pad="12"/>
-<wire x1="-2.290903125" y1="-590.678396875" x2="-14.496084375" y2="-213.60803125" width="0" layer="19" extent="1-1"/>
-<wire x1="-25.971753125" y1="-601.55564375" x2="-2.290903125" y2="-590.678396875" width="0" layer="19" extent="1-1"/>
+<contactref element="OK5" pad="14"/>
+<wire x1="-2.290903125" y1="-590.678396875" x2="-25.971753125" y2="-601.55564375" width="0" layer="19" extent="1-1"/>
+<wire x1="-19.576084375" y1="-558.668759375" x2="-2.290903125" y2="-590.678396875" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$39">
+<contactref element="OK5" pad="3"/>
 </signal>
 <signal name="N$40">
 <contactref element="R21" pad="2"/>
-<contactref element="OK2" pad="6"/>
-<wire x1="-17.03100625" y1="-590.678396875" x2="-11.956084375" y2="-221.22803125" width="0" layer="19" extent="1-1"/>
+<contactref element="OK5" pad="4"/>
+<wire x1="-17.036084375" y1="-566.288759375" x2="-17.03100625" y2="-590.678396875" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$41">
 <contactref element="R22" pad="1"/>
@@ -5817,44 +5853,17 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="N$42">
 <contactref element="LED8" pad="K"/>
 <contactref element="U$22" pad="4"/>
-<contactref element="OK2" pad="10"/>
-<wire x1="-2.290903125" y1="-644.447175" x2="-9.416084375" y2="-213.60803125" width="0" layer="19" extent="1-1"/>
-<wire x1="-25.971753125" y1="-655.32441875" x2="-2.290903125" y2="-644.447175" width="0" layer="19" extent="1-1"/>
+<contactref element="OK6" pad="14"/>
+<wire x1="-2.290903125" y1="-644.447175" x2="-25.971753125" y2="-655.32441875" width="0" layer="19" extent="1-1"/>
+<wire x1="-19.576084375" y1="-612.437534375" x2="-2.290903125" y2="-644.447175" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$43">
+<contactref element="OK6" pad="3"/>
 </signal>
 <signal name="N$44">
 <contactref element="R23" pad="2"/>
-<contactref element="OK2" pad="8"/>
-<wire x1="-17.03100625" y1="-644.447175" x2="-6.876084375" y2="-221.22803125" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="N$31">
-<contactref element="OK2" pad="1"/>
-</signal>
-<signal name="N$35">
-<contactref element="OK2" pad="3"/>
-</signal>
-<signal name="N$39">
-<contactref element="OK2" pad="5"/>
-</signal>
-<signal name="N$43">
-<contactref element="OK2" pad="7"/>
-</signal>
-<signal name="FLASH_CS">
-<contactref element="U$1" pad="CS"/>
-</signal>
-<signal name="CLK">
-<contactref element="U$1" pad="CLK"/>
-</signal>
-<signal name="DI">
-<contactref element="U$1" pad="DI"/>
-</signal>
-<signal name="DO">
-<contactref element="U$1" pad="DO"/>
-</signal>
-<signal name="WP">
-<contactref element="U$1" pad="WP"/>
-</signal>
-<signal name="N$23">
-<contactref element="U$1" pad="HOLD"/>
+<contactref element="OK6" pad="4"/>
+<wire x1="-17.036084375" y1="-620.057534375" x2="-17.03100625" y2="-644.447175" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>
