@@ -15498,56 +15498,56 @@ W = angled&lt;p&gt;
 <part name="LED1" library="led" deviceset="LED" device="3MM"/>
 <part name="P+2" library="supply1" deviceset="+5V" device=""/>
 <part name="GND11" library="SparkFun" deviceset="GND" device=""/>
-<part name="R9" library="rcl" deviceset="R-US_" device="0204/7"/>
+<part name="R9" library="rcl" deviceset="R-US_" device="0204/7" value="150"/>
 <part name="GND12" library="SparkFun" deviceset="GND" device=""/>
 <part name="U$16" library="HankLibraries" deviceset="SSR" device=""/>
 <part name="R10" library="rcl" deviceset="R-US_" device="0204/7" value="1k"/>
 <part name="LED2" library="led" deviceset="LED" device="3MM"/>
 <part name="P+3" library="supply1" deviceset="+5V" device=""/>
 <part name="GND13" library="SparkFun" deviceset="GND" device=""/>
-<part name="R11" library="rcl" deviceset="R-US_" device="0204/7"/>
+<part name="R11" library="rcl" deviceset="R-US_" device="0204/7" value="150"/>
 <part name="GND14" library="SparkFun" deviceset="GND" device=""/>
 <part name="U$17" library="HankLibraries" deviceset="SSR" device=""/>
 <part name="R12" library="rcl" deviceset="R-US_" device="0204/7" value="1k"/>
 <part name="LED3" library="led" deviceset="LED" device="3MM"/>
 <part name="P+4" library="supply1" deviceset="+5V" device=""/>
 <part name="GND15" library="SparkFun" deviceset="GND" device=""/>
-<part name="R13" library="rcl" deviceset="R-US_" device="0204/7"/>
+<part name="R13" library="rcl" deviceset="R-US_" device="0204/7" value="150"/>
 <part name="GND16" library="SparkFun" deviceset="GND" device=""/>
 <part name="U$18" library="HankLibraries" deviceset="SSR" device=""/>
 <part name="R14" library="rcl" deviceset="R-US_" device="0204/7" value="1k"/>
 <part name="LED4" library="led" deviceset="LED" device="3MM"/>
 <part name="P+5" library="supply1" deviceset="+5V" device=""/>
 <part name="GND17" library="SparkFun" deviceset="GND" device=""/>
-<part name="R15" library="rcl" deviceset="R-US_" device="0204/7"/>
+<part name="R15" library="rcl" deviceset="R-US_" device="0204/7" value="150"/>
 <part name="GND18" library="SparkFun" deviceset="GND" device=""/>
 <part name="U$19" library="HankLibraries" deviceset="SSR" device=""/>
 <part name="R16" library="rcl" deviceset="R-US_" device="0204/7" value="1k"/>
 <part name="LED5" library="led" deviceset="LED" device="3MM"/>
 <part name="P+6" library="supply1" deviceset="+5V" device=""/>
 <part name="GND19" library="SparkFun" deviceset="GND" device=""/>
-<part name="R17" library="rcl" deviceset="R-US_" device="0204/7"/>
+<part name="R17" library="rcl" deviceset="R-US_" device="0204/7" value="150"/>
 <part name="GND20" library="SparkFun" deviceset="GND" device=""/>
 <part name="U$20" library="HankLibraries" deviceset="SSR" device=""/>
 <part name="R18" library="rcl" deviceset="R-US_" device="0204/7" value="1k"/>
 <part name="LED6" library="led" deviceset="LED" device="3MM"/>
 <part name="P+7" library="supply1" deviceset="+5V" device=""/>
 <part name="GND21" library="SparkFun" deviceset="GND" device=""/>
-<part name="R19" library="rcl" deviceset="R-US_" device="0204/7"/>
+<part name="R19" library="rcl" deviceset="R-US_" device="0204/7" value="150"/>
 <part name="GND22" library="SparkFun" deviceset="GND" device=""/>
 <part name="U$21" library="HankLibraries" deviceset="SSR" device=""/>
 <part name="R20" library="rcl" deviceset="R-US_" device="0204/7"/>
 <part name="LED7" library="led" deviceset="LED" device="3MM"/>
 <part name="P+8" library="supply1" deviceset="+5V" device=""/>
 <part name="GND23" library="SparkFun" deviceset="GND" device=""/>
-<part name="R21" library="rcl" deviceset="R-US_" device="0204/7"/>
+<part name="R21" library="rcl" deviceset="R-US_" device="0204/7" value="150"/>
 <part name="GND24" library="SparkFun" deviceset="GND" device=""/>
 <part name="U$22" library="HankLibraries" deviceset="SSR" device=""/>
 <part name="R22" library="rcl" deviceset="R-US_" device="0204/7" value="1k"/>
 <part name="LED8" library="led" deviceset="LED" device="3MM"/>
 <part name="P+9" library="supply1" deviceset="+5V" device=""/>
 <part name="GND25" library="SparkFun" deviceset="GND" device=""/>
-<part name="R23" library="rcl" deviceset="R-US_" device="0204/7"/>
+<part name="R23" library="rcl" deviceset="R-US_" device="0204/7" value="150"/>
 <part name="GND26" library="SparkFun" deviceset="GND" device=""/>
 <part name="MOUT" library="con-ptr500" deviceset="AK300/10" device=""/>
 <part name="MIN" library="con-lstb" deviceset="MA09-1" device=""/>
@@ -15593,11 +15593,12 @@ W = angled&lt;p&gt;
 <text x="20.32" y="-7.62" size="1.778" layer="95">Released under the Creative Commons Attribution Share-Alike 3.0 License</text>
 <text x="20.32" y="-2.54" size="1.778" layer="95">http://creativecommons.org/licenses/by-sa/3.0</text>
 <text x="-53.34" y="119.38" size="1.778" layer="95">TO DO:
--Add connections to Microcontroller
++DONE Add connections to Microcontroller
 -Add 3.3V Power Supply Regulator
 -Add 5V low drop regulator
--Add Temperature Sensor
-+DONE: Add the SSR Circuit</text>
++DONE: Add Temperature Sensor
++DONE: Add the SSR Circuit
+-Add Fuses</text>
 <text x="20.32" y="-5.08" size="1.778" layer="95">Arduino Pro Mini Design by Spark Fun Electronics</text>
 </plain>
 <instances>
