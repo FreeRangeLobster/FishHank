@@ -204,39 +204,39 @@ V2.0</text>
 <pad name="RST" x="-6.35" y="-2.54" drill="0.6" shape="long"/>
 </package>
 <package name="SD_CARD_READER_FOOTPRINT">
-<pad name="GND" x="0" y="0" drill="0.6" shape="long"/>
-<pad name="+3.3" x="0" y="-1.27" drill="0.6" shape="long"/>
-<pad name="MISO" x="0" y="-2.54" drill="0.6" shape="long"/>
-<pad name="MOSI" x="0" y="-3.81" drill="0.6" shape="long"/>
-<pad name="SCK" x="0" y="-5.08" drill="0.6" shape="long"/>
-<pad name="CS" x="0" y="-6.35" drill="0.6" shape="long"/>
-<wire x1="-2.54" y1="1.27" x2="12.7" y2="1.27" width="0.1524" layer="21"/>
-<wire x1="12.7" y1="1.27" x2="12.7" y2="-7.62" width="0.1524" layer="21"/>
-<wire x1="12.7" y1="-7.62" x2="-2.54" y2="-7.62" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="-7.62" x2="-2.54" y2="1.27" width="0.1524" layer="21"/>
-<text x="1.27" y="0" size="0.6096" layer="21">GND</text>
-<text x="1.27" y="-1.27" size="0.6096" layer="21">+3.3V</text>
-<text x="1.27" y="-2.54" size="0.6096" layer="21">MISO</text>
-<text x="1.27" y="-3.81" size="0.6096" layer="21">MOSI</text>
-<text x="1.27" y="-5.08" size="0.6096" layer="21">SCK</text>
-<text x="1.27" y="-6.35" size="0.6096" layer="21">CS</text>
-<text x="5.08" y="-5.08" size="1.016" layer="21">uSD Card
+<pad name="GND" x="-5.08" y="7.62" drill="0.6" shape="long"/>
+<pad name="+3.3" x="-5.08" y="5.08" drill="0.6" shape="long"/>
+<pad name="MISO" x="-5.08" y="2.54" drill="0.6" shape="long"/>
+<pad name="MOSI" x="-5.08" y="0" drill="0.6" shape="long"/>
+<pad name="SCK" x="-5.08" y="-2.54" drill="0.6" shape="long"/>
+<pad name="CS" x="-5.08" y="-5.08" drill="0.6" shape="long"/>
+<wire x1="-7.62" y1="8.89" x2="7.62" y2="8.89" width="0.1524" layer="21"/>
+<wire x1="7.62" y1="8.89" x2="7.62" y2="-6.35" width="0.1524" layer="21"/>
+<wire x1="7.62" y1="-6.35" x2="-7.62" y2="-6.35" width="0.1524" layer="21"/>
+<wire x1="-7.62" y1="-6.35" x2="-7.62" y2="8.89" width="0.1524" layer="21"/>
+<text x="-3.81" y="7.62" size="0.6096" layer="21">GND</text>
+<text x="-3.81" y="5.08" size="0.6096" layer="21">+3.3V</text>
+<text x="-3.81" y="2.54" size="0.6096" layer="21">MISO</text>
+<text x="-3.81" y="0" size="0.6096" layer="21">MOSI</text>
+<text x="-3.81" y="-2.54" size="0.6096" layer="21">SCK</text>
+<text x="-3.81" y="-5.08" size="0.6096" layer="21">CS</text>
+<text x="0" y="0" size="1.016" layer="21">uSD Card
 Reader</text>
 </package>
 <package name="SSR_FOOTPRINT">
-<pad name="4" x="-5.08" y="0" drill="0.6" shape="long" rot="R90"/>
-<pad name="3" x="-3.81" y="0" drill="0.6" shape="long" rot="R90"/>
-<pad name="2" x="1.27" y="0" drill="0.6" shape="long" rot="R90"/>
-<pad name="1" x="5.08" y="0" drill="0.6" shape="long" rot="R90"/>
-<wire x1="-7.62" y1="2.54" x2="-7.62" y2="-3.81" width="0.1524" layer="21"/>
-<wire x1="-7.62" y1="-3.81" x2="7.62" y2="-3.81" width="0.1524" layer="21"/>
-<wire x1="7.62" y1="-3.81" x2="7.62" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="7.62" y1="2.54" x2="-7.62" y2="2.54" width="0.1524" layer="21"/>
-<text x="-3.81" y="1.27" size="0.8128" layer="21">3</text>
-<text x="1.27" y="1.27" size="0.8128" layer="21">2</text>
-<text x="5.08" y="1.27" size="0.8128" layer="21">1</text>
-<text x="-5.08" y="1.27" size="0.8128" layer="21">4</text>
-<text x="-6.35" y="-2.54" size="0.8128" layer="21">SSR G3MB-202P-5VDC</text>
+<pad name="4" x="-6.35" y="0" drill="0.6" diameter="1.4224" shape="long" rot="R90"/>
+<pad name="3" x="-3.81" y="0" drill="0.6" diameter="1.4224" shape="long" rot="R90"/>
+<pad name="2" x="1.27" y="0" drill="0.6" diameter="1.9304" shape="long" rot="R90"/>
+<pad name="1" x="10.16" y="0" drill="0.6" diameter="1.9304" shape="long" rot="R90"/>
+<wire x1="-8.89" y1="2.54" x2="-8.89" y2="-2.54" width="0.1524" layer="21"/>
+<wire x1="-8.89" y1="-2.54" x2="12.7" y2="-2.54" width="0.1524" layer="21"/>
+<wire x1="12.7" y1="-2.54" x2="12.7" y2="2.54" width="0.1524" layer="21"/>
+<wire x1="12.7" y1="2.54" x2="-8.89" y2="2.54" width="0.1524" layer="21"/>
+<text x="-2.54" y="1.27" size="0.8128" layer="21">3</text>
+<text x="2.54" y="1.27" size="0.8128" layer="21">2</text>
+<text x="11.43" y="1.27" size="0.8128" layer="21">1</text>
+<text x="-7.62" y="1.27" size="0.8128" layer="21">4</text>
+<text x="-3.81" y="-2.54" size="0.8128" layer="21">SSR G3MB-202P-5VDC</text>
 </package>
 </packages>
 <symbols>
