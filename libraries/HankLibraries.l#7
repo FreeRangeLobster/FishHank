@@ -30,8 +30,8 @@
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
 <layer number="35" name="tGlue" color="7" fill="4" visible="no" active="yes"/>
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
-<layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
@@ -140,24 +140,99 @@ V2.0</text>
 <text x="-3.81" y="-2.54" size="0.8128" layer="21">SSR G3MB-202P-5VDC</text>
 </package>
 <package name="SD_CARD_READER_FOOTPRINT">
-<pad name="GND" x="0" y="2.54" drill="0.6" shape="long"/>
-<pad name="+3.3" x="0" y="0" drill="0.6" shape="long"/>
-<pad name="MISO" x="0" y="-2.54" drill="0.6" shape="long"/>
-<pad name="MOSI" x="0" y="-5.08" drill="0.6" shape="long"/>
-<pad name="SCK" x="0" y="-7.62" drill="0.6" shape="long"/>
-<pad name="CS" x="0" y="-10.16" drill="0.6" shape="long"/>
-<wire x1="-2.54" y1="3.81" x2="12.7" y2="3.81" width="0.1524" layer="21"/>
-<wire x1="12.7" y1="3.81" x2="12.7" y2="-11.43" width="0.1524" layer="21"/>
-<wire x1="12.7" y1="-11.43" x2="-2.54" y2="-11.43" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="-11.43" x2="-2.54" y2="3.81" width="0.1524" layer="21"/>
-<text x="1.27" y="2.54" size="0.6096" layer="21">GND</text>
-<text x="1.27" y="0" size="0.6096" layer="21">+3.3V</text>
-<text x="1.27" y="-2.54" size="0.6096" layer="21">MISO</text>
-<text x="1.27" y="-5.08" size="0.6096" layer="21">MOSI</text>
-<text x="1.27" y="-7.62" size="0.6096" layer="21">SCK</text>
-<text x="1.27" y="-10.16" size="0.6096" layer="21">CS</text>
-<text x="5.08" y="-5.08" size="1.016" layer="21">uSD Card
+<pad name="GND" x="-5.08" y="7.62" drill="0.6" shape="long"/>
+<pad name="+3.3" x="-5.08" y="5.08" drill="0.6" shape="long"/>
+<pad name="MISO" x="-5.08" y="2.54" drill="0.6" shape="long"/>
+<pad name="MOSI" x="-5.08" y="0" drill="0.6" shape="long"/>
+<pad name="SCK" x="-5.08" y="-2.54" drill="0.6" shape="long"/>
+<pad name="CS" x="-5.08" y="-5.08" drill="0.6" shape="long"/>
+<wire x1="-7.62" y1="8.89" x2="7.62" y2="8.89" width="0.1524" layer="21"/>
+<wire x1="7.62" y1="8.89" x2="7.62" y2="-6.35" width="0.1524" layer="21"/>
+<wire x1="7.62" y1="-6.35" x2="-7.62" y2="-6.35" width="0.1524" layer="21"/>
+<wire x1="-7.62" y1="-6.35" x2="-7.62" y2="8.89" width="0.1524" layer="21"/>
+<text x="-3.81" y="7.62" size="0.6096" layer="21">GND</text>
+<text x="-3.81" y="5.08" size="0.6096" layer="21">+3.3V</text>
+<text x="-3.81" y="2.54" size="0.6096" layer="21">MISO</text>
+<text x="-3.81" y="0" size="0.6096" layer="21">MOSI</text>
+<text x="-3.81" y="-2.54" size="0.6096" layer="21">SCK</text>
+<text x="-3.81" y="-5.08" size="0.6096" layer="21">CS</text>
+<text x="0" y="0" size="1.016" layer="21">uSD Card
 Reader</text>
+</package>
+<package name="ARDUINOMICRO_FOOTPRINT">
+<pad name="PC7" x="-6.35" y="7.62" drill="0.8"/>
+<pad name="3.3V" x="-6.35" y="5.08" drill="0.8"/>
+<pad name="AREF" x="-6.35" y="2.54" drill="0.8"/>
+<pad name="PF7" x="-6.35" y="0" drill="0.8"/>
+<pad name="PF6" x="-6.35" y="-2.54" drill="0.8"/>
+<pad name="PF5" x="-6.35" y="-5.08" drill="0.8"/>
+<pad name="PF4" x="-6.35" y="-7.62" drill="0.8"/>
+<pad name="PF1" x="-6.35" y="-10.16" drill="0.8"/>
+<pad name="PF0" x="-6.35" y="-12.7" drill="0.8"/>
+<pad name="NC1" x="-6.35" y="-15.24" drill="0.8"/>
+<pad name="NC2" x="-6.35" y="-17.78" drill="0.8"/>
+<pad name="5V" x="-6.35" y="-20.32" drill="0.8"/>
+<pad name="RESET1" x="-6.35" y="-22.86" drill="0.8"/>
+<pad name="GND" x="-6.35" y="-25.4" drill="0.8"/>
+<pad name="VIN" x="-6.35" y="-27.94" drill="0.8"/>
+<pad name="PB3" x="-6.35" y="-30.48" drill="0.8"/>
+<pad name="PB1" x="-6.35" y="-33.02" drill="0.8"/>
+<pad name="PD6" x="12.7" y="7.62" drill="0.8"/>
+<pad name="PB7" x="12.7" y="5.08" drill="0.8"/>
+<pad name="PB6" x="12.7" y="2.54" drill="0.8"/>
+<pad name="PB5" x="12.7" y="0" drill="0.8"/>
+<pad name="PB4" x="12.7" y="-2.54" drill="0.8"/>
+<pad name="PE6" x="12.7" y="-5.08" drill="0.8"/>
+<pad name="PD7" x="12.7" y="-7.62" drill="0.8"/>
+<pad name="PC6" x="12.7" y="-10.16" drill="0.8"/>
+<pad name="PD4" x="12.7" y="-12.7" drill="0.8"/>
+<pad name="PD0" x="12.7" y="-15.24" drill="0.8"/>
+<pad name="PD1" x="12.7" y="-17.78" drill="0.8"/>
+<pad name="GND2" x="12.7" y="-20.32" drill="0.8"/>
+<pad name="RESET" x="12.7" y="-22.86" drill="0.8"/>
+<pad name="PD2" x="12.7" y="-25.4" drill="0.8"/>
+<pad name="PD3" x="12.7" y="-27.94" drill="0.8"/>
+<pad name="PD8" x="12.7" y="-30.48" drill="0.8"/>
+<pad name="PB2" x="12.7" y="-33.02" drill="0.8"/>
+<wire x1="-8.89" y1="10.16" x2="15.24" y2="10.16" width="0.127" layer="21"/>
+<wire x1="15.24" y1="10.16" x2="15.24" y2="-35.56" width="0.127" layer="21"/>
+<wire x1="15.24" y1="-35.56" x2="-8.89" y2="-35.56" width="0.127" layer="21"/>
+<wire x1="-8.89" y1="-35.56" x2="-8.89" y2="10.16" width="0.127" layer="21"/>
+<text x="-5.08" y="7.62" size="1.016" layer="21">PC7</text>
+<text x="-5.08" y="5.08" size="1.016" layer="21">3.3V</text>
+<text x="-5.08" y="2.54" size="1.016" layer="21">AREF</text>
+<text x="-5.08" y="0" size="1.016" layer="21">PF7</text>
+<text x="-5.08" y="-2.54" size="1.016" layer="21">PF6</text>
+<text x="-5.08" y="-5.08" size="1.016" layer="21">PF5</text>
+<text x="-5.08" y="-7.62" size="1.016" layer="21">PF4</text>
+<text x="-5.08" y="-10.16" size="1.016" layer="21">PF1</text>
+<text x="-5.08" y="-12.7" size="1.016" layer="21">PF0</text>
+<text x="-5.08" y="-15.24" size="1.016" layer="21">NC</text>
+<text x="-5.08" y="-17.78" size="1.016" layer="21">NC</text>
+<text x="-5.08" y="-20.32" size="1.016" layer="21">5V</text>
+<text x="-5.08" y="-22.86" size="1.016" layer="21">RESET</text>
+<text x="-5.08" y="-25.4" size="1.016" layer="21">GND</text>
+<text x="-5.08" y="-27.94" size="1.016" layer="21">VIN</text>
+<text x="-5.08" y="-30.48" size="1.016" layer="21">PB3</text>
+<text x="-5.08" y="-33.02" size="1.016" layer="21">PB1</text>
+<text x="8.89" y="-33.02" size="1.016" layer="21">PB2</text>
+<text x="8.89" y="-30.48" size="1.016" layer="21">PB8</text>
+<text x="8.89" y="-27.94" size="1.016" layer="21">PD3</text>
+<text x="8.89" y="-25.4" size="1.016" layer="21">PD2</text>
+<text x="8.89" y="-22.86" size="1.016" layer="21">RESET</text>
+<text x="8.89" y="-20.32" size="1.016" layer="21">GND</text>
+<text x="8.89" y="-17.78" size="1.016" layer="21">PD1</text>
+<text x="8.89" y="-15.24" size="1.016" layer="21">PD0</text>
+<text x="8.89" y="-12.7" size="1.016" layer="21">PD4</text>
+<text x="8.89" y="-10.16" size="1.016" layer="21">PC6</text>
+<text x="8.89" y="-7.62" size="1.016" layer="21">PD7</text>
+<text x="8.89" y="-5.08" size="1.016" layer="21">PE6</text>
+<text x="8.89" y="-2.54" size="1.016" layer="21">PB4</text>
+<text x="8.89" y="0" size="1.016" layer="21">PB5</text>
+<text x="8.89" y="2.54" size="1.016" layer="21">PB6</text>
+<text x="8.89" y="5.08" size="1.016" layer="21">PB7</text>
+<text x="8.89" y="7.62" size="1.016" layer="21">PD6</text>
+<text x="3.81" y="-26.67" size="1.27" layer="21" rot="R90">ARDUINO MICRO</text>
 </package>
 </packages>
 <symbols>
@@ -238,6 +313,47 @@ to Serial RS232 TTL
 <wire x1="20.32" y1="-10.16" x2="20.32" y2="20.32" width="0.1524" layer="94"/>
 <wire x1="20.32" y1="20.32" x2="-10.16" y2="20.32" width="0.1524" layer="94"/>
 <text x="5.08" y="5.08" size="2.54" layer="94" distance="70" align="center">uSD Card</text>
+</symbol>
+<symbol name="ARDUINOMICRO_SYMBOL">
+<pin name="PC7" x="2.54" y="22.86" length="middle"/>
+<pin name="3.3V" x="2.54" y="17.78" length="middle"/>
+<pin name="AREF" x="2.54" y="12.7" length="middle"/>
+<pin name="PF7" x="2.54" y="7.62" length="middle"/>
+<pin name="PF6" x="2.54" y="2.54" length="middle"/>
+<pin name="PF5" x="2.54" y="-2.54" length="middle"/>
+<pin name="PF4" x="2.54" y="-7.62" length="middle"/>
+<pin name="PF1" x="2.54" y="-12.7" length="middle"/>
+<pin name="PF0" x="2.54" y="-17.78" length="middle"/>
+<pin name="NC1" x="2.54" y="-22.86" length="middle"/>
+<pin name="NC2" x="2.54" y="-27.94" length="middle"/>
+<pin name="5V" x="2.54" y="-33.02" length="middle"/>
+<pin name="RESET" x="2.54" y="-38.1" length="middle"/>
+<pin name="GND1" x="2.54" y="-43.18" length="middle"/>
+<pin name="VIN" x="2.54" y="-48.26" length="middle"/>
+<pin name="PB3" x="2.54" y="-53.34" length="middle"/>
+<pin name="PB1" x="2.54" y="-58.42" length="middle"/>
+<pin name="PD6" x="40.64" y="22.86" length="middle" rot="R180"/>
+<pin name="PB7" x="40.64" y="17.78" length="middle" rot="R180"/>
+<pin name="PB6" x="40.64" y="12.7" length="middle" rot="R180"/>
+<pin name="PB5" x="40.64" y="7.62" length="middle" rot="R180"/>
+<pin name="PB4" x="40.64" y="2.54" length="middle" rot="R180"/>
+<pin name="PE6" x="40.64" y="-2.54" length="middle" rot="R180"/>
+<pin name="PD7" x="40.64" y="-7.62" length="middle" rot="R180"/>
+<pin name="PC6" x="40.64" y="-12.7" length="middle" rot="R180"/>
+<pin name="PD4" x="40.64" y="-17.78" length="middle" rot="R180"/>
+<pin name="PD0" x="40.64" y="-22.86" length="middle" rot="R180"/>
+<pin name="PD1" x="40.64" y="-27.94" length="middle" rot="R180"/>
+<pin name="GND2" x="40.64" y="-33.02" length="middle" rot="R180"/>
+<pin name="RESET1" x="40.64" y="-38.1" length="middle" rot="R180"/>
+<pin name="RX" x="40.64" y="-43.18" length="middle" rot="R180"/>
+<pin name="TX" x="40.64" y="-48.26" length="middle" rot="R180"/>
+<pin name="PB0" x="40.64" y="-53.34" length="middle" rot="R180"/>
+<pin name="PB2" x="40.64" y="-58.42" length="middle" rot="R180"/>
+<wire x1="7.62" y1="27.94" x2="35.56" y2="27.94" width="0.254" layer="94"/>
+<wire x1="35.56" y1="27.94" x2="35.56" y2="-63.5" width="0.254" layer="94"/>
+<wire x1="35.56" y1="-63.5" x2="7.62" y2="-63.5" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-63.5" x2="7.62" y2="27.94" width="0.254" layer="94"/>
+<text x="22.86" y="-22.86" size="1.778" layer="94" rot="R90">Arduino Micro</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -337,6 +453,22 @@ to Serial RS232 TTL
 <connect gate="G$1" pin="MISO" pad="MISO"/>
 <connect gate="G$1" pin="MOSI" pad="MOSI"/>
 <connect gate="G$1" pin="SCK" pad="SCK"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="ARDUINO_MICRO">
+<gates>
+<gate name="G$1" symbol="ARDUINOMICRO_SYMBOL" x="-27.94" y="15.24"/>
+</gates>
+<devices>
+<device name="" package="ARDUINOMICRO_FOOTPRINT">
+<connects>
+<connect gate="G$1" pin="3.3V" pad="3.3V"/>
+<connect gate="G$1" pin="AREF" pad="AREF"/>
 </connects>
 <technologies>
 <technology name=""/>
