@@ -1,27 +1,47 @@
 
+const byte In1=36;
+const byte In2=37;
+const byte In3=38;
+const byte In4=39;
+const byte In5=40;
+const byte In6=41;
+const byte In7=11;
+const byte In8=9;
+
+const byte Out1=32;
+const byte Out2=26;
+const byte Out3=12;
+const byte Out4=30;
+const byte Out5=29;
+const byte Out6=27;
+const byte Out7=31;
+const byte Out8=18;
+
 
 // the setup function runs once when you press reset or power the board
 void setup() {
+   Serial.begin(9600);
+  
   // initialize digital pin LED_BUILTIN as an output.
   pinMode(LED_BUILTIN, OUTPUT);
   //outputs
-  pinMode(32, OUTPUT);
-  pinMode(26, OUTPUT);
-  pinMode(12, OUTPUT);
-  pinMode(30, OUTPUT);
-  pinMode(29, OUTPUT);
-  pinMode(27, OUTPUT);
-  pinMode(31, OUTPUT);
-  pinMode(18, OUTPUT);
+  pinMode(Out1, OUTPUT);
+  pinMode(Out2, OUTPUT);
+  pinMode(Out3, OUTPUT);
+  pinMode(Out4, OUTPUT);
+  pinMode(Out5, OUTPUT);
+  pinMode(Out6, OUTPUT);
+  pinMode(Out7, OUTPUT);
+  pinMode(Out8, OUTPUT);
   //inputs
-  pinMode(36, INPUT);
-  pinMode(37, INPUT);
-  pinMode(38, INPUT);
-  pinMode(39, INPUT);
-  pinMode(40, INPUT);
-  pinMode(41, INPUT);
-  pinMode(11, INPUT);
-  pinMode(9, INPUT);
+  pinMode(In1, INPUT);
+  pinMode(In2, INPUT);
+  pinMode(In3, INPUT);
+  pinMode(In4, INPUT);
+  pinMode(In5, INPUT);
+  pinMode(In6, INPUT);
+  pinMode(In7, INPUT);
+  pinMode(In8, INPUT);
 
 
   
@@ -52,4 +72,42 @@ void loop() {
   digitalWrite(18, LOW);
   
   delay(1000);                       // wait for a second
+
+
+
+
+
+
+
+
+
+  // if there's any serial available, read it:
+  while (Serial.available() > 0) {
+
+    // look for the next valid integer in the incoming serial stream:
+    int red = Serial.parseInt();
+    // do it again:
+    int green = Serial.parseInt();
+    // do it again:
+    int blue = Serial.parseInt();
+
+    // look for the newline. That's the end of your sentence:
+    if (Serial.read() == '\n') {
+      // constrain the values to 0 - 255 and invert
+      // if you're using a common-cathode LED, just use "constrain(color, 0, 255);"
+      red = 255 - constrain(red, 0, 255);
+      green = 255 - constrain(green, 0, 255);
+      blue = 255 - constrain(blue, 0, 255);
+
+      
+
+      // print the three numbers in one string as hexadecimal:
+      Serial.print(red, HEX);
+      Serial.print(green, HEX);
+      Serial.println(blue, HEX);
+    }
+  }
+
+
 }
+

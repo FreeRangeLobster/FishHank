@@ -224,19 +224,19 @@ V2.0</text>
 Reader</text>
 </package>
 <package name="SSR_FOOTPRINT">
-<pad name="4" x="-5.08" y="0" drill="0.6" shape="long" rot="R90"/>
-<pad name="3" x="-3.81" y="0" drill="0.6" shape="long" rot="R90"/>
-<pad name="2" x="1.27" y="0" drill="0.6" shape="long" rot="R90"/>
-<pad name="1" x="5.08" y="0" drill="0.6" shape="long" rot="R90"/>
-<wire x1="-7.62" y1="2.54" x2="-7.62" y2="-3.81" width="0.1524" layer="21"/>
-<wire x1="-7.62" y1="-3.81" x2="7.62" y2="-3.81" width="0.1524" layer="21"/>
-<wire x1="7.62" y1="-3.81" x2="7.62" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="7.62" y1="2.54" x2="-7.62" y2="2.54" width="0.1524" layer="21"/>
+<pad name="4" x="-6.35" y="0" drill="0.6" diameter="1.778" shape="long" rot="R90"/>
+<pad name="3" x="-3.81" y="0" drill="0.6" diameter="1.778" shape="long" rot="R90"/>
+<pad name="2" x="3.81" y="0" drill="0.6" diameter="2.1844" shape="long" rot="R90"/>
+<pad name="1" x="11.43" y="0" drill="0.6" diameter="2.1844" shape="long" rot="R90"/>
+<wire x1="-8.89" y1="2.54" x2="-8.89" y2="-2.54" width="0.1524" layer="21"/>
+<wire x1="-8.89" y1="-2.54" x2="12.7" y2="-2.54" width="0.1524" layer="21"/>
+<wire x1="12.7" y1="-2.54" x2="12.7" y2="2.54" width="0.1524" layer="21"/>
+<wire x1="12.7" y1="2.54" x2="-8.89" y2="2.54" width="0.1524" layer="21"/>
 <text x="-3.81" y="1.27" size="0.8128" layer="21">3</text>
-<text x="1.27" y="1.27" size="0.8128" layer="21">2</text>
-<text x="5.08" y="1.27" size="0.8128" layer="21">1</text>
+<text x="3.81" y="1.27" size="0.8128" layer="21">2</text>
+<text x="11.43" y="1.27" size="0.8128" layer="21">1</text>
 <text x="-5.08" y="1.27" size="0.8128" layer="21">4</text>
-<text x="-6.35" y="-2.54" size="0.8128" layer="21">SSR G3MB-202P-5VDC</text>
+<text x="-3.81" y="-2.54" size="0.8128" layer="21">SSR G3MB-202P-5VDC</text>
 </package>
 </packages>
 <symbols>

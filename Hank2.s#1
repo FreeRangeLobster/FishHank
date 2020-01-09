@@ -17114,60 +17114,60 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <part name="C_FM" library="rcl" deviceset="C-US" device="025-024X044" value="0.1uF"/>
 <part name="C_USD" library="rcl" deviceset="C-US" device="025-024X044" value="0.1uF"/>
 <part name="C_RTC" library="rcl" deviceset="C-US" device="025-024X044" value="0.1uF"/>
-<part name="RO52" library="rcl" deviceset="R-US_" device="0204/7" value="1k"/>
+<part name="RO53" library="rcl" deviceset="R-US_" device="0204/7" value="1k"/>
 <part name="LO5" library="led" deviceset="LED" device="3MM"/>
 <part name="P+2" library="supply1" deviceset="+5V" device=""/>
 <part name="GND11" library="SparkFun" deviceset="GND" device=""/>
-<part name="R51" library="rcl" deviceset="R-US_" device="0204/7" value="150"/>
+<part name="R51" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
 <part name="GND12" library="SparkFun" deviceset="GND" device=""/>
 <part name="SSR6" library="HankLibraries" deviceset="SSR" device=""/>
-<part name="R62" library="rcl" deviceset="R-US_" device="0204/7" value="1k"/>
+<part name="RO63" library="rcl" deviceset="R-US_" device="0204/7" value="1k"/>
 <part name="LO6" library="led" deviceset="LED" device="3MM"/>
 <part name="P+3" library="supply1" deviceset="+5V" device=""/>
 <part name="GND13" library="SparkFun" deviceset="GND" device=""/>
-<part name="R61" library="rcl" deviceset="R-US_" device="0204/7" value="150"/>
+<part name="R61" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
 <part name="GND14" library="SparkFun" deviceset="GND" device=""/>
 <part name="SSR7" library="HankLibraries" deviceset="SSR" device=""/>
-<part name="RO72" library="rcl" deviceset="R-US_" device="0204/7" value="1k"/>
+<part name="RO73" library="rcl" deviceset="R-US_" device="0204/7" value="1k"/>
 <part name="LO7" library="led" deviceset="LED" device="3MM"/>
 <part name="P+4" library="supply1" deviceset="+5V" device=""/>
 <part name="GND15" library="SparkFun" deviceset="GND" device=""/>
-<part name="RO71" library="rcl" deviceset="R-US_" device="0204/7" value="150"/>
+<part name="RO71" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
 <part name="GND16" library="SparkFun" deviceset="GND" device=""/>
 <part name="SSR8" library="HankLibraries" deviceset="SSR" device=""/>
-<part name="RO82" library="rcl" deviceset="R-US_" device="0204/7" value="1k"/>
+<part name="RO83" library="rcl" deviceset="R-US_" device="0204/7" value="1k"/>
 <part name="LO8" library="led" deviceset="LED" device="3MM"/>
 <part name="P+5" library="supply1" deviceset="+5V" device=""/>
 <part name="GND17" library="SparkFun" deviceset="GND" device=""/>
-<part name="RO81" library="rcl" deviceset="R-US_" device="0204/7" value="150"/>
+<part name="RO81" library="rcl" deviceset="R-US_" device="0204/7" value="10k"/>
 <part name="GND18" library="SparkFun" deviceset="GND" device=""/>
 <part name="SSR1" library="HankLibraries" deviceset="SSR" device=""/>
-<part name="RO12" library="rcl" deviceset="R-US_" device="0204/7" value="1k"/>
+<part name="RO13" library="rcl" deviceset="R-US_" device="0204/7" value="1k"/>
 <part name="LO1" library="led" deviceset="LED" device="3MM"/>
 <part name="P+6" library="supply1" deviceset="+5V" device=""/>
 <part name="GND19" library="SparkFun" deviceset="GND" device=""/>
 <part name="RO11" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
 <part name="GND20" library="SparkFun" deviceset="GND" device=""/>
 <part name="SSR2" library="HankLibraries" deviceset="SSR" device=""/>
-<part name="RO22" library="rcl" deviceset="R-US_" device="0204/7" value="1k"/>
+<part name="RO23" library="rcl" deviceset="R-US_" device="0204/7" value="1k"/>
 <part name="L_O2" library="led" deviceset="LED" device="3MM"/>
 <part name="P+7" library="supply1" deviceset="+5V" device=""/>
 <part name="GND21" library="SparkFun" deviceset="GND" device=""/>
 <part name="RO21" library="rcl" deviceset="R-US_" device="0204/7" value="150"/>
 <part name="GND22" library="SparkFun" deviceset="GND" device=""/>
 <part name="SSR3" library="HankLibraries" deviceset="SSR" device=""/>
-<part name="RO32" library="rcl" deviceset="R-US_" device="0204/7"/>
+<part name="RO33" library="rcl" deviceset="R-US_" device="0204/7"/>
 <part name="L_O3" library="led" deviceset="LED" device="3MM"/>
 <part name="P+8" library="supply1" deviceset="+5V" device=""/>
 <part name="GND23" library="SparkFun" deviceset="GND" device=""/>
 <part name="RO31" library="rcl" deviceset="R-US_" device="0204/7" value="150"/>
 <part name="GND24" library="SparkFun" deviceset="GND" device=""/>
 <part name="SSR4" library="HankLibraries" deviceset="SSR" device=""/>
-<part name="RO42" library="rcl" deviceset="R-US_" device="0204/7" value="1k"/>
+<part name="RO43" library="rcl" deviceset="R-US_" device="0204/7" value="1k"/>
 <part name="L_O4" library="led" deviceset="LED" device="3MM"/>
 <part name="P+9" library="supply1" deviceset="+5V" device=""/>
 <part name="GND25" library="SparkFun" deviceset="GND" device=""/>
-<part name="RO41" library="rcl" deviceset="R-US_" device="0204/7" value="150"/>
+<part name="RO41" library="rcl" deviceset="R-US_" device="0204/7" value="10k"/>
 <part name="GND26" library="SparkFun" deviceset="GND" device=""/>
 <part name="MOUT" library="con-ptr500" deviceset="AK300/10" device=""/>
 <part name="PSU" library="con-ptr500" deviceset="AK300/2" device=""/>
@@ -17231,7 +17231,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <part name="GND1" library="SparkFun" deviceset="GND" device=""/>
 <part name="GND3" library="SparkFun" deviceset="GND" device=""/>
 <part name="T1" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
-<part name="RO1" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
+<part name="RO12" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
 <part name="T2" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
 <part name="T3" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
 <part name="T4" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
@@ -17239,13 +17239,13 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <part name="T6" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
 <part name="T7" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
 <part name="T8" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
-<part name="RO2" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
-<part name="RO3" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
-<part name="RO4" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
-<part name="RO5" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
-<part name="RO6" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
-<part name="RO7" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
-<part name="RO8" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
+<part name="RO52" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
+<part name="RO62" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
+<part name="RO72" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
+<part name="RO82" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
+<part name="RO42" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
+<part name="RO32" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
+<part name="RO22" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
 </parts>
 <sheets>
 <sheet>
@@ -17289,7 +17289,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <instance part="C_FM" gate="G$1" x="116.84" y="246.38"/>
 <instance part="C_USD" gate="G$1" x="111.76" y="198.12" rot="R180"/>
 <instance part="C_RTC" gate="G$1" x="45.72" y="198.12" rot="MR0"/>
-<instance part="RO52" gate="G$1" x="294.64" y="241.3" rot="R90"/>
+<instance part="RO53" gate="G$1" x="294.64" y="241.3" rot="R90"/>
 <instance part="LO5" gate="G$1" x="294.64" y="233.68"/>
 <instance part="P+2" gate="1" x="294.64" y="251.46"/>
 <instance part="GND11" gate="1" x="292.1" y="208.28" smashed="yes">
@@ -17300,7 +17300,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <attribute name="VALUE" x="274.32" y="203.2" size="1.778" layer="96"/>
 </instance>
 <instance part="SSR6" gate="G$1" x="320.04" y="193.04" rot="R90"/>
-<instance part="R62" gate="G$1" x="294.64" y="187.96" rot="R90"/>
+<instance part="RO63" gate="G$1" x="294.64" y="187.96" rot="R90"/>
 <instance part="LO6" gate="G$1" x="294.64" y="180.34"/>
 <instance part="P+3" gate="1" x="294.64" y="198.12"/>
 <instance part="GND13" gate="1" x="292.1" y="154.94" smashed="yes">
@@ -17311,7 +17311,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <attribute name="VALUE" x="274.32" y="152.4" size="1.778" layer="96"/>
 </instance>
 <instance part="SSR7" gate="G$1" x="320.04" y="139.7" rot="R90"/>
-<instance part="RO72" gate="G$1" x="294.64" y="134.62" rot="R90"/>
+<instance part="RO73" gate="G$1" x="294.64" y="134.62" rot="R90"/>
 <instance part="LO7" gate="G$1" x="294.64" y="127"/>
 <instance part="P+4" gate="1" x="294.64" y="144.78"/>
 <instance part="GND15" gate="1" x="292.1" y="99.06" smashed="yes">
@@ -17322,7 +17322,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <attribute name="VALUE" x="274.32" y="96.52" size="1.778" layer="96"/>
 </instance>
 <instance part="SSR8" gate="G$1" x="320.04" y="86.36" rot="R90"/>
-<instance part="RO82" gate="G$1" x="294.64" y="81.28" rot="R90"/>
+<instance part="RO83" gate="G$1" x="294.64" y="81.28" rot="R90"/>
 <instance part="LO8" gate="G$1" x="294.64" y="73.66"/>
 <instance part="P+5" gate="1" x="294.64" y="91.44"/>
 <instance part="GND17" gate="1" x="292.1" y="48.26" smashed="yes">
@@ -17333,7 +17333,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <attribute name="VALUE" x="274.32" y="45.72" size="1.778" layer="96"/>
 </instance>
 <instance part="SSR1" gate="G$1" x="238.76" y="246.38" rot="R90"/>
-<instance part="RO12" gate="G$1" x="213.36" y="241.3" rot="R90"/>
+<instance part="RO13" gate="G$1" x="213.36" y="241.3" rot="R90"/>
 <instance part="LO1" gate="G$1" x="213.36" y="233.68"/>
 <instance part="P+6" gate="1" x="213.36" y="251.46"/>
 <instance part="GND19" gate="1" x="210.82" y="205.74" smashed="yes">
@@ -17344,7 +17344,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <attribute name="VALUE" x="193.04" y="203.2" size="1.778" layer="96"/>
 </instance>
 <instance part="SSR2" gate="G$1" x="238.76" y="193.04" rot="R90"/>
-<instance part="RO22" gate="G$1" x="213.36" y="187.96" rot="R90"/>
+<instance part="RO23" gate="G$1" x="213.36" y="187.96" rot="R90"/>
 <instance part="L_O2" gate="G$1" x="213.36" y="180.34"/>
 <instance part="P+7" gate="1" x="213.36" y="198.12"/>
 <instance part="GND21" gate="1" x="210.82" y="152.4" smashed="yes">
@@ -17355,7 +17355,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <attribute name="VALUE" x="193.04" y="149.86" size="1.778" layer="96"/>
 </instance>
 <instance part="SSR3" gate="G$1" x="238.76" y="139.7" rot="R90"/>
-<instance part="RO32" gate="G$1" x="213.36" y="134.62" rot="R90"/>
+<instance part="RO33" gate="G$1" x="213.36" y="134.62" rot="R90"/>
 <instance part="L_O3" gate="G$1" x="213.36" y="127"/>
 <instance part="P+8" gate="1" x="213.36" y="144.78"/>
 <instance part="GND23" gate="1" x="210.82" y="99.06" smashed="yes">
@@ -17366,7 +17366,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <attribute name="VALUE" x="193.04" y="96.52" size="1.778" layer="96"/>
 </instance>
 <instance part="SSR4" gate="G$1" x="238.76" y="86.36" rot="R90"/>
-<instance part="RO42" gate="G$1" x="213.36" y="81.28" rot="R90"/>
+<instance part="RO43" gate="G$1" x="213.36" y="81.28" rot="R90"/>
 <instance part="L_O4" gate="G$1" x="213.36" y="73.66"/>
 <instance part="P+9" gate="1" x="213.36" y="91.44"/>
 <instance part="GND25" gate="1" x="210.82" y="45.72" smashed="yes">
@@ -17469,7 +17469,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <attribute name="VALUE" x="175.26" y="33.02" size="1.778" layer="96"/>
 </instance>
 <instance part="T1" gate="G$1" x="208.28" y="220.98"/>
-<instance part="RO1" gate="G$1" x="200.66" y="220.98" rot="R180"/>
+<instance part="RO12" gate="G$1" x="200.66" y="220.98" rot="R180"/>
 <instance part="T2" gate="G$1" x="208.28" y="167.64"/>
 <instance part="T3" gate="G$1" x="208.28" y="114.3"/>
 <instance part="T4" gate="G$1" x="208.28" y="60.96"/>
@@ -17477,13 +17477,13 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <instance part="T6" gate="G$1" x="289.56" y="114.3"/>
 <instance part="T7" gate="G$1" x="289.56" y="167.64"/>
 <instance part="T8" gate="G$1" x="289.56" y="220.98"/>
-<instance part="RO2" gate="G$1" x="281.94" y="220.98" rot="R180"/>
-<instance part="RO3" gate="G$1" x="281.94" y="167.64" rot="R180"/>
-<instance part="RO4" gate="G$1" x="281.94" y="114.3" rot="R180"/>
-<instance part="RO5" gate="G$1" x="281.94" y="60.96" rot="R180"/>
-<instance part="RO6" gate="G$1" x="200.66" y="60.96" rot="R180"/>
-<instance part="RO7" gate="G$1" x="200.66" y="114.3" rot="R180"/>
-<instance part="RO8" gate="G$1" x="200.66" y="167.64" rot="R180"/>
+<instance part="RO52" gate="G$1" x="281.94" y="220.98" rot="R180"/>
+<instance part="RO62" gate="G$1" x="281.94" y="167.64" rot="R180"/>
+<instance part="RO72" gate="G$1" x="281.94" y="114.3" rot="R180"/>
+<instance part="RO82" gate="G$1" x="281.94" y="60.96" rot="R180"/>
+<instance part="RO42" gate="G$1" x="200.66" y="60.96" rot="R180"/>
+<instance part="RO32" gate="G$1" x="200.66" y="114.3" rot="R180"/>
+<instance part="RO22" gate="G$1" x="200.66" y="167.64" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -17980,7 +17980,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 </net>
 <net name="N$11" class="0">
 <segment>
-<pinref part="RO52" gate="G$1" pin="1"/>
+<pinref part="RO53" gate="G$1" pin="1"/>
 <pinref part="LO5" gate="G$1" pin="A"/>
 </segment>
 </net>
@@ -17991,12 +17991,14 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <wire x1="294.64" y1="226.06" x2="309.88" y2="226.06" width="0.1524" layer="91"/>
 <pinref part="SSR5" gate="G$1" pin="-"/>
 <wire x1="309.88" y1="226.06" x2="309.88" y2="238.76" width="0.1524" layer="91"/>
+<pinref part="T8" gate="G$1" pin="C"/>
+<wire x1="292.1" y1="226.06" x2="294.64" y2="226.06" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+5V" class="0">
 <segment>
 <pinref part="P+2" gate="1" pin="+5V"/>
-<pinref part="RO52" gate="G$1" pin="2"/>
+<pinref part="RO53" gate="G$1" pin="2"/>
 <wire x1="294.64" y1="248.92" x2="294.64" y2="246.38" width="0.1524" layer="91"/>
 <pinref part="SSR5" gate="G$1" pin="+"/>
 <wire x1="312.42" y1="238.76" x2="312.42" y2="236.22" width="0.1524" layer="91"/>
@@ -18006,7 +18008,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 </segment>
 <segment>
 <pinref part="P+3" gate="1" pin="+5V"/>
-<pinref part="R62" gate="G$1" pin="2"/>
+<pinref part="RO63" gate="G$1" pin="2"/>
 <wire x1="294.64" y1="195.58" x2="294.64" y2="193.04" width="0.1524" layer="91"/>
 <pinref part="SSR6" gate="G$1" pin="+"/>
 <wire x1="312.42" y1="185.42" x2="312.42" y2="182.88" width="0.1524" layer="91"/>
@@ -18016,7 +18018,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 </segment>
 <segment>
 <pinref part="P+4" gate="1" pin="+5V"/>
-<pinref part="RO72" gate="G$1" pin="2"/>
+<pinref part="RO73" gate="G$1" pin="2"/>
 <wire x1="294.64" y1="142.24" x2="294.64" y2="139.7" width="0.1524" layer="91"/>
 <pinref part="SSR7" gate="G$1" pin="+"/>
 <wire x1="312.42" y1="132.08" x2="312.42" y2="129.54" width="0.1524" layer="91"/>
@@ -18026,7 +18028,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 </segment>
 <segment>
 <pinref part="P+5" gate="1" pin="+5V"/>
-<pinref part="RO82" gate="G$1" pin="2"/>
+<pinref part="RO83" gate="G$1" pin="2"/>
 <wire x1="294.64" y1="88.9" x2="294.64" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="SSR8" gate="G$1" pin="+"/>
 <wire x1="312.42" y1="78.74" x2="312.42" y2="76.2" width="0.1524" layer="91"/>
@@ -18036,7 +18038,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 </segment>
 <segment>
 <pinref part="P+6" gate="1" pin="+5V"/>
-<pinref part="RO12" gate="G$1" pin="2"/>
+<pinref part="RO13" gate="G$1" pin="2"/>
 <wire x1="213.36" y1="248.92" x2="213.36" y2="246.38" width="0.1524" layer="91"/>
 <pinref part="SSR1" gate="G$1" pin="+"/>
 <wire x1="231.14" y1="238.76" x2="231.14" y2="236.22" width="0.1524" layer="91"/>
@@ -18046,7 +18048,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 </segment>
 <segment>
 <pinref part="P+7" gate="1" pin="+5V"/>
-<pinref part="RO22" gate="G$1" pin="2"/>
+<pinref part="RO23" gate="G$1" pin="2"/>
 <wire x1="213.36" y1="195.58" x2="213.36" y2="193.04" width="0.1524" layer="91"/>
 <pinref part="SSR2" gate="G$1" pin="+"/>
 <wire x1="231.14" y1="185.42" x2="231.14" y2="182.88" width="0.1524" layer="91"/>
@@ -18056,7 +18058,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 </segment>
 <segment>
 <pinref part="P+8" gate="1" pin="+5V"/>
-<pinref part="RO32" gate="G$1" pin="2"/>
+<pinref part="RO33" gate="G$1" pin="2"/>
 <wire x1="213.36" y1="142.24" x2="213.36" y2="139.7" width="0.1524" layer="91"/>
 <pinref part="SSR3" gate="G$1" pin="+"/>
 <wire x1="231.14" y1="132.08" x2="231.14" y2="129.54" width="0.1524" layer="91"/>
@@ -18066,7 +18068,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 </segment>
 <segment>
 <pinref part="P+9" gate="1" pin="+5V"/>
-<pinref part="RO42" gate="G$1" pin="2"/>
+<pinref part="RO43" gate="G$1" pin="2"/>
 <wire x1="213.36" y1="88.9" x2="213.36" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="SSR4" gate="G$1" pin="+"/>
 <wire x1="231.14" y1="78.74" x2="231.14" y2="76.2" width="0.1524" layer="91"/>
@@ -18117,12 +18119,12 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <net name="N$15" class="0">
 <segment>
 <pinref part="R51" gate="G$1" pin="2"/>
-<pinref part="RO2" gate="G$1" pin="2"/>
+<pinref part="RO52" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$16" class="0">
 <segment>
-<pinref part="R62" gate="G$1" pin="1"/>
+<pinref part="RO63" gate="G$1" pin="1"/>
 <pinref part="LO6" gate="G$1" pin="A"/>
 </segment>
 </net>
@@ -18151,12 +18153,12 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <net name="N$19" class="0">
 <segment>
 <pinref part="R61" gate="G$1" pin="2"/>
-<pinref part="RO3" gate="G$1" pin="2"/>
+<pinref part="RO62" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$20" class="0">
 <segment>
-<pinref part="RO72" gate="G$1" pin="1"/>
+<pinref part="RO73" gate="G$1" pin="1"/>
 <pinref part="LO7" gate="G$1" pin="A"/>
 </segment>
 </net>
@@ -18185,12 +18187,12 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <net name="N$24" class="0">
 <segment>
 <pinref part="RO71" gate="G$1" pin="2"/>
-<pinref part="RO4" gate="G$1" pin="2"/>
+<pinref part="RO72" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$25" class="0">
 <segment>
-<pinref part="RO82" gate="G$1" pin="1"/>
+<pinref part="RO83" gate="G$1" pin="1"/>
 <pinref part="LO8" gate="G$1" pin="A"/>
 </segment>
 </net>
@@ -18219,12 +18221,12 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <net name="N$28" class="0">
 <segment>
 <pinref part="RO81" gate="G$1" pin="2"/>
-<pinref part="RO5" gate="G$1" pin="2"/>
+<pinref part="RO82" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$29" class="0">
 <segment>
-<pinref part="RO12" gate="G$1" pin="1"/>
+<pinref part="RO13" gate="G$1" pin="1"/>
 <pinref part="LO1" gate="G$1" pin="A"/>
 </segment>
 </net>
@@ -18244,7 +18246,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <wire x1="195.58" y1="220.98" x2="185.42" y2="220.98" width="0.1524" layer="91"/>
 <label x="185.42" y="220.98" size="1.778" layer="95"/>
 <pinref part="RO11" gate="G$1" pin="2"/>
-<pinref part="RO1" gate="G$1" pin="2"/>
+<pinref part="RO12" gate="G$1" pin="2"/>
 <junction x="195.58" y="220.98"/>
 </segment>
 <segment>
@@ -18255,7 +18257,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 </net>
 <net name="N$33" class="0">
 <segment>
-<pinref part="RO22" gate="G$1" pin="1"/>
+<pinref part="RO23" gate="G$1" pin="1"/>
 <pinref part="L_O2" gate="G$1" pin="A"/>
 </segment>
 </net>
@@ -18284,12 +18286,12 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <net name="N$36" class="0">
 <segment>
 <pinref part="RO21" gate="G$1" pin="2"/>
-<pinref part="RO8" gate="G$1" pin="2"/>
+<pinref part="RO22" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$37" class="0">
 <segment>
-<pinref part="RO32" gate="G$1" pin="1"/>
+<pinref part="RO33" gate="G$1" pin="1"/>
 <pinref part="L_O3" gate="G$1" pin="A"/>
 </segment>
 </net>
@@ -18318,12 +18320,12 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <net name="N$40" class="0">
 <segment>
 <pinref part="RO31" gate="G$1" pin="2"/>
-<pinref part="RO7" gate="G$1" pin="2"/>
+<pinref part="RO32" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$41" class="0">
 <segment>
-<pinref part="RO42" gate="G$1" pin="1"/>
+<pinref part="RO43" gate="G$1" pin="1"/>
 <pinref part="L_O4" gate="G$1" pin="A"/>
 </segment>
 </net>
@@ -18352,7 +18354,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <net name="N$44" class="0">
 <segment>
 <pinref part="RO41" gate="G$1" pin="2"/>
-<pinref part="RO6" gate="G$1" pin="2"/>
+<pinref part="RO42" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="L1-1" class="0">
@@ -18822,49 +18824,49 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <net name="N$8" class="0">
 <segment>
 <pinref part="T1" gate="G$1" pin="B"/>
-<pinref part="RO1" gate="G$1" pin="1"/>
+<pinref part="RO12" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$9" class="0">
 <segment>
 <pinref part="T8" gate="G$1" pin="B"/>
-<pinref part="RO2" gate="G$1" pin="1"/>
+<pinref part="RO52" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$18" class="0">
 <segment>
 <pinref part="T7" gate="G$1" pin="B"/>
-<pinref part="RO3" gate="G$1" pin="1"/>
+<pinref part="RO62" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$22" class="0">
 <segment>
 <pinref part="T6" gate="G$1" pin="B"/>
-<pinref part="RO4" gate="G$1" pin="1"/>
+<pinref part="RO72" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$23" class="0">
 <segment>
 <pinref part="T4" gate="G$1" pin="B"/>
-<pinref part="RO6" gate="G$1" pin="1"/>
+<pinref part="RO42" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$27" class="0">
 <segment>
 <pinref part="T3" gate="G$1" pin="B"/>
-<pinref part="RO7" gate="G$1" pin="1"/>
+<pinref part="RO32" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$31" class="0">
 <segment>
 <pinref part="T2" gate="G$1" pin="B"/>
-<pinref part="RO8" gate="G$1" pin="1"/>
+<pinref part="RO22" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$34" class="0">
 <segment>
 <pinref part="T5" gate="G$1" pin="B"/>
-<pinref part="RO5" gate="G$1" pin="1"/>
+<pinref part="RO82" gate="G$1" pin="1"/>
 </segment>
 </net>
 </nets>

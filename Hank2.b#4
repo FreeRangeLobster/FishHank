@@ -6078,12 +6078,6 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="MPN" value="" x="233.1363125" y="77.85780625" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="OC_NEWARK" value="unknown" x="233.1363125" y="77.85780625" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
-<element name="MIN" library="con-lstb" package="MA09-1" value="" x="149.0701625" y="13.703578125" rot="R90">
-<attribute name="MF" value="" x="149.0701625" y="13.703578125" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="OC_FARNELL" value="unknown" x="149.0701625" y="13.703578125" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MPN" value="" x="149.0701625" y="13.703578125" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="OC_NEWARK" value="unknown" x="149.0701625" y="13.703578125" size="1.778" layer="27" rot="R90" display="off"/>
-</element>
 <element name="PSU" library="con-ptr500" package="AK300/2" value="" x="10.394009375" y="9.61108125" rot="R90">
 <attribute name="MF" value="" x="10.394009375" y="9.61108125" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="OC_FARNELL" value="unknown" x="10.394009375" y="9.61108125" size="1.778" layer="27" rot="R90" display="off"/>
@@ -6209,7 +6203,7 @@ Please make sure your boards conform to these design rules.</description>
 <element name="PR_3.3V" library="rcl" package="0204/7" value="1k" x="82.010428125" y="36.5894875"/>
 <element name="5V" library="led" package="LED3MM" value="" x="89.63296875" y="28.2027625"/>
 <element name="PR_5V" library="rcl" package="0204/7" value="1k" x="82.010428125" y="27.4360375"/>
-<element name="U$2" library="HankLibraries" package="ARDUINOMICRO_FOOTPRINT" value="ARDUINO_MICRO" x="-54.61" y="33.02"/>
+<element name="ARDUINO" library="HankLibraries" package="ARDUINOMICRO_FOOTPRINT" value="ARDUINO_MICRO" x="-54.61" y="33.02"/>
 </elements>
 <signals>
 <signal name="GND" class="1">
@@ -6243,7 +6237,6 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="OK1" pad="11"/>
 <contactref element="OK1" pad="9"/>
 <contactref element="U$1" pad="GND"/>
-<contactref element="MIN" pad="1"/>
 <contactref element="PSU" pad="2"/>
 <contactref element="CP01" pad="-"/>
 <contactref element="TEMP_SENSOR" pad="1"/>
@@ -6263,8 +6256,8 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="LF33CV" pad="GND"/>
 <contactref element="PR_5V" pad="1"/>
 <contactref element="CP52" pad="-"/>
-<contactref element="U$2" pad="GND"/>
-<contactref element="U$2" pad="GND2"/>
+<contactref element="ARDUINO" pad="GND"/>
+<contactref element="ARDUINO" pad="GND2"/>
 <wire x1="135.89" y1="96.52" x2="143.51" y2="95.25" width="0" layer="19" extent="1-1"/>
 <wire x1="135.89" y1="91.44" x2="135.89" y2="96.52" width="0" layer="19" extent="1-1"/>
 <wire x1="135.89" y1="86.36" x2="135.89" y2="91.44" width="0" layer="19" extent="1-1"/>
@@ -6282,8 +6275,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="108.69899375" y1="99.78915625" x2="108.69899375" y2="87.501603125" width="0" layer="19" extent="1-1"/>
 <wire x1="129.01899375" y1="22.05479375" x2="135.89" y2="57.15" width="0" layer="19" extent="1-1"/>
 <wire x1="125.203078125" y1="8.384565625" x2="129.01899375" y2="22.05479375" width="0" layer="19" extent="1-1"/>
-<wire x1="149.0701625" y1="3.543578125" x2="125.203078125" y2="8.384565625" width="0" layer="19" extent="1-1"/>
-<wire x1="164.586234375" y1="23.861471875" x2="149.0701625" y2="3.543578125" width="0" layer="19" extent="1-1"/>
+<wire x1="164.586234375" y1="23.861471875" x2="129.01899375" y2="22.05479375" width="0" layer="19" extent="1-1"/>
 <wire x1="185.674634375" y1="16.242309375" x2="164.586234375" y2="23.861471875" width="0" layer="19" extent="1-1"/>
 <wire x1="185.674634375" y1="13.702309375" x2="185.674634375" y2="16.242309375" width="0" layer="19" extent="1-1"/>
 <wire x1="185.674634375" y1="11.162309375" x2="185.674634375" y2="13.702309375" width="0" layer="19" extent="1-1"/>
@@ -6434,7 +6426,7 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="CP52" pad="+"/>
 <contactref element="CP51" pad="+"/>
 <contactref element="5V" pad="A"/>
-<contactref element="U$2" pad="VIN"/>
+<contactref element="ARDUINO" pad="VIN"/>
 <wire x1="187.96" y1="54.61" x2="187.96" y2="62.23" width="0" layer="19" extent="1-1"/>
 <wire x1="187.96" y1="46.99" x2="187.96" y2="54.61" width="0" layer="19" extent="1-1"/>
 <wire x1="187.96" y1="69.85" x2="187.96" y2="62.23" width="0" layer="19" extent="1-1"/>
@@ -6459,8 +6451,8 @@ Please make sure your boards conform to these design rules.</description>
 </signal>
 <signal name="OUT5">
 <contactref element="OK2" pad="1"/>
-<contactref element="MIN" pad="6"/>
-<wire x1="149.0701625" y1="16.243578125" x2="128.27" y2="74.93" width="0" layer="19" extent="1-1"/>
+<contactref element="ARDUINO" pad="PB5"/>
+<wire x1="-44.45" y1="39.37" x2="128.27" y2="74.93" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$15">
 <contactref element="OK2" pad="2"/>
@@ -6520,18 +6512,18 @@ Please make sure your boards conform to these design rules.</description>
 </signal>
 <signal name="OUT6">
 <contactref element="OK2" pad="3"/>
-<contactref element="MIN" pad="7"/>
-<wire x1="149.0701625" y1="18.783578125" x2="128.27" y2="69.85" width="0" layer="19" extent="1-1"/>
+<contactref element="ARDUINO" pad="PD7"/>
+<wire x1="-44.45" y1="31.75" x2="128.27" y2="69.85" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="OUT7">
 <contactref element="OK2" pad="5"/>
-<contactref element="MIN" pad="8"/>
-<wire x1="149.0701625" y1="21.323578125" x2="128.27" y2="64.77" width="0" layer="19" extent="1-1"/>
+<contactref element="ARDUINO" pad="PC6"/>
+<wire x1="-44.45" y1="29.21" x2="128.27" y2="64.77" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="OUT8">
 <contactref element="OK2" pad="7"/>
-<contactref element="MIN" pad="9"/>
-<wire x1="149.0701625" y1="23.863578125" x2="128.27" y2="59.69" width="0" layer="19" extent="1-1"/>
+<contactref element="ARDUINO" pad="PD0"/>
+<wire x1="-44.45" y1="24.13" x2="128.27" y2="59.69" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$29">
 <contactref element="RO12" pad="1"/>
@@ -6603,23 +6595,23 @@ Please make sure your boards conform to these design rules.</description>
 </signal>
 <signal name="OUT1">
 <contactref element="OK1" pad="1"/>
-<contactref element="MIN" pad="2"/>
-<wire x1="149.0701625" y1="6.083578125" x2="128.27" y2="99.06" width="0" layer="19" extent="1-1"/>
+<contactref element="ARDUINO" pad="PC7"/>
+<wire x1="-63.5" y1="46.99" x2="128.27" y2="99.06" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="OUT2">
 <contactref element="OK1" pad="3"/>
-<contactref element="MIN" pad="3"/>
-<wire x1="149.0701625" y1="8.623578125" x2="128.27" y2="93.98" width="0" layer="19" extent="1-1"/>
+<contactref element="ARDUINO" pad="PD6"/>
+<wire x1="-44.45" y1="46.99" x2="128.27" y2="93.98" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="OUT3">
 <contactref element="OK1" pad="5"/>
-<contactref element="MIN" pad="4"/>
-<wire x1="149.0701625" y1="11.163578125" x2="128.27" y2="88.9" width="0" layer="19" extent="1-1"/>
+<contactref element="ARDUINO" pad="PB7"/>
+<wire x1="-44.45" y1="44.45" x2="128.27" y2="88.9" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="OUT4">
 <contactref element="OK1" pad="7"/>
-<contactref element="MIN" pad="5"/>
-<wire x1="149.0701625" y1="13.703578125" x2="128.27" y2="83.82" width="0" layer="19" extent="1-1"/>
+<contactref element="ARDUINO" pad="PB6"/>
+<wire x1="-44.45" y1="41.91" x2="128.27" y2="83.82" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="FLASH_CS">
 <contactref element="U$1" pad="CS"/>
@@ -6718,32 +6710,42 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="N$14">
 <contactref element="SV1" pad="10"/>
 </signal>
-<signal name="AUTO">
+<signal name="AUTO_MANUAL">
 <contactref element="R2" pad="2"/>
 <contactref element="X3" pad="2"/>
 <contactref element="SV2" pad="10"/>
+<contactref element="ARDUINO" pad="PB2"/>
+<wire x1="139.3071375" y1="9.724009375" x2="200.9163125" y2="26.402309375" width="0" layer="19" extent="1-1"/>
 <wire x1="136.63899375" y1="22.05479375" x2="139.3071375" y2="9.724009375" width="0" layer="19" extent="1-1"/>
-<wire x1="200.9163125" y1="26.402309375" x2="136.63899375" y2="22.05479375" width="0" layer="19" extent="1-1"/>
+<wire x1="-44.45" y1="6.35" x2="136.63899375" y2="22.05479375" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="IN4">
 <contactref element="RI4" pad="1"/>
 <contactref element="IN_BUTTONS" pad="5"/>
+<contactref element="ARDUINO" pad="PF4"/>
 <wire x1="217.0636" y1="15.506421875" x2="231.88899375" y2="21.759696875" width="0" layer="19" extent="1-1"/>
+<wire x1="-63.5" y1="31.75" x2="217.0636" y2="15.506421875" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="IN3">
 <contactref element="RI3" pad="1"/>
 <contactref element="IN_BUTTONS" pad="4"/>
-<wire x1="217.0636" y1="18.046421875" x2="231.88899375" y2="26.336421875" width="0" layer="19" extent="1-1"/>
+<contactref element="ARDUINO" pad="PF5"/>
+<wire x1="231.88899375" y1="26.336421875" x2="217.0636" y2="18.046421875" width="0" layer="19" extent="1-1"/>
+<wire x1="-63.5" y1="34.29" x2="217.0636" y2="18.046421875" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="IN2">
 <contactref element="RI2" pad="1"/>
 <contactref element="IN_BUTTONS" pad="3"/>
-<wire x1="217.0636" y1="20.586421875" x2="231.88899375" y2="30.913146875" width="0" layer="19" extent="1-1"/>
+<contactref element="ARDUINO" pad="PF6"/>
+<wire x1="231.88899375" y1="30.913146875" x2="217.0636" y2="20.586421875" width="0" layer="19" extent="1-1"/>
+<wire x1="-63.5" y1="36.83" x2="217.0636" y2="20.586421875" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="IN1">
 <contactref element="RI1" pad="1"/>
 <contactref element="IN_BUTTONS" pad="2"/>
-<wire x1="217.0636" y1="23.126421875" x2="231.88899375" y2="35.489871875" width="0" layer="19" extent="1-1"/>
+<contactref element="ARDUINO" pad="PF7"/>
+<wire x1="231.88899375" y1="35.489871875" x2="217.0636" y2="23.126421875" width="0" layer="19" extent="1-1"/>
+<wire x1="-63.5" y1="39.37" x2="217.0636" y2="23.126421875" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$7">
 <contactref element="RI5" pad="2"/>
@@ -6765,22 +6767,30 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="IN8">
 <contactref element="RI8" pad="1"/>
 <contactref element="IN_BUTTONS" pad="9"/>
+<contactref element="ARDUINO" pad="PB1"/>
 <wire x1="217.0636" y1="5.346421875" x2="231.88899375" y2="3.4528" width="0" layer="19" extent="1-1"/>
+<wire x1="-63.5" y1="6.35" x2="217.0636" y2="5.346421875" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="IN5">
 <contactref element="RI5" pad="1"/>
 <contactref element="IN_BUTTONS" pad="6"/>
+<contactref element="ARDUINO" pad="PF1"/>
 <wire x1="217.0636" y1="12.966421875" x2="231.88899375" y2="17.182971875" width="0" layer="19" extent="1-1"/>
+<wire x1="-63.5" y1="29.21" x2="217.0636" y2="12.966421875" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="IN7">
 <contactref element="IN_BUTTONS" pad="8"/>
 <contactref element="RI7" pad="1"/>
+<contactref element="ARDUINO" pad="PB3"/>
 <wire x1="217.0636" y1="7.886421875" x2="231.88899375" y2="8.029525" width="0" layer="19" extent="1-1"/>
+<wire x1="-63.5" y1="8.89" x2="217.0636" y2="7.886421875" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="IN6">
 <contactref element="IN_BUTTONS" pad="7"/>
 <contactref element="RI6" pad="1"/>
+<contactref element="ARDUINO" pad="PF0"/>
 <wire x1="217.0636" y1="10.426421875" x2="231.88899375" y2="12.60625" width="0" layer="19" extent="1-1"/>
+<wire x1="-63.5" y1="26.67" x2="217.0636" y2="10.426421875" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="MO1">
 <contactref element="MOUT" pad="2"/>
@@ -6847,6 +6857,12 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="3.3V" pad="K"/>
 <contactref element="PR_3.3V" pad="2"/>
 <wire x1="90.90296875" y1="37.3562125" x2="85.820428125" y2="36.5894875" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$6">
+<contactref element="ARDUINO" pad="TX"/>
+</signal>
+<signal name="N$35">
+<contactref element="ARDUINO" pad="RX"/>
 </signal>
 </signals>
 </board>

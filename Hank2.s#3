@@ -17221,7 +17221,6 @@ Wickmann</description>
 <part name="RO41" library="rcl" deviceset="R-US_" device="0204/7" value="150"/>
 <part name="GND26" library="SparkFun" deviceset="GND" device=""/>
 <part name="MOUT" library="con-ptr500" deviceset="AK300/10" device=""/>
-<part name="MIN" library="con-lstb" deviceset="MA09-1" device=""/>
 <part name="PSU" library="con-ptr500" deviceset="AK300/2" device=""/>
 <part name="CP01" library="rcl" deviceset="CPOL-US" device="E5-8.5" value="100u"/>
 <part name="TEMP_SENSOR" library="con-lstb" deviceset="MA03-1" device=""/>
@@ -17278,7 +17277,7 @@ Wickmann</description>
 <part name="PR_5V" library="rcl" deviceset="R-US_" device="0204/7" value="1k"/>
 <part name="GND33" library="SparkFun" deviceset="GND" device=""/>
 <part name="+3V10" library="supply1" deviceset="+3V3" device=""/>
-<part name="U$2" library="HankLibraries" deviceset="ARDUINO_MICRO" device=""/>
+<part name="ARDUINO" library="HankLibraries" deviceset="ARDUINO_MICRO" device=""/>
 <part name="P+1" library="supply1" deviceset="+5V" device=""/>
 <part name="GND1" library="SparkFun" deviceset="GND" device=""/>
 <part name="GND3" library="SparkFun" deviceset="GND" device=""/>
@@ -17430,7 +17429,6 @@ Wickmann</description>
 <instance part="MOUT" gate="-8" x="370.84" y="154.94" rot="R180"/>
 <instance part="MOUT" gate="-9" x="370.84" y="149.86" rot="R180"/>
 <instance part="MOUT" gate="-10" x="370.84" y="144.78" rot="R180"/>
-<instance part="MIN" gate="1" x="378.46" y="226.06" rot="R180"/>
 <instance part="PSU" gate="-1" x="25.4" y="33.02"/>
 <instance part="PSU" gate="-2" x="25.4" y="15.24"/>
 <instance part="CP01" gate="G$1" x="33.02" y="25.4"/>
@@ -17505,7 +17503,7 @@ Wickmann</description>
 <attribute name="VALUE" x="50.8" y="43.18" size="1.778" layer="96"/>
 </instance>
 <instance part="+3V10" gate="G$1" x="152.4" y="139.7"/>
-<instance part="U$2" gate="G$1" x="144.78" y="66.04"/>
+<instance part="ARDUINO" gate="G$1" x="144.78" y="66.04"/>
 <instance part="P+1" gate="1" x="114.3" y="27.94"/>
 <instance part="GND1" gate="1" x="114.3" y="33.02" smashed="yes">
 <attribute name="VALUE" x="111.76" y="30.48" size="1.778" layer="96"/>
@@ -17631,12 +17629,6 @@ Wickmann</description>
 <pinref part="GND26" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="MIN" gate="1" pin="1"/>
-<wire x1="370.84" y1="236.22" x2="370.84" y2="246.38" width="0.1524" layer="91"/>
-<label x="355.6" y="246.38" size="1.778" layer="95"/>
-<wire x1="370.84" y1="246.38" x2="355.6" y2="246.38" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="PSU" gate="-2" pin="KL"/>
 <pinref part="CP01" gate="G$1" pin="-"/>
 <wire x1="30.48" y1="15.24" x2="33.02" y2="15.24" width="0.1524" layer="91"/>
@@ -17720,11 +17712,11 @@ Wickmann</description>
 <pinref part="GND1" gate="1" pin="GND"/>
 <wire x1="114.3" y1="35.56" x2="116.84" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="116.84" y1="35.56" x2="116.84" y2="27.94" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="GND1"/>
+<pinref part="ARDUINO" gate="G$1" pin="GND1"/>
 <wire x1="116.84" y1="27.94" x2="127" y2="27.94" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="GND2"/>
+<pinref part="ARDUINO" gate="G$1" pin="GND2"/>
 <pinref part="GND3" gate="1" pin="GND"/>
 <wire x1="165.1" y1="38.1" x2="177.8" y2="38.1" width="0.1524" layer="91"/>
 </segment>
@@ -18135,7 +18127,7 @@ Wickmann</description>
 <junction x="71.12" y="33.02"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="VIN"/>
+<pinref part="ARDUINO" gate="G$1" pin="VIN"/>
 <wire x1="127" y1="22.86" x2="114.3" y2="22.86" width="0.1524" layer="91"/>
 <pinref part="P+1" gate="1" pin="+5V"/>
 <wire x1="114.3" y1="25.4" x2="114.3" y2="22.86" width="0.1524" layer="91"/>
@@ -18148,14 +18140,7 @@ Wickmann</description>
 <label x="264.16" y="226.06" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="MIN" gate="1" pin="6"/>
-<wire x1="370.84" y1="223.52" x2="363.22" y2="223.52" width="0.1524" layer="91"/>
-<wire x1="363.22" y1="223.52" x2="363.22" y2="220.98" width="0.1524" layer="91"/>
-<wire x1="363.22" y1="220.98" x2="355.6" y2="220.98" width="0.1524" layer="91"/>
-<label x="355.6" y="220.98" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="U$2" gate="G$1" pin="29"/>
+<pinref part="ARDUINO" gate="G$1" pin="29"/>
 <wire x1="165.1" y1="78.74" x2="175.26" y2="78.74" width="0.1524" layer="91"/>
 <label x="170.18" y="78.74" size="1.778" layer="95"/>
 </segment>
@@ -18191,14 +18176,7 @@ Wickmann</description>
 <label x="264.16" y="172.72" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="MIN" gate="1" pin="7"/>
-<wire x1="370.84" y1="220.98" x2="365.76" y2="220.98" width="0.1524" layer="91"/>
-<wire x1="365.76" y1="220.98" x2="365.76" y2="215.9" width="0.1524" layer="91"/>
-<wire x1="365.76" y1="215.9" x2="355.6" y2="215.9" width="0.1524" layer="91"/>
-<label x="355.6" y="215.9" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="U$2" gate="G$1" pin="27"/>
+<pinref part="ARDUINO" gate="G$1" pin="27"/>
 <wire x1="165.1" y1="63.5" x2="175.26" y2="63.5" width="0.1524" layer="91"/>
 <label x="170.18" y="63.5" size="1.778" layer="95"/>
 </segment>
@@ -18234,14 +18212,7 @@ Wickmann</description>
 <label x="264.16" y="119.38" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="MIN" gate="1" pin="8"/>
-<wire x1="370.84" y1="218.44" x2="368.3" y2="218.44" width="0.1524" layer="91"/>
-<wire x1="368.3" y1="218.44" x2="368.3" y2="210.82" width="0.1524" layer="91"/>
-<wire x1="368.3" y1="210.82" x2="355.6" y2="210.82" width="0.1524" layer="91"/>
-<label x="355.6" y="210.82" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="U$2" gate="G$1" pin="31"/>
+<pinref part="ARDUINO" gate="G$1" pin="31"/>
 <wire x1="165.1" y1="58.42" x2="175.26" y2="58.42" width="0.1524" layer="91"/>
 <label x="170.18" y="58.42" size="1.778" layer="95"/>
 </segment>
@@ -18277,13 +18248,7 @@ Wickmann</description>
 <label x="264.16" y="66.04" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="MIN" gate="1" pin="9"/>
-<wire x1="370.84" y1="215.9" x2="370.84" y2="205.74" width="0.1524" layer="91"/>
-<wire x1="370.84" y1="205.74" x2="355.6" y2="205.74" width="0.1524" layer="91"/>
-<label x="355.6" y="205.74" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="U$2" gate="G$1" pin="18"/>
+<pinref part="ARDUINO" gate="G$1" pin="18"/>
 <wire x1="165.1" y1="48.26" x2="175.26" y2="48.26" width="0.1524" layer="91"/>
 <label x="170.18" y="48.26" size="1.778" layer="95"/>
 </segment>
@@ -18319,14 +18284,7 @@ Wickmann</description>
 <label x="180.34" y="226.06" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="MIN" gate="1" pin="2"/>
-<wire x1="370.84" y1="233.68" x2="368.3" y2="233.68" width="0.1524" layer="91"/>
-<wire x1="368.3" y1="233.68" x2="368.3" y2="241.3" width="0.1524" layer="91"/>
-<wire x1="368.3" y1="241.3" x2="355.6" y2="241.3" width="0.1524" layer="91"/>
-<label x="355.6" y="241.3" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="U$2" gate="G$1" pin="32"/>
+<pinref part="ARDUINO" gate="G$1" pin="32"/>
 <wire x1="127" y1="93.98" x2="116.84" y2="93.98" width="0.1524" layer="91"/>
 <label x="116.84" y="93.98" size="1.778" layer="95"/>
 </segment>
@@ -18362,14 +18320,7 @@ Wickmann</description>
 <label x="180.34" y="172.72" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="MIN" gate="1" pin="3"/>
-<wire x1="370.84" y1="231.14" x2="365.76" y2="231.14" width="0.1524" layer="91"/>
-<wire x1="365.76" y1="231.14" x2="365.76" y2="236.22" width="0.1524" layer="91"/>
-<wire x1="365.76" y1="236.22" x2="355.6" y2="236.22" width="0.1524" layer="91"/>
-<label x="355.6" y="236.22" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="U$2" gate="G$1" pin="26"/>
+<pinref part="ARDUINO" gate="G$1" pin="26"/>
 <wire x1="165.1" y1="93.98" x2="175.26" y2="93.98" width="0.1524" layer="91"/>
 <label x="170.18" y="93.98" size="1.778" layer="95"/>
 </segment>
@@ -18405,14 +18356,7 @@ Wickmann</description>
 <label x="180.34" y="119.38" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="MIN" gate="1" pin="4"/>
-<wire x1="370.84" y1="228.6" x2="363.22" y2="228.6" width="0.1524" layer="91"/>
-<wire x1="363.22" y1="228.6" x2="363.22" y2="231.14" width="0.1524" layer="91"/>
-<wire x1="363.22" y1="231.14" x2="355.6" y2="231.14" width="0.1524" layer="91"/>
-<label x="355.6" y="231.14" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="U$2" gate="G$1" pin="12"/>
+<pinref part="ARDUINO" gate="G$1" pin="12"/>
 <wire x1="165.1" y1="88.9" x2="175.26" y2="88.9" width="0.1524" layer="91"/>
 <label x="170.18" y="88.9" size="1.778" layer="95"/>
 </segment>
@@ -18448,12 +18392,7 @@ Wickmann</description>
 <label x="180.34" y="66.04" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="MIN" gate="1" pin="5"/>
-<wire x1="370.84" y1="226.06" x2="355.6" y2="226.06" width="0.1524" layer="91"/>
-<label x="355.6" y="226.06" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="U$2" gate="G$1" pin="30"/>
+<pinref part="ARDUINO" gate="G$1" pin="30"/>
 <wire x1="165.1" y1="83.82" x2="175.26" y2="83.82" width="0.1524" layer="91"/>
 <label x="170.18" y="83.82" size="1.778" layer="95"/>
 </segment>
@@ -18617,7 +18556,7 @@ Wickmann</description>
 <wire x1="63.5" y1="91.44" x2="63.5" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="AUTO" class="0">
+<net name="AUTO_MANUAL" class="0">
 <segment>
 <pinref part="R2" gate="G$1" pin="2"/>
 <pinref part="X3" gate="-2" pin="S"/>
@@ -18630,6 +18569,11 @@ Wickmann</description>
 <wire x1="99.06" y1="78.74" x2="76.2" y2="78.74" width="0.1524" layer="91"/>
 <label x="76.2" y="78.74" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="ARDUINO" gate="G$1" pin="10"/>
+<wire x1="165.1" y1="12.7" x2="175.26" y2="12.7" width="0.1524" layer="91"/>
+<label x="172.72" y="12.7" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="IN4" class="0">
 <segment>
@@ -18639,6 +18583,11 @@ Wickmann</description>
 <label x="134.62" y="127" size="1.778" layer="95"/>
 <wire x1="134.62" y1="127" x2="137.16" y2="127" width="0.1524" layer="91"/>
 <pinref part="IN_BUTTONS" gate="1" pin="5"/>
+</segment>
+<segment>
+<pinref part="ARDUINO" gate="G$1" pin="39"/>
+<wire x1="127" y1="63.5" x2="116.84" y2="63.5" width="0.1524" layer="91"/>
+<label x="116.84" y="63.5" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IN3" class="0">
@@ -18650,6 +18599,11 @@ Wickmann</description>
 <label x="127" y="129.54" size="1.778" layer="95"/>
 <pinref part="IN_BUTTONS" gate="1" pin="4"/>
 </segment>
+<segment>
+<pinref part="ARDUINO" gate="G$1" pin="38"/>
+<wire x1="127" y1="68.58" x2="116.84" y2="68.58" width="0.1524" layer="91"/>
+<label x="116.84" y="68.58" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="IN2" class="0">
 <segment>
@@ -18660,6 +18614,11 @@ Wickmann</description>
 <label x="119.38" y="132.08" size="1.778" layer="95"/>
 <pinref part="IN_BUTTONS" gate="1" pin="3"/>
 </segment>
+<segment>
+<pinref part="ARDUINO" gate="G$1" pin="37"/>
+<wire x1="127" y1="73.66" x2="116.84" y2="73.66" width="0.1524" layer="91"/>
+<label x="116.84" y="73.66" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="IN1" class="0">
 <segment>
@@ -18669,6 +18628,11 @@ Wickmann</description>
 <wire x1="114.3" y1="134.62" x2="111.76" y2="134.62" width="0.1524" layer="91"/>
 <label x="111.76" y="134.62" size="1.778" layer="95"/>
 <pinref part="IN_BUTTONS" gate="1" pin="2"/>
+</segment>
+<segment>
+<pinref part="ARDUINO" gate="G$1" pin="36"/>
+<wire x1="127" y1="78.74" x2="116.84" y2="78.74" width="0.1524" layer="91"/>
+<label x="116.84" y="78.74" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$7" class="0">
@@ -18708,6 +18672,11 @@ Wickmann</description>
 <wire x1="167.64" y1="114.3" x2="167.64" y2="116.84" width="0.1524" layer="91"/>
 <junction x="167.64" y="114.3"/>
 </segment>
+<segment>
+<pinref part="ARDUINO" gate="G$1" pin="9"/>
+<wire x1="127" y1="12.7" x2="116.84" y2="12.7" width="0.1524" layer="91"/>
+<label x="116.84" y="12.7" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="IN5" class="0">
 <segment>
@@ -18717,6 +18686,11 @@ Wickmann</description>
 <wire x1="144.78" y1="124.46" x2="139.7" y2="124.46" width="0.1524" layer="91"/>
 <label x="139.7" y="124.46" size="1.778" layer="95"/>
 <pinref part="IN_BUTTONS" gate="1" pin="6"/>
+</segment>
+<segment>
+<pinref part="ARDUINO" gate="G$1" pin="40"/>
+<wire x1="127" y1="58.42" x2="116.84" y2="58.42" width="0.1524" layer="91"/>
+<label x="116.84" y="58.42" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IN7" class="0">
@@ -18728,6 +18702,11 @@ Wickmann</description>
 <wire x1="160.02" y1="119.38" x2="160.02" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="160.02" y1="119.38" x2="157.48" y2="119.38" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="ARDUINO" gate="G$1" pin="11"/>
+<wire x1="127" y1="17.78" x2="116.84" y2="17.78" width="0.1524" layer="91"/>
+<label x="116.84" y="17.78" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="IN6" class="0">
 <segment>
@@ -18738,6 +18717,11 @@ Wickmann</description>
 <segment>
 <pinref part="RI6" gate="G$1" pin="1"/>
 <wire x1="152.4" y1="121.92" x2="152.4" y2="114.3" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="ARDUINO" gate="G$1" pin="41"/>
+<wire x1="127" y1="53.34" x2="116.84" y2="53.34" width="0.1524" layer="91"/>
+<label x="116.84" y="53.34" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="MO1" class="0">
@@ -18874,7 +18858,14 @@ Wickmann</description>
 </net>
 <net name="N$6" class="0">
 <segment>
-<wire x1="127" y1="20.32" x2="114.3" y2="20.32" width="0.1524" layer="91"/>
+<pinref part="ARDUINO" gate="G$1" pin="21"/>
+<wire x1="165.1" y1="22.86" x2="175.26" y2="22.86" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$35" class="0">
+<segment>
+<pinref part="ARDUINO" gate="G$1" pin="20"/>
+<wire x1="165.1" y1="27.94" x2="175.26" y2="27.94" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
