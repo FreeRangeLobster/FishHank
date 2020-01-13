@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="mil" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="mil"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -16940,43 +16940,54 @@ Wickmann</description>
 <description>&lt;b&gt;Voltage Regulators&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
 <packages>
-<package name="78XXL">
-<description>&lt;b&gt;VOLTAGE REGULATOR&lt;/b&gt;</description>
-<wire x1="-5.207" y1="-1.27" x2="5.207" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="5.207" y1="14.605" x2="-5.207" y2="14.605" width="0.1524" layer="21"/>
-<wire x1="5.207" y1="-1.27" x2="5.207" y2="11.176" width="0.1524" layer="21"/>
-<wire x1="5.207" y1="11.176" x2="4.318" y2="11.176" width="0.1524" layer="21"/>
-<wire x1="4.318" y1="11.176" x2="4.318" y2="12.7" width="0.1524" layer="21"/>
-<wire x1="4.318" y1="12.7" x2="5.207" y2="12.7" width="0.1524" layer="21"/>
-<wire x1="5.207" y1="12.7" x2="5.207" y2="14.605" width="0.1524" layer="21"/>
-<wire x1="-5.207" y1="-1.27" x2="-5.207" y2="11.176" width="0.1524" layer="21"/>
-<wire x1="-5.207" y1="11.176" x2="-4.318" y2="11.176" width="0.1524" layer="21"/>
-<wire x1="-4.318" y1="11.176" x2="-4.318" y2="12.7" width="0.1524" layer="21"/>
-<wire x1="-4.318" y1="12.7" x2="-5.207" y2="12.7" width="0.1524" layer="21"/>
-<wire x1="-5.207" y1="12.7" x2="-5.207" y2="14.605" width="0.1524" layer="21"/>
-<wire x1="-4.572" y1="-0.635" x2="4.572" y2="-0.635" width="0.0508" layer="21"/>
-<wire x1="4.572" y1="7.62" x2="4.572" y2="-0.635" width="0.0508" layer="21"/>
-<wire x1="4.572" y1="7.62" x2="-4.572" y2="7.62" width="0.0508" layer="21"/>
-<wire x1="-4.572" y1="-0.635" x2="-4.572" y2="7.62" width="0.0508" layer="21"/>
-<circle x="0" y="11.176" radius="1.8034" width="0.1524" layer="21"/>
-<circle x="0" y="11.176" radius="4.191" width="0" layer="42"/>
-<circle x="0" y="11.176" radius="4.191" width="0" layer="43"/>
-<pad name="IN" x="-2.54" y="-3.81" drill="1.016" shape="long" rot="R90"/>
-<pad name="GND" x="0" y="-3.81" drill="1.016" shape="long" rot="R90"/>
-<pad name="OUT" x="2.54" y="-3.81" drill="1.016" shape="long" rot="R90"/>
-<text x="-3.81" y="5.08" size="1.778" layer="25" ratio="10">&gt;NAME</text>
-<text x="-3.937" y="2.54" size="1.778" layer="27" ratio="10">&gt;VALUE</text>
-<text x="-4.445" y="7.874" size="0.9906" layer="21" ratio="10">A15,2mm</text>
-<text x="-0.508" y="0" size="1.27" layer="51" ratio="10">-</text>
-<text x="-3.048" y="0" size="1.27" layer="51" ratio="10">I</text>
-<text x="2.032" y="0" size="1.27" layer="51" ratio="10">O</text>
-<rectangle x1="1.905" y1="-2.159" x2="3.175" y2="-1.27" layer="21"/>
-<rectangle x1="1.905" y1="-3.81" x2="3.175" y2="-2.159" layer="51"/>
-<rectangle x1="-0.635" y1="-2.159" x2="0.635" y2="-1.27" layer="21"/>
-<rectangle x1="-3.175" y1="-2.159" x2="-1.905" y2="-1.27" layer="21"/>
-<rectangle x1="-0.635" y1="-3.81" x2="0.635" y2="-2.159" layer="51"/>
-<rectangle x1="-3.175" y1="-3.81" x2="-1.905" y2="-2.159" layer="51"/>
-<hole x="0" y="11.176" drill="3.302"/>
+<package name="TO92">
+<description>&lt;b&gt;TO 92&lt;/b&gt;</description>
+<wire x1="-2.0946" y1="-1.651" x2="-2.6549" y2="-0.254" width="0.127" layer="21" curve="-32.78104"/>
+<wire x1="-2.6549" y1="-0.254" x2="-0.7863" y2="2.5485" width="0.127" layer="21" curve="-78.318477"/>
+<wire x1="0.7863" y1="2.5484" x2="2.0945" y2="-1.651" width="0.127" layer="21" curve="-111.09954"/>
+<wire x1="-2.0945" y1="-1.651" x2="2.0945" y2="-1.651" width="0.127" layer="21"/>
+<wire x1="-2.2537" y1="-0.254" x2="-0.2863" y2="-0.254" width="0.127" layer="51"/>
+<wire x1="-2.6549" y1="-0.254" x2="-2.2537" y2="-0.254" width="0.127" layer="21"/>
+<wire x1="-0.2863" y1="-0.254" x2="0.2863" y2="-0.254" width="0.127" layer="21"/>
+<wire x1="2.2537" y1="-0.254" x2="2.6549" y2="-0.254" width="0.127" layer="21"/>
+<wire x1="0.2863" y1="-0.254" x2="2.2537" y2="-0.254" width="0.127" layer="51"/>
+<wire x1="-0.7863" y1="2.5485" x2="0.7863" y2="2.5485" width="0.127" layer="51" curve="-34.293591"/>
+<pad name="3" x="1.27" y="0" drill="0.8128" shape="octagon"/>
+<pad name="2" x="0" y="1.905" drill="0.8128" shape="octagon"/>
+<pad name="1" x="-1.27" y="0" drill="0.8128" shape="octagon"/>
+<text x="3.175" y="0.635" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="3.175" y="-1.27" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+</package>
+<package name="DPACK">
+<description>&lt;b&gt;DPAK&lt;/b&gt;&lt;p&gt;
+PLASTIC PACKAGE CASE 369C-01&lt;br&gt;
+Source: http://www.onsemi.co.jp .. LM317M-D.PDF</description>
+<wire x1="3.2766" y1="3.8354" x2="3.277" y2="-2.159" width="0.2032" layer="21"/>
+<wire x1="3.277" y1="-2.159" x2="-3.277" y2="-2.159" width="0.2032" layer="21"/>
+<wire x1="-3.277" y1="-2.159" x2="-3.2766" y2="3.8354" width="0.2032" layer="21"/>
+<wire x1="-3.277" y1="3.835" x2="3.2774" y2="3.8346" width="0.2032" layer="51"/>
+<wire x1="-2.5654" y1="3.937" x2="-2.5654" y2="4.6482" width="0.2032" layer="51"/>
+<wire x1="-2.5654" y1="4.6482" x2="-2.1082" y2="5.1054" width="0.2032" layer="51"/>
+<wire x1="-2.1082" y1="5.1054" x2="2.1082" y2="5.1054" width="0.2032" layer="51"/>
+<wire x1="2.1082" y1="5.1054" x2="2.5654" y2="4.6482" width="0.2032" layer="51"/>
+<wire x1="2.5654" y1="4.6482" x2="2.5654" y2="3.937" width="0.2032" layer="51"/>
+<wire x1="2.5654" y1="3.937" x2="-2.5654" y2="3.937" width="0.2032" layer="51"/>
+<smd name="4" x="0" y="2.38" dx="5.8" dy="6.2" layer="1"/>
+<smd name="1" x="-2.28" y="-4.8" dx="1.6" dy="3" layer="1"/>
+<smd name="3" x="2.28" y="-4.8" dx="1.6" dy="3" layer="1"/>
+<text x="-3.81" y="-2.54" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="5.08" y="-2.54" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<rectangle x1="-2.7178" y1="-5.1562" x2="-1.8542" y2="-2.2606" layer="51"/>
+<rectangle x1="1.8542" y1="-5.1562" x2="2.7178" y2="-2.2606" layer="51"/>
+<rectangle x1="-0.4318" y1="-3.0226" x2="0.4318" y2="-2.2606" layer="21"/>
+<polygon width="0.1998" layer="51">
+<vertex x="-2.5654" y="3.937"/>
+<vertex x="-2.5654" y="4.6482"/>
+<vertex x="-2.1082" y="5.1054"/>
+<vertex x="2.1082" y="5.1054"/>
+<vertex x="2.5654" y="4.6482"/>
+<vertex x="2.5654" y="3.937"/>
+</polygon>
 </package>
 </packages>
 <symbols>
@@ -16996,20 +17007,48 @@ Wickmann</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="78XXL" prefix="IC" uservalue="yes">
-<description>&lt;b&gt;VOLTAGE REGULATOR&lt;/b&gt;</description>
+<deviceset name="LP2950?*" prefix="IC">
+<description>Source: http://cache.national.com/ds/LP/LP2950.pdf</description>
 <gates>
-<gate name="A" symbol="78XX" x="0" y="0"/>
+<gate name="G$1" symbol="78XX" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="78XXL">
+<device name="CZ" package="TO92">
 <connects>
-<connect gate="A" pin="GND" pad="GND"/>
-<connect gate="A" pin="IN" pad="IN"/>
-<connect gate="A" pin="OUT" pad="OUT"/>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="IN" pad="3"/>
+<connect gate="G$1" pin="OUT" pad="1"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="-3.0"/>
+<technology name="-3.3"/>
+<technology name="-5.0"/>
+</technologies>
+</device>
+<device name="CDT" package="DPACK">
+<connects>
+<connect gate="G$1" pin="GND" pad="4"/>
+<connect gate="G$1" pin="IN" pad="1"/>
+<connect gate="G$1" pin="OUT" pad="3"/>
+</connects>
+<technologies>
+<technology name="-3.0"/>
+<technology name="-3.3"/>
+<technology name="-5.0"/>
+<technology name="X-3.0"/>
+<technology name="X-3.3"/>
+</technologies>
+</device>
+<device name="ACZ" package="TO92">
+<connects>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="IN" pad="3"/>
+<connect gate="G$1" pin="OUT" pad="1"/>
+</connects>
+<technologies>
+<technology name="-3.0"/>
+<technology name="-3.3"/>
+<technology name="-5.0"/>
 </technologies>
 </device>
 </devices>
@@ -17203,8 +17242,6 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <part name="GND28" library="SparkFun" deviceset="GND" device=""/>
 <part name="IN_BUTTONS" library="con-lstb" deviceset="MA09-1" device=""/>
 <part name="F1" library="fuse" deviceset="FUSE" device="PICOFUSE" value="SM 092 A0 2A"/>
-<part name="LF33CV" library="v-reg" deviceset="78XXL" device=""/>
-<part name="LF50ABV" library="v-reg" deviceset="78XXL" device=""/>
 <part name="F2" library="fuse" deviceset="FUSE" device="PICOFUSE" value="SM 092 A0 2A"/>
 <part name="F3" library="fuse" deviceset="FUSE" device="PICOFUSE" value="SM 092 A0 2A"/>
 <part name="F4" library="fuse" deviceset="FUSE" device="PICOFUSE" value="SM 092 A0 2A"/>
@@ -17235,10 +17272,10 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <part name="T2" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
 <part name="T3" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
 <part name="T4" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
-<part name="T5" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
-<part name="T6" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
-<part name="T7" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
 <part name="T8" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
+<part name="T7" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
+<part name="T6" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
+<part name="T5" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
 <part name="RO52" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
 <part name="RO62" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
 <part name="RO72" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
@@ -17249,6 +17286,11 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <part name="TX2" library="rcl" deviceset="R-US_" device="0204/7" value="2K"/>
 <part name="TX1" library="rcl" deviceset="R-US_" device="0204/7" value="1k"/>
 <part name="GND29" library="SparkFun" deviceset="GND" device=""/>
+<part name="NI1" library="rcl" deviceset="R-US_" device="0204/7" value="1k"/>
+<part name="NI2" library="rcl" deviceset="R-US_" device="0204/7" value="2K"/>
+<part name="GND30" library="SparkFun" deviceset="GND" device=""/>
+<part name="IC1" library="v-reg" deviceset="LP2950?*" device="CDT" technology="-3.3"/>
+<part name="IC2" library="v-reg" deviceset="LP2950?*" device="CDT" technology="-5.0"/>
 </parts>
 <sheets>
 <sheet>
@@ -17436,8 +17478,6 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 </instance>
 <instance part="IN_BUTTONS" gate="1" x="175.26" y="127" rot="R180"/>
 <instance part="F1" gate="G$1" x="254" y="233.68"/>
-<instance part="LF33CV" gate="A" x="53.34" y="68.58"/>
-<instance part="LF50ABV" gate="A" x="53.34" y="33.02"/>
 <instance part="F2" gate="G$1" x="254" y="180.34"/>
 <instance part="F3" gate="G$1" x="254" y="127"/>
 <instance part="F4" gate="G$1" x="254" y="73.66"/>
@@ -17476,10 +17516,10 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <instance part="T2" gate="G$1" x="208.28" y="167.64"/>
 <instance part="T3" gate="G$1" x="208.28" y="114.3"/>
 <instance part="T4" gate="G$1" x="208.28" y="60.96"/>
-<instance part="T5" gate="G$1" x="289.56" y="60.96"/>
-<instance part="T6" gate="G$1" x="289.56" y="114.3"/>
-<instance part="T7" gate="G$1" x="289.56" y="167.64"/>
-<instance part="T8" gate="G$1" x="289.56" y="220.98"/>
+<instance part="T8" gate="G$1" x="289.56" y="60.96"/>
+<instance part="T7" gate="G$1" x="289.56" y="114.3"/>
+<instance part="T6" gate="G$1" x="289.56" y="167.64"/>
+<instance part="T5" gate="G$1" x="289.56" y="220.98"/>
 <instance part="RO52" gate="G$1" x="281.94" y="220.98" rot="R180"/>
 <instance part="RO62" gate="G$1" x="281.94" y="167.64" rot="R180"/>
 <instance part="RO72" gate="G$1" x="281.94" y="114.3" rot="R180"/>
@@ -17492,6 +17532,13 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <instance part="GND29" gate="1" x="200.66" y="10.16" smashed="yes">
 <attribute name="VALUE" x="198.12" y="7.62" size="1.778" layer="96"/>
 </instance>
+<instance part="NI1" gate="G$1" x="170.18" y="73.66" rot="R180"/>
+<instance part="NI2" gate="G$1" x="180.34" y="68.58" rot="R270"/>
+<instance part="GND30" gate="1" x="180.34" y="60.96" smashed="yes">
+<attribute name="VALUE" x="177.8" y="58.42" size="1.778" layer="96"/>
+</instance>
+<instance part="IC1" gate="G$1" x="53.34" y="68.58"/>
+<instance part="IC2" gate="G$1" x="53.34" y="33.02"/>
 </instances>
 <busses>
 </busses>
@@ -17615,7 +17662,6 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <pinref part="CP02" gate="G$1" pin="-"/>
 <wire x1="43.18" y1="20.32" x2="43.18" y2="15.24" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="15.24" x2="33.02" y2="15.24" width="0.1524" layer="91"/>
-<pinref part="LF50ABV" gate="A" pin="GND"/>
 <pinref part="GND27" gate="1" pin="GND"/>
 <wire x1="53.34" y1="25.4" x2="53.34" y2="15.24" width="0.1524" layer="91"/>
 <pinref part="CP51" gate="G$1" pin="-"/>
@@ -17629,6 +17675,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <wire x1="81.28" y1="15.24" x2="71.12" y2="15.24" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="20.32" x2="81.28" y2="15.24" width="0.1524" layer="91"/>
 <junction x="81.28" y="15.24"/>
+<pinref part="IC2" gate="G$1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="TEMP_SENSOR" gate="G$1" pin="1"/>
@@ -17662,9 +17709,6 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <wire x1="40.64" y1="111.76" x2="40.64" y2="116.84" width="0.1524" layer="91"/>
 <pinref part="GND7" gate="1" pin="GND"/>
 <wire x1="40.64" y1="116.84" x2="17.78" y2="116.84" width="0.1524" layer="91"/>
-<pinref part="SV1" gate="1" pin="6"/>
-<wire x1="63.5" y1="101.6" x2="40.64" y2="101.6" width="0.1524" layer="91"/>
-<wire x1="40.64" y1="101.6" x2="40.64" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND8" gate="1" pin="GND"/>
@@ -17681,11 +17725,11 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <wire x1="81.28" y1="48.26" x2="81.28" y2="55.88" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="48.26" x2="71.12" y2="55.88" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="48.26" x2="71.12" y2="48.26" width="0.1524" layer="91"/>
-<pinref part="LF33CV" gate="A" pin="GND"/>
 <wire x1="71.12" y1="48.26" x2="53.34" y2="48.26" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="60.96" x2="53.34" y2="48.26" width="0.1524" layer="91"/>
 <junction x="71.12" y="48.26"/>
 <junction x="81.28" y="48.26"/>
+<pinref part="IC1" gate="G$1" pin="GND"/>
+<wire x1="53.34" y1="60.96" x2="53.34" y2="48.26" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND1" gate="1" pin="GND"/>
@@ -17702,6 +17746,10 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <segment>
 <pinref part="TX2" gate="G$1" pin="1"/>
 <pinref part="GND29" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="NI2" gate="G$1" pin="2"/>
+<pinref part="GND30" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="SCK" class="0">
@@ -17759,7 +17807,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 </segment>
 <segment>
 <wire x1="63.5" y1="78.74" x2="40.64" y2="78.74" width="0.1524" layer="91"/>
-<label x="27.94" y="78.74" size="1.778" layer="95"/>
+<label x="40.64" y="81.28" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="SDA" class="0">
@@ -17777,7 +17825,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <wire x1="66.04" y1="93.98" x2="60.96" y2="93.98" width="0.1524" layer="91"/>
 <wire x1="60.96" y1="93.98" x2="60.96" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="60.96" y1="83.82" x2="40.64" y2="83.82" width="0.1524" layer="91"/>
-<label x="27.94" y="83.82" size="1.778" layer="95"/>
+<label x="40.64" y="86.36" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="N$10" class="0">
@@ -17797,7 +17845,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <wire x1="63.5" y1="99.06" x2="55.88" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="55.88" y1="99.06" x2="55.88" y2="93.98" width="0.1524" layer="91"/>
 <wire x1="55.88" y1="93.98" x2="40.64" y2="93.98" width="0.1524" layer="91"/>
-<label x="27.94" y="93.98" size="1.778" layer="95"/>
+<label x="40.64" y="96.52" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="SERIAL_TXD" class="0">
@@ -17811,7 +17859,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <wire x1="63.5" y1="96.52" x2="58.42" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="96.52" x2="58.42" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="88.9" x2="40.64" y2="88.9" width="0.1524" layer="91"/>
-<label x="27.94" y="88.9" size="1.778" layer="95"/>
+<label x="40.64" y="91.44" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="N$13" class="0">
@@ -17972,8 +18020,6 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <wire x1="91.44" y1="68.58" x2="91.44" y2="73.66" width="0.1524" layer="91"/>
 <pinref part="+3V11" gate="G$1" pin="+3V3"/>
 <pinref part="3.3V" gate="G$1" pin="A"/>
-<pinref part="LF33CV" gate="A" pin="OUT"/>
-<wire x1="60.96" y1="68.58" x2="71.12" y2="68.58" width="0.1524" layer="91"/>
 <pinref part="CP32" gate="G$1" pin="+"/>
 <wire x1="71.12" y1="68.58" x2="81.28" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="68.58" x2="91.44" y2="68.58" width="0.1524" layer="91"/>
@@ -17981,8 +18027,9 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <pinref part="CP31" gate="G$1" pin="+"/>
 <wire x1="71.12" y1="63.5" x2="71.12" y2="68.58" width="0.1524" layer="91"/>
 <junction x="81.28" y="68.58"/>
-<junction x="71.12" y="68.58"/>
 <junction x="91.44" y="68.58"/>
+<pinref part="IC1" gate="G$1" pin="OUT"/>
+<wire x1="60.96" y1="68.58" x2="71.12" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="167.64" y1="137.16" x2="152.4" y2="137.16" width="0.1524" layer="91"/>
@@ -18003,7 +18050,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <wire x1="294.64" y1="226.06" x2="309.88" y2="226.06" width="0.1524" layer="91"/>
 <pinref part="SSR5" gate="G$1" pin="-"/>
 <wire x1="309.88" y1="226.06" x2="309.88" y2="238.76" width="0.1524" layer="91"/>
-<pinref part="T8" gate="G$1" pin="C"/>
+<pinref part="T5" gate="G$1" pin="C"/>
 <wire x1="292.1" y1="226.06" x2="294.64" y2="226.06" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -18095,7 +18142,6 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <wire x1="17.78" y1="134.62" x2="17.78" y2="139.7" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="LF50ABV" gate="A" pin="OUT"/>
 <wire x1="60.96" y1="33.02" x2="71.12" y2="33.02" width="0.1524" layer="91"/>
 <pinref part="CP52" gate="G$1" pin="+"/>
 <wire x1="71.12" y1="33.02" x2="81.28" y2="33.02" width="0.1524" layer="91"/>
@@ -18109,6 +18155,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <junction x="91.44" y="33.02"/>
 <junction x="81.28" y="33.02"/>
 <junction x="71.12" y="33.02"/>
+<pinref part="IC2" gate="G$1" pin="OUT"/>
 </segment>
 <segment>
 <pinref part="ARDUINO" gate="G$1" pin="VIN"/>
@@ -18147,7 +18194,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <wire x1="294.64" y1="172.72" x2="309.88" y2="172.72" width="0.1524" layer="91"/>
 <pinref part="SSR6" gate="G$1" pin="-"/>
 <wire x1="309.88" y1="172.72" x2="309.88" y2="185.42" width="0.1524" layer="91"/>
-<pinref part="T7" gate="G$1" pin="C"/>
+<pinref part="T6" gate="G$1" pin="C"/>
 <wire x1="294.64" y1="172.72" x2="292.1" y2="172.72" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -18181,7 +18228,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <wire x1="294.64" y1="119.38" x2="309.88" y2="119.38" width="0.1524" layer="91"/>
 <pinref part="SSR7" gate="G$1" pin="-"/>
 <wire x1="309.88" y1="119.38" x2="309.88" y2="132.08" width="0.1524" layer="91"/>
-<pinref part="T6" gate="G$1" pin="C"/>
+<pinref part="T7" gate="G$1" pin="C"/>
 <wire x1="292.1" y1="119.38" x2="294.64" y2="119.38" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -18215,7 +18262,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <wire x1="294.64" y1="66.04" x2="309.88" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="SSR8" gate="G$1" pin="-"/>
 <wire x1="309.88" y1="66.04" x2="309.88" y2="78.74" width="0.1524" layer="91"/>
-<pinref part="T5" gate="G$1" pin="C"/>
+<pinref part="T8" gate="G$1" pin="C"/>
 <wire x1="294.64" y1="66.04" x2="292.1" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -18795,7 +18842,6 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 </net>
 <net name="CP12" class="0">
 <segment>
-<pinref part="LF50ABV" gate="A" pin="IN"/>
 <pinref part="PSU" gate="-1" pin="KL"/>
 <pinref part="CP01" gate="G$1" pin="+"/>
 <wire x1="33.02" y1="27.94" x2="33.02" y2="33.02" width="0.1524" layer="91"/>
@@ -18805,8 +18851,9 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <wire x1="43.18" y1="33.02" x2="33.02" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="27.94" x2="43.18" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="33.02" x2="43.18" y2="68.58" width="0.1524" layer="91"/>
-<pinref part="LF33CV" gate="A" pin="IN"/>
-<wire x1="43.18" y1="68.58" x2="45.72" y2="68.58" width="0.1524" layer="91"/>
+<pinref part="IC2" gate="G$1" pin="IN"/>
+<pinref part="IC1" gate="G$1" pin="IN"/>
+<wire x1="45.72" y1="68.58" x2="43.18" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -18836,19 +18883,19 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 </net>
 <net name="N$9" class="0">
 <segment>
-<pinref part="T8" gate="G$1" pin="B"/>
+<pinref part="T5" gate="G$1" pin="B"/>
 <pinref part="RO52" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$18" class="0">
 <segment>
-<pinref part="T7" gate="G$1" pin="B"/>
+<pinref part="T6" gate="G$1" pin="B"/>
 <pinref part="RO62" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$22" class="0">
 <segment>
-<pinref part="T6" gate="G$1" pin="B"/>
+<pinref part="T7" gate="G$1" pin="B"/>
 <pinref part="RO72" gate="G$1" pin="1"/>
 </segment>
 </net>
@@ -18872,7 +18919,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 </net>
 <net name="N$34" class="0">
 <segment>
-<pinref part="T5" gate="G$1" pin="B"/>
+<pinref part="T8" gate="G$1" pin="B"/>
 <pinref part="RO82" gate="G$1" pin="1"/>
 </segment>
 </net>
@@ -18889,6 +18936,26 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <pinref part="ARDUINO" gate="G$1" pin="21"/>
 <pinref part="TX1" gate="G$1" pin="2"/>
 <wire x1="165.1" y1="22.86" x2="190.5" y2="22.86" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$32" class="0">
+<segment>
+<pinref part="ARDUINO" gate="G$1" pin="28"/>
+<pinref part="NI1" gate="G$1" pin="2"/>
+</segment>
+</net>
+<net name="NEW_IN" class="0">
+<segment>
+<pinref part="NI1" gate="G$1" pin="1"/>
+<pinref part="NI2" gate="G$1" pin="1"/>
+<label x="182.88" y="73.66" size="1.778" layer="95"/>
+<wire x1="175.26" y1="73.66" x2="180.34" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="73.66" x2="187.96" y2="73.66" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="SV1" gate="1" pin="6"/>
+<wire x1="63.5" y1="101.6" x2="40.64" y2="101.6" width="0.1524" layer="91"/>
+<label x="40.64" y="104.14" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 </nets>

@@ -17,6 +17,7 @@ const byte Out6=27;
 const byte Out7=31;
 const byte Out8=18;
 
+const byte NewInfo=20;
 
 // the setup function runs once when you press reset or power the board
 void setup() {
@@ -33,6 +34,8 @@ void setup() {
   pinMode(Out6, OUTPUT);
   pinMode(Out7, OUTPUT);
   pinMode(Out8, OUTPUT);
+  pinMode(NewInfo, OUTPUT);
+  
   //inputs
   pinMode(In1, INPUT);
   pinMode(In2, INPUT);
@@ -76,7 +79,11 @@ void loop() {
 
 
 
-
+// Check input status
+//in case input is up flag up NewInput, update input vector
+//check if manual/auto
+//update outputs
+//handle serial
 
 
 
