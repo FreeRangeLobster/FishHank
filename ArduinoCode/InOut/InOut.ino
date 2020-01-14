@@ -34,6 +34,12 @@ void setup() {
   pinMode(Out6, OUTPUT);
   pinMode(Out7, OUTPUT);
   pinMode(Out8, OUTPUT);
+  pinMode(A0, OUTPUT);
+  pinMode(A1, OUTPUT);
+  pinMode(A2, OUTPUT);
+  pinMode(A3, OUTPUT);
+  pinMode(A4, OUTPUT);
+  pinMode(A5, OUTPUT);
   pinMode(NewInfo, OUTPUT);
   
   //inputs
@@ -61,6 +67,7 @@ void loop() {
   digitalWrite(29, HIGH);
   digitalWrite(27, HIGH);
   digitalWrite(31, HIGH);
+  digitalWrite(18, HIGH);
   digitalWrite(18, HIGH);
   
   delay(1000);                       // wait for a second
