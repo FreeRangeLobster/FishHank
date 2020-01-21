@@ -1,32 +1,45 @@
+//Inputs A5,A4,A3,A2,A1,A0,D13,D12
+//Outputs D2,D3,D4,D5,D6,B0,B1,B2
+//New Data B4
+//Tx/RxD0,D1
 
-const byte In1=36;
-const byte In2=37;
-const byte In3=38;
-const byte In4=39;
-const byte In5=40;
-const byte In6=41;
-const byte In7=11;
-const byte In8=9;
 
-const byte Out1=32;
-const byte Out2=26;
-const byte Out3=12;
-const byte Out4=30;
-const byte Out5=29;
-const byte Out6=27;
-const byte Out7=31;
-const byte Out8=18;
+//http://www.hobbytronics.co.uk/arduino-atmega328-pinout
+//Outputs
+#define Out1  2 //D2
+#define Out2  3 //D3
+#define Out3  4 //D4
+#define Out4  5 //D5
+#define Out5  6 //D6
+#define Out6  8 //B0
+#define Out7  9 //B1
+#define Out8  10//B2
 
-const byte NewInfo=20;
+//New Data Available
+#define NewDataAvailable  12 //b4
+
+//Inputs
+#define In1 A5
+#define In2 A4
+#define In3 A3
+#define In4 A2
+#define In5 A1
+#define In6 A0
+#define In7 13 //B5
+#define In8 12 //B4
+
+
+
+
 
 // the setup function runs once when you press reset or power the board
 void setup() {
    Serial.begin(9600);
   
   // initialize digital pin LED_BUILTIN as an output.
-  pinMode(LED_BUILTIN, OUTPUT);
+  //pinMode(LED_BUILTIN, OUTPUT);
   //outputs
-  pinMode(Out1, OUTPUT);
+  pinMode(Out1, OUTPUT); //D2
   pinMode(Out2, OUTPUT);
   pinMode(Out3, OUTPUT);
   pinMode(Out4, OUTPUT);
@@ -34,13 +47,8 @@ void setup() {
   pinMode(Out6, OUTPUT);
   pinMode(Out7, OUTPUT);
   pinMode(Out8, OUTPUT);
-  pinMode(A0, OUTPUT);
-  pinMode(A1, OUTPUT);
-  pinMode(A2, OUTPUT);
-  pinMode(A3, OUTPUT);
-  pinMode(A4, OUTPUT);
-  pinMode(A5, OUTPUT);
-  pinMode(NewInfo, OUTPUT);
+
+  pinMode(NewDataAvailable, OUTPUT);
   
   //inputs
   pinMode(In1, INPUT);
@@ -58,28 +66,25 @@ void setup() {
 
 // the loop function runs over and over again forever
 void loop() {
-  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-  digitalWrite(32, HIGH);
-  digitalWrite(26, HIGH);
-  digitalWrite(12, HIGH);
-  digitalWrite(30, HIGH);
-  digitalWrite(29, HIGH);
-  digitalWrite(27, HIGH);
-  digitalWrite(31, HIGH);
-  digitalWrite(18, HIGH);
-  digitalWrite(18, HIGH);
+  digitalWrite(Out1, HIGH);
+  digitalWrite(Out2, HIGH);
+  digitalWrite(Out3, HIGH);
+  digitalWrite(Out5, HIGH);
+  digitalWrite(Out6, HIGH);
+  digitalWrite(Out7, HIGH);
+  digitalWrite(Out8, HIGH);
+  digitalWrite(NewDataAvailable, HIGH);
+ 
   
   delay(1000);                       // wait for a second
-  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
-   digitalWrite(32, LOW);
-  digitalWrite(26, LOW);
-  digitalWrite(12, LOW);
-  digitalWrite(30, LOW);
-  digitalWrite(29, LOW);
-  digitalWrite(27, LOW);
-  digitalWrite(31, LOW);
-  digitalWrite(18, LOW);
+  digitalWrite(Out1, LOW);
+  digitalWrite(Out2, LOW);
+  digitalWrite(Out3, LOW);
+  digitalWrite(Out5, LOW);
+  digitalWrite(Out6, LOW);
+  digitalWrite(Out7, LOW);
+  digitalWrite(Out8, LOW);
+  digitalWrite(NewDataAvailable, LOW);
   
   delay(1000);                       // wait for a second
 
