@@ -17246,6 +17246,9 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <part name="RO42" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
 <part name="RO32" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
 <part name="RO22" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
+<part name="TX2" library="rcl" deviceset="R-US_" device="0204/7" value="2K"/>
+<part name="TX1" library="rcl" deviceset="R-US_" device="0204/7" value="1k"/>
+<part name="GND29" library="SparkFun" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -17484,6 +17487,11 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <instance part="RO42" gate="G$1" x="200.66" y="60.96" rot="R180"/>
 <instance part="RO32" gate="G$1" x="200.66" y="114.3" rot="R180"/>
 <instance part="RO22" gate="G$1" x="200.66" y="167.64" rot="R180"/>
+<instance part="TX2" gate="G$1" x="200.66" y="17.78" rot="R90"/>
+<instance part="TX1" gate="G$1" x="195.58" y="22.86" rot="R180"/>
+<instance part="GND29" gate="1" x="200.66" y="10.16" smashed="yes">
+<attribute name="VALUE" x="198.12" y="7.62" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -17690,6 +17698,10 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <pinref part="ARDUINO" gate="G$1" pin="GND2"/>
 <pinref part="GND3" gate="1" pin="GND"/>
 <wire x1="165.1" y1="38.1" x2="177.8" y2="38.1" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="TX2" gate="G$1" pin="1"/>
+<pinref part="GND29" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="SCK" class="0">
@@ -18809,16 +18821,11 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <pinref part="PR_3.3V" gate="G$1" pin="2"/>
 </segment>
 </net>
-<net name="N$6" class="0">
-<segment>
-<pinref part="ARDUINO" gate="G$1" pin="21"/>
-<wire x1="165.1" y1="22.86" x2="175.26" y2="22.86" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$35" class="0">
+<net name="ARD_RX" class="0">
 <segment>
 <pinref part="ARDUINO" gate="G$1" pin="20"/>
-<wire x1="165.1" y1="27.94" x2="175.26" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="27.94" x2="213.36" y2="27.94" width="0.1524" layer="91"/>
+<label x="210.82" y="27.94" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$8" class="0">
@@ -18867,6 +18874,21 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <segment>
 <pinref part="T5" gate="G$1" pin="B"/>
 <pinref part="RO82" gate="G$1" pin="1"/>
+</segment>
+</net>
+<net name="ARD_TX" class="0">
+<segment>
+<pinref part="TX2" gate="G$1" pin="2"/>
+<pinref part="TX1" gate="G$1" pin="1"/>
+<wire x1="200.66" y1="22.86" x2="213.36" y2="22.86" width="0.1524" layer="91"/>
+<label x="210.82" y="22.86" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$6" class="0">
+<segment>
+<pinref part="ARDUINO" gate="G$1" pin="21"/>
+<pinref part="TX1" gate="G$1" pin="2"/>
+<wire x1="165.1" y1="22.86" x2="190.5" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

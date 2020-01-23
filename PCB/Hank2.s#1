@@ -17272,10 +17272,10 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <part name="T2" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
 <part name="T3" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
 <part name="T4" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
-<part name="T5" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
-<part name="T6" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
-<part name="T7" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
 <part name="T8" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
+<part name="T7" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
+<part name="T6" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
+<part name="T5" library="transistor" deviceset="2SC458" device="" value="2n2222"/>
 <part name="RO52" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
 <part name="RO62" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
 <part name="RO72" library="rcl" deviceset="R-US_" device="0204/7" value="10K"/>
@@ -17516,10 +17516,10 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <instance part="T2" gate="G$1" x="208.28" y="167.64"/>
 <instance part="T3" gate="G$1" x="208.28" y="114.3"/>
 <instance part="T4" gate="G$1" x="208.28" y="60.96"/>
-<instance part="T5" gate="G$1" x="289.56" y="60.96"/>
-<instance part="T6" gate="G$1" x="289.56" y="114.3"/>
-<instance part="T7" gate="G$1" x="289.56" y="167.64"/>
-<instance part="T8" gate="G$1" x="289.56" y="220.98"/>
+<instance part="T8" gate="G$1" x="289.56" y="60.96"/>
+<instance part="T7" gate="G$1" x="289.56" y="114.3"/>
+<instance part="T6" gate="G$1" x="289.56" y="167.64"/>
+<instance part="T5" gate="G$1" x="289.56" y="220.98"/>
 <instance part="RO52" gate="G$1" x="281.94" y="220.98" rot="R180"/>
 <instance part="RO62" gate="G$1" x="281.94" y="167.64" rot="R180"/>
 <instance part="RO72" gate="G$1" x="281.94" y="114.3" rot="R180"/>
@@ -18050,7 +18050,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <wire x1="294.64" y1="226.06" x2="309.88" y2="226.06" width="0.1524" layer="91"/>
 <pinref part="SSR5" gate="G$1" pin="-"/>
 <wire x1="309.88" y1="226.06" x2="309.88" y2="238.76" width="0.1524" layer="91"/>
-<pinref part="T8" gate="G$1" pin="C"/>
+<pinref part="T5" gate="G$1" pin="C"/>
 <wire x1="292.1" y1="226.06" x2="294.64" y2="226.06" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -18194,7 +18194,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <wire x1="294.64" y1="172.72" x2="309.88" y2="172.72" width="0.1524" layer="91"/>
 <pinref part="SSR6" gate="G$1" pin="-"/>
 <wire x1="309.88" y1="172.72" x2="309.88" y2="185.42" width="0.1524" layer="91"/>
-<pinref part="T7" gate="G$1" pin="C"/>
+<pinref part="T6" gate="G$1" pin="C"/>
 <wire x1="294.64" y1="172.72" x2="292.1" y2="172.72" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -18228,7 +18228,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <wire x1="294.64" y1="119.38" x2="309.88" y2="119.38" width="0.1524" layer="91"/>
 <pinref part="SSR7" gate="G$1" pin="-"/>
 <wire x1="309.88" y1="119.38" x2="309.88" y2="132.08" width="0.1524" layer="91"/>
-<pinref part="T6" gate="G$1" pin="C"/>
+<pinref part="T7" gate="G$1" pin="C"/>
 <wire x1="292.1" y1="119.38" x2="294.64" y2="119.38" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -18262,7 +18262,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 <wire x1="294.64" y1="66.04" x2="309.88" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="SSR8" gate="G$1" pin="-"/>
 <wire x1="309.88" y1="66.04" x2="309.88" y2="78.74" width="0.1524" layer="91"/>
-<pinref part="T5" gate="G$1" pin="C"/>
+<pinref part="T8" gate="G$1" pin="C"/>
 <wire x1="294.64" y1="66.04" x2="292.1" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -18883,19 +18883,19 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 </net>
 <net name="N$9" class="0">
 <segment>
-<pinref part="T8" gate="G$1" pin="B"/>
+<pinref part="T5" gate="G$1" pin="B"/>
 <pinref part="RO52" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$18" class="0">
 <segment>
-<pinref part="T7" gate="G$1" pin="B"/>
+<pinref part="T6" gate="G$1" pin="B"/>
 <pinref part="RO62" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$22" class="0">
 <segment>
-<pinref part="T6" gate="G$1" pin="B"/>
+<pinref part="T7" gate="G$1" pin="B"/>
 <pinref part="RO72" gate="G$1" pin="1"/>
 </segment>
 </net>
@@ -18919,7 +18919,7 @@ Source: SEMTECH ELECTRONICS LTD. ... 2SC458  1.pdf</description>
 </net>
 <net name="N$34" class="0">
 <segment>
-<pinref part="T5" gate="G$1" pin="B"/>
+<pinref part="T8" gate="G$1" pin="B"/>
 <pinref part="RO82" gate="G$1" pin="1"/>
 </segment>
 </net>

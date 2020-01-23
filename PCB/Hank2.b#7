@@ -6203,6 +6203,8 @@ Please make sure your boards conform to these design rules.</description>
 <element name="RO22" library="rcl" package="0204/7" value="10K" x="173.99" y="33.02"/>
 <element name="TX2" library="rcl" package="0204/7" value="2K" x="-6.35" y="-12.7"/>
 <element name="TX1" library="rcl" package="0204/7" value="1k" x="-6.35" y="-25.4"/>
+<element name="NI1" library="rcl" package="0204/7" value="1k" x="-6.35" y="-38.1"/>
+<element name="NI2" library="rcl" package="0204/7" value="2K" x="-6.35" y="-50.8"/>
 </elements>
 <signals>
 <signal name="GND" class="1">
@@ -6251,6 +6253,7 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="ARDUINO" pad="GND2"/>
 <contactref element="T3" pad="E"/>
 <contactref element="TX2" pad="1"/>
+<contactref element="NI2" pad="2"/>
 <wire x1="143.51" y1="95.25" x2="142.24" y2="106.68" width="0" layer="19" extent="1-1"/>
 <wire x1="137.16" y1="125.73" x2="142.24" y2="106.68" width="0" layer="19" extent="1-1"/>
 <wire x1="108.69899375" y1="99.78915625" x2="142.24" y2="106.68" width="0" layer="19" extent="1-1"/>
@@ -6282,6 +6285,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="10.394009375" y1="12.10028125" x2="36.547553125" y2="11.7340875" width="0" layer="19" extent="1-1"/>
 <wire x1="-10.16" y1="-12.7" x2="10.394009375" y2="12.10028125" width="0" layer="19" extent="1-1"/>
 <wire x1="145.52899375" y1="59.075496875" x2="109.96899375" y2="64.584275" width="0" layer="19" extent="1-1"/>
+<wire x1="-2.54" y1="-50.8" x2="-10.16" y2="-12.7" width="0" layer="19" extent="1-1"/>
 <wire x1="164.586234375" y1="23.861471875" x2="145.52899375" y2="59.075496875" width="0" layer="19" extent="1-1"/>
 <wire x1="185.674634375" y1="16.242309375" x2="164.586234375" y2="23.861471875" width="0" layer="19" extent="1-1"/>
 <wire x1="185.674634375" y1="13.702309375" x2="185.674634375" y2="16.242309375" width="0" layer="19" extent="1-1"/>
@@ -6880,6 +6884,16 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="ARDUINO" pad="TX"/>
 <contactref element="TX1" pad="2"/>
 <wire x1="144.78" y1="125.73" x2="-2.54" y2="-25.4" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$32">
+<contactref element="ARDUINO" pad="PB4"/>
+<contactref element="NI1" pad="2"/>
+<wire x1="-2.54" y1="-38.1" x2="119.38" y2="125.73" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="NEW_IN">
+<contactref element="NI1" pad="1"/>
+<contactref element="NI2" pad="1"/>
+<wire x1="-10.16" y1="-38.1" x2="-10.16" y2="-50.8" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>

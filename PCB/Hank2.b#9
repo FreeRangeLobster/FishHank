@@ -6185,29 +6185,29 @@ Please make sure your boards conform to these design rules.</description>
 <element name="5V" library="led" package="LED3MM" value="" x="89.63296875" y="28.2027625"/>
 <element name="PR_5V" library="rcl" package="0204/7" value="1k" x="82.010428125" y="27.4360375"/>
 <element name="ARDUINO" library="HankLibraries" package="ARDUINOMICRO_FOOTPRINT" value="ARDUINO_MICRO" x="123.19" y="115.57" rot="R90"/>
-<element name="T1" library="transistor" package="TO92-ECB" value="2n2222" x="-35.56" y="-12.7"/>
-<element name="RO12" library="rcl" package="0204/7" value="10K" x="-34.29" y="-25.4"/>
-<element name="T2" library="transistor" package="TO92-ECB" value="2n2222" x="-35.56" y="-38.1"/>
-<element name="T3" library="transistor" package="TO92-ECB" value="2n2222" x="-35.56" y="-50.8"/>
-<element name="T4" library="transistor" package="TO92-ECB" value="2n2222" x="-35.56" y="-63.5"/>
-<element name="T5" library="transistor" package="TO92-ECB" value="2n2222" x="-35.56" y="-76.2"/>
-<element name="T6" library="transistor" package="TO92-ECB" value="2n2222" x="-35.56" y="-88.9"/>
-<element name="T7" library="transistor" package="TO92-ECB" value="2n2222" x="-35.56" y="-101.6"/>
-<element name="T8" library="transistor" package="TO92-ECB" value="2n2222" x="-35.56" y="-114.3"/>
-<element name="RO52" library="rcl" package="0204/7" value="10K" x="-34.29" y="-127"/>
-<element name="RO62" library="rcl" package="0204/7" value="10K" x="-34.29" y="-139.7"/>
-<element name="RO72" library="rcl" package="0204/7" value="10K" x="-34.29" y="-152.4"/>
-<element name="RO82" library="rcl" package="0204/7" value="10K" x="-34.29" y="-165.1"/>
-<element name="RO42" library="rcl" package="0204/7" value="10K" x="-34.29" y="-177.8"/>
-<element name="RO32" library="rcl" package="0204/7" value="10K" x="-34.29" y="-190.5"/>
-<element name="RO22" library="rcl" package="0204/7" value="10K" x="-34.29" y="-203.2"/>
+<element name="T1" library="transistor" package="TO92-ECB" value="2n2222" x="97.79" y="121.92"/>
+<element name="RO12" library="rcl" package="0204/7" value="10K" x="99.06" y="109.22"/>
+<element name="T2" library="transistor" package="TO92-ECB" value="2n2222" x="97.79" y="96.52"/>
+<element name="T3" library="transistor" package="TO92-ECB" value="2n2222" x="97.79" y="83.82"/>
+<element name="T4" library="transistor" package="TO92-ECB" value="2n2222" x="97.79" y="71.12"/>
+<element name="T5" library="transistor" package="TO92-ECB" value="2n2222" x="97.79" y="58.42"/>
+<element name="T6" library="transistor" package="TO92-ECB" value="2n2222" x="97.79" y="45.72"/>
+<element name="T7" library="transistor" package="TO92-ECB" value="2n2222" x="97.79" y="33.02"/>
+<element name="T8" library="transistor" package="TO92-ECB" value="2n2222" x="97.79" y="20.32"/>
+<element name="RO52" library="rcl" package="0204/7" value="10K" x="173.99" y="109.22"/>
+<element name="RO62" library="rcl" package="0204/7" value="10K" x="173.99" y="96.52"/>
+<element name="RO72" library="rcl" package="0204/7" value="10K" x="173.99" y="83.82"/>
+<element name="RO82" library="rcl" package="0204/7" value="10K" x="173.99" y="71.12"/>
+<element name="RO42" library="rcl" package="0204/7" value="10K" x="173.99" y="58.42"/>
+<element name="RO32" library="rcl" package="0204/7" value="10K" x="173.99" y="45.72"/>
+<element name="RO22" library="rcl" package="0204/7" value="10K" x="173.99" y="33.02"/>
 </elements>
 <signals>
 <signal name="GND" class="1">
 <polygon width="0.254" layer="1" isolate="0.1524">
 <vertex x="5.08" y="59.055"/>
 <vertex x="2.54" y="51.435"/>
-<vertex x="-35.56" y="20.32"/>
+<vertex x="87.63" y="19.05"/>
 <vertex x="23.6513125" y="53.55778125"/>
 </polygon>
 <contactref element="U$7" pad="GND"/>
@@ -6284,7 +6284,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="17.767553125" y1="70.593078125" x2="39.37" y2="71.12" width="0" layer="19" extent="1-1"/>
 <wire x1="26.67" y1="95.25" x2="17.767553125" y2="70.593078125" width="0" layer="19" extent="1-1"/>
 <wire x1="18.77410625" y1="97.263078125" x2="26.67" y2="95.25" width="0" layer="19" extent="1-1"/>
-<wire x1="-38.1" y1="-50.8" x2="10.394009375" y2="12.10028125" width="0" layer="19" extent="1-1"/>
+<wire x1="95.25" y1="83.82" x2="10.394009375" y2="12.10028125" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SCK">
 <contactref element="U$7" pad="SCK"/>
@@ -6385,7 +6385,7 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="SSR5" pad="4"/>
 <contactref element="T8" pad="C"/>
 <wire x1="185.42" y1="69.85" x2="158.223078125" y2="73.15233125" width="0" layer="19" extent="1-1"/>
-<wire x1="-35.56" y1="-114.3" x2="158.223078125" y2="73.15233125" width="0" layer="19" extent="1-1"/>
+<wire x1="97.79" y1="20.32" x2="158.223078125" y2="73.15233125" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="+5V">
 <contactref element="RO53" pad="2"/>
@@ -6438,7 +6438,7 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="N$15">
 <contactref element="R51" pad="2"/>
 <contactref element="RO52" pad="2"/>
-<wire x1="-30.48" y1="-127" x2="117.58899375" y2="73.65560625" width="0" layer="19" extent="1-1"/>
+<wire x1="177.8" y1="109.22" x2="117.58899375" y2="73.65560625" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$16">
 <contactref element="RO63" pad="1"/>
@@ -6450,12 +6450,12 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="SSR6" pad="4"/>
 <contactref element="T7" pad="C"/>
 <wire x1="158.999096875" y1="67.553053125" x2="185.42" y2="62.23" width="0" layer="19" extent="1-1"/>
-<wire x1="-35.56" y1="-101.6" x2="158.999096875" y2="67.553053125" width="0" layer="19" extent="1-1"/>
+<wire x1="97.79" y1="33.02" x2="158.999096875" y2="67.553053125" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$19">
 <contactref element="R61" pad="2"/>
 <contactref element="RO62" pad="2"/>
-<wire x1="-30.48" y1="-139.7" x2="117.58899375" y2="68.823053125" width="0" layer="19" extent="1-1"/>
+<wire x1="177.8" y1="96.52" x2="117.58899375" y2="68.823053125" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$20">
 <contactref element="RO73" pad="1"/>
@@ -6467,12 +6467,12 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="SSR7" pad="4"/>
 <contactref element="T6" pad="C"/>
 <wire x1="158.999096875" y1="63.314275" x2="185.42" y2="54.61" width="0" layer="19" extent="1-1"/>
-<wire x1="-35.56" y1="-88.9" x2="158.999096875" y2="63.314275" width="0" layer="19" extent="1-1"/>
+<wire x1="97.79" y1="45.72" x2="158.999096875" y2="63.314275" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$24">
 <contactref element="RO71" pad="2"/>
 <contactref element="RO72" pad="2"/>
-<wire x1="117.58899375" y1="64.584275" x2="-30.48" y2="-152.4" width="0" layer="19" extent="1-1"/>
+<wire x1="117.58899375" y1="64.584275" x2="177.8" y2="83.82" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$25">
 <contactref element="RO83" pad="1"/>
@@ -6484,12 +6484,12 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="SSR8" pad="4"/>
 <contactref element="T5" pad="C"/>
 <wire x1="158.999096875" y1="59.075496875" x2="185.42" y2="46.99" width="0" layer="19" extent="1-1"/>
-<wire x1="-35.56" y1="-76.2" x2="158.999096875" y2="59.075496875" width="0" layer="19" extent="1-1"/>
+<wire x1="97.79" y1="58.42" x2="158.999096875" y2="59.075496875" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$28">
 <contactref element="RO81" pad="2"/>
 <contactref element="RO82" pad="2"/>
-<wire x1="-30.48" y1="-165.1" x2="153.14899375" y2="59.075496875" width="0" layer="19" extent="1-1"/>
+<wire x1="177.8" y1="71.12" x2="153.14899375" y2="59.075496875" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="OUT6">
 <contactref element="ARDUINO" pad="PD7"/>
@@ -6509,7 +6509,7 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="LO1" pad="K"/>
 <contactref element="SSR1" pad="4"/>
 <contactref element="T1" pad="C"/>
-<wire x1="157.48" y1="100.33" x2="-35.56" y2="-12.7" width="0" layer="19" extent="1-1"/>
+<wire x1="157.48" y1="100.33" x2="97.79" y2="121.92" width="0" layer="19" extent="1-1"/>
 <wire x1="185.42" y1="110.49" x2="157.48" y2="100.33" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$33">
@@ -6522,12 +6522,12 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="SSR2" pad="4"/>
 <contactref element="T2" pad="C"/>
 <wire x1="185.42" y1="92.71" x2="157.48" y2="95.25" width="0" layer="19" extent="1-1"/>
-<wire x1="-35.56" y1="-38.1" x2="157.48" y2="95.25" width="0" layer="19" extent="1-1"/>
+<wire x1="97.79" y1="96.52" x2="157.48" y2="95.25" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$36">
 <contactref element="RO21" pad="2"/>
 <contactref element="RO22" pad="2"/>
-<wire x1="-30.48" y1="-203.2" x2="151.13" y2="95.25" width="0" layer="19" extent="1-1"/>
+<wire x1="177.8" y1="33.02" x2="151.13" y2="95.25" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$37">
 <contactref element="RO33" pad="1"/>
@@ -6539,12 +6539,12 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="SSR3" pad="4"/>
 <contactref element="T3" pad="C"/>
 <wire x1="185.42" y1="85.09" x2="157.48" y2="90.17" width="0" layer="19" extent="1-1"/>
-<wire x1="-35.56" y1="-50.8" x2="157.48" y2="90.17" width="0" layer="19" extent="1-1"/>
+<wire x1="97.79" y1="83.82" x2="157.48" y2="90.17" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$40">
 <contactref element="RO31" pad="2"/>
 <contactref element="RO32" pad="2"/>
-<wire x1="116.31899375" y1="87.501603125" x2="-30.48" y2="-190.5" width="0" layer="19" extent="1-1"/>
+<wire x1="116.31899375" y1="87.501603125" x2="177.8" y2="45.72" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$41">
 <contactref element="RO43" pad="1"/>
@@ -6556,19 +6556,19 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="SSR4" pad="4"/>
 <contactref element="T4" pad="C"/>
 <wire x1="185.42" y1="77.47" x2="157.48" y2="85.09" width="0" layer="19" extent="1-1"/>
-<wire x1="-35.56" y1="-63.5" x2="157.48" y2="85.09" width="0" layer="19" extent="1-1"/>
+<wire x1="97.79" y1="71.12" x2="157.48" y2="85.09" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$44">
 <contactref element="RO41" pad="2"/>
 <contactref element="RO42" pad="2"/>
-<wire x1="116.31899375" y1="81.992825" x2="-30.48" y2="-177.8" width="0" layer="19" extent="1-1"/>
+<wire x1="116.31899375" y1="81.992825" x2="177.8" y2="58.42" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="OUT1">
 <contactref element="ARDUINO" pad="PC7"/>
 <contactref element="RO11" pad="2"/>
 <contactref element="RO12" pad="2"/>
 <wire x1="116.31899375" y1="99.78915625" x2="109.22" y2="106.68" width="0" layer="19" extent="1-1"/>
-<wire x1="-30.48" y1="-25.4" x2="109.22" y2="106.68" width="0" layer="19" extent="1-1"/>
+<wire x1="102.87" y1="109.22" x2="109.22" y2="106.68" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="OUT2">
 <contactref element="ARDUINO" pad="PD6"/>
@@ -6833,42 +6833,42 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="N$8">
 <contactref element="T1" pad="B"/>
 <contactref element="RO12" pad="1"/>
-<wire x1="-33.02" y1="-12.7" x2="-38.1" y2="-25.4" width="0" layer="19" extent="1-1"/>
+<wire x1="100.33" y1="121.92" x2="95.25" y2="109.22" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$9">
 <contactref element="T8" pad="B"/>
 <contactref element="RO52" pad="1"/>
-<wire x1="-33.02" y1="-114.3" x2="-38.1" y2="-127" width="0" layer="19" extent="1-1"/>
+<wire x1="100.33" y1="20.32" x2="170.18" y2="109.22" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$18">
 <contactref element="T7" pad="B"/>
 <contactref element="RO62" pad="1"/>
-<wire x1="-33.02" y1="-101.6" x2="-38.1" y2="-139.7" width="0" layer="19" extent="1-1"/>
+<wire x1="100.33" y1="33.02" x2="170.18" y2="96.52" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$22">
 <contactref element="T6" pad="B"/>
 <contactref element="RO72" pad="1"/>
-<wire x1="-33.02" y1="-88.9" x2="-38.1" y2="-152.4" width="0" layer="19" extent="1-1"/>
+<wire x1="100.33" y1="45.72" x2="170.18" y2="83.82" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$23">
 <contactref element="T4" pad="B"/>
 <contactref element="RO42" pad="1"/>
-<wire x1="-33.02" y1="-63.5" x2="-38.1" y2="-177.8" width="0" layer="19" extent="1-1"/>
+<wire x1="100.33" y1="71.12" x2="170.18" y2="58.42" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$27">
 <contactref element="T3" pad="B"/>
 <contactref element="RO32" pad="1"/>
-<wire x1="-33.02" y1="-50.8" x2="-38.1" y2="-190.5" width="0" layer="19" extent="1-1"/>
+<wire x1="100.33" y1="83.82" x2="170.18" y2="45.72" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$31">
 <contactref element="T2" pad="B"/>
 <contactref element="RO22" pad="1"/>
-<wire x1="-33.02" y1="-38.1" x2="-38.1" y2="-203.2" width="0" layer="19" extent="1-1"/>
+<wire x1="100.33" y1="96.52" x2="170.18" y2="33.02" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$34">
 <contactref element="T5" pad="B"/>
 <contactref element="RO82" pad="1"/>
-<wire x1="-33.02" y1="-76.2" x2="-38.1" y2="-165.1" width="0" layer="19" extent="1-1"/>
+<wire x1="100.33" y1="58.42" x2="170.18" y2="71.12" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>
