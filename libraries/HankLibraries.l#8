@@ -164,36 +164,36 @@ Reader</text>
 <pad name="3.3V" x="-6.35" y="5.08" drill="0.8"/>
 <pad name="AREF" x="-6.35" y="2.54" drill="0.8"/>
 <pad name="PF7" x="-6.35" y="0" drill="0.8"/>
-<pad name="P$5" x="-6.35" y="-2.54" drill="0.8"/>
-<pad name="P$6" x="-6.35" y="-5.08" drill="0.8"/>
-<pad name="P$7" x="-6.35" y="-7.62" drill="0.8"/>
-<pad name="P$8" x="-6.35" y="-10.16" drill="0.8"/>
-<pad name="P$9" x="-6.35" y="-12.7" drill="0.8"/>
-<pad name="P$10" x="-6.35" y="-15.24" drill="0.8"/>
-<pad name="P$11" x="-6.35" y="-17.78" drill="0.8"/>
-<pad name="P$12" x="-6.35" y="-20.32" drill="0.8"/>
-<pad name="P$13" x="-6.35" y="-22.86" drill="0.8"/>
-<pad name="P$14" x="-6.35" y="-25.4" drill="0.8"/>
-<pad name="P$15" x="-6.35" y="-27.94" drill="0.8"/>
-<pad name="P$16" x="-6.35" y="-30.48" drill="0.8"/>
-<pad name="P$17" x="-6.35" y="-33.02" drill="0.8"/>
-<pad name="P$18" x="12.7" y="7.62" drill="0.8"/>
-<pad name="P$19" x="12.7" y="5.08" drill="0.8"/>
-<pad name="P$20" x="12.7" y="2.54" drill="0.8"/>
-<pad name="P$21" x="12.7" y="0" drill="0.8"/>
-<pad name="P$22" x="12.7" y="-2.54" drill="0.8"/>
-<pad name="P$23" x="12.7" y="-5.08" drill="0.8"/>
-<pad name="P$24" x="12.7" y="-7.62" drill="0.8"/>
-<pad name="P$25" x="12.7" y="-10.16" drill="0.8"/>
-<pad name="P$26" x="12.7" y="-12.7" drill="0.8"/>
-<pad name="P$27" x="12.7" y="-15.24" drill="0.8"/>
-<pad name="P$28" x="12.7" y="-17.78" drill="0.8"/>
-<pad name="P$29" x="12.7" y="-20.32" drill="0.8"/>
-<pad name="P$30" x="12.7" y="-22.86" drill="0.8"/>
-<pad name="P$31" x="12.7" y="-25.4" drill="0.8"/>
-<pad name="P$32" x="12.7" y="-27.94" drill="0.8"/>
-<pad name="P$33" x="12.7" y="-30.48" drill="0.8"/>
-<pad name="P$34" x="12.7" y="-33.02" drill="0.8"/>
+<pad name="PF6" x="-6.35" y="-2.54" drill="0.8"/>
+<pad name="PF5" x="-6.35" y="-5.08" drill="0.8"/>
+<pad name="PF4" x="-6.35" y="-7.62" drill="0.8"/>
+<pad name="PF1" x="-6.35" y="-10.16" drill="0.8"/>
+<pad name="PF0" x="-6.35" y="-12.7" drill="0.8"/>
+<pad name="NC1" x="-6.35" y="-15.24" drill="0.8"/>
+<pad name="NC2" x="-6.35" y="-17.78" drill="0.8"/>
+<pad name="5V" x="-6.35" y="-20.32" drill="0.8"/>
+<pad name="RESET1" x="-6.35" y="-22.86" drill="0.8"/>
+<pad name="GND" x="-6.35" y="-25.4" drill="0.8"/>
+<pad name="VIN" x="-6.35" y="-27.94" drill="0.8"/>
+<pad name="PB3" x="-6.35" y="-30.48" drill="0.8"/>
+<pad name="PB1" x="-6.35" y="-33.02" drill="0.8"/>
+<pad name="PD6" x="12.7" y="7.62" drill="0.8"/>
+<pad name="PB7" x="12.7" y="5.08" drill="0.8"/>
+<pad name="PB6" x="12.7" y="2.54" drill="0.8"/>
+<pad name="PB5" x="12.7" y="0" drill="0.8"/>
+<pad name="PB4" x="12.7" y="-2.54" drill="0.8"/>
+<pad name="PE6" x="12.7" y="-5.08" drill="0.8"/>
+<pad name="PD7" x="12.7" y="-7.62" drill="0.8"/>
+<pad name="PC6" x="12.7" y="-10.16" drill="0.8"/>
+<pad name="PD4" x="12.7" y="-12.7" drill="0.8"/>
+<pad name="PD0" x="12.7" y="-15.24" drill="0.8"/>
+<pad name="PD1" x="12.7" y="-17.78" drill="0.8"/>
+<pad name="GND2" x="12.7" y="-20.32" drill="0.8"/>
+<pad name="RESET" x="12.7" y="-22.86" drill="0.8"/>
+<pad name="PD2" x="12.7" y="-25.4" drill="0.8"/>
+<pad name="PD3" x="12.7" y="-27.94" drill="0.8"/>
+<pad name="PD8" x="12.7" y="-30.48" drill="0.8"/>
+<pad name="PB2" x="12.7" y="-33.02" drill="0.8"/>
 <wire x1="-8.89" y1="10.16" x2="15.24" y2="10.16" width="0.127" layer="21"/>
 <wire x1="15.24" y1="10.16" x2="15.24" y2="-35.56" width="0.127" layer="21"/>
 <wire x1="15.24" y1="-35.56" x2="-8.89" y2="-35.56" width="0.127" layer="21"/>
@@ -453,6 +453,22 @@ to Serial RS232 TTL
 <connect gate="G$1" pin="MISO" pad="MISO"/>
 <connect gate="G$1" pin="MOSI" pad="MOSI"/>
 <connect gate="G$1" pin="SCK" pad="SCK"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="ARDUINO_MICRO">
+<gates>
+<gate name="G$1" symbol="ARDUINOMICRO_SYMBOL" x="-27.94" y="15.24"/>
+</gates>
+<devices>
+<device name="" package="ARDUINOMICRO_FOOTPRINT">
+<connects>
+<connect gate="G$1" pin="3.3V" pad="3.3V"/>
+<connect gate="G$1" pin="AREF" pad="AREF"/>
 </connects>
 <technologies>
 <technology name=""/>

@@ -190,9 +190,9 @@ Reader</text>
 <pad name="PD1" x="12.7" y="-17.78" drill="0.8"/>
 <pad name="GND2" x="12.7" y="-20.32" drill="0.8"/>
 <pad name="RESET" x="12.7" y="-22.86" drill="0.8"/>
-<pad name="PD2" x="12.7" y="-25.4" drill="0.8"/>
-<pad name="PD3" x="12.7" y="-27.94" drill="0.8"/>
-<pad name="PD8" x="12.7" y="-30.48" drill="0.8"/>
+<pad name="RX" x="12.7" y="-25.4" drill="0.8"/>
+<pad name="TX" x="12.7" y="-27.94" drill="0.8"/>
+<pad name="PB8" x="12.7" y="-30.48" drill="0.8"/>
 <pad name="PB2" x="12.7" y="-33.02" drill="0.8"/>
 <wire x1="-8.89" y1="10.16" x2="15.24" y2="10.16" width="0.127" layer="21"/>
 <wire x1="15.24" y1="10.16" x2="15.24" y2="-35.56" width="0.127" layer="21"/>
@@ -217,8 +217,8 @@ Reader</text>
 <text x="-5.08" y="-33.02" size="1.016" layer="21">PB1</text>
 <text x="8.89" y="-33.02" size="1.016" layer="21">PB2</text>
 <text x="8.89" y="-30.48" size="1.016" layer="21">PB8</text>
-<text x="8.89" y="-27.94" size="1.016" layer="21">PD3</text>
-<text x="8.89" y="-25.4" size="1.016" layer="21">PD2</text>
+<text x="8.89" y="-27.94" size="1.016" layer="21">TX</text>
+<text x="8.89" y="-25.4" size="1.016" layer="21">RX</text>
 <text x="8.89" y="-22.86" size="1.016" layer="21">RESET</text>
 <text x="8.89" y="-20.32" size="1.016" layer="21">GND</text>
 <text x="8.89" y="-17.78" size="1.016" layer="21">PD1</text>
@@ -474,6 +474,7 @@ to Serial RS232 TTL
 <connect gate="G$1" pin="GND2" pad="GND2"/>
 <connect gate="G$1" pin="NC1" pad="NC1"/>
 <connect gate="G$1" pin="NC2" pad="NC2"/>
+<connect gate="G$1" pin="PB0" pad="PB8"/>
 <connect gate="G$1" pin="PB1" pad="PB1"/>
 <connect gate="G$1" pin="PB2" pad="PB2"/>
 <connect gate="G$1" pin="PB3" pad="PB3"/>
@@ -497,6 +498,8 @@ to Serial RS232 TTL
 <connect gate="G$1" pin="PF7" pad="PF7"/>
 <connect gate="G$1" pin="RESET" pad="RESET"/>
 <connect gate="G$1" pin="RESET1" pad="RESET1"/>
+<connect gate="G$1" pin="RX" pad="RX"/>
+<connect gate="G$1" pin="TX" pad="TX"/>
 <connect gate="G$1" pin="VIN" pad="VIN"/>
 </connects>
 <technologies>
