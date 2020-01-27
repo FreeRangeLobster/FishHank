@@ -74,13 +74,21 @@ Developed to handle Digital IO of a fishtank controller</description>
 <wire x1="6.35" y1="-6.35" x2="-6.35" y2="-6.35" width="0.127" layer="21"/>
 <wire x1="-6.35" y1="-6.35" x2="-8.89" y2="-3.81" width="0.127" layer="21"/>
 <wire x1="-8.89" y1="-3.81" x2="-8.89" y2="6.35" width="0.127" layer="21"/>
-<text x="0" y="5.08" size="1.27" layer="21" align="center">RTC
+<text x="0" y="6.35" size="1.27" layer="21" align="center">RTC
 ChronoDot
 V2.0</text>
 <pad name="BAT" x="-6.35" y="5.08" drill="0.6" shape="long"/>
 <pad name="32K" x="-6.35" y="2.54" drill="0.6" shape="long"/>
 <pad name="SQW" x="-6.35" y="0" drill="0.6" shape="long"/>
 <pad name="RST" x="-6.35" y="-2.54" drill="0.6" shape="long"/>
+<text x="-3.81" y="5.08" size="1.016" layer="21" align="center">Bat</text>
+<text x="-3.81" y="2.54" size="1.016" layer="21" align="center">32K</text>
+<text x="-3.81" y="0" size="1.016" layer="21" align="center">SQW</text>
+<text x="-3.81" y="-2.54" size="1.016" layer="21" align="center">RST</text>
+<text x="3.81" y="5.08" size="1.016" layer="21" align="center">GND</text>
+<text x="3.81" y="2.54" size="1.016" layer="21" align="center">3.3V</text>
+<text x="3.81" y="0" size="1.016" layer="21" align="center">SCL</text>
+<text x="3.81" y="-2.54" size="1.016" layer="21" align="center">SDA</text>
 </package>
 <package name="FLASHMEMORY_FOOTPRINT">
 <pad name="VCC" x="-8.89" y="8.89" drill="0.6" shape="long"/>
@@ -160,85 +168,85 @@ V2.0</text>
 Reader</text>
 </package>
 <package name="ARDUINOMICRO_FOOTPRINT">
-<pad name="PC7" x="-6.35" y="7.62" drill="0.8"/>
-<pad name="3.3V" x="-6.35" y="5.08" drill="0.8"/>
-<pad name="AREF" x="-6.35" y="2.54" drill="0.8"/>
-<pad name="PF7" x="-6.35" y="0" drill="0.8"/>
-<pad name="PF6" x="-6.35" y="-2.54" drill="0.8"/>
-<pad name="PF5" x="-6.35" y="-5.08" drill="0.8"/>
-<pad name="PF4" x="-6.35" y="-7.62" drill="0.8"/>
-<pad name="PF1" x="-6.35" y="-10.16" drill="0.8"/>
-<pad name="PF0" x="-6.35" y="-12.7" drill="0.8"/>
-<pad name="NC1" x="-6.35" y="-15.24" drill="0.8"/>
-<pad name="NC2" x="-6.35" y="-17.78" drill="0.8"/>
-<pad name="5V" x="-6.35" y="-20.32" drill="0.8"/>
-<pad name="RESET1" x="-6.35" y="-22.86" drill="0.8"/>
-<pad name="GND" x="-6.35" y="-25.4" drill="0.8"/>
-<pad name="VIN" x="-6.35" y="-27.94" drill="0.8"/>
-<pad name="PB3" x="-6.35" y="-30.48" drill="0.8"/>
-<pad name="PB1" x="-6.35" y="-33.02" drill="0.8"/>
-<pad name="PD6" x="12.7" y="7.62" drill="0.8"/>
-<pad name="PB7" x="12.7" y="5.08" drill="0.8"/>
-<pad name="PB6" x="12.7" y="2.54" drill="0.8"/>
-<pad name="PB5" x="12.7" y="0" drill="0.8"/>
-<pad name="PB4" x="12.7" y="-2.54" drill="0.8"/>
-<pad name="PE6" x="12.7" y="-5.08" drill="0.8"/>
-<pad name="PD7" x="12.7" y="-7.62" drill="0.8"/>
-<pad name="PC6" x="12.7" y="-10.16" drill="0.8"/>
-<pad name="PD4" x="12.7" y="-12.7" drill="0.8"/>
-<pad name="PD0" x="12.7" y="-15.24" drill="0.8"/>
-<pad name="PD1" x="12.7" y="-17.78" drill="0.8"/>
-<pad name="GND2" x="12.7" y="-20.32" drill="0.8"/>
-<pad name="RESET" x="12.7" y="-22.86" drill="0.8"/>
-<pad name="RX" x="12.7" y="-25.4" drill="0.8"/>
-<pad name="TX" x="12.7" y="-27.94" drill="0.8"/>
-<pad name="PB8" x="12.7" y="-30.48" drill="0.8"/>
-<pad name="PB2" x="12.7" y="-33.02" drill="0.8"/>
-<wire x1="-8.89" y1="10.16" x2="0" y2="10.16" width="0.127" layer="21"/>
-<wire x1="0" y1="10.16" x2="6.35" y2="10.16" width="0.127" layer="21"/>
-<wire x1="6.35" y1="10.16" x2="15.24" y2="10.16" width="0.127" layer="21"/>
-<wire x1="15.24" y1="10.16" x2="15.24" y2="-35.56" width="0.127" layer="21"/>
-<wire x1="15.24" y1="-35.56" x2="-8.89" y2="-35.56" width="0.127" layer="21"/>
-<wire x1="-8.89" y1="-35.56" x2="-8.89" y2="10.16" width="0.127" layer="21"/>
-<text x="-5.08" y="7.62" size="1.016" layer="21">PC7</text>
-<text x="-5.08" y="5.08" size="1.016" layer="21">3.3V</text>
-<text x="-5.08" y="2.54" size="1.016" layer="21">AREF</text>
-<text x="-5.08" y="0" size="1.016" layer="21">PF7</text>
-<text x="-5.08" y="-2.54" size="1.016" layer="21">PF6</text>
-<text x="-5.08" y="-5.08" size="1.016" layer="21">PF5</text>
-<text x="-5.08" y="-7.62" size="1.016" layer="21">PF4</text>
-<text x="-5.08" y="-10.16" size="1.016" layer="21">PF1</text>
-<text x="-5.08" y="-12.7" size="1.016" layer="21">PF0</text>
-<text x="-5.08" y="-15.24" size="1.016" layer="21">NC</text>
-<text x="-5.08" y="-17.78" size="1.016" layer="21">NC</text>
-<text x="-5.08" y="-20.32" size="1.016" layer="21">5V</text>
-<text x="-5.08" y="-22.86" size="1.016" layer="21">RESET</text>
-<text x="-5.08" y="-25.4" size="1.016" layer="21">GND</text>
-<text x="-5.08" y="-27.94" size="1.016" layer="21">VIN</text>
-<text x="-5.08" y="-30.48" size="1.016" layer="21">PB3</text>
-<text x="-5.08" y="-33.02" size="1.016" layer="21">PB1</text>
-<text x="8.89" y="-33.02" size="1.016" layer="21">PB2</text>
-<text x="8.89" y="-30.48" size="1.016" layer="21">PB8</text>
-<text x="8.89" y="-27.94" size="1.016" layer="21">TX</text>
-<text x="8.89" y="-25.4" size="1.016" layer="21">RX</text>
-<text x="8.89" y="-22.86" size="1.016" layer="21">RESET</text>
-<text x="8.89" y="-20.32" size="1.016" layer="21">GND</text>
-<text x="8.89" y="-17.78" size="1.016" layer="21">PD1</text>
-<text x="8.89" y="-15.24" size="1.016" layer="21">PD0</text>
-<text x="8.89" y="-12.7" size="1.016" layer="21">PD4</text>
-<text x="8.89" y="-10.16" size="1.016" layer="21">PC6</text>
-<text x="8.89" y="-7.62" size="1.016" layer="21">PD7</text>
-<text x="8.89" y="-5.08" size="1.016" layer="21">PE6</text>
-<text x="8.89" y="-2.54" size="1.016" layer="21">PB4</text>
-<text x="8.89" y="0" size="1.016" layer="21">PB5</text>
-<text x="8.89" y="2.54" size="1.016" layer="21">PB6</text>
-<text x="8.89" y="5.08" size="1.016" layer="21">PB7</text>
-<text x="8.89" y="7.62" size="1.016" layer="21">PD6</text>
-<text x="3.81" y="-26.67" size="1.27" layer="21" rot="R90">ARDUINO MICRO</text>
-<wire x1="0" y1="10.16" x2="0" y2="5.08" width="0.127" layer="21"/>
-<wire x1="0" y1="5.08" x2="6.35" y2="5.08" width="0.127" layer="21"/>
-<wire x1="6.35" y1="5.08" x2="6.35" y2="10.16" width="0.127" layer="21"/>
-<text x="1.27" y="7.62" size="1.016" layer="21"> USB</text>
+<pad name="PC7" x="-8.89" y="13.97" drill="0.8"/>
+<pad name="3.3V" x="-8.89" y="11.43" drill="0.8"/>
+<pad name="AREF" x="-8.89" y="8.89" drill="0.8"/>
+<pad name="PF7" x="-8.89" y="6.35" drill="0.8"/>
+<pad name="PF6" x="-8.89" y="3.81" drill="0.8"/>
+<pad name="PF5" x="-8.89" y="1.27" drill="0.8"/>
+<pad name="PF4" x="-8.89" y="-1.27" drill="0.8"/>
+<pad name="PF1" x="-8.89" y="-3.81" drill="0.8"/>
+<pad name="PF0" x="-8.89" y="-6.35" drill="0.8"/>
+<pad name="NC1" x="-8.89" y="-8.89" drill="0.8"/>
+<pad name="NC2" x="-8.89" y="-11.43" drill="0.8"/>
+<pad name="5V" x="-8.89" y="-13.97" drill="0.8"/>
+<pad name="RESET1" x="-8.89" y="-16.51" drill="0.8"/>
+<pad name="GND" x="-8.89" y="-19.05" drill="0.8"/>
+<pad name="VIN" x="-8.89" y="-21.59" drill="0.8"/>
+<pad name="PB3" x="-8.89" y="-24.13" drill="0.8"/>
+<pad name="PB1" x="-8.89" y="-26.67" drill="0.8"/>
+<pad name="PD6" x="10.16" y="13.97" drill="0.8"/>
+<pad name="PB7" x="10.16" y="11.43" drill="0.8"/>
+<pad name="PB6" x="10.16" y="8.89" drill="0.8"/>
+<pad name="PB5" x="10.16" y="6.35" drill="0.8"/>
+<pad name="PB4" x="10.16" y="3.81" drill="0.8"/>
+<pad name="PE6" x="10.16" y="1.27" drill="0.8"/>
+<pad name="PD7" x="10.16" y="-1.27" drill="0.8"/>
+<pad name="PC6" x="10.16" y="-3.81" drill="0.8"/>
+<pad name="PD4" x="10.16" y="-6.35" drill="0.8"/>
+<pad name="PD0" x="10.16" y="-8.89" drill="0.8"/>
+<pad name="PD1" x="10.16" y="-11.43" drill="0.8"/>
+<pad name="GND2" x="10.16" y="-13.97" drill="0.8"/>
+<pad name="RESET" x="10.16" y="-16.51" drill="0.8"/>
+<pad name="RX" x="10.16" y="-19.05" drill="0.8"/>
+<pad name="TX" x="10.16" y="-21.59" drill="0.8"/>
+<pad name="PB8" x="10.16" y="-24.13" drill="0.8"/>
+<pad name="PB2" x="10.16" y="-26.67" drill="0.8"/>
+<wire x1="-11.43" y1="16.51" x2="-2.54" y2="16.51" width="0.127" layer="21"/>
+<wire x1="-2.54" y1="16.51" x2="3.81" y2="16.51" width="0.127" layer="21"/>
+<wire x1="3.81" y1="16.51" x2="12.7" y2="16.51" width="0.127" layer="21"/>
+<wire x1="12.7" y1="16.51" x2="12.7" y2="-29.21" width="0.127" layer="21"/>
+<wire x1="12.7" y1="-29.21" x2="-11.43" y2="-29.21" width="0.127" layer="21"/>
+<wire x1="-11.43" y1="-29.21" x2="-11.43" y2="16.51" width="0.127" layer="21"/>
+<text x="-7.62" y="13.97" size="1.016" layer="21">PC7</text>
+<text x="-7.62" y="11.43" size="1.016" layer="21">3.3V</text>
+<text x="-7.62" y="8.89" size="1.016" layer="21">AREF</text>
+<text x="-7.62" y="6.35" size="1.016" layer="21">PF7</text>
+<text x="-7.62" y="3.81" size="1.016" layer="21">PF6</text>
+<text x="-7.62" y="1.27" size="1.016" layer="21">PF5</text>
+<text x="-7.62" y="-1.27" size="1.016" layer="21">PF4</text>
+<text x="-7.62" y="-3.81" size="1.016" layer="21">PF1</text>
+<text x="-7.62" y="-6.35" size="1.016" layer="21">PF0</text>
+<text x="-7.62" y="-8.89" size="1.016" layer="21">NC</text>
+<text x="-7.62" y="-11.43" size="1.016" layer="21">NC</text>
+<text x="-7.62" y="-13.97" size="1.016" layer="21">5V</text>
+<text x="-7.62" y="-16.51" size="1.016" layer="21">RESET</text>
+<text x="-7.62" y="-19.05" size="1.016" layer="21">GND</text>
+<text x="-7.62" y="-21.59" size="1.016" layer="21">VIN</text>
+<text x="-7.62" y="-24.13" size="1.016" layer="21">PB3</text>
+<text x="-7.62" y="-26.67" size="1.016" layer="21">PB1</text>
+<text x="6.35" y="-26.67" size="1.016" layer="21">PB2</text>
+<text x="6.35" y="-24.13" size="1.016" layer="21">PB8</text>
+<text x="6.35" y="-21.59" size="1.016" layer="21">TX</text>
+<text x="6.35" y="-19.05" size="1.016" layer="21">RX</text>
+<text x="6.35" y="-16.51" size="1.016" layer="21">RESET</text>
+<text x="6.35" y="-13.97" size="1.016" layer="21">GND</text>
+<text x="6.35" y="-11.43" size="1.016" layer="21">PD1</text>
+<text x="6.35" y="-8.89" size="1.016" layer="21">PD0</text>
+<text x="6.35" y="-6.35" size="1.016" layer="21">PD4</text>
+<text x="6.35" y="-3.81" size="1.016" layer="21">PC6</text>
+<text x="6.35" y="-1.27" size="1.016" layer="21">PD7</text>
+<text x="6.35" y="1.27" size="1.016" layer="21">PE6</text>
+<text x="6.35" y="3.81" size="1.016" layer="21">PB4</text>
+<text x="6.35" y="6.35" size="1.016" layer="21">PB5</text>
+<text x="6.35" y="8.89" size="1.016" layer="21">PB6</text>
+<text x="6.35" y="11.43" size="1.016" layer="21">PB7</text>
+<text x="6.35" y="13.97" size="1.016" layer="21">PD6</text>
+<text x="1.27" y="-20.32" size="1.27" layer="21" rot="R90">ARDUINO MICRO</text>
+<wire x1="-2.54" y1="16.51" x2="-2.54" y2="11.43" width="0.127" layer="21"/>
+<wire x1="-2.54" y1="11.43" x2="3.81" y2="11.43" width="0.127" layer="21"/>
+<wire x1="3.81" y1="11.43" x2="3.81" y2="16.51" width="0.127" layer="21"/>
+<text x="-1.27" y="13.97" size="1.016" layer="21"> USB</text>
 </package>
 </packages>
 <symbols>
@@ -321,45 +329,45 @@ to Serial RS232 TTL
 <text x="5.08" y="5.08" size="2.54" layer="94" distance="70" align="center">uSD Card</text>
 </symbol>
 <symbol name="ARDUINOMICRO_SYMBOL">
-<pin name="PC7" x="2.54" y="22.86" length="middle"/>
-<pin name="3.3V" x="2.54" y="17.78" length="middle"/>
-<pin name="AREF" x="2.54" y="12.7" length="middle"/>
-<pin name="PF7" x="2.54" y="7.62" length="middle"/>
-<pin name="PF6" x="2.54" y="2.54" length="middle"/>
-<pin name="PF5" x="2.54" y="-2.54" length="middle"/>
-<pin name="PF4" x="2.54" y="-7.62" length="middle"/>
-<pin name="PF1" x="2.54" y="-12.7" length="middle"/>
-<pin name="PF0" x="2.54" y="-17.78" length="middle"/>
-<pin name="NC1" x="2.54" y="-22.86" length="middle"/>
-<pin name="NC2" x="2.54" y="-27.94" length="middle"/>
-<pin name="5V" x="2.54" y="-33.02" length="middle"/>
-<pin name="RESET" x="2.54" y="-38.1" length="middle"/>
-<pin name="GND1" x="2.54" y="-43.18" length="middle"/>
-<pin name="VIN" x="2.54" y="-48.26" length="middle"/>
-<pin name="PB3" x="2.54" y="-53.34" length="middle"/>
-<pin name="PB1" x="2.54" y="-58.42" length="middle"/>
-<pin name="PD6" x="40.64" y="22.86" length="middle" rot="R180"/>
-<pin name="PB7" x="40.64" y="17.78" length="middle" rot="R180"/>
-<pin name="PB6" x="40.64" y="12.7" length="middle" rot="R180"/>
-<pin name="PB5" x="40.64" y="7.62" length="middle" rot="R180"/>
-<pin name="PB4" x="40.64" y="2.54" length="middle" rot="R180"/>
-<pin name="PE6" x="40.64" y="-2.54" length="middle" rot="R180"/>
-<pin name="PD7" x="40.64" y="-7.62" length="middle" rot="R180"/>
-<pin name="PC6" x="40.64" y="-12.7" length="middle" rot="R180"/>
-<pin name="PD4" x="40.64" y="-17.78" length="middle" rot="R180"/>
-<pin name="PD0" x="40.64" y="-22.86" length="middle" rot="R180"/>
-<pin name="PD1" x="40.64" y="-27.94" length="middle" rot="R180"/>
-<pin name="GND2" x="40.64" y="-33.02" length="middle" rot="R180"/>
-<pin name="RESET1" x="40.64" y="-38.1" length="middle" rot="R180"/>
-<pin name="RX" x="40.64" y="-43.18" length="middle" rot="R180"/>
-<pin name="TX" x="40.64" y="-48.26" length="middle" rot="R180"/>
-<pin name="PB0" x="40.64" y="-53.34" length="middle" rot="R180"/>
-<pin name="PB2" x="40.64" y="-58.42" length="middle" rot="R180"/>
-<wire x1="7.62" y1="27.94" x2="35.56" y2="27.94" width="0.254" layer="94"/>
-<wire x1="35.56" y1="27.94" x2="35.56" y2="-63.5" width="0.254" layer="94"/>
-<wire x1="35.56" y1="-63.5" x2="7.62" y2="-63.5" width="0.254" layer="94"/>
-<wire x1="7.62" y1="-63.5" x2="7.62" y2="27.94" width="0.254" layer="94"/>
-<text x="22.86" y="-22.86" size="1.778" layer="94" rot="R90">Arduino Micro</text>
+<pin name="32" x="-17.78" y="27.94" length="middle"/>
+<pin name="3.3V" x="-17.78" y="22.86" length="middle"/>
+<pin name="AREF" x="-17.78" y="17.78" length="middle"/>
+<pin name="36" x="-17.78" y="12.7" length="middle"/>
+<pin name="37" x="-17.78" y="7.62" length="middle"/>
+<pin name="38" x="-17.78" y="2.54" length="middle"/>
+<pin name="39" x="-17.78" y="-2.54" length="middle"/>
+<pin name="40" x="-17.78" y="-7.62" length="middle"/>
+<pin name="41" x="-17.78" y="-12.7" length="middle"/>
+<pin name="NC1" x="-17.78" y="-17.78" length="middle"/>
+<pin name="NC2" x="-17.78" y="-22.86" length="middle"/>
+<pin name="5V" x="-17.78" y="-27.94" length="middle"/>
+<pin name="RESET" x="-17.78" y="-33.02" length="middle"/>
+<pin name="GND1" x="-17.78" y="-38.1" length="middle"/>
+<pin name="VIN" x="-17.78" y="-43.18" length="middle"/>
+<pin name="11" x="-17.78" y="-48.26" length="middle"/>
+<pin name="9" x="-17.78" y="-53.34" length="middle"/>
+<pin name="26" x="20.32" y="27.94" length="middle" rot="R180"/>
+<pin name="12" x="20.32" y="22.86" length="middle" rot="R180"/>
+<pin name="30" x="20.32" y="17.78" length="middle" rot="R180"/>
+<pin name="29" x="20.32" y="12.7" length="middle" rot="R180"/>
+<pin name="28" x="20.32" y="7.62" length="middle" rot="R180"/>
+<pin name="1" x="20.32" y="2.54" length="middle" rot="R180"/>
+<pin name="27" x="20.32" y="-2.54" length="middle" rot="R180"/>
+<pin name="31" x="20.32" y="-7.62" length="middle" rot="R180"/>
+<pin name="25" x="20.32" y="-12.7" length="middle" rot="R180"/>
+<pin name="18" x="20.32" y="-17.78" length="middle" rot="R180"/>
+<pin name="19" x="20.32" y="-22.86" length="middle" rot="R180"/>
+<pin name="GND2" x="20.32" y="-27.94" length="middle" rot="R180"/>
+<pin name="RESET1" x="20.32" y="-33.02" length="middle" rot="R180"/>
+<pin name="20" x="20.32" y="-38.1" length="middle" rot="R180"/>
+<pin name="21" x="20.32" y="-43.18" length="middle" rot="R180"/>
+<pin name="8" x="20.32" y="-48.26" length="middle" rot="R180"/>
+<pin name="10" x="20.32" y="-53.34" length="middle" rot="R180"/>
+<wire x1="-12.7" y1="33.02" x2="15.24" y2="33.02" width="0.254" layer="94"/>
+<wire x1="15.24" y1="33.02" x2="15.24" y2="-58.42" width="0.254" layer="94"/>
+<wire x1="15.24" y1="-58.42" x2="-12.7" y2="-58.42" width="0.254" layer="94"/>
+<wire x1="-12.7" y1="-58.42" x2="-12.7" y2="33.02" width="0.254" layer="94"/>
+<text x="2.54" y="-17.78" size="1.778" layer="94" rot="R90">Arduino Micro</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -473,39 +481,39 @@ to Serial RS232 TTL
 <devices>
 <device name="" package="ARDUINOMICRO_FOOTPRINT">
 <connects>
+<connect gate="G$1" pin="1" pad="PE6"/>
+<connect gate="G$1" pin="10" pad="PB2"/>
+<connect gate="G$1" pin="11" pad="PB3"/>
+<connect gate="G$1" pin="12" pad="PB7"/>
+<connect gate="G$1" pin="18" pad="PD0"/>
+<connect gate="G$1" pin="19" pad="PD1"/>
+<connect gate="G$1" pin="20" pad="RX"/>
+<connect gate="G$1" pin="21" pad="TX"/>
+<connect gate="G$1" pin="25" pad="PD4"/>
+<connect gate="G$1" pin="26" pad="PD6"/>
+<connect gate="G$1" pin="27" pad="PD7"/>
+<connect gate="G$1" pin="28" pad="PB4"/>
+<connect gate="G$1" pin="29" pad="PB5"/>
 <connect gate="G$1" pin="3.3V" pad="3.3V"/>
+<connect gate="G$1" pin="30" pad="PB6"/>
+<connect gate="G$1" pin="31" pad="PC6"/>
+<connect gate="G$1" pin="32" pad="PC7"/>
+<connect gate="G$1" pin="36" pad="PF7"/>
+<connect gate="G$1" pin="37" pad="PF6"/>
+<connect gate="G$1" pin="38" pad="PF5"/>
+<connect gate="G$1" pin="39" pad="PF4"/>
+<connect gate="G$1" pin="40" pad="PF1"/>
+<connect gate="G$1" pin="41" pad="PF0"/>
 <connect gate="G$1" pin="5V" pad="5V"/>
+<connect gate="G$1" pin="8" pad="PB8"/>
+<connect gate="G$1" pin="9" pad="PB1"/>
 <connect gate="G$1" pin="AREF" pad="AREF"/>
 <connect gate="G$1" pin="GND1" pad="GND"/>
 <connect gate="G$1" pin="GND2" pad="GND2"/>
 <connect gate="G$1" pin="NC1" pad="NC1"/>
 <connect gate="G$1" pin="NC2" pad="NC2"/>
-<connect gate="G$1" pin="PB0" pad="PB8"/>
-<connect gate="G$1" pin="PB1" pad="PB1"/>
-<connect gate="G$1" pin="PB2" pad="PB2"/>
-<connect gate="G$1" pin="PB3" pad="PB3"/>
-<connect gate="G$1" pin="PB4" pad="PB4"/>
-<connect gate="G$1" pin="PB5" pad="PB5"/>
-<connect gate="G$1" pin="PB6" pad="PB6"/>
-<connect gate="G$1" pin="PB7" pad="PB7"/>
-<connect gate="G$1" pin="PC6" pad="PC6"/>
-<connect gate="G$1" pin="PC7" pad="PC7"/>
-<connect gate="G$1" pin="PD0" pad="PD0"/>
-<connect gate="G$1" pin="PD1" pad="PD1"/>
-<connect gate="G$1" pin="PD4" pad="PD4"/>
-<connect gate="G$1" pin="PD6" pad="PD6"/>
-<connect gate="G$1" pin="PD7" pad="PD7"/>
-<connect gate="G$1" pin="PE6" pad="PE6"/>
-<connect gate="G$1" pin="PF0" pad="PF0"/>
-<connect gate="G$1" pin="PF1" pad="PF1"/>
-<connect gate="G$1" pin="PF4" pad="PF4"/>
-<connect gate="G$1" pin="PF5" pad="PF5"/>
-<connect gate="G$1" pin="PF6" pad="PF6"/>
-<connect gate="G$1" pin="PF7" pad="PF7"/>
 <connect gate="G$1" pin="RESET" pad="RESET"/>
 <connect gate="G$1" pin="RESET1" pad="RESET1"/>
-<connect gate="G$1" pin="RX" pad="RX"/>
-<connect gate="G$1" pin="TX" pad="TX"/>
 <connect gate="G$1" pin="VIN" pad="VIN"/>
 </connects>
 <technologies>

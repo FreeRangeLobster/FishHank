@@ -6144,19 +6144,19 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="MPN" value="22-23-2021" x="7.62" y="71.12" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="OC_NEWARK" value="25C3832" x="7.62" y="71.12" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
-<element name="RI1" library="rcl" package="0204/7" value="330" x="176.00899375" y="48.189871875"/>
-<element name="RI2" library="rcl" package="0204/7" value="330" x="176.00899375" y="51.233146875"/>
-<element name="RI3" library="rcl" package="0204/7" value="330" x="176.00899375" y="54.276421875"/>
-<element name="RI4" library="rcl" package="0204/7" value="330" x="176.00899375" y="57.319696875"/>
-<element name="RI5" library="rcl" package="0204/7" value="330" x="176.00899375" y="60.362971875"/>
-<element name="RI6" library="rcl" package="0204/7" value="330" x="176.00899375" y="63.40625"/>
-<element name="RI7" library="rcl" package="0204/7" value="330" x="176.00899375" y="67.719525"/>
-<element name="RI8" library="rcl" package="0204/7" value="" x="176.00899375" y="72.0328"/>
-<element name="IN_BUTTONS" library="con-lstb" package="MA09-1" value="" x="165.1" y="62.23" rot="R90">
-<attribute name="MF" value="" x="165.1" y="62.23" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="OC_FARNELL" value="unknown" x="165.1" y="62.23" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MPN" value="" x="165.1" y="62.23" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="OC_NEWARK" value="unknown" x="165.1" y="62.23" size="1.778" layer="27" rot="R90" display="off"/>
+<element name="RI1" library="rcl" package="0204/7" value="330" x="172.72" y="67.31"/>
+<element name="RI2" library="rcl" package="0204/7" value="330" x="172.72" y="64.77"/>
+<element name="RI3" library="rcl" package="0204/7" value="330" x="172.72" y="62.23"/>
+<element name="RI4" library="rcl" package="0204/7" value="330" x="172.72" y="59.69"/>
+<element name="RI5" library="rcl" package="0204/7" value="330" x="172.72" y="57.15"/>
+<element name="RI6" library="rcl" package="0204/7" value="330" x="172.72" y="54.61"/>
+<element name="RI7" library="rcl" package="0204/7" value="330" x="172.72" y="52.07"/>
+<element name="RI8" library="rcl" package="0204/7" value="" x="172.72" y="49.53"/>
+<element name="IN_BUTTONS" library="con-lstb" package="MA09-1" value="" x="163.83" y="59.69" rot="R270">
+<attribute name="MF" value="" x="163.83" y="59.69" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="OC_FARNELL" value="unknown" x="163.83" y="59.69" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="" x="163.83" y="59.69" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="163.83" y="59.69" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
 <element name="F1" library="fuse" package="PICOFUSE" value="SM 092 A0 2A" x="193.04" y="125.73">
 <attribute name="MF" value="" x="193.04" y="125.73" size="1.778" layer="27" display="off"/>
@@ -6444,7 +6444,7 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="CP31" pad="+"/>
 <contactref element="IN_BUTTONS" pad="1"/>
 <contactref element="REG_3V3" pad="3"/>
-<wire x1="68.066234375" y1="72.121471875" x2="165.1" y2="52.07" width="0" layer="19" extent="1-1"/>
+<wire x1="68.066234375" y1="72.121471875" x2="163.83" y2="69.85" width="0" layer="19" extent="1-1"/>
 <wire x1="7.62" y1="69.85" x2="68.066234375" y2="72.121471875" width="0" layer="19" extent="1-1"/>
 <wire x1="74.165434375" y1="66.783078125" x2="7.62" y2="69.85" width="0" layer="19" extent="1-1"/>
 <wire x1="7.52441875" y1="60.5671375" x2="74.165434375" y2="66.783078125" width="0" layer="19" extent="1-1"/>
@@ -6785,30 +6785,30 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="130.81" y1="29.21" x2="152.4" y2="39.37" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="IN4">
-<contactref element="IC3" pad="27"/>
 <contactref element="RI5" pad="1"/>
 <contactref element="IN_BUTTONS" pad="6"/>
-<wire x1="165.1" y1="64.77" x2="172.19899375" y2="60.362971875" width="0" layer="19" extent="1-1"/>
-<wire x1="152.4" y1="64.77" x2="165.1" y2="64.77" width="0" layer="19" extent="1-1"/>
+<contactref element="IC3" pad="24"/>
+<wire x1="163.83" y1="57.15" x2="168.91" y2="57.15" width="0" layer="19" extent="1-1"/>
+<wire x1="152.4" y1="57.15" x2="163.83" y2="57.15" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="IN3">
-<contactref element="IC3" pad="28"/>
 <contactref element="IN_BUTTONS" pad="7"/>
-<wire x1="152.4" y1="67.31" x2="165.1" y2="67.31" width="0" layer="19" extent="1-1"/>
+<contactref element="IC3" pad="23"/>
+<wire x1="152.4" y1="54.61" x2="163.83" y2="54.61" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="IN2">
-<contactref element="IC3" pad="18"/>
 <contactref element="IN_BUTTONS" pad="8"/>
 <contactref element="RI7" pad="1"/>
-<wire x1="165.1" y1="69.85" x2="172.19899375" y2="67.719525" width="0" layer="19" extent="1-1"/>
-<wire x1="152.4" y1="41.91" x2="165.1" y2="69.85" width="0" layer="19" extent="1-1"/>
+<contactref element="IC3" pad="19"/>
+<wire x1="163.83" y1="52.07" x2="168.91" y2="52.07" width="0" layer="19" extent="1-1"/>
+<wire x1="152.4" y1="44.45" x2="163.83" y2="52.07" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="IN1">
-<contactref element="IC3" pad="19"/>
 <contactref element="RI8" pad="1"/>
 <contactref element="IN_BUTTONS" pad="9"/>
-<wire x1="165.1" y1="72.39" x2="172.19899375" y2="72.0328" width="0" layer="19" extent="1-1"/>
-<wire x1="152.4" y1="44.45" x2="165.1" y2="72.39" width="0" layer="19" extent="1-1"/>
+<contactref element="IC3" pad="18"/>
+<wire x1="163.83" y1="49.53" x2="168.91" y2="49.53" width="0" layer="19" extent="1-1"/>
+<wire x1="152.4" y1="41.91" x2="163.83" y2="49.53" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$7">
 <contactref element="RI5" pad="2"/>
@@ -6819,47 +6819,47 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="RI2" pad="2"/>
 <contactref element="RI3" pad="2"/>
 <contactref element="RI4" pad="2"/>
-<wire x1="179.81899375" y1="63.40625" x2="179.81899375" y2="67.719525" width="0" layer="19" extent="1-1"/>
-<wire x1="179.81899375" y1="60.362971875" x2="179.81899375" y2="63.40625" width="0" layer="19" extent="1-1"/>
-<wire x1="179.81899375" y1="57.319696875" x2="179.81899375" y2="60.362971875" width="0" layer="19" extent="1-1"/>
-<wire x1="179.81899375" y1="54.276421875" x2="179.81899375" y2="57.319696875" width="0" layer="19" extent="1-1"/>
-<wire x1="179.81899375" y1="51.233146875" x2="179.81899375" y2="54.276421875" width="0" layer="19" extent="1-1"/>
-<wire x1="179.81899375" y1="48.189871875" x2="179.81899375" y2="51.233146875" width="0" layer="19" extent="1-1"/>
-<wire x1="179.81899375" y1="72.0328" x2="179.81899375" y2="67.719525" width="0" layer="19" extent="1-1"/>
+<wire x1="176.53" y1="54.61" x2="176.53" y2="52.07" width="0" layer="19" extent="1-1"/>
+<wire x1="176.53" y1="57.15" x2="176.53" y2="54.61" width="0" layer="19" extent="1-1"/>
+<wire x1="176.53" y1="59.69" x2="176.53" y2="57.15" width="0" layer="19" extent="1-1"/>
+<wire x1="176.53" y1="62.23" x2="176.53" y2="59.69" width="0" layer="19" extent="1-1"/>
+<wire x1="176.53" y1="64.77" x2="176.53" y2="62.23" width="0" layer="19" extent="1-1"/>
+<wire x1="176.53" y1="67.31" x2="176.53" y2="64.77" width="0" layer="19" extent="1-1"/>
+<wire x1="176.53" y1="49.53" x2="176.53" y2="52.07" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="IN8">
 <contactref element="SV4" pad="3"/>
-<contactref element="IC3" pad="23"/>
 <contactref element="RI1" pad="1"/>
 <contactref element="IN_BUTTONS" pad="2"/>
-<wire x1="152.4" y1="54.61" x2="165.1" y2="54.61" width="0" layer="19" extent="1-1"/>
-<wire x1="172.19899375" y1="48.189871875" x2="152.4" y2="54.61" width="0" layer="19" extent="1-1"/>
-<wire x1="130.81" y1="26.67" x2="152.4" y2="54.61" width="0" layer="19" extent="1-1"/>
+<contactref element="IC3" pad="28"/>
+<wire x1="152.4" y1="67.31" x2="163.83" y2="67.31" width="0" layer="19" extent="1-1"/>
+<wire x1="168.91" y1="67.31" x2="163.83" y2="67.31" width="0" layer="19" extent="1-1"/>
+<wire x1="130.81" y1="26.67" x2="152.4" y2="67.31" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="IN5">
-<contactref element="IC3" pad="26"/>
 <contactref element="RI4" pad="1"/>
 <contactref element="IN_BUTTONS" pad="5"/>
-<wire x1="172.19899375" y1="57.319696875" x2="165.1" y2="62.23" width="0" layer="19" extent="1-1"/>
-<wire x1="152.4" y1="62.23" x2="165.1" y2="62.23" width="0" layer="19" extent="1-1"/>
+<contactref element="IC3" pad="25"/>
+<wire x1="163.83" y1="59.69" x2="168.91" y2="59.69" width="0" layer="19" extent="1-1"/>
+<wire x1="152.4" y1="59.69" x2="163.83" y2="59.69" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="IN7">
 <contactref element="SV4" pad="1"/>
-<contactref element="IC3" pad="24"/>
 <contactref element="RI2" pad="1"/>
 <contactref element="IN_BUTTONS" pad="3"/>
-<wire x1="152.4" y1="57.15" x2="165.1" y2="57.15" width="0" layer="19" extent="1-1"/>
-<wire x1="172.19899375" y1="51.233146875" x2="165.1" y2="57.15" width="0" layer="19" extent="1-1"/>
-<wire x1="128.27" y1="26.67" x2="152.4" y2="57.15" width="0" layer="19" extent="1-1"/>
+<contactref element="IC3" pad="27"/>
+<wire x1="152.4" y1="64.77" x2="163.83" y2="64.77" width="0" layer="19" extent="1-1"/>
+<wire x1="168.91" y1="64.77" x2="163.83" y2="64.77" width="0" layer="19" extent="1-1"/>
+<wire x1="128.27" y1="26.67" x2="152.4" y2="64.77" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="IN6">
 <contactref element="RI6" pad="1"/>
-<contactref element="IC3" pad="25"/>
 <contactref element="RI3" pad="1"/>
 <contactref element="IN_BUTTONS" pad="4"/>
-<wire x1="165.1" y1="59.69" x2="172.19899375" y2="63.40625" width="0" layer="19" extent="1-1"/>
-<wire x1="172.19899375" y1="54.276421875" x2="172.19899375" y2="63.40625" width="0" layer="19" extent="1-1"/>
-<wire x1="152.4" y1="59.69" x2="165.1" y2="59.69" width="0" layer="19" extent="1-1"/>
+<contactref element="IC3" pad="26"/>
+<wire x1="168.91" y1="62.23" x2="168.91" y2="54.61" width="0" layer="19" extent="1-1"/>
+<wire x1="163.83" y1="62.23" x2="168.91" y2="54.61" width="0" layer="19" extent="1-1"/>
+<wire x1="152.4" y1="62.23" x2="163.83" y2="62.23" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="MO1">
 <contactref element="F1" pad="2"/>
