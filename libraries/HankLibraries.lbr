@@ -62,17 +62,17 @@
 Developed to handle Digital IO of a fishtank controller</description>
 <packages>
 <package name="RTC_FOOTPRINT">
-<pad name="SCL" x="11.43" y="-2.54" drill="0.6" shape="long"/>
-<pad name="SDA" x="11.43" y="-5.08" drill="0.6" shape="long"/>
-<pad name="+3.3V" x="11.43" y="0" drill="0.6" shape="long"/>
-<pad name="GND" x="11.43" y="2.54" drill="0.6" shape="long"/>
-<text x="0" y="6.35" size="1.27" layer="21" align="center">RTC
+<pad name="SCL" x="11.43" y="-2.54" drill="0.9" shape="long"/>
+<pad name="SDA" x="11.43" y="-5.08" drill="0.9" shape="long"/>
+<pad name="+3.3V" x="11.43" y="0" drill="0.9" shape="long"/>
+<pad name="GND" x="11.43" y="2.54" drill="0.9" shape="long"/>
+<text x="0" y="6.35" size="2.1844" layer="21" align="center">RTC
 ChronoDot
 V2.0</text>
-<pad name="BAT" x="-11.43" y="2.54" drill="0.6" shape="long"/>
-<pad name="32K" x="-11.43" y="0" drill="0.6" shape="long"/>
-<pad name="SQW" x="-11.43" y="-2.54" drill="0.6" shape="long"/>
-<pad name="RST" x="-11.43" y="-5.08" drill="0.6" shape="long"/>
+<pad name="BAT" x="-11.43" y="2.54" drill="0.9" shape="long"/>
+<pad name="32K" x="-11.43" y="0" drill="0.9" shape="long"/>
+<pad name="SQW" x="-11.43" y="-2.54" drill="0.9" shape="long"/>
+<pad name="RST" x="-11.43" y="-5.08" drill="0.9" shape="long"/>
 <text x="-8.89" y="2.54" size="1.016" layer="21" align="center">Bat</text>
 <text x="-8.89" y="0" size="1.016" layer="21" align="center">32K</text>
 <text x="-8.89" y="-2.54" size="1.016" layer="21" align="center">SQW</text>
@@ -84,14 +84,14 @@ V2.0</text>
 <circle x="0" y="-1.27" radius="15.24" width="0.127" layer="21"/>
 </package>
 <package name="FLASHMEMORY_FOOTPRINT">
-<pad name="VCC" x="-8.89" y="8.89" drill="0.6" shape="long"/>
-<pad name="GND" x="-8.89" y="6.35" drill="0.6" shape="long"/>
-<pad name="CS" x="-8.89" y="3.81" drill="0.6" shape="long"/>
-<pad name="CLK" x="-8.89" y="1.27" drill="0.6" shape="long"/>
-<pad name="DI" x="-8.89" y="-1.27" drill="0.6" shape="long"/>
-<pad name="DO" x="-8.89" y="-3.81" drill="0.6" shape="long"/>
-<pad name="WP" x="-8.89" y="-6.35" drill="0.6" shape="long"/>
-<pad name="HOLD" x="-8.89" y="-8.89" drill="0.6" shape="long"/>
+<pad name="VCC" x="-8.89" y="8.89" drill="0.9" shape="long"/>
+<pad name="GND" x="-8.89" y="6.35" drill="0.9" shape="long"/>
+<pad name="CS" x="-8.89" y="3.81" drill="0.9" shape="long"/>
+<pad name="CLK" x="-8.89" y="1.27" drill="0.9" shape="long"/>
+<pad name="DI" x="-8.89" y="-1.27" drill="0.9" shape="long"/>
+<pad name="DO" x="-8.89" y="-3.81" drill="0.9" shape="long"/>
+<pad name="WP" x="-8.89" y="-6.35" drill="0.9" shape="long"/>
+<pad name="HOLD" x="-8.89" y="-8.89" drill="0.9" shape="long"/>
 <wire x1="-11.43" y1="10.16" x2="-11.43" y2="-10.16" width="0.127" layer="21"/>
 <wire x1="-11.43" y1="-10.16" x2="10.16" y2="-10.16" width="0.127" layer="21"/>
 <wire x1="10.16" y1="-10.16" x2="10.16" y2="10.16" width="0.127" layer="21"/>
@@ -107,23 +107,23 @@ V2.0</text>
 <text x="6.35" y="-5.08" size="1.27" layer="21" rot="R90">Flash Memory</text>
 </package>
 <package name="BLUETOOTH_FOOTPRINT">
-<pad name="KEY" x="-8.89" y="8.89" drill="0.6" shape="long"/>
-<pad name="RXD" x="-8.89" y="6.35" drill="0.6" shape="long"/>
-<pad name="TXD" x="-8.89" y="3.81" drill="0.6" shape="long"/>
-<pad name="5V" x="-8.89" y="1.27" drill="0.6" shape="long"/>
-<pad name="+3.3" x="-8.89" y="-1.27" drill="0.6" shape="long"/>
-<pad name="GND" x="-8.89" y="-3.81" drill="0.6" shape="long"/>
-<wire x1="-11.43" y1="10.16" x2="-11.43" y2="-5.08" width="0.127" layer="21"/>
-<wire x1="-11.43" y1="-5.08" x2="24.13" y2="-5.08" width="0.127" layer="21"/>
-<wire x1="24.13" y1="-5.08" x2="24.13" y2="10.16" width="0.127" layer="21"/>
-<wire x1="24.13" y1="10.16" x2="-11.43" y2="10.16" width="0.127" layer="21"/>
-<text x="-6.35" y="1.27" size="1.27" layer="21">5V</text>
-<text x="-6.35" y="8.89" size="1.27" layer="21">Key</text>
-<text x="-6.35" y="6.35" size="1.27" layer="21">RxD</text>
-<text x="-6.35" y="3.81" size="1.27" layer="21">TxD</text>
-<text x="-6.35" y="-1.27" size="1.27" layer="21">+3.3V</text>
-<text x="-6.35" y="-3.81" size="1.27" layer="21">GND</text>
-<text x="6.35" y="6.35" size="1.27" layer="21">Bluetooth
+<pad name="KEY" x="-15.24" y="6.35" drill="0.9" shape="long"/>
+<pad name="RXD" x="-15.24" y="3.81" drill="0.9" shape="long"/>
+<pad name="TXD" x="-15.24" y="1.27" drill="0.9" shape="long"/>
+<pad name="5V" x="-15.24" y="-1.27" drill="0.9" shape="long"/>
+<pad name="+3.3" x="-15.24" y="-3.81" drill="0.9" shape="long"/>
+<pad name="GND" x="-15.24" y="-6.35" drill="0.9" shape="long"/>
+<wire x1="-17.78" y1="7.62" x2="-17.78" y2="-7.62" width="0.127" layer="21"/>
+<wire x1="-17.78" y1="-7.62" x2="17.78" y2="-7.62" width="0.127" layer="21"/>
+<wire x1="17.78" y1="-7.62" x2="17.78" y2="7.62" width="0.127" layer="21"/>
+<wire x1="17.78" y1="7.62" x2="-17.78" y2="7.62" width="0.127" layer="21"/>
+<text x="-12.7" y="-1.27" size="1.27" layer="21">5V</text>
+<text x="-12.7" y="6.35" size="1.27" layer="21">Key</text>
+<text x="-12.7" y="3.81" size="1.27" layer="21">RxD</text>
+<text x="-12.7" y="1.27" size="1.27" layer="21">TxD</text>
+<text x="-12.7" y="-3.81" size="1.27" layer="21">+3.3V</text>
+<text x="-12.7" y="-6.35" size="1.27" layer="21">GND</text>
+<text x="3.81" y="-1.27" size="1.27" layer="21">Bluetooth
 HC-05</text>
 </package>
 <package name="SSR_FOOTPRINT">
@@ -142,12 +142,12 @@ HC-05</text>
 <text x="-7.62" y="-2.54" size="0.8128" layer="21">SSR G3MB-202P-5VDC</text>
 </package>
 <package name="SD_CARD_READER_FOOTPRINT">
-<pad name="GND" x="-17.78" y="6.35" drill="0.6" shape="long"/>
-<pad name="+3.3" x="-17.78" y="3.81" drill="0.6" shape="long"/>
-<pad name="MISO" x="-17.78" y="1.27" drill="0.6" shape="long"/>
-<pad name="MOSI" x="-17.78" y="-1.27" drill="0.6" shape="long"/>
-<pad name="SCK" x="-17.78" y="-3.81" drill="0.6" shape="long"/>
-<pad name="CS" x="-17.78" y="-6.35" drill="0.6" shape="long"/>
+<pad name="GND" x="-17.78" y="6.35" drill="0.9" shape="long"/>
+<pad name="+3.3" x="-17.78" y="3.81" drill="0.9" shape="long"/>
+<pad name="MISO" x="-17.78" y="1.27" drill="0.9" shape="long"/>
+<pad name="MOSI" x="-17.78" y="-1.27" drill="0.9" shape="long"/>
+<pad name="SCK" x="-17.78" y="-3.81" drill="0.9" shape="long"/>
+<pad name="CS" x="-17.78" y="-6.35" drill="0.9" shape="long"/>
 <wire x1="-20.32" y1="11.43" x2="20.32" y2="11.43" width="0.1524" layer="21"/>
 <wire x1="20.32" y1="11.43" x2="20.32" y2="-11.43" width="0.1524" layer="21"/>
 <wire x1="20.32" y1="-11.43" x2="-20.32" y2="-11.43" width="0.1524" layer="21"/>
@@ -158,7 +158,7 @@ HC-05</text>
 <text x="-16.51" y="-1.27" size="0.6096" layer="21">MOSI</text>
 <text x="-16.51" y="-3.81" size="0.6096" layer="21">SCK</text>
 <text x="-16.51" y="-6.35" size="0.6096" layer="21">CS</text>
-<text x="-2.54" y="3.81" size="1.016" layer="21">uSD Card
+<text x="-5.08" y="-2.54" size="2.1844" layer="21">uSD Card
 Reader</text>
 </package>
 <package name="ARDUINOMICRO_FOOTPRINT">
