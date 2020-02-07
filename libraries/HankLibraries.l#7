@@ -127,19 +127,19 @@ V2.0</text>
 HC-05</text>
 </package>
 <package name="SSR_FOOTPRINT">
-<pad name="4" x="-6.35" y="0" drill="0.6" diameter="1.4224" shape="long" rot="R90"/>
-<pad name="3" x="-3.81" y="0" drill="0.6" diameter="1.4224" shape="long" rot="R90"/>
-<pad name="2" x="1.27" y="0" drill="0.6" diameter="1.9304" shape="long" rot="R90"/>
+<pad name="4" x="-10.16" y="0" drill="0.6" diameter="1.4224" shape="long" rot="R90"/>
+<pad name="3" x="-7.62" y="0" drill="0.6" diameter="1.4224" shape="long" rot="R90"/>
+<pad name="2" x="3.81" y="0" drill="0.6" diameter="1.9304" shape="long" rot="R90"/>
 <pad name="1" x="10.16" y="0" drill="0.6" diameter="1.9304" shape="long" rot="R90"/>
-<wire x1="-8.89" y1="2.54" x2="-8.89" y2="-2.54" width="0.1524" layer="21"/>
-<wire x1="-8.89" y1="-2.54" x2="12.7" y2="-2.54" width="0.1524" layer="21"/>
+<wire x1="-12.7" y1="2.54" x2="-12.7" y2="-2.54" width="0.1524" layer="21"/>
+<wire x1="-12.7" y1="-2.54" x2="12.7" y2="-2.54" width="0.1524" layer="21"/>
 <wire x1="12.7" y1="-2.54" x2="12.7" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="12.7" y1="2.54" x2="-8.89" y2="2.54" width="0.1524" layer="21"/>
-<text x="-2.54" y="1.27" size="0.8128" layer="21">3</text>
+<wire x1="12.7" y1="2.54" x2="-12.7" y2="2.54" width="0.1524" layer="21"/>
+<text x="-6.35" y="1.27" size="0.8128" layer="21">3</text>
 <text x="2.54" y="1.27" size="0.8128" layer="21">2</text>
-<text x="11.43" y="1.27" size="0.8128" layer="21">1</text>
-<text x="-7.62" y="1.27" size="0.8128" layer="21">4</text>
-<text x="-3.81" y="-2.54" size="0.8128" layer="21">SSR G3MB-202P-5VDC</text>
+<text x="7.62" y="1.27" size="0.8128" layer="21">1</text>
+<text x="-11.43" y="1.27" size="0.8128" layer="21">4</text>
+<text x="-7.62" y="-2.54" size="0.8128" layer="21">SSR G3MB-202P-5VDC</text>
 </package>
 <package name="SD_CARD_READER_FOOTPRINT">
 <pad name="GND" x="-17.78" y="6.35" drill="0.6" shape="long"/>

@@ -129,7 +129,7 @@ HC-05</text>
 <package name="SSR_FOOTPRINT">
 <pad name="4" x="-10.16" y="0" drill="0.6" diameter="1.4224" shape="long" rot="R90"/>
 <pad name="3" x="-7.62" y="0" drill="0.6" diameter="1.4224" shape="long" rot="R90"/>
-<pad name="2" x="3.81" y="0" drill="0.6" diameter="1.9304" shape="long" rot="R90"/>
+<pad name="2" x="2.54" y="0" drill="0.6" diameter="1.9304" shape="long" rot="R90"/>
 <pad name="1" x="10.16" y="0" drill="0.6" diameter="1.9304" shape="long" rot="R90"/>
 <wire x1="-12.7" y1="2.54" x2="-12.7" y2="-2.54" width="0.1524" layer="21"/>
 <wire x1="-12.7" y1="-2.54" x2="12.7" y2="-2.54" width="0.1524" layer="21"/>

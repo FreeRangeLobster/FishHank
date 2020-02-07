@@ -84,14 +84,14 @@ V2.0</text>
 <circle x="0" y="-1.27" radius="15.24" width="0.127" layer="21"/>
 </package>
 <package name="FLASHMEMORY_FOOTPRINT">
-<pad name="VCC" x="-8.89" y="8.89" drill="0.6" shape="long"/>
-<pad name="GND" x="-8.89" y="6.35" drill="0.6" shape="long"/>
-<pad name="CS" x="-8.89" y="3.81" drill="0.6" shape="long"/>
-<pad name="CLK" x="-8.89" y="1.27" drill="0.6" shape="long"/>
-<pad name="DI" x="-8.89" y="-1.27" drill="0.6" shape="long"/>
-<pad name="DO" x="-8.89" y="-3.81" drill="0.6" shape="long"/>
-<pad name="WP" x="-8.89" y="-6.35" drill="0.6" shape="long"/>
-<pad name="HOLD" x="-8.89" y="-8.89" drill="0.6" shape="long"/>
+<pad name="VCC" x="-8.89" y="8.89" drill="0.9" shape="long"/>
+<pad name="GND" x="-8.89" y="6.35" drill="0.9" shape="long"/>
+<pad name="CS" x="-8.89" y="3.81" drill="0.9" shape="long"/>
+<pad name="CLK" x="-8.89" y="1.27" drill="0.9" shape="long"/>
+<pad name="DI" x="-8.89" y="-1.27" drill="0.9" shape="long"/>
+<pad name="DO" x="-8.89" y="-3.81" drill="0.9" shape="long"/>
+<pad name="WP" x="-8.89" y="-6.35" drill="0.9" shape="long"/>
+<pad name="HOLD" x="-8.89" y="-8.89" drill="0.9" shape="long"/>
 <wire x1="-11.43" y1="10.16" x2="-11.43" y2="-10.16" width="0.127" layer="21"/>
 <wire x1="-11.43" y1="-10.16" x2="10.16" y2="-10.16" width="0.127" layer="21"/>
 <wire x1="10.16" y1="-10.16" x2="10.16" y2="10.16" width="0.127" layer="21"/>

@@ -107,23 +107,23 @@ V2.0</text>
 <text x="6.35" y="-5.08" size="1.27" layer="21" rot="R90">Flash Memory</text>
 </package>
 <package name="BLUETOOTH_FOOTPRINT">
-<pad name="KEY" x="-8.89" y="8.89" drill="0.6" shape="long"/>
-<pad name="RXD" x="-8.89" y="6.35" drill="0.6" shape="long"/>
-<pad name="TXD" x="-8.89" y="3.81" drill="0.6" shape="long"/>
-<pad name="5V" x="-8.89" y="1.27" drill="0.6" shape="long"/>
-<pad name="+3.3" x="-8.89" y="-1.27" drill="0.6" shape="long"/>
-<pad name="GND" x="-8.89" y="-3.81" drill="0.6" shape="long"/>
-<wire x1="-11.43" y1="10.16" x2="-11.43" y2="-5.08" width="0.127" layer="21"/>
-<wire x1="-11.43" y1="-5.08" x2="24.13" y2="-5.08" width="0.127" layer="21"/>
-<wire x1="24.13" y1="-5.08" x2="24.13" y2="10.16" width="0.127" layer="21"/>
-<wire x1="24.13" y1="10.16" x2="-11.43" y2="10.16" width="0.127" layer="21"/>
-<text x="-6.35" y="1.27" size="1.27" layer="21">5V</text>
-<text x="-6.35" y="8.89" size="1.27" layer="21">Key</text>
-<text x="-6.35" y="6.35" size="1.27" layer="21">RxD</text>
-<text x="-6.35" y="3.81" size="1.27" layer="21">TxD</text>
-<text x="-6.35" y="-1.27" size="1.27" layer="21">+3.3V</text>
-<text x="-6.35" y="-3.81" size="1.27" layer="21">GND</text>
-<text x="6.35" y="6.35" size="1.27" layer="21">Bluetooth
+<pad name="KEY" x="-15.24" y="6.35" drill="0.9" shape="long"/>
+<pad name="RXD" x="-15.24" y="3.81" drill="0.9" shape="long"/>
+<pad name="TXD" x="-15.24" y="1.27" drill="0.9" shape="long"/>
+<pad name="5V" x="-15.24" y="-1.27" drill="0.9" shape="long"/>
+<pad name="+3.3" x="-15.24" y="-3.81" drill="0.9" shape="long"/>
+<pad name="GND" x="-15.24" y="-6.35" drill="0.9" shape="long"/>
+<wire x1="-17.78" y1="7.62" x2="-17.78" y2="-7.62" width="0.127" layer="21"/>
+<wire x1="-17.78" y1="-7.62" x2="17.78" y2="-7.62" width="0.127" layer="21"/>
+<wire x1="17.78" y1="-7.62" x2="17.78" y2="7.62" width="0.127" layer="21"/>
+<wire x1="17.78" y1="7.62" x2="-17.78" y2="7.62" width="0.127" layer="21"/>
+<text x="-12.7" y="-1.27" size="1.27" layer="21">5V</text>
+<text x="-12.7" y="6.35" size="1.27" layer="21">Key</text>
+<text x="-12.7" y="3.81" size="1.27" layer="21">RxD</text>
+<text x="-12.7" y="1.27" size="1.27" layer="21">TxD</text>
+<text x="-12.7" y="-3.81" size="1.27" layer="21">+3.3V</text>
+<text x="-12.7" y="-6.35" size="1.27" layer="21">GND</text>
+<text x="3.81" y="-1.27" size="1.27" layer="21">Bluetooth
 HC-05</text>
 </package>
 <package name="SSR_FOOTPRINT">

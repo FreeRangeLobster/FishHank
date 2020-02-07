@@ -142,12 +142,12 @@ HC-05</text>
 <text x="-7.62" y="-2.54" size="0.8128" layer="21">SSR G3MB-202P-5VDC</text>
 </package>
 <package name="SD_CARD_READER_FOOTPRINT">
-<pad name="GND" x="-17.78" y="6.35" drill="0.6" shape="long"/>
-<pad name="+3.3" x="-17.78" y="3.81" drill="0.6" shape="long"/>
-<pad name="MISO" x="-17.78" y="1.27" drill="0.6" shape="long"/>
-<pad name="MOSI" x="-17.78" y="-1.27" drill="0.6" shape="long"/>
-<pad name="SCK" x="-17.78" y="-3.81" drill="0.6" shape="long"/>
-<pad name="CS" x="-17.78" y="-6.35" drill="0.6" shape="long"/>
+<pad name="GND" x="-17.78" y="6.35" drill="0.9" shape="long"/>
+<pad name="+3.3" x="-17.78" y="3.81" drill="0.9" shape="long"/>
+<pad name="MISO" x="-17.78" y="1.27" drill="0.9" shape="long"/>
+<pad name="MOSI" x="-17.78" y="-1.27" drill="0.9" shape="long"/>
+<pad name="SCK" x="-17.78" y="-3.81" drill="0.9" shape="long"/>
+<pad name="CS" x="-17.78" y="-6.35" drill="0.9" shape="long"/>
 <wire x1="-20.32" y1="11.43" x2="20.32" y2="11.43" width="0.1524" layer="21"/>
 <wire x1="20.32" y1="11.43" x2="20.32" y2="-11.43" width="0.1524" layer="21"/>
 <wire x1="20.32" y1="-11.43" x2="-20.32" y2="-11.43" width="0.1524" layer="21"/>

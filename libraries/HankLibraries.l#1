@@ -66,7 +66,7 @@ Developed to handle Digital IO of a fishtank controller</description>
 <pad name="SDA" x="11.43" y="-5.08" drill="0.9" shape="long"/>
 <pad name="+3.3V" x="11.43" y="0" drill="0.9" shape="long"/>
 <pad name="GND" x="11.43" y="2.54" drill="0.9" shape="long"/>
-<text x="0" y="6.35" size="1.27" layer="21" align="center">RTC
+<text x="0" y="6.35" size="2.1844" layer="21" align="center">RTC
 ChronoDot
 V2.0</text>
 <pad name="BAT" x="-11.43" y="2.54" drill="0.9" shape="long"/>

@@ -158,7 +158,7 @@ HC-05</text>
 <text x="-16.51" y="-1.27" size="0.6096" layer="21">MOSI</text>
 <text x="-16.51" y="-3.81" size="0.6096" layer="21">SCK</text>
 <text x="-16.51" y="-6.35" size="0.6096" layer="21">CS</text>
-<text x="-2.54" y="3.81" size="1.016" layer="21">uSD Card
+<text x="-5.08" y="-2.54" size="2.1844" layer="21">uSD Card
 Reader</text>
 </package>
 <package name="ARDUINOMICRO_FOOTPRINT">

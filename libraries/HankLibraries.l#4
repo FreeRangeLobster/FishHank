@@ -62,17 +62,17 @@
 Developed to handle Digital IO of a fishtank controller</description>
 <packages>
 <package name="RTC_FOOTPRINT">
-<pad name="SCL" x="11.43" y="-2.54" drill="0.6" shape="long"/>
-<pad name="SDA" x="11.43" y="-5.08" drill="0.6" shape="long"/>
-<pad name="+3.3V" x="11.43" y="0" drill="0.6" shape="long"/>
-<pad name="GND" x="11.43" y="2.54" drill="0.6" shape="long"/>
+<pad name="SCL" x="11.43" y="-2.54" drill="0.9" shape="long"/>
+<pad name="SDA" x="11.43" y="-5.08" drill="0.9" shape="long"/>
+<pad name="+3.3V" x="11.43" y="0" drill="0.9" shape="long"/>
+<pad name="GND" x="11.43" y="2.54" drill="0.9" shape="long"/>
 <text x="0" y="6.35" size="1.27" layer="21" align="center">RTC
 ChronoDot
 V2.0</text>
-<pad name="BAT" x="-11.43" y="2.54" drill="0.6" shape="long"/>
-<pad name="32K" x="-11.43" y="0" drill="0.6" shape="long"/>
-<pad name="SQW" x="-11.43" y="-2.54" drill="0.6" shape="long"/>
-<pad name="RST" x="-11.43" y="-5.08" drill="0.6" shape="long"/>
+<pad name="BAT" x="-11.43" y="2.54" drill="0.9" shape="long"/>
+<pad name="32K" x="-11.43" y="0" drill="0.9" shape="long"/>
+<pad name="SQW" x="-11.43" y="-2.54" drill="0.9" shape="long"/>
+<pad name="RST" x="-11.43" y="-5.08" drill="0.9" shape="long"/>
 <text x="-8.89" y="2.54" size="1.016" layer="21" align="center">Bat</text>
 <text x="-8.89" y="0" size="1.016" layer="21" align="center">32K</text>
 <text x="-8.89" y="-2.54" size="1.016" layer="21" align="center">SQW</text>
