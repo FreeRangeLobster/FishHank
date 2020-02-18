@@ -182,37 +182,37 @@ Developed to handle Digital IO of a fishtank controller</description>
 <wire x1="-17.78" y1="-7.62" x2="17.78" y2="-7.62" width="0.127" layer="21"/>
 <wire x1="17.78" y1="-7.62" x2="17.78" y2="7.62" width="0.127" layer="21"/>
 <wire x1="17.78" y1="7.62" x2="-17.78" y2="7.62" width="0.127" layer="21"/>
-<text x="-12.7" y="-1.27" size="1.27" layer="21">5V</text>
-<text x="-12.7" y="6.35" size="1.27" layer="21">Key</text>
-<text x="-12.7" y="3.81" size="1.27" layer="21">RxD</text>
-<text x="-12.7" y="1.27" size="1.27" layer="21">TxD</text>
-<text x="-12.7" y="-3.81" size="1.27" layer="21">+3.3V</text>
-<text x="-12.7" y="-6.35" size="1.27" layer="21">GND</text>
-<text x="3.81" y="-1.27" size="1.27" layer="21">Bluetooth
+<text x="-12.7" y="-1.905" size="1.016" layer="21">5V</text>
+<text x="-12.7" y="5.715" size="1.016" layer="21">Key</text>
+<text x="-12.7" y="3.175" size="1.016" layer="21">RxD</text>
+<text x="-12.7" y="0.635" size="1.016" layer="21">TxD</text>
+<text x="-12.7" y="-4.445" size="1.016" layer="21">+3.3V</text>
+<text x="-12.7" y="-6.985" size="1.016" layer="21">GND</text>
+<text x="2.54" y="-5.715" size="2.1844" layer="21">Bluetooth
 HC-05</text>
 </package>
 <package name="FLASHMEMORY_FOOTPRINT">
-<pad name="VCC" x="-8.89" y="8.89" drill="0.9" shape="long"/>
-<pad name="GND" x="-8.89" y="6.35" drill="0.9" shape="long"/>
-<pad name="CS" x="-8.89" y="3.81" drill="0.9" shape="long"/>
-<pad name="CLK" x="-8.89" y="1.27" drill="0.9" shape="long"/>
-<pad name="DI" x="-8.89" y="-1.27" drill="0.9" shape="long"/>
-<pad name="DO" x="-8.89" y="-3.81" drill="0.9" shape="long"/>
-<pad name="WP" x="-8.89" y="-6.35" drill="0.9" shape="long"/>
-<pad name="HOLD" x="-8.89" y="-8.89" drill="0.9" shape="long"/>
-<wire x1="-11.43" y1="10.16" x2="-11.43" y2="-10.16" width="0.127" layer="21"/>
-<wire x1="-11.43" y1="-10.16" x2="10.16" y2="-10.16" width="0.127" layer="21"/>
-<wire x1="10.16" y1="-10.16" x2="10.16" y2="10.16" width="0.127" layer="21"/>
-<wire x1="10.16" y1="10.16" x2="-11.43" y2="10.16" width="0.127" layer="21"/>
-<text x="-6.35" y="1.27" size="1.27" layer="21">CLK</text>
-<text x="-6.35" y="8.89" size="1.27" layer="21">+3.3V</text>
-<text x="-6.35" y="6.35" size="1.27" layer="21">GND</text>
-<text x="-6.35" y="3.81" size="1.27" layer="21">CS</text>
-<text x="-6.35" y="-1.27" size="1.27" layer="21">DI</text>
-<text x="-6.35" y="-3.81" size="1.27" layer="21">DO</text>
-<text x="-6.35" y="-6.35" size="1.27" layer="21">WP</text>
-<text x="-6.35" y="-8.89" size="1.27" layer="21">Hold</text>
-<text x="6.35" y="-5.08" size="1.27" layer="21" rot="R90">Flash Memory</text>
+<pad name="VCC" x="-6.35" y="8.89" drill="0.9" shape="long"/>
+<pad name="GND" x="-6.35" y="6.35" drill="0.9" shape="long"/>
+<pad name="CS" x="-6.35" y="3.81" drill="0.9" shape="long"/>
+<pad name="CLK" x="-6.35" y="1.27" drill="0.9" shape="long"/>
+<pad name="DI" x="-6.35" y="-1.27" drill="0.9" shape="long"/>
+<pad name="DO" x="-6.35" y="-3.81" drill="0.9" shape="long"/>
+<pad name="WP" x="-6.35" y="-6.35" drill="0.9" shape="long"/>
+<pad name="HOLD" x="-6.35" y="-8.89" drill="0.9" shape="long"/>
+<wire x1="-8.89" y1="10.16" x2="-8.89" y2="-11.43" width="0.127" layer="21"/>
+<wire x1="-8.89" y1="-11.43" x2="3.81" y2="-11.43" width="0.127" layer="21"/>
+<wire x1="3.81" y1="-11.43" x2="3.81" y2="10.16" width="0.127" layer="21"/>
+<wire x1="3.81" y1="10.16" x2="-8.89" y2="10.16" width="0.127" layer="21"/>
+<text x="-3.81" y="0.635" size="1.016" layer="21">CLK</text>
+<text x="-3.81" y="8.255" size="1.016" layer="21">+3.3V</text>
+<text x="-3.81" y="5.715" size="1.016" layer="21">GND</text>
+<text x="-3.81" y="3.175" size="1.016" layer="21">CS</text>
+<text x="-3.81" y="-1.905" size="1.016" layer="21">DI</text>
+<text x="-3.81" y="-4.445" size="1.016" layer="21">DO</text>
+<text x="-3.81" y="-6.985" size="1.016" layer="21">WP</text>
+<text x="-3.81" y="-9.525" size="1.016" layer="21">Hold</text>
+<text x="2.54" y="-9.525" size="2.1844" layer="21" rot="R90">Flash Memory</text>
 </package>
 <package name="RTC_FOOTPRINT">
 <pad name="SCL" x="11.43" y="-2.54" drill="0.9" shape="long"/>
@@ -226,10 +226,10 @@ V2.0</text>
 <pad name="32K" x="-11.43" y="0" drill="0.9" shape="long"/>
 <pad name="SQW" x="-11.43" y="-2.54" drill="0.9" shape="long"/>
 <pad name="RST" x="-11.43" y="-5.08" drill="0.9" shape="long"/>
-<text x="-8.89" y="2.54" size="1.016" layer="21" align="center">Bat</text>
-<text x="-8.89" y="0" size="1.016" layer="21" align="center">32K</text>
-<text x="-8.89" y="-2.54" size="1.016" layer="21" align="center">SQW</text>
-<text x="-8.89" y="-5.08" size="1.016" layer="21" align="center">RST</text>
+<text x="-7.62" y="2.54" size="1.016" layer="21" align="center">Bat</text>
+<text x="-7.62" y="0" size="1.016" layer="21" align="center">32K</text>
+<text x="-6.985" y="-2.54" size="1.016" layer="21" align="center">SQW</text>
+<text x="-7.62" y="-5.08" size="1.016" layer="21" align="center">RST</text>
 <text x="7.62" y="2.54" size="1.016" layer="21" align="center">GND</text>
 <text x="7.62" y="0" size="1.016" layer="21" align="center">3.3V</text>
 <text x="7.62" y="-2.54" size="1.016" layer="21" align="center">SCL</text>
@@ -247,20 +247,20 @@ V2.0</text>
 <wire x1="20.32" y1="11.43" x2="20.32" y2="-11.43" width="0.1524" layer="21"/>
 <wire x1="20.32" y1="-11.43" x2="-20.32" y2="-11.43" width="0.1524" layer="21"/>
 <wire x1="-20.32" y1="-11.43" x2="-20.32" y2="11.43" width="0.1524" layer="21"/>
-<text x="-16.51" y="6.35" size="0.6096" layer="21">GND</text>
-<text x="-16.51" y="3.81" size="0.6096" layer="21">+3.3V</text>
-<text x="-16.51" y="1.27" size="0.6096" layer="21">MISO</text>
-<text x="-16.51" y="-1.27" size="0.6096" layer="21">MOSI</text>
-<text x="-16.51" y="-3.81" size="0.6096" layer="21">SCK</text>
-<text x="-16.51" y="-6.35" size="0.6096" layer="21">CS</text>
+<text x="-15.875" y="5.715" size="1.016" layer="21">GND</text>
+<text x="-15.875" y="3.175" size="1.016" layer="21">+3.3V</text>
+<text x="-15.875" y="0.635" size="1.016" layer="21">MISO</text>
+<text x="-15.875" y="-1.905" size="1.016" layer="21">MOSI</text>
+<text x="-15.875" y="-4.445" size="1.016" layer="21">SCK</text>
+<text x="-15.875" y="-6.985" size="1.016" layer="21">CS</text>
 <text x="-5.08" y="-2.54" size="2.1844" layer="21">uSD Card
 Reader</text>
 </package>
 <package name="SSR_FOOTPRINT">
-<pad name="4" x="-10.16" y="0" drill="0.6" diameter="1.4224" shape="long" rot="R90"/>
-<pad name="3" x="-7.62" y="0" drill="0.6" diameter="1.4224" shape="long" rot="R90"/>
-<pad name="2" x="2.54" y="0" drill="0.6" diameter="1.9304" shape="long" rot="R90"/>
-<pad name="1" x="10.16" y="0" drill="0.6" diameter="1.9304" shape="long" rot="R90"/>
+<pad name="4" x="-10.16" y="0" drill="0.9" diameter="1.6764" shape="long" rot="R90"/>
+<pad name="3" x="-7.62" y="0" drill="0.9" diameter="1.6764" shape="long" rot="R90"/>
+<pad name="2" x="2.54" y="0" drill="0.9" diameter="2.1844" shape="long" rot="R90"/>
+<pad name="1" x="10.16" y="0" drill="0.9" diameter="2.1844" shape="long" rot="R90"/>
 <wire x1="-12.7" y1="2.54" x2="-12.7" y2="-2.54" width="0.1524" layer="21"/>
 <wire x1="-12.7" y1="-2.54" x2="12.7" y2="-2.54" width="0.1524" layer="21"/>
 <wire x1="12.7" y1="-2.54" x2="12.7" y2="2.54" width="0.1524" layer="21"/>
@@ -18432,21 +18432,21 @@ Source: 008-0260-0_E.pdf</description>
 <part name="GND20" library="SparkFun" deviceset="GND" device=""/>
 <part name="SSR2" library="HankLibraries" deviceset="SSR" device=""/>
 <part name="RO23" library="rcl" deviceset="R-US_" device="0207/10" value="1k"/>
-<part name="L_O2" library="led" deviceset="LED" device="3MM"/>
+<part name="LO2" library="led" deviceset="LED" device="3MM"/>
 <part name="P+7" library="supply1" deviceset="+5V" device=""/>
 <part name="GND21" library="SparkFun" deviceset="GND" device=""/>
 <part name="RO21" library="rcl" deviceset="R-US_" device="0207/10" value="150"/>
 <part name="GND22" library="SparkFun" deviceset="GND" device=""/>
 <part name="SSR3" library="HankLibraries" deviceset="SSR" device=""/>
 <part name="RO33" library="rcl" deviceset="R-US_" device="0207/10" value="1k"/>
-<part name="L_O3" library="led" deviceset="LED" device="3MM"/>
+<part name="LO3" library="led" deviceset="LED" device="3MM"/>
 <part name="P+8" library="supply1" deviceset="+5V" device=""/>
 <part name="GND23" library="SparkFun" deviceset="GND" device=""/>
 <part name="RO31" library="rcl" deviceset="R-US_" device="0207/10" value="150"/>
 <part name="GND24" library="SparkFun" deviceset="GND" device=""/>
 <part name="SSR4" library="HankLibraries" deviceset="SSR" device=""/>
 <part name="RO43" library="rcl" deviceset="R-US_" device="0207/10" value="1k"/>
-<part name="L_O4" library="led" deviceset="LED" device="3MM"/>
+<part name="LO4" library="led" deviceset="LED" device="3MM"/>
 <part name="P+9" library="supply1" deviceset="+5V" device=""/>
 <part name="GND25" library="SparkFun" deviceset="GND" device=""/>
 <part name="RO41" library="rcl" deviceset="R-US_" device="0207/10" value="10k"/>
@@ -18461,8 +18461,8 @@ Source: 008-0260-0_E.pdf</description>
 <part name="C_OLED" library="rcl" deviceset="C-US" device="025-024X044" value="0.1uF"/>
 <part name="GND5" library="SparkFun" deviceset="GND" device=""/>
 <part name="+3V6" library="supply1" deviceset="+3V3" device=""/>
-<part name="J_3.3V" library="con-molex" deviceset="22-23-2021" device="" value="Jumper"/>
-<part name="J_5.5V" library="con-molex" deviceset="22-23-2021" device="" value="Jumper"/>
+<part name="J_5V" library="con-molex" deviceset="22-23-2021" device="" value="Jumper"/>
+<part name="J_3V3V" library="con-molex" deviceset="22-23-2021" device="" value="Jumper"/>
 <part name="+3V7" library="supply1" deviceset="+3V3" device=""/>
 <part name="P+10" library="supply1" deviceset="+5V" device=""/>
 <part name="GND7" library="SparkFun" deviceset="GND" device=""/>
@@ -18480,14 +18480,14 @@ Source: 008-0260-0_E.pdf</description>
 <part name="RI8" library="rcl" deviceset="R-US_" device="0207/10" value="330"/>
 <part name="GND28" library="SparkFun" deviceset="GND" device=""/>
 <part name="IN_BUTTONS" library="con-lstb" deviceset="MA09-1" device="" value="User Inputs"/>
-<part name="F1" library="fuse" deviceset="FUSE" device="PICOFUSE" value="SM 092 A0 2A"/>
-<part name="F2" library="fuse" deviceset="FUSE" device="PICOFUSE" value="SM 092 A0 2A"/>
-<part name="F3" library="fuse" deviceset="FUSE" device="PICOFUSE" value="SM 092 A0 2A"/>
-<part name="F4" library="fuse" deviceset="FUSE" device="PICOFUSE" value="SM 092 A0 2A"/>
-<part name="F5" library="fuse" deviceset="FUSE" device="PICOFUSE" value="SM 092 A0 2A"/>
-<part name="F6" library="fuse" deviceset="FUSE" device="PICOFUSE" value="SM 092 A0 2A"/>
-<part name="F7" library="fuse" deviceset="FUSE" device="PICOFUSE" value="SM 092 A0 2A"/>
-<part name="F8" library="fuse" deviceset="FUSE" device="PICOFUSE" value="SM 092 A0 2A"/>
+<part name="FUSE1" library="fuse" deviceset="FUSE" device="PICOFUSE" value="SM 092 A0 2A"/>
+<part name="FUSE2" library="fuse" deviceset="FUSE" device="PICOFUSE" value="SM 092 A0 2A"/>
+<part name="FUSE3" library="fuse" deviceset="FUSE" device="PICOFUSE" value="SM 092 A0 2A"/>
+<part name="FUSE4" library="fuse" deviceset="FUSE" device="PICOFUSE" value="SM 092 A0 2A"/>
+<part name="FUSE5" library="fuse" deviceset="FUSE" device="PICOFUSE" value="SM 092 A0 2A"/>
+<part name="FUSE6" library="fuse" deviceset="FUSE" device="PICOFUSE" value="SM 092 A0 2A"/>
+<part name="FUSE7" library="fuse" deviceset="FUSE" device="PICOFUSE" value="SM 092 A0 2A"/>
+<part name="FUSE8" library="fuse" deviceset="FUSE" device="PICOFUSE" value="SM 092 A0 2A"/>
 <part name="P+11" library="supply1" deviceset="+5V" device=""/>
 <part name="GND27" library="SparkFun" deviceset="GND" device=""/>
 <part name="+3V11" library="supply1" deviceset="+3V3" device=""/>
@@ -18522,7 +18522,7 @@ Source: 008-0260-0_E.pdf</description>
 <part name="GND30" library="SparkFun" deviceset="GND" device=""/>
 <part name="REG_3V3" library="AMS117" deviceset="AMS1117" device=""/>
 <part name="REG_5V" library="AMS117" deviceset="AMS1117" device=""/>
-<part name="IC3" library="atmega328" deviceset="ATMEGA328*P" device="" technology="-20"/>
+<part name="IO_UC" library="atmega328" deviceset="ATMEGA328*P" device="" technology="-20"/>
 <part name="C_UXTAL1" library="rcl" deviceset="C-US" device="025-024X044" value="0.1uF"/>
 <part name="C_UXTAL2" library="rcl" deviceset="C-US" device="025-024X044" value="0.1uF"/>
 <part name="C_U" library="rcl" deviceset="C-US" device="025-024X044" value="0.1uF"/>
@@ -18540,33 +18540,24 @@ Source: 008-0260-0_E.pdf</description>
 <part name="D_URES" library="diode" deviceset="1N4148" device="DO35-7"/>
 <part name="GND3" library="SparkFun" deviceset="GND" device=""/>
 <part name="XTALU" library="crystal" deviceset="CRYSTAL" device="HC49S" value="16M"/>
-<part name="SV4" library="con-lstb" deviceset="MA03-2" device=""/>
+<part name="JTAG" library="con-lstb" deviceset="MA03-2" device=""/>
 <part name="RDX" library="rcl" deviceset="R-US_" device="0207/10" value="10k"/>
-<part name="X1" library="con-ptr500" deviceset="AK500/5" device="" value="Sockets 1"/>
-<part name="X2" library="con-ptr500" deviceset="AK500/5" device="" value="Sockets 2"/>
+<part name="SKT1" library="con-ptr500" deviceset="AK500/5" device="" value="Sockets 1"/>
+<part name="SKT2" library="con-ptr500" deviceset="AK500/5" device="" value="Sockets 2"/>
 <part name="D_PSU" library="diode" deviceset="1N4148" device="DO35-7"/>
-<part name="S1" library="switch-tact" deviceset="DTS-6" device=""/>
+<part name="U_RESET" library="switch-tact" deviceset="DTS-6" device=""/>
 <part name="D_PSU1" library="diode" deviceset="1N4148" device="DO35-7"/>
 <part name="D_PSU2" library="diode" deviceset="1N4148" device="DO35-7"/>
-<part name="SV3" library="con-lstb" deviceset="MA10-2" device=""/>
+<part name="BREAKOUT" library="con-lstb" deviceset="MA10-2" device=""/>
 <part name="P+1" library="supply1" deviceset="+5V" device=""/>
 <part name="P+16" library="supply1" deviceset="+5V" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<text x="297.18" y="25.4" size="1.778" layer="95">Released under the Creative Commons Attribution Share-Alike 3.0 License</text>
-<text x="302.26" y="30.48" size="1.778" layer="95">https://github.com/FreeRangeLobster/FishHank</text>
-<text x="-96.52" y="160.02" size="1.778" layer="95">TO DO:
-+DONE Add connections to Microcontroller
--Add 3.3V Power Supply Regulator
--Add 5V low drop regulator
-+DONE: Add Temperature Sensor
-+DONE: Add the SSR Circuit
--DONE:Add Fuses SM 092 A0 2A--- RS PN: 116-114
--Add Connector with 8Inputs
-http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
-<text x="297.18" y="30.48" size="1.778" layer="95">Fish tank controller breakout board</text>
+<text x="203.2" y="5.08" size="1.778" layer="95">Released under the Creative Commons Attribution Share-Alike 3.0 License</text>
+<text x="203.2" y="10.16" size="1.778" layer="95">https://github.com/FreeRangeLobster/FishHank</text>
+<text x="203.2" y="15.24" size="1.778" layer="95">Fish tank controller breakout board</text>
 <text x="35.56" y="109.22" size="1.778" layer="91">CTS</text>
 <text x="35.56" y="111.76" size="1.778" layer="91">GND</text>
 <text x="35.56" y="106.68" size="1.778" layer="91">VCC</text>
@@ -18663,7 +18654,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 </instance>
 <instance part="SSR2" gate="G$1" x="246.38" y="187.96" rot="R90"/>
 <instance part="RO23" gate="G$1" x="220.98" y="182.88" rot="R90"/>
-<instance part="L_O2" gate="G$1" x="220.98" y="175.26"/>
+<instance part="LO2" gate="G$1" x="220.98" y="175.26"/>
 <instance part="P+7" gate="1" x="220.98" y="193.04"/>
 <instance part="GND21" gate="1" x="218.44" y="147.32" smashed="yes">
 <attribute name="VALUE" x="215.9" y="144.78" size="1.778" layer="96"/>
@@ -18674,7 +18665,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 </instance>
 <instance part="SSR3" gate="G$1" x="246.38" y="134.62" rot="R90"/>
 <instance part="RO33" gate="G$1" x="220.98" y="129.54" rot="R90"/>
-<instance part="L_O3" gate="G$1" x="220.98" y="121.92"/>
+<instance part="LO3" gate="G$1" x="220.98" y="121.92"/>
 <instance part="P+8" gate="1" x="220.98" y="139.7"/>
 <instance part="GND23" gate="1" x="218.44" y="93.98" smashed="yes">
 <attribute name="VALUE" x="215.9" y="91.44" size="1.778" layer="96"/>
@@ -18685,7 +18676,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 </instance>
 <instance part="SSR4" gate="G$1" x="246.38" y="81.28" rot="R90"/>
 <instance part="RO43" gate="G$1" x="220.98" y="76.2" rot="R90"/>
-<instance part="L_O4" gate="G$1" x="220.98" y="68.58"/>
+<instance part="LO4" gate="G$1" x="220.98" y="68.58"/>
 <instance part="P+9" gate="1" x="220.98" y="86.36"/>
 <instance part="GND25" gate="1" x="218.44" y="40.64" smashed="yes">
 <attribute name="VALUE" x="215.9" y="38.1" size="1.778" layer="96"/>
@@ -18709,10 +18700,10 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <attribute name="VALUE" x="93.98" y="187.96" size="1.778" layer="96" rot="MR0"/>
 </instance>
 <instance part="+3V6" gate="G$1" x="83.82" y="210.82"/>
-<instance part="J_3.3V" gate="-1" x="30.48" y="170.18" rot="R90"/>
-<instance part="J_3.3V" gate="-2" x="33.02" y="170.18" rot="R90"/>
-<instance part="J_5.5V" gate="-1" x="38.1" y="165.1" rot="R90"/>
-<instance part="J_5.5V" gate="-2" x="40.64" y="165.1" rot="R90"/>
+<instance part="J_5V" gate="-1" x="30.48" y="170.18" rot="R90"/>
+<instance part="J_5V" gate="-2" x="33.02" y="170.18" rot="R90"/>
+<instance part="J_3V3V" gate="-1" x="38.1" y="165.1" rot="R90"/>
+<instance part="J_3V3V" gate="-2" x="40.64" y="165.1" rot="R90"/>
 <instance part="+3V7" gate="G$1" x="22.86" y="165.1"/>
 <instance part="P+10" gate="1" x="25.4" y="175.26"/>
 <instance part="GND7" gate="1" x="22.86" y="157.48" smashed="yes" rot="MR0">
@@ -18737,14 +18728,14 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <attribute name="VALUE" x="124.46" y="124.46" size="1.778" layer="96"/>
 </instance>
 <instance part="IN_BUTTONS" gate="1" x="180.34" y="154.94" rot="MR0"/>
-<instance part="F1" gate="G$1" x="259.08" y="226.06"/>
-<instance part="F2" gate="G$1" x="259.08" y="175.26"/>
-<instance part="F3" gate="G$1" x="259.08" y="121.92"/>
-<instance part="F4" gate="G$1" x="259.08" y="68.58"/>
-<instance part="F5" gate="G$1" x="340.36" y="228.6"/>
-<instance part="F6" gate="G$1" x="340.36" y="175.26"/>
-<instance part="F7" gate="G$1" x="340.36" y="121.92"/>
-<instance part="F8" gate="G$1" x="340.36" y="66.04"/>
+<instance part="FUSE1" gate="G$1" x="259.08" y="226.06"/>
+<instance part="FUSE2" gate="G$1" x="259.08" y="175.26"/>
+<instance part="FUSE3" gate="G$1" x="259.08" y="121.92"/>
+<instance part="FUSE4" gate="G$1" x="259.08" y="68.58"/>
+<instance part="FUSE5" gate="G$1" x="340.36" y="228.6"/>
+<instance part="FUSE6" gate="G$1" x="340.36" y="175.26"/>
+<instance part="FUSE7" gate="G$1" x="340.36" y="121.92"/>
+<instance part="FUSE8" gate="G$1" x="340.36" y="66.04"/>
 <instance part="P+11" gate="1" x="81.28" y="35.56"/>
 <instance part="GND27" gate="1" x="45.72" y="5.08" smashed="yes">
 <attribute name="VALUE" x="43.18" y="2.54" size="1.778" layer="96"/>
@@ -18787,7 +18778,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 </instance>
 <instance part="REG_3V3" gate="G$1" x="45.72" y="55.88"/>
 <instance part="REG_5V" gate="G$1" x="45.72" y="25.4"/>
-<instance part="IC3" gate="G$1" x="114.3" y="86.36"/>
+<instance part="IO_UC" gate="G$1" x="114.3" y="86.36"/>
 <instance part="C_UXTAL1" gate="G$1" x="73.66" y="96.52" rot="R270"/>
 <instance part="C_UXTAL2" gate="G$1" x="68.58" y="88.9" rot="R270"/>
 <instance part="C_U" gate="G$1" x="86.36" y="81.28"/>
@@ -18815,23 +18806,23 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <attribute name="VALUE" x="68.58" y="99.06" size="1.778" layer="96"/>
 </instance>
 <instance part="XTALU" gate="G$1" x="86.36" y="93.98" rot="R90"/>
-<instance part="SV4" gate="1" x="33.02" y="129.54" rot="R180"/>
+<instance part="JTAG" gate="1" x="33.02" y="129.54" rot="R180"/>
 <instance part="RDX" gate="G$1" x="17.78" y="101.6" rot="R180"/>
-<instance part="X1" gate="-1" x="373.38" y="170.18" rot="R180"/>
-<instance part="X1" gate="-2" x="373.38" y="175.26" rot="R180"/>
-<instance part="X1" gate="-3" x="373.38" y="180.34" rot="R180"/>
-<instance part="X1" gate="-4" x="373.38" y="185.42" rot="R180"/>
-<instance part="X1" gate="-5" x="373.38" y="190.5" rot="R180"/>
-<instance part="X2" gate="-1" x="370.84" y="139.7" rot="R180"/>
-<instance part="X2" gate="-2" x="370.84" y="144.78" rot="R180"/>
-<instance part="X2" gate="-3" x="370.84" y="149.86" rot="R180"/>
-<instance part="X2" gate="-4" x="370.84" y="154.94" rot="R180"/>
-<instance part="X2" gate="-5" x="370.84" y="160.02" rot="R180"/>
+<instance part="SKT1" gate="-1" x="373.38" y="170.18" rot="R180"/>
+<instance part="SKT1" gate="-2" x="373.38" y="175.26" rot="R180"/>
+<instance part="SKT1" gate="-3" x="373.38" y="180.34" rot="R180"/>
+<instance part="SKT1" gate="-4" x="373.38" y="185.42" rot="R180"/>
+<instance part="SKT1" gate="-5" x="373.38" y="190.5" rot="R180"/>
+<instance part="SKT2" gate="-1" x="370.84" y="139.7" rot="R180"/>
+<instance part="SKT2" gate="-2" x="370.84" y="144.78" rot="R180"/>
+<instance part="SKT2" gate="-3" x="370.84" y="149.86" rot="R180"/>
+<instance part="SKT2" gate="-4" x="370.84" y="154.94" rot="R180"/>
+<instance part="SKT2" gate="-5" x="370.84" y="160.02" rot="R180"/>
 <instance part="D_PSU" gate="G$1" x="17.78" y="25.4"/>
-<instance part="S1" gate="G$1" x="63.5" y="109.22"/>
+<instance part="U_RESET" gate="G$1" x="63.5" y="109.22"/>
 <instance part="D_PSU1" gate="G$1" x="45.72" y="35.56" rot="R180"/>
 <instance part="D_PSU2" gate="G$1" x="45.72" y="66.04" rot="R180"/>
-<instance part="SV3" gate="G$1" x="53.34" y="154.94" rot="R180"/>
+<instance part="BREAKOUT" gate="G$1" x="53.34" y="154.94" rot="R180"/>
 <instance part="P+1" gate="1" x="149.86" y="170.18"/>
 <instance part="P+16" gate="1" x="20.32" y="66.04"/>
 </instances>
@@ -18989,7 +18980,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <pinref part="GND7" gate="1" pin="GND"/>
 <wire x1="45.72" y1="160.02" x2="22.86" y2="160.02" width="0.1524" layer="91"/>
-<pinref part="SV3" gate="G$1" pin="5"/>
+<pinref part="BREAKOUT" gate="G$1" pin="5"/>
 </segment>
 <segment>
 <pinref part="GND8" gate="1" pin="GND"/>
@@ -19018,13 +19009,13 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <pinref part="C_U" gate="G$1" pin="1"/>
 <wire x1="86.36" y1="83.82" x2="91.44" y2="83.82" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="GND"/>
+<pinref part="IO_UC" gate="G$1" pin="GND"/>
 <wire x1="78.74" y1="83.82" x2="86.36" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="GND31" gate="1" pin="GND"/>
 <junction x="86.36" y="83.82"/>
 </segment>
 <segment>
-<pinref part="IC3" gate="G$1" pin="AGND"/>
+<pinref part="IO_UC" gate="G$1" pin="AGND"/>
 <pinref part="GND32" gate="1" pin="GND"/>
 <wire x1="91.44" y1="109.22" x2="76.2" y2="109.22" width="0.1524" layer="91"/>
 </segment>
@@ -19055,13 +19046,13 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <pinref part="GND3" gate="1" pin="GND"/>
 <junction x="71.12" y="104.14"/>
 <wire x1="71.12" y1="104.14" x2="66.04" y2="104.14" width="0.1524" layer="91"/>
-<pinref part="S1" gate="G$1" pin="1"/>
-<pinref part="S1" gate="G$1" pin="2"/>
+<pinref part="U_RESET" gate="G$1" pin="1"/>
+<pinref part="U_RESET" gate="G$1" pin="2"/>
 <wire x1="66.04" y1="104.14" x2="63.5" y2="104.14" width="0.1524" layer="91"/>
 <junction x="66.04" y="104.14"/>
 </segment>
 <segment>
-<pinref part="SV4" gate="1" pin="6"/>
+<pinref part="JTAG" gate="1" pin="6"/>
 <wire x1="40.64" y1="127" x2="48.26" y2="127" width="0.1524" layer="91"/>
 <label x="40.64" y="127" size="1.778" layer="95"/>
 </segment>
@@ -19100,7 +19091,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="78.74" y1="149.86" x2="60.96" y2="149.86" width="0.1524" layer="91"/>
 <label x="66.04" y="149.86" size="1.778" layer="95"/>
-<pinref part="SV3" gate="G$1" pin="14"/>
+<pinref part="BREAKOUT" gate="G$1" pin="14"/>
 </segment>
 </net>
 <net name="MISO" class="0">
@@ -19112,7 +19103,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="78.74" y1="154.94" x2="60.96" y2="154.94" width="0.1524" layer="91"/>
 <label x="66.04" y="154.94" size="1.778" layer="95"/>
-<pinref part="SV3" gate="G$1" pin="10"/>
+<pinref part="BREAKOUT" gate="G$1" pin="10"/>
 </segment>
 </net>
 <net name="MOSI" class="0">
@@ -19124,7 +19115,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="78.74" y1="152.4" x2="60.96" y2="152.4" width="0.1524" layer="91"/>
 <label x="66.04" y="152.4" size="1.778" layer="95"/>
-<pinref part="SV3" gate="G$1" pin="12"/>
+<pinref part="BREAKOUT" gate="G$1" pin="12"/>
 </segment>
 </net>
 <net name="SCL" class="0">
@@ -19141,7 +19132,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="45.72" y1="142.24" x2="30.48" y2="142.24" width="0.1524" layer="91"/>
 <label x="30.48" y="142.24" size="1.778" layer="95"/>
-<pinref part="SV3" gate="G$1" pin="19"/>
+<pinref part="BREAKOUT" gate="G$1" pin="19"/>
 </segment>
 </net>
 <net name="SDA" class="0">
@@ -19158,7 +19149,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <label x="30.48" y="144.78" size="1.778" layer="95"/>
 <wire x1="45.72" y1="144.78" x2="30.48" y2="144.78" width="0.1524" layer="91"/>
-<pinref part="SV3" gate="G$1" pin="17"/>
+<pinref part="BREAKOUT" gate="G$1" pin="17"/>
 </segment>
 </net>
 <net name="FLASH_CS" class="0">
@@ -19170,7 +19161,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="78.74" y1="165.1" x2="60.96" y2="165.1" width="0.1524" layer="91"/>
 <label x="66.04" y="165.1" size="1.778" layer="95"/>
-<pinref part="SV3" gate="G$1" pin="2"/>
+<pinref part="BREAKOUT" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="FLASH_CLK" class="0">
@@ -19182,7 +19173,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="78.74" y1="162.56" x2="60.96" y2="162.56" width="0.1524" layer="91"/>
 <label x="66.04" y="162.56" size="1.778" layer="95"/>
-<pinref part="SV3" gate="G$1" pin="4"/>
+<pinref part="BREAKOUT" gate="G$1" pin="4"/>
 </segment>
 </net>
 <net name="FLASH_DI" class="0">
@@ -19194,7 +19185,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="78.74" y1="160.02" x2="60.96" y2="160.02" width="0.1524" layer="91"/>
 <label x="66.04" y="160.02" size="1.778" layer="95"/>
-<pinref part="SV3" gate="G$1" pin="6"/>
+<pinref part="BREAKOUT" gate="G$1" pin="6"/>
 </segment>
 </net>
 <net name="FLASH_DO" class="0">
@@ -19206,7 +19197,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="78.74" y1="157.48" x2="60.96" y2="157.48" width="0.1524" layer="91"/>
 <label x="66.04" y="157.48" size="1.778" layer="95"/>
-<pinref part="SV3" gate="G$1" pin="8"/>
+<pinref part="BREAKOUT" gate="G$1" pin="8"/>
 </segment>
 </net>
 <net name="SD_CS" class="0">
@@ -19218,7 +19209,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="78.74" y1="147.32" x2="60.96" y2="147.32" width="0.1524" layer="91"/>
 <label x="66.04" y="147.32" size="1.778" layer="95"/>
-<pinref part="SV3" gate="G$1" pin="16"/>
+<pinref part="BREAKOUT" gate="G$1" pin="16"/>
 </segment>
 </net>
 <net name="+3V3" class="0">
@@ -19282,7 +19273,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <junction x="83.82" y="200.66"/>
 </segment>
 <segment>
-<pinref part="J_5.5V" gate="-1" pin="S"/>
+<pinref part="J_3V3V" gate="-1" pin="S"/>
 <wire x1="38.1" y1="162.56" x2="22.86" y2="162.56" width="0.1524" layer="91"/>
 <pinref part="+3V7" gate="G$1" pin="+3V3"/>
 </segment>
@@ -19424,7 +19415,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <junction x="220.98" y="81.28"/>
 </segment>
 <segment>
-<pinref part="J_3.3V" gate="-1" pin="S"/>
+<pinref part="J_5V" gate="-1" pin="S"/>
 <wire x1="30.48" y1="167.64" x2="25.4" y2="167.64" width="0.1524" layer="91"/>
 <pinref part="P+10" gate="1" pin="+5V"/>
 <wire x1="25.4" y1="167.64" x2="25.4" y2="172.72" width="0.1524" layer="91"/>
@@ -19450,7 +19441,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <pinref part="P+12" gate="1" pin="+5V"/>
 <wire x1="78.74" y1="73.66" x2="86.36" y2="73.66" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="VCC"/>
+<pinref part="IO_UC" gate="G$1" pin="VCC"/>
 <pinref part="C_U" gate="G$1" pin="2"/>
 <wire x1="91.44" y1="78.74" x2="91.44" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="91.44" y1="76.2" x2="86.36" y2="76.2" width="0.1524" layer="91"/>
@@ -19461,8 +19452,8 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <pinref part="P+13" gate="1" pin="+5V"/>
 <wire x1="86.36" y1="104.14" x2="86.36" y2="101.6" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="101.6" x2="91.44" y2="101.6" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="AREF"/>
-<pinref part="IC3" gate="G$1" pin="AVCC"/>
+<pinref part="IO_UC" gate="G$1" pin="AREF"/>
+<pinref part="IO_UC" gate="G$1" pin="AVCC"/>
 <wire x1="91.44" y1="106.68" x2="91.44" y2="104.14" width="0.1524" layer="91"/>
 <wire x1="91.44" y1="101.6" x2="91.44" y2="104.14" width="0.1524" layer="91"/>
 <junction x="91.44" y="104.14"/>
@@ -19483,7 +19474,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <junction x="76.2" y="127"/>
 </segment>
 <segment>
-<pinref part="SV4" gate="1" pin="2"/>
+<pinref part="JTAG" gate="1" pin="2"/>
 <wire x1="40.64" y1="132.08" x2="48.26" y2="132.08" width="0.1524" layer="91"/>
 <label x="40.64" y="132.08" size="1.778" layer="95"/>
 </segment>
@@ -19508,7 +19499,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <junction x="284.48" y="215.9"/>
 </segment>
 <segment>
-<pinref part="IC3" gate="G$1" pin="(PCI22/AIN0OC0A)PD6"/>
+<pinref part="IO_UC" gate="G$1" pin="(PCI22/AIN0OC0A)PD6"/>
 <wire x1="147.32" y1="73.66" x2="154.94" y2="73.66" width="0.1524" layer="91"/>
 <label x="154.94" y="73.66" size="1.778" layer="95"/>
 </segment>
@@ -19540,7 +19531,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <junction x="284.48" y="162.56"/>
 </segment>
 <segment>
-<pinref part="IC3" gate="G$1" pin="(PCI23/AIN1)PD7"/>
+<pinref part="IO_UC" gate="G$1" pin="(PCI23/AIN1)PD7"/>
 <wire x1="147.32" y1="71.12" x2="154.94" y2="71.12" width="0.1524" layer="91"/>
 <label x="154.94" y="71.12" size="1.778" layer="95"/>
 </segment>
@@ -19572,7 +19563,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <junction x="284.48" y="109.22"/>
 </segment>
 <segment>
-<pinref part="IC3" gate="G$1" pin="(PCI0/ICP/CLKO)PB0"/>
+<pinref part="IO_UC" gate="G$1" pin="(PCI0/ICP/CLKO)PB0"/>
 <wire x1="147.32" y1="66.04" x2="154.94" y2="66.04" width="0.1524" layer="91"/>
 <label x="154.94" y="66.04" size="1.778" layer="95"/>
 </segment>
@@ -19604,7 +19595,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <junction x="284.48" y="53.34"/>
 </segment>
 <segment>
-<pinref part="IC3" gate="G$1" pin="(PCI1/OC1A/OC1S)PB1"/>
+<pinref part="IO_UC" gate="G$1" pin="(PCI1/OC1A/OC1S)PB1"/>
 <wire x1="147.32" y1="63.5" x2="154.94" y2="63.5" width="0.1524" layer="91"/>
 <label x="154.94" y="63.5" size="1.778" layer="95"/>
 </segment>
@@ -19636,7 +19627,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <junction x="203.2" y="215.9"/>
 </segment>
 <segment>
-<pinref part="IC3" gate="G$1" pin="(PCI18/INT0)PD2"/>
+<pinref part="IO_UC" gate="G$1" pin="(PCI18/INT0)PD2"/>
 <wire x1="147.32" y1="83.82" x2="154.94" y2="83.82" width="0.1524" layer="91"/>
 <label x="154.94" y="83.82" size="1.778" layer="95"/>
 </segment>
@@ -19644,12 +19635,12 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <net name="N$33" class="0">
 <segment>
 <pinref part="RO23" gate="G$1" pin="1"/>
-<pinref part="L_O2" gate="G$1" pin="A"/>
+<pinref part="LO2" gate="G$1" pin="A"/>
 </segment>
 </net>
 <net name="L_O1" class="0">
 <segment>
-<pinref part="L_O2" gate="G$1" pin="C"/>
+<pinref part="LO2" gate="G$1" pin="C"/>
 <wire x1="220.98" y1="167.64" x2="220.98" y2="170.18" width="0.1524" layer="91"/>
 <wire x1="220.98" y1="167.64" x2="236.22" y2="167.64" width="0.1524" layer="91"/>
 <pinref part="SSR2" gate="G$1" pin="-"/>
@@ -19668,7 +19659,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <junction x="203.2" y="162.56"/>
 </segment>
 <segment>
-<pinref part="IC3" gate="G$1" pin="(PCI19/INT1/OC2B)PD3"/>
+<pinref part="IO_UC" gate="G$1" pin="(PCI19/INT1/OC2B)PD3"/>
 <wire x1="147.32" y1="81.28" x2="154.94" y2="81.28" width="0.1524" layer="91"/>
 <label x="154.94" y="81.28" size="1.778" layer="95"/>
 </segment>
@@ -19676,12 +19667,12 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <net name="N$37" class="0">
 <segment>
 <pinref part="RO33" gate="G$1" pin="1"/>
-<pinref part="L_O3" gate="G$1" pin="A"/>
+<pinref part="LO3" gate="G$1" pin="A"/>
 </segment>
 </net>
 <net name="L_O3" class="0">
 <segment>
-<pinref part="L_O3" gate="G$1" pin="C"/>
+<pinref part="LO3" gate="G$1" pin="C"/>
 <wire x1="220.98" y1="114.3" x2="220.98" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="220.98" y1="114.3" x2="236.22" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="SSR3" gate="G$1" pin="-"/>
@@ -19700,7 +19691,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <junction x="203.2" y="109.22"/>
 </segment>
 <segment>
-<pinref part="IC3" gate="G$1" pin="(PCI20/XCK/T0)PD4"/>
+<pinref part="IO_UC" gate="G$1" pin="(PCI20/XCK/T0)PD4"/>
 <wire x1="147.32" y1="78.74" x2="154.94" y2="78.74" width="0.1524" layer="91"/>
 <label x="154.94" y="78.74" size="1.778" layer="95"/>
 </segment>
@@ -19708,12 +19699,12 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <net name="N$41" class="0">
 <segment>
 <pinref part="RO43" gate="G$1" pin="1"/>
-<pinref part="L_O4" gate="G$1" pin="A"/>
+<pinref part="LO4" gate="G$1" pin="A"/>
 </segment>
 </net>
 <net name="N$42" class="0">
 <segment>
-<pinref part="L_O4" gate="G$1" pin="C"/>
+<pinref part="LO4" gate="G$1" pin="C"/>
 <wire x1="220.98" y1="60.96" x2="220.98" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="220.98" y1="60.96" x2="236.22" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="SSR4" gate="G$1" pin="-"/>
@@ -19732,7 +19723,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <junction x="203.2" y="55.88"/>
 </segment>
 <segment>
-<pinref part="IC3" gate="G$1" pin="(PCI21/T1/OC0B)PD5"/>
+<pinref part="IO_UC" gate="G$1" pin="(PCI21/T1/OC0B)PD5"/>
 <wire x1="147.32" y1="76.2" x2="154.94" y2="76.2" width="0.1524" layer="91"/>
 <label x="154.94" y="76.2" size="1.778" layer="95"/>
 </segment>
@@ -19741,7 +19732,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="368.3" y1="190.5" x2="360.68" y2="190.5" width="0.1524" layer="91"/>
 <label x="360.68" y="190.5" size="1.778" layer="95"/>
-<pinref part="X1" gate="-5" pin="KL"/>
+<pinref part="SKT1" gate="-5" pin="KL"/>
 </segment>
 <segment>
 <wire x1="271.78" y1="73.66" x2="259.08" y2="73.66" width="0.1524" layer="91"/>
@@ -19768,7 +19759,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="360.68" y1="160.02" x2="365.76" y2="160.02" width="0.1524" layer="91"/>
 <label x="360.68" y="160.02" size="1.778" layer="95"/>
-<pinref part="X2" gate="-5" pin="KL"/>
+<pinref part="SKT2" gate="-5" pin="KL"/>
 </segment>
 <segment>
 <wire x1="340.36" y1="233.68" x2="353.06" y2="233.68" width="0.1524" layer="91"/>
@@ -19803,22 +19794,22 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="78.74" y1="144.78" x2="60.96" y2="144.78" width="0.1524" layer="91"/>
 <label x="66.04" y="144.78" size="1.778" layer="95"/>
-<pinref part="SV3" gate="G$1" pin="18"/>
+<pinref part="BREAKOUT" gate="G$1" pin="18"/>
 </segment>
 </net>
 <net name="N$1" class="0">
 <segment>
-<pinref part="J_3.3V" gate="-2" pin="S"/>
+<pinref part="J_5V" gate="-2" pin="S"/>
 <wire x1="33.02" y1="167.64" x2="45.72" y2="167.64" width="0.1524" layer="91"/>
 <wire x1="45.72" y1="167.64" x2="45.72" y2="165.1" width="0.1524" layer="91"/>
-<pinref part="SV3" gate="G$1" pin="1"/>
+<pinref part="BREAKOUT" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$2" class="0">
 <segment>
 <wire x1="45.72" y1="162.56" x2="40.64" y2="162.56" width="0.1524" layer="91"/>
-<pinref part="J_5.5V" gate="-2" pin="S"/>
-<pinref part="SV3" gate="G$1" pin="3"/>
+<pinref part="J_3V3V" gate="-2" pin="S"/>
+<pinref part="BREAKOUT" gate="G$1" pin="3"/>
 </segment>
 </net>
 <net name="AUTO_MANUAL" class="0">
@@ -19832,15 +19823,15 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="78.74" y1="142.24" x2="60.96" y2="142.24" width="0.1524" layer="91"/>
 <label x="66.04" y="142.24" size="1.778" layer="95"/>
-<pinref part="SV3" gate="G$1" pin="20"/>
+<pinref part="BREAKOUT" gate="G$1" pin="20"/>
 </segment>
 <segment>
-<pinref part="IC3" gate="G$1" pin="(PCI3/MOSI/OC2A)PB3"/>
+<pinref part="IO_UC" gate="G$1" pin="(PCI3/MOSI/OC2A)PB3"/>
 <wire x1="147.32" y1="58.42" x2="154.94" y2="58.42" width="0.1524" layer="91"/>
 <label x="149.86" y="58.42" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="SV4" gate="1" pin="4"/>
+<pinref part="JTAG" gate="1" pin="4"/>
 <wire x1="40.64" y1="129.54" x2="48.26" y2="129.54" width="0.1524" layer="91"/>
 <label x="48.26" y="129.54" size="1.778" layer="95"/>
 </segment>
@@ -19849,7 +19840,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="154.94" y1="111.76" x2="147.32" y2="111.76" width="0.1524" layer="91"/>
 <label x="154.94" y="111.76" size="1.778" layer="95"/>
-<pinref part="IC3" gate="G$1" pin="(PCI9/ADC1)PC1"/>
+<pinref part="IO_UC" gate="G$1" pin="(PCI9/ADC1)PC1"/>
 </segment>
 <segment>
 <pinref part="IN_BUTTONS" gate="1" pin="5"/>
@@ -19863,7 +19854,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="154.94" y1="114.3" x2="147.32" y2="114.3" width="0.1524" layer="91"/>
 <label x="154.94" y="114.3" size="1.778" layer="95"/>
-<pinref part="IC3" gate="G$1" pin="(PCI8/ADC0)PC0"/>
+<pinref part="IO_UC" gate="G$1" pin="(PCI8/ADC0)PC0"/>
 </segment>
 <segment>
 <pinref part="IN_BUTTONS" gate="1" pin="6"/>
@@ -19877,7 +19868,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="154.94" y1="53.34" x2="147.32" y2="53.34" width="0.1524" layer="91"/>
 <label x="154.94" y="53.34" size="1.778" layer="95"/>
-<pinref part="IC3" gate="G$1" pin="(PCI5/SCK)PB5"/>
+<pinref part="IO_UC" gate="G$1" pin="(PCI5/SCK)PB5"/>
 </segment>
 <segment>
 <pinref part="IN_BUTTONS" gate="1" pin="7"/>
@@ -19891,7 +19882,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="147.32" y1="55.88" x2="154.94" y2="55.88" width="0.1524" layer="91"/>
 <label x="154.94" y="55.88" size="1.778" layer="95"/>
-<pinref part="IC3" gate="G$1" pin="(PCI4/MISO)PB4"/>
+<pinref part="IO_UC" gate="G$1" pin="(PCI4/MISO)PB4"/>
 </segment>
 <segment>
 <pinref part="IN_BUTTONS" gate="1" pin="8"/>
@@ -19903,14 +19894,14 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 </net>
 <net name="IN8" class="0">
 <segment>
-<pinref part="SV4" gate="1" pin="3"/>
+<pinref part="JTAG" gate="1" pin="3"/>
 <wire x1="25.4" y1="129.54" x2="17.78" y2="129.54" width="0.1524" layer="91"/>
 <label x="20.32" y="129.54" size="1.778" layer="95"/>
 </segment>
 <segment>
 <wire x1="147.32" y1="101.6" x2="154.94" y2="101.6" width="0.1524" layer="91"/>
 <label x="154.94" y="101.6" size="1.778" layer="95"/>
-<pinref part="IC3" gate="G$1" pin="(PCI13/ADC5/SCL)PC5"/>
+<pinref part="IO_UC" gate="G$1" pin="(PCI13/ADC5/SCL)PC5"/>
 </segment>
 <segment>
 <pinref part="IN_BUTTONS" gate="1" pin="1"/>
@@ -19924,7 +19915,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="154.94" y1="109.22" x2="147.32" y2="109.22" width="0.1524" layer="91"/>
 <label x="154.94" y="109.22" size="1.778" layer="95"/>
-<pinref part="IC3" gate="G$1" pin="(PCI10/ADC2)PC2"/>
+<pinref part="IO_UC" gate="G$1" pin="(PCI10/ADC2)PC2"/>
 </segment>
 <segment>
 <pinref part="IN_BUTTONS" gate="1" pin="4"/>
@@ -19936,14 +19927,14 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 </net>
 <net name="IN7" class="0">
 <segment>
-<pinref part="SV4" gate="1" pin="1"/>
+<pinref part="JTAG" gate="1" pin="1"/>
 <wire x1="25.4" y1="132.08" x2="17.78" y2="132.08" width="0.1524" layer="91"/>
 <label x="20.32" y="132.08" size="1.778" layer="95"/>
 </segment>
 <segment>
 <wire x1="154.94" y1="104.14" x2="147.32" y2="104.14" width="0.1524" layer="91"/>
 <label x="154.94" y="104.14" size="1.778" layer="95"/>
-<pinref part="IC3" gate="G$1" pin="(PCI12/ADC4/SDA)PC4"/>
+<pinref part="IO_UC" gate="G$1" pin="(PCI12/ADC4/SDA)PC4"/>
 </segment>
 <segment>
 <pinref part="IN_BUTTONS" gate="1" pin="2"/>
@@ -19957,7 +19948,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="154.94" y1="106.68" x2="147.32" y2="106.68" width="0.1524" layer="91"/>
 <label x="154.94" y="106.68" size="1.778" layer="95"/>
-<pinref part="IC3" gate="G$1" pin="(PCI11/ADC3)PC3"/>
+<pinref part="IO_UC" gate="G$1" pin="(PCI11/ADC3)PC3"/>
 </segment>
 <segment>
 <pinref part="IN_BUTTONS" gate="1" pin="3"/>
@@ -19971,35 +19962,35 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="360.68" y1="185.42" x2="368.3" y2="185.42" width="0.1524" layer="91"/>
 <label x="360.68" y="185.42" size="1.778" layer="95"/>
-<pinref part="X1" gate="-4" pin="KL"/>
+<pinref part="SKT1" gate="-4" pin="KL"/>
 </segment>
 <segment>
 <wire x1="264.16" y1="226.06" x2="271.78" y2="226.06" width="0.1524" layer="91"/>
 <label x="271.78" y="226.06" size="1.778" layer="95"/>
-<pinref part="F1" gate="G$1" pin="2"/>
+<pinref part="FUSE1" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="MO2" class="0">
 <segment>
 <wire x1="360.68" y1="180.34" x2="368.3" y2="180.34" width="0.1524" layer="91"/>
 <label x="360.68" y="180.34" size="1.778" layer="95"/>
-<pinref part="X1" gate="-3" pin="KL"/>
+<pinref part="SKT1" gate="-3" pin="KL"/>
 </segment>
 <segment>
 <wire x1="264.16" y1="175.26" x2="274.32" y2="175.26" width="0.1524" layer="91"/>
 <label x="274.32" y="175.26" size="1.778" layer="95"/>
-<pinref part="F2" gate="G$1" pin="2"/>
+<pinref part="FUSE2" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="MO6" class="0">
 <segment>
 <wire x1="360.68" y1="149.86" x2="365.76" y2="149.86" width="0.1524" layer="91"/>
 <label x="360.68" y="149.86" size="1.778" layer="95"/>
-<pinref part="X2" gate="-3" pin="KL"/>
+<pinref part="SKT2" gate="-3" pin="KL"/>
 </segment>
 <segment>
 <wire x1="345.44" y1="175.26" x2="353.06" y2="175.26" width="0.1524" layer="91"/>
-<pinref part="F6" gate="G$1" pin="2"/>
+<pinref part="FUSE6" gate="G$1" pin="2"/>
 <label x="350.52" y="175.26" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -20007,11 +19998,11 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="360.68" y1="139.7" x2="365.76" y2="139.7" width="0.1524" layer="91"/>
 <label x="360.68" y="139.7" size="1.778" layer="95"/>
-<pinref part="X2" gate="-1" pin="KL"/>
+<pinref part="SKT2" gate="-1" pin="KL"/>
 </segment>
 <segment>
 <wire x1="345.44" y1="66.04" x2="353.06" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="F8" gate="G$1" pin="2"/>
+<pinref part="FUSE8" gate="G$1" pin="2"/>
 <label x="353.06" y="66.04" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -20019,11 +20010,11 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="365.76" y1="154.94" x2="360.68" y2="154.94" width="0.1524" layer="91"/>
 <label x="360.68" y="154.94" size="1.778" layer="95"/>
-<pinref part="X2" gate="-4" pin="KL"/>
+<pinref part="SKT2" gate="-4" pin="KL"/>
 </segment>
 <segment>
 <wire x1="345.44" y1="228.6" x2="353.06" y2="228.6" width="0.1524" layer="91"/>
-<pinref part="F5" gate="G$1" pin="2"/>
+<pinref part="FUSE5" gate="G$1" pin="2"/>
 <label x="353.06" y="228.6" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -20031,11 +20022,11 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="368.3" y1="170.18" x2="360.68" y2="170.18" width="0.1524" layer="91"/>
 <label x="360.68" y="170.18" size="1.778" layer="95"/>
-<pinref part="X1" gate="-1" pin="KL"/>
+<pinref part="SKT1" gate="-1" pin="KL"/>
 </segment>
 <segment>
 <label x="266.7" y="68.58" size="1.778" layer="95"/>
-<pinref part="F4" gate="G$1" pin="2"/>
+<pinref part="FUSE4" gate="G$1" pin="2"/>
 <wire x1="264.16" y1="68.58" x2="271.78" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -20043,23 +20034,23 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="368.3" y1="175.26" x2="360.68" y2="175.26" width="0.1524" layer="91"/>
 <label x="360.68" y="175.26" size="1.778" layer="95"/>
-<pinref part="X1" gate="-2" pin="KL"/>
+<pinref part="SKT1" gate="-2" pin="KL"/>
 </segment>
 <segment>
 <wire x1="264.16" y1="121.92" x2="271.78" y2="121.92" width="0.1524" layer="91"/>
 <label x="271.78" y="121.92" size="1.778" layer="95"/>
-<pinref part="F3" gate="G$1" pin="2"/>
+<pinref part="FUSE3" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="MO7" class="0">
 <segment>
 <wire x1="365.76" y1="144.78" x2="360.68" y2="144.78" width="0.1524" layer="91"/>
 <label x="360.68" y="144.78" size="1.778" layer="95"/>
-<pinref part="X2" gate="-2" pin="KL"/>
+<pinref part="SKT2" gate="-2" pin="KL"/>
 </segment>
 <segment>
 <wire x1="345.44" y1="121.92" x2="353.06" y2="121.92" width="0.1524" layer="91"/>
-<pinref part="F7" gate="G$1" pin="2"/>
+<pinref part="FUSE7" gate="G$1" pin="2"/>
 <label x="350.52" y="121.92" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -20099,13 +20090,13 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <net name="U_RX" class="0">
 <segment>
 <wire x1="147.32" y1="88.9" x2="175.26" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="(PCI16/RXD)PD0"/>
+<pinref part="IO_UC" gate="G$1" pin="(PCI16/RXD)PD0"/>
 <label x="175.26" y="88.9" size="1.778" layer="95"/>
 </segment>
 <segment>
 <wire x1="45.72" y1="149.86" x2="30.48" y2="149.86" width="0.1524" layer="91"/>
 <label x="30.48" y="149.86" size="1.778" layer="95"/>
-<pinref part="SV3" gate="G$1" pin="13"/>
+<pinref part="BREAKOUT" gate="G$1" pin="13"/>
 </segment>
 <segment>
 <wire x1="25.4" y1="104.14" x2="7.62" y2="104.14" width="0.1524" layer="91"/>
@@ -20172,7 +20163,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="45.72" y1="147.32" x2="30.48" y2="147.32" width="0.1524" layer="91"/>
 <label x="30.48" y="147.32" size="1.778" layer="95"/>
-<pinref part="SV3" gate="G$1" pin="15"/>
+<pinref part="BREAKOUT" gate="G$1" pin="15"/>
 </segment>
 </net>
 <net name="NEW_IN" class="0">
@@ -20186,12 +20177,12 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="45.72" y1="152.4" x2="30.48" y2="152.4" width="0.1524" layer="91"/>
 <label x="30.48" y="152.4" size="1.778" layer="95"/>
-<pinref part="SV3" gate="G$1" pin="11"/>
+<pinref part="BREAKOUT" gate="G$1" pin="11"/>
 </segment>
 </net>
 <net name="U_TX" class="0">
 <segment>
-<pinref part="IC3" gate="G$1" pin="(PCI17/TXD)PD1"/>
+<pinref part="IO_UC" gate="G$1" pin="(PCI17/TXD)PD1"/>
 <pinref part="R_UTX1" gate="G$1" pin="2"/>
 <wire x1="160.02" y1="86.36" x2="147.32" y2="86.36" width="0.1524" layer="91"/>
 <label x="152.4" y="86.36" size="1.778" layer="95"/>
@@ -20205,7 +20196,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <net name="N$32" class="0">
 <segment>
 <pinref part="C_UXTAL1" gate="G$1" pin="1"/>
-<pinref part="IC3" gate="G$1" pin="PB6(XTAL1/TOSC1/PCI6)"/>
+<pinref part="IO_UC" gate="G$1" pin="PB6(XTAL1/TOSC1/PCI6)"/>
 <wire x1="76.2" y1="96.52" x2="86.36" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="XTALU" gate="G$1" pin="2"/>
 <wire x1="86.36" y1="96.52" x2="91.44" y2="96.52" width="0.1524" layer="91"/>
@@ -20214,7 +20205,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 </net>
 <net name="N$35" class="0">
 <segment>
-<pinref part="IC3" gate="G$1" pin="PB7(XTAL2/TOSC2/PCI7)"/>
+<pinref part="IO_UC" gate="G$1" pin="PB7(XTAL2/TOSC2/PCI7)"/>
 <pinref part="C_UXTAL2" gate="G$1" pin="1"/>
 <wire x1="91.44" y1="91.44" x2="91.44" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="91.44" y1="88.9" x2="86.36" y2="88.9" width="0.1524" layer="91"/>
@@ -20227,14 +20218,14 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 </net>
 <net name="N$39" class="0">
 <segment>
-<pinref part="IC3" gate="G$1" pin="(PCI2/SS/OC1B)PB2"/>
+<pinref part="IO_UC" gate="G$1" pin="(PCI2/SS/OC1B)PB2"/>
 <pinref part="R_NI1" gate="G$1" pin="2"/>
 <wire x1="160.02" y1="60.96" x2="147.32" y2="60.96" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="U_RESET" class="0">
 <segment>
-<pinref part="IC3" gate="G$1" pin="PC6(/RESET/PCI14)"/>
+<pinref part="IO_UC" gate="G$1" pin="PC6(/RESET/PCI14)"/>
 <wire x1="91.44" y1="114.3" x2="83.82" y2="114.3" width="0.1524" layer="91"/>
 <label x="81.28" y="114.3" size="1.778" layer="95"/>
 <pinref part="R_URES" gate="G$1" pin="2"/>
@@ -20244,8 +20235,8 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <wire x1="76.2" y1="114.3" x2="66.04" y2="114.3" width="0.1524" layer="91"/>
 <junction x="83.82" y="114.3"/>
 <junction x="76.2" y="114.3"/>
-<pinref part="S1" gate="G$1" pin="3"/>
-<pinref part="S1" gate="G$1" pin="4"/>
+<pinref part="U_RESET" gate="G$1" pin="3"/>
+<pinref part="U_RESET" gate="G$1" pin="4"/>
 <wire x1="66.04" y1="114.3" x2="63.5" y2="114.3" width="0.1524" layer="91"/>
 <junction x="66.04" y="114.3"/>
 </segment>
@@ -20255,7 +20246,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <label x="22.86" y="86.36" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="SV4" gate="1" pin="5"/>
+<pinref part="JTAG" gate="1" pin="5"/>
 <wire x1="25.4" y1="127" x2="17.78" y2="127" width="0.1524" layer="91"/>
 <label x="20.32" y="127" size="1.778" layer="95"/>
 </segment>
@@ -20280,7 +20271,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="45.72" y1="157.48" x2="30.48" y2="157.48" width="0.1524" layer="91"/>
 <label x="30.48" y="157.48" size="1.778" layer="95"/>
-<pinref part="SV3" gate="G$1" pin="7"/>
+<pinref part="BREAKOUT" gate="G$1" pin="7"/>
 </segment>
 <segment>
 <wire x1="22.86" y1="246.38" x2="7.62" y2="246.38" width="0.1524" layer="91"/>
@@ -20292,7 +20283,7 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <segment>
 <wire x1="45.72" y1="154.94" x2="30.48" y2="154.94" width="0.1524" layer="91"/>
 <label x="30.48" y="154.94" size="1.778" layer="95"/>
-<pinref part="SV3" gate="G$1" pin="9"/>
+<pinref part="BREAKOUT" gate="G$1" pin="9"/>
 </segment>
 <segment>
 <wire x1="22.86" y1="241.3" x2="7.62" y2="241.3" width="0.1524" layer="91"/>
@@ -20310,56 +20301,56 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <net name="N$3" class="0">
 <segment>
 <pinref part="SSR1" gate="G$1" pin="L2"/>
-<pinref part="F1" gate="G$1" pin="1"/>
+<pinref part="FUSE1" gate="G$1" pin="1"/>
 <wire x1="254" y1="226.06" x2="254" y2="238.76" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$14" class="0">
 <segment>
 <pinref part="SSR2" gate="G$1" pin="L2"/>
-<pinref part="F2" gate="G$1" pin="1"/>
+<pinref part="FUSE2" gate="G$1" pin="1"/>
 <wire x1="254" y1="175.26" x2="254" y2="180.34" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$15" class="0">
 <segment>
 <pinref part="SSR3" gate="G$1" pin="L2"/>
-<pinref part="F3" gate="G$1" pin="1"/>
+<pinref part="FUSE3" gate="G$1" pin="1"/>
 <wire x1="254" y1="121.92" x2="254" y2="127" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$24" class="0">
 <segment>
 <pinref part="SSR4" gate="G$1" pin="L2"/>
-<pinref part="F4" gate="G$1" pin="1"/>
+<pinref part="FUSE4" gate="G$1" pin="1"/>
 <wire x1="254" y1="68.58" x2="254" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$10" class="0">
 <segment>
 <pinref part="SSR8" gate="G$1" pin="L2"/>
-<pinref part="F8" gate="G$1" pin="1"/>
+<pinref part="FUSE8" gate="G$1" pin="1"/>
 <wire x1="335.28" y1="66.04" x2="335.28" y2="71.12" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$13" class="0">
 <segment>
 <pinref part="SSR7" gate="G$1" pin="L2"/>
-<pinref part="F7" gate="G$1" pin="1"/>
+<pinref part="FUSE7" gate="G$1" pin="1"/>
 <wire x1="335.28" y1="121.92" x2="335.28" y2="127" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$19" class="0">
 <segment>
 <pinref part="SSR6" gate="G$1" pin="L2"/>
-<pinref part="F6" gate="G$1" pin="1"/>
+<pinref part="FUSE6" gate="G$1" pin="1"/>
 <wire x1="335.28" y1="175.26" x2="335.28" y2="180.34" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$28" class="0">
 <segment>
 <pinref part="SSR5" gate="G$1" pin="L2"/>
-<pinref part="F5" gate="G$1" pin="1"/>
+<pinref part="FUSE5" gate="G$1" pin="1"/>
 <wire x1="335.28" y1="228.6" x2="335.28" y2="233.68" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -20373,14 +20364,17 @@ http://www.gammon.com.au/images/Wire_Wrapped_Atmega132_e.png</text>
 <approved hash="113,1,302.582,120.65,LO7,,,,,"/>
 <approved hash="113,1,302.582,64.77,LO8,,,,,"/>
 <approved hash="113,1,221.302,227.33,LO1,,,,,"/>
-<approved hash="113,1,221.302,173.99,L_O2,,,,,"/>
-<approved hash="113,1,221.302,120.65,L_O3,,,,,"/>
-<approved hash="113,1,221.302,67.31,L_O4,,,,,"/>
+<approved hash="113,1,221.302,173.99,LO2,,,,,"/>
+<approved hash="113,1,221.302,120.65,LO3,,,,,"/>
+<approved hash="113,1,221.302,67.31,LO4,,,,,"/>
+<approved hash="113,1,7.98245,25.4,PSU,,,,,"/>
 <approved hash="113,1,165.484,202.125,TEMP_SENSOR,,,,,"/>
 <approved hash="113,1,101.81,197.925,OLED_DISPLAY,,,,,"/>
 <approved hash="113,1,81.6017,52.07,D_3V3,,,,,"/>
+<approved hash="113,1,81.6017,21.59,D_5V,,,,,"/>
 <approved hash="113,1,27.9823,103.945,FTDI,,,,,"/>
-<approved hash="113,1,33.02,128.075,SV4,,,,,"/>
+<approved hash="113,1,33.02,128.075,JTAG,,,,,"/>
+<approved hash="113,1,53.34,152.205,BREAKOUT,,,,,"/>
 </errors>
 </schematic>
 </drawing>
