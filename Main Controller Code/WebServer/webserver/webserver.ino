@@ -1,6 +1,9 @@
 /*********
   Rui Santos
   Complete project details at http://randomnerdtutorials.com  
+  https://randomnerdtutorials.com/esp32-web-server-arduino-ide/
+  For Ip address fixed check on:
+  https://randomnerdtutorials.com/esp32-static-fixed-ip-address-arduino-ide/
 *********/
 
 // Load Wi-Fi library
