@@ -30,13 +30,15 @@
 #define In8 12 //B4
 
 int Inputs[8];
-
+int Outputs[8];
+String readString;
 
 
 // the setup function runs once when you press reset or power the board
 void setup() {
    Serial.begin(9600);
    Serial.print("Remote IO Restarted");
+   String sMsg;
  
   // initialize digital pin LED_BUILTIN as an output.
   //pinMode(LED_BUILTIN, OUTPUT);
@@ -73,9 +75,63 @@ void setup() {
  
 }
 
+void executeCommand(String cmd)
+{
+    if (cmd == "?ID") Serial.println("FishHank I/O Microcontroller Ver 0.1");
+    else if (cmd == "?I"){
+      Serial.print(Inputs[0]);
+      Serial.print(Inputs[1]);
+      Serial.print(Inputs[2]);
+      Serial.print(Inputs[3]);
+      Serial.print(Inputs[4]);
+      Serial.print(Inputs[5]);
+      Serial.print(Inputs[6]);
+      Serial.println(Inputs[7]);
+     }
+     else if (cmd == "?O"){
+      Serial.print(Outputs[0]);
+      Serial.print(Outputs[1]);
+      Serial.print(Outputs[2]);
+      Serial.print(Outputs[3]);
+      Serial.print(Outputs[4]);
+      Serial.print(Outputs[5]);
+      Serial.print(Outputs[6]);
+      Serial.println(  Outputs[7]);
+     }
+     else if (cmd == "!11"){
+      digitalWrite(Out1, HIGH);
+     }
+      else if (cmd == "!10"){
+      digitalWrite(Out1, LOW);
+     }
+    
+    
+    else if (cmd == "STOP") Serial.println("Bye");
+    // etc...
+    else Serial.println("Bad command");
+}
+
+void checkSerial()
+{
+    if (!Serial.available()) return;
+    
+    char c = Serial.read();
+    if (c == '\n') {
+      Serial.println(readString);
+      executeCommand(readString);
+      readString = "";    
+    }
+    else readString += c;
+}
+
+void ConvertInputsToString (String cmd){
+ 
+}
+
 // the loop function runs over and over again forever
 void loop() {
-  digitalWrite(Out1, HIGH);
+  checkSerial();
+  /*digitalWrite(Out1, HIGH);
   digitalWrite(Out2, HIGH);
   digitalWrite(Out3, HIGH);
   digitalWrite(Out4, HIGH);
@@ -86,8 +142,8 @@ void loop() {
   digitalWrite(NewDataAvailable, HIGH);
  
  
-  delay(1000);                       // wait for a second
-  digitalWrite(Out1, LOW);
+  delay(1);                       // wait for a second
+  /*digitalWrite(Out1, LOW);
   digitalWrite(Out2, LOW);
   digitalWrite(Out3, LOW);
   digitalWrite(Out4, LOW);
@@ -95,9 +151,9 @@ void loop() {
   digitalWrite(Out6, LOW);
   digitalWrite(Out7, LOW);
   digitalWrite(Out8, LOW);
-  digitalWrite(NewDataAvailable, LOW);
+  digitalWrite(NewDataAvailable, LOW);*/
  
-  delay(1000);                       // wait for a second
+  delay(1);                       // wait for a second
 
   // Check input status
   Inputs[0] = digitalRead (In1);
@@ -108,7 +164,18 @@ void loop() {
   Inputs[5] = digitalRead (In6);
   Inputs[6] = digitalRead (In7);
   Inputs[7] = digitalRead (In8);
- 
+
+  Outputs[0] = digitalRead (Out1);
+  Outputs[1] = digitalRead (Out2);
+  Outputs[2] = digitalRead (Out3);
+  Outputs[3] = digitalRead (Out4);
+  Outputs[4] = digitalRead (Out5);
+  Outputs[5] = digitalRead (Out6);
+  Outputs[6] = digitalRead (Out7);
+  Outputs[7] = digitalRead (Out8);
+  
+
+ /*
   Serial.print(Inputs[0]);
   Serial.print(Inputs[1]);
   Serial.print(Inputs[2]);
@@ -117,9 +184,9 @@ void loop() {
   Serial.print(Inputs[5]);
   Serial.print(Inputs[6]);
   Serial.println(Inputs[7]);
- 
+ */
 
-
+  checkSerial();
 
 
 //in case input is up flag up NewInput, update input vector
@@ -128,34 +195,14 @@ void loop() {
 //handle serial
 
 
-
-
-  // if there's any serial available, read it:
-  while (Serial.available() > 0) {
-
-    // look for the next valid integer in the incoming serial stream:
-    int red = Serial.parseInt();
-    // do it again:
-    int green = Serial.parseInt();
-    // do it again:
-    int blue = Serial.parseInt();
-
-    // look for the newline. That's the end of your sentence:
-    if (Serial.read() == '\n') {
-      // constrain the values to 0 - 255 and invert
-      // if you're using a common-cathode LED, just use "constrain(color, 0, 255);"
-      red = 255 - constrain(red, 0, 255);
-      green = 255 - constrain(green, 0, 255);
-      blue = 255 - constrain(blue, 0, 255);
-
-     
-
-      // print the three numbers in one string as hexadecimal:
-      Serial.print(red, HEX);
-      Serial.print(green, HEX);
-      Serial.println(blue, HEX);
-    }
-  }
-
-
 }
+
+/*
+  // substring(index) looks for the substring from the index position to the end:
+  if (stringOne.substring(19) == "html") {
+    Serial.println("It's an html file");
+  }
+  // you can also look for a substring in the middle of a string:
+  if (stringOne.substring(14, 18) == "text") {
+    Serial.println("It's a text-based file");
+  } */
