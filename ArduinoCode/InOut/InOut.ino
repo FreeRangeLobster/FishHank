@@ -32,13 +32,15 @@
 int Inputs[8];
 int Outputs[8];
 String readString;
-
+int nOutputNumber;
 
 // the setup function runs once when you press reset or power the board
 void setup() {
    Serial.begin(9600);
    Serial.print("Remote IO Restarted");
    String sMsg;
+   
+   
  
   // initialize digital pin LED_BUILTIN as an output.
   //pinMode(LED_BUILTIN, OUTPUT);
@@ -77,7 +79,18 @@ void setup() {
 
 void executeCommand(String cmd)
 {
+    int nOutputNumber,i;
+    String sOutputNumber;
     if (cmd == "?ID") Serial.println("FishHank I/O Microcontroller Ver 0.1");
+    else if(cmd == "HELP"){
+      Serial.println("?I = Returns the state of all inputs");
+      Serial.println("?O = Returns the state of all outputs");
+      Serial.println("!A0 = Resets all outputs");
+      Serial.println("!11 = Sets Output 1 to high, there are 1-8 outputs");
+      Serial.println("!10 = Resets Output 1 to Low, there are 1-8 outputs");
+    }
+    
+    
     else if (cmd == "?I"){
       Serial.print(Inputs[0]);
       Serial.print(Inputs[1]);
@@ -87,8 +100,10 @@ void executeCommand(String cmd)
       Serial.print(Inputs[5]);
       Serial.print(Inputs[6]);
       Serial.println(Inputs[7]);
-     }
+      }
+     
      else if (cmd == "?O"){
+      //Serial.println(Outputs[0] + Outputs[1] + Outputs[2] + Outputs [3] + Outputs[4] + Outputs[5] + Outputs[6] + Outputs[7]);
       Serial.print(Outputs[0]);
       Serial.print(Outputs[1]);
       Serial.print(Outputs[2]);
@@ -96,21 +111,48 @@ void executeCommand(String cmd)
       Serial.print(Outputs[4]);
       Serial.print(Outputs[5]);
       Serial.print(Outputs[6]);
-      Serial.println(  Outputs[7]);
-     }
-     else if (cmd == "!11"){
-      digitalWrite(Out1, HIGH);
-     }
-      else if (cmd == "!10"){
-      digitalWrite(Out1, LOW);
-     }
-    
-    
-    else if (cmd == "STOP") Serial.println("Bye");
-    // etc...
+      Serial.println(Outputs[7]);
+      }
+     
+     else if (cmd == "!A0"){
+      //All to 0
+      for(i=0;i<8;i++){
+        Outputs[i]=0;
+        }
+       UpdateOutputs();  
+      }
+      
+     else if (cmd.substring(0, 1) == "!"){
+      //Captures in case there is a set of an output
+      Serial.println(cmd);
+      //Serial.print("Setting Value to output:");
+      sOutputNumber=cmd.substring(1, 2);
+      nOutputNumber=sOutputNumber.toInt()-1;
+      //Serial.println(sOutputNumber);
+      if (cmd.substring(2, 3)=="1"){
+        //Serial.println("Output High");
+        Outputs[nOutputNumber]=1;
+        }
+      else{
+        //Serial.println("Output Low");
+        Outputs[nOutputNumber]=0;    
+        }
+      UpdateOutputs();        
+      }
+      
     else Serial.println("Bad command");
 }
-
+void UpdateOutputs(){
+  if (Outputs[0]==1)digitalWrite(Out1, HIGH); else digitalWrite(Out1, LOW);
+  if (Outputs[1]==1)digitalWrite(Out2, HIGH); else digitalWrite(Out2, LOW);
+  if (Outputs[2]==1)digitalWrite(Out3, HIGH); else digitalWrite(Out3, LOW);
+  if (Outputs[3]==1)digitalWrite(Out4, HIGH); else digitalWrite(Out4, LOW);
+  if (Outputs[4]==1)digitalWrite(Out5, HIGH); else digitalWrite(Out5, LOW);
+  if (Outputs[5]==1)digitalWrite(Out6, HIGH); else digitalWrite(Out6, LOW);
+  if (Outputs[6]==1)digitalWrite(Out7, HIGH); else digitalWrite(Out7, LOW);
+  if (Outputs[7]==1)digitalWrite(Out8, HIGH); else digitalWrite(Out8, LOW);
+  }
+  
 void checkSerial()
 {
     if (!Serial.available()) return;
