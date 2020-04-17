@@ -44,8 +44,10 @@ int nOutputNumber;
 
 // the setup function runs once when you press reset or power the board
 void setup() {
-   Serial.begin(9600);
-   Serial.println("Remote IO Restarted");
+   Serial.begin(115200);
+   Serial.print("Remote IO Restarted");
+   Serial.print('\n');
+   
    String sMsg;
     //outputs
     pinMode(Out1, OUTPUT); //D2
@@ -109,7 +111,8 @@ void executeCommand(String cmd)
         Serial.print(Inputs[4]);
         Serial.print(Inputs[5]);
         Serial.print(Inputs[6]);
-        Serial.println(Inputs[7]);
+        Serial.print(Inputs[7]);
+        Serial.print('\n');
         }
 
      
@@ -123,7 +126,8 @@ void executeCommand(String cmd)
         Serial.print(Outputs[5]);
         Serial.print(Outputs[6]);
         Serial.print(Outputs[7]);
-        Serial.println(nDataAvailable);
+        Serial.print(nDataAvailable);
+        Serial.print('\n');
         }
 
      
@@ -152,7 +156,8 @@ void executeCommand(String cmd)
           Outputs[nOutputNumber]=0;    
           }
         UpdateOutputs();
-        Serial.println("OK");     
+        Serial.print("OK");
+        Serial.print('\n');     
         }
 
 
@@ -162,7 +167,11 @@ void executeCommand(String cmd)
          }
 
      
-      else Serial.println("NOK");
+      else {
+        Serial.print("NOK");
+        Serial.print('\n');
+      }
+      
 }
 
 
@@ -180,8 +189,9 @@ void UpdateOutputs(){
 void checkSerial(){
     if (!Serial.available()) return;
     char c = Serial.read();
-    if (c == '\n') {
-      //Serial.println(readString);
+    if ((c == '\n')||(c == '\r')) {
+      Serial.print(readString);
+      Serial.print('\n');
       executeCommand(readString);
       readString = "";    
     }
