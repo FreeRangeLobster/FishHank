@@ -1,6 +1,7 @@
 /*********
   Rui Santos
   Complete project details at https://randomnerdtutorials.com  
+  https://randomnerdtutorials.com/esp32-data-logging-temperature-to-microsd-card/
 *********/
 
 // Libraries for SD card
@@ -37,9 +38,6 @@ void setup() {
   // Start serial communication for debugging purposes
   Serial.begin(115200);
 
-  // Connect to Wi-Fi network with SSID and password
-  Serial.print("Connecting to ");
-  Serial.println(ssid);
 
   // Initialize SD card
   SD.begin(SD_CS);  
@@ -71,17 +69,6 @@ void setup() {
   }
   file.close();
 
-  // Enable Timer wake_up
-  esp_sleep_enable_timer_wakeup(TIME_TO_SLEEP * uS_TO_S_FACTOR);
-
-  //logSDCard();
-  
-  // Increment readingID on every new reading
-  readingID++;
-  
-  // Start deep sleep
-  Serial.println("DONE! Going to sleep now.");
-  esp_deep_sleep_start(); 
 }
 
 void loop() {
