@@ -17,6 +17,12 @@
 RTC_DS3231 rtc;
 char daysOfTheWeek[7][12] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 
+String sHour;
+String sMinute;
+String sSecond;
+String stringOne;
+
+
 
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 64 // OLED display height, in pixels
@@ -76,7 +82,7 @@ void setup() {
   // Show initial display buffer contents on the screen --
   // the library initializes this with an Adafruit splash screen.
   display.display();
-  delay(2000); // Pause for 2 seconds
+  delay(1000); // Pause for 2 seconds
 
   // Clear the buffer
   display.clearDisplay();
@@ -87,7 +93,7 @@ void setup() {
   // Show the display buffer on the screen. You MUST call display() after
   // drawing commands to make them visible on screen!
   display.display();
-  delay(2000);
+  delay(1000);
   // display.display() is NOT necessary after every single drawing command,
   // unless that's what you want...rather, you can batch up a bunch of
   // drawing operations and then update the screen all at once by calling
@@ -177,14 +183,23 @@ DateTime now = rtc.now();
 
   
 
+    //Hour
+    sHour=now.hour();
+    //Minute
+    sMinute=now.minute();
+    //Second
+    sSecond=now.second();
     
-    
+    stringOne =  String(sHour + ":" + sMinute + ":" + sSecond);
  
     display.clearDisplay();
     display.setTextSize(2);                         // set these parameters according to your need..
     display.setCursor(0, 0);
     //display.println(str);
-    display.println("Hello");
+    //display.print(future.hour()+future.second(), DEC);
+    
+    display.println(stringOne);
+    //display.println(future.hour()+':'+future.minute()+':'+future.second(), DEC);
     display.display();
     delay(10);
   
