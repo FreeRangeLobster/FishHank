@@ -1,0 +1,4 @@
+Copy HardwareSerial.cpp to:  C:\Program Files (x86)\Arduino\hardware\espressif\esp32\cores\esp32
+
+Take from:
+https://www.youtube.com/watch?v=GwShqW39jlE&feature=youtu.be&t=182
