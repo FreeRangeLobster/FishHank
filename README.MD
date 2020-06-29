@@ -4,6 +4,8 @@ This embedded system is designed to control control devices of a fish tank such 
 
 The system is also equiped with the following systems: SD card, Real time clock, Bluetooth connection, flash memory and temperature sensor. This devices are available to be connected to a IOT terminal, which could be a Raspberry pi or a ESP32 or a ST Nucleo.
 
+Arduino IDE 1.8.5
+
 ## PCB BOM
 See parts schedule file ![Application](/Parts Schedule.ods)
 Format: ![Alt Text](url)
