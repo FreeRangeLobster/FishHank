@@ -1,16 +1,79 @@
-HardwareSerial Serial1(1);
-HardwareSerial Serial2(2);
+//https://esp32.com/viewtopic.php?t=328  
+/* ESP32 3 UARTs */
 
-void setup(){
+HardwareSerial Serial_1(1);
+HardwareSerial Serial_2(2);
+
+// Choose two free pins
+#define SERIAL1_RXPIN 2//12
+#define SERIAL1_TXPIN 4//13
+
+String readString;
+String readStringB;
+
+void setup() {
   Serial.begin(115200);
-  Serial1.begin(115200);
-  Serial2.begin(115200);
+  //Serial1.begin();
+  Serial_1.begin(9600, SERIAL_8N1, SERIAL1_RXPIN, SERIAL1_TXPIN,false);
+  Serial_2.begin(9600);  // pin 16=RX, pin 17=TX
+
+  Serial.println("Restarted");
+  Serial.println("");
+  Serial.println("");
+  Serial_1.print("Serial1 Working");
+  Serial_1.print('\n');
+
+  Serial_2.print("Serial2 working");
+  Serial_2.print('\n');
 }
 
-void loop(){
-  Serial.println("This Message is sent through USB Serial");
-  Serial1.println("This Message is sent through UART1 Serial");
-  Serial2.println("This Message is sent through UART2 Serial");
-  delay(1000);  
+
+void checkSerial_2(){
+    if (!Serial_2.available()) return;
+    char c = Serial_2.read();
+    if (c == '\n') {
+      Serial.println(readString);
+      //executeCommand(readString);
+      readString = "";    
+    }
+    else readString += c;
+}
+
+
+void checkSerial_1(){
+    if (!Serial_1.available()) return;
+    char c = Serial_1.read();
+    if (c == '\n') {
+      Serial.println(readString);
+      //executeCommand(readString);
+      readString = "";    
+    }
+    else readString += c;
+} 
+
+void checkSerial1(){
+    if (!Serial.available()) return;
+    char c = Serial.read();
+    if (c == '\n') {
+      Serial2.print(readStringB);
+      Serial2.print('\n');
+      //executeCommand(readStringB);
+      readStringB = "";    
+    }
+    else readStringB += c;
+}
+
+void loop() {
+// Do something wonderful
+//  checkSerial_2();
+//  checkSerial_1();
+
+  Serial_1.print("Serial1 Working");
+  Serial_1.print('\n');
+delay(200);
+  Serial_2.print("Serial2 working");
+  Serial_2.print('\n');
+
+  delay(200);
 }
 
