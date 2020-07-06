@@ -1,0 +1,38 @@
+﻿<Window x:Class="Serial_Communication_WPF.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Serial_Communication_WPF"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="782">
+            <TabItem Header="Serial Conf">
+                <Grid Background="#FFE5E5E5" Margin="0,0,-47,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="36*"/>
+                        <ColumnDefinition Width="17*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Label" HorizontalAlignment="Left" Margin="29,29,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Terminal">
+                <Grid Background="#FFE5E5E5" Margin="0,0,-80,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="11*"/>
+                        <ColumnDefinition Width="69*"/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Configuration">
+                <Grid Background="#FFE5E5E5" Margin="0,-2,-5,2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="11*"/>
+                        <ColumnDefinition Width="69*"/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

@@ -63,6 +63,20 @@ void checkSerial1(){
     else readStringB += c;
 }
 
+void CheckSerialVer2(){
+  
+ if (!Serial.available()) return;
+
+ if (Serial.available()) {
+    String s1 = Serial.readStringUntil('\n');// s1 is String type variable.
+    Serial.print("Received Data = ");
+    Serial.println(s1);//display same received Data back in serial monitor.
+   // delay(500);
+  }
+ 
+ }
+
+
 void loop() {
 // Do something wonderful
 //  checkSerial_2();
@@ -74,6 +88,9 @@ delay(200);
   Serial_2.print("Serial2 working");
   Serial_2.print('\n');
 
+  CheckSerialVer2();
+
   delay(200);
 }
+
 
