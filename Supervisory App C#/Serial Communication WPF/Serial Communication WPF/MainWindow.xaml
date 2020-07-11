@@ -27,37 +27,17 @@
 
         <TextBlock Text="Send" Grid.Column="0" Grid.Row="2" TextAlignment="Center"/>
         <TextBox Name ="SerialData" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" TextAlignment="Center"  MinWidth="150" />
-        <Button Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" Content="Send" Click="Send_Data"/>
+        <Button Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" Content="Send" Click="Send_Data" Height="20" VerticalAlignment="Top"/>
 
         <TextBlock Grid.Column="0" Grid.Row="3" Text="Recieved Data" TextAlignment="Center"/>
-        <RichTextBox Grid.Column="1" Grid.Row="3" Name="Commdata"/>
-
-        <TabControl HorizontalAlignment="Left" Height="319" Margin="-444,0,0,0" VerticalAlignment="Top" Width="424" Grid.RowSpan="4">
-            <TabItem Header="Serial Conf">
-                <Grid Background="#FFE5E5E5" Margin="0,0,-47,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="36*"/>
-                        <ColumnDefinition Width="17*"/>
-                    </Grid.ColumnDefinitions>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Terminal">
-                <Grid Background="#FFE5E5E5" Margin="0,0,-80,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="11*"/>
-                        <ColumnDefinition Width="69*"/>
-                    </Grid.ColumnDefinitions>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Configuration">
-                <Grid Background="#FFE5E5E5" Margin="0,-2,-5,2">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="11*"/>
-                        <ColumnDefinition Width="69*"/>
-                    </Grid.ColumnDefinitions>
-                </Grid>
-            </TabItem>
-        </TabControl>
+        <RichTextBox Grid.Column="1" Grid.Row="3" Name="Commdata">
+            <FlowDocument>
+                <Paragraph>
+                    
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="-343,79,0,0" Grid.Row="3" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 
 
     </Grid>

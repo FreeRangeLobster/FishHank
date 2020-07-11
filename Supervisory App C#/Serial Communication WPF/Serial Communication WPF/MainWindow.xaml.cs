@@ -73,6 +73,14 @@ namespace Serial_Communication_WPF
             }
         }
 
+        private void LaunchForm2() {
+
+
+            //this.Close();
+            Window1 fm = new Window1();
+            fm.Show();
+        }
+
         #region Recieving
 
         private delegate void UpdateUiTextDelegate(string text);
@@ -100,6 +108,9 @@ namespace Serial_Communication_WPF
             SerialCmdSend(SerialData.Text);
             SerialData.Text = "";
         }
+
+
+       
         public void SerialCmdSend(string data)
         {
             if (serial.IsOpen)
@@ -133,8 +144,12 @@ namespace Serial_Communication_WPF
             }
         }
 
+
         #endregion
 
-
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            LaunchForm2();
+        }
     }
 }

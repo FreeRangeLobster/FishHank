@@ -6,33 +6,53 @@
         xmlns:local="clr-namespace:Serial_Communication_WPF"
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800">
+    <Window.Resources>
+        <XmlDataProvider x:Key="ComPorts" Source="CommsData.xml" XPath="/Comms/Ports" />
+        <XmlDataProvider x:Key="ComSpeed" Source="CommsData.xml" XPath="/Comms/Baud" />
+    </Window.Resources>
     <Grid>
-        <TabControl HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="782">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition Width="20*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="782" Grid.ColumnSpan="2">
             <TabItem Header="Serial Conf">
                 <Grid Background="#FFE5E5E5" Margin="0,0,-47,0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="36*"/>
-                        <ColumnDefinition Width="17*"/>
+                        <ColumnDefinition Width="80*"/>
+                        <ColumnDefinition Width="479*"/>
+                        <ColumnDefinition Width="264*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Content="Label" HorizontalAlignment="Left" Margin="29,29,0,0" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
+
             <TabItem Header="Terminal">
-                <Grid Background="#FFE5E5E5" Margin="0,0,-80,0">
+                <Grid Background="#FFE5E5E5" Margin="0,0,-47,0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="11*"/>
-                        <ColumnDefinition Width="69*"/>
+                        <ColumnDefinition Width="80*"/>
+                        <ColumnDefinition Width="479*"/>
+                        <ColumnDefinition Width="264*"/>
                     </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" TextAlignment="Center" Text="Send String" Margin="62,44,346,325" Grid.ColumnSpan="2" />
+
+
+
+
+
                 </Grid>
             </TabItem>
-            <TabItem Header="Configuration">
+
+            <TabItem Header="Configuration" Height="22" VerticalAlignment="Top">
                 <Grid Background="#FFE5E5E5" Margin="0,-2,-5,2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="11*"/>
                         <ColumnDefinition Width="69*"/>
                     </Grid.ColumnDefinitions>
+                    <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="27,78,0,0" VerticalAlignment="Top" Width="75"/>
                 </Grid>
             </TabItem>
+
+
         </TabControl>
     </Grid>
 </Window>
