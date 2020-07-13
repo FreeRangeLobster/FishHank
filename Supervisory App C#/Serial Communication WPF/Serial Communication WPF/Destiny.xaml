@@ -20,9 +20,14 @@
                 <Grid Background="#FFE5E5E5" Margin="0,0,-47,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="80*"/>
-                        <ColumnDefinition Width="479*"/>
+                        <ColumnDefinition Width="18*"/>
+                        <ColumnDefinition Width="461*"/>
                         <ColumnDefinition Width="264*"/>
                     </Grid.ColumnDefinitions>
+                    <Button Content="Button" Grid.Column="2" HorizontalAlignment="Left" Margin="204,214,0,0" VerticalAlignment="Top" Width="75"/>
+                    <TextBox Grid.Column="2" HorizontalAlignment="Left" Height="22" Margin="33,110,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox Grid.Column="2" HorizontalAlignment="Left" Height="22" Margin="33,158,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox Grid.Column="2" HorizontalAlignment="Left" Height="22" Margin="33,200,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
                 </Grid>
             </TabItem>
 
@@ -33,7 +38,7 @@
                         <ColumnDefinition Width="479*"/>
                         <ColumnDefinition Width="264*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Row="0" TextAlignment="Center" Text="Send String" Margin="62,44,346,325" Grid.ColumnSpan="2" />
+                    <TextBlock Grid.Row="0" TextAlignment="Center" Text="Send String" Margin="36,28,292,341" Grid.Column="1" />
 
 
 
@@ -54,5 +59,9 @@
 
 
         </TabControl>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="166,69,0,0" VerticalAlignment="Top" Width="74" Grid.Column="1"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="166,110,0,0" VerticalAlignment="Top" Width="74" Grid.Column="1"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="166,150,0,0" VerticalAlignment="Top" Width="74" Grid.Column="1"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="166,198,0,0" VerticalAlignment="Top" Width="74" Grid.Column="1"/>
     </Grid>
 </Window>
