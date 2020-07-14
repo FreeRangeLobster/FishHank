@@ -31,7 +31,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Terminal">
+            <TabItem Header="Terminal" Margin="-4.8,0,0.6,-1.6">
                 <Grid Background="#FFE5E5E5" Margin="0,0,-47,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="80*"/>
@@ -48,20 +48,24 @@
             </TabItem>
 
             <TabItem Header="Configuration" Height="22" VerticalAlignment="Top">
-                <Grid Background="#FFE5E5E5" Margin="0,-2,-5,2">
+                <Grid Background="#FFE5E5E5" Margin="0,0,-5.2,-0.4">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="11*"/>
                         <ColumnDefinition Width="69*"/>
                     </Grid.ColumnDefinitions>
-                    <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="27,78,0,0" VerticalAlignment="Top" Width="75"/>
+                    <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="321.8,273,0,0" VerticalAlignment="Top" Width="75"/>
+                    <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="89,55,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="201"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="89,83,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="201" Grid.ColumnSpan="2"/>
+                    <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="89,111,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="201"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="89,139,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="201" Grid.ColumnSpan="2"/>
                 </Grid>
             </TabItem>
 
 
         </TabControl>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="166,69,0,0" VerticalAlignment="Top" Width="74" Grid.Column="1"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="166,110,0,0" VerticalAlignment="Top" Width="74" Grid.Column="1"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="166,150,0,0" VerticalAlignment="Top" Width="74" Grid.Column="1"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="166,198,0,0" VerticalAlignment="Top" Width="74" Grid.Column="1"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="106.2,88,0,0" VerticalAlignment="Top" Width="74" Grid.Column="1"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="106.2,112,0,0" VerticalAlignment="Top" Width="74" Grid.Column="1"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="106.2,136,0,0" VerticalAlignment="Top" Width="74" Grid.Column="1"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="106.2,169,0,0" VerticalAlignment="Top" Width="74" Grid.Column="1"/>
     </Grid>
 </Window>
