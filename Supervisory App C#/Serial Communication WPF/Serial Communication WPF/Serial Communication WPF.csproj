@@ -76,6 +76,8 @@
     <Compile Include="Destiny.xaml.cs">
       <DependentUpon>Destiny.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SDCard\Configuration.cs" />
+    <Compile Include="Settings.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

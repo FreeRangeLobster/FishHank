@@ -145,11 +145,12 @@ namespace Serial_Communication_WPF
         }
 
 
+
         #endregion
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            LaunchForm2();
+            
         }
     }
 }
