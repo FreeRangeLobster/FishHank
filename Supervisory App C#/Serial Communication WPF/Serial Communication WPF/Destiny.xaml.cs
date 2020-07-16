@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO.Ports;
+using System.Threading;
+using System.Windows.Threading;
 
 namespace Serial_Communication_WPF
 {
@@ -21,8 +23,9 @@ namespace Serial_Communication_WPF
     public partial class Window1 : Window
     {
         SerialPort ComPort = new SerialPort();
-
-      
+        string recieved_data;
+        Paragraph para = new Paragraph();
+        FlowDocument mcFlowDoc = new FlowDocument();
 
         public Window1()
         {
@@ -56,7 +59,7 @@ namespace Serial_Communication_WPF
             cboBaudRate.Items.Add(115200);
             cboBaudRate.Items.ToString();
             //get first item print in text
-            cboBaudRate.Text = cboBaudRate.Items[4].ToString();
+            cboBaudRate.Text = cboBaudRate.Items[9].ToString();
             //Data Bits
             cboDataBits.Items.Add(7);
             cboDataBits.Items.Add(8);
@@ -89,8 +92,7 @@ namespace Serial_Communication_WPF
 
         private void CmdConnect_Click(object sender, RoutedEventArgs e)
         {
-            if (cmdConnect.Content  == "Closed")
-            {
+            
                 cmdConnect.Content = "Open";
                 ComPort.PortName = Convert.ToString(cboComPortsAvailable.Text );
                 ComPort.BaudRate = Convert.ToInt32(cboBaudRate.Text);
@@ -99,22 +101,114 @@ namespace Serial_Communication_WPF
                 ComPort.Handshake = (Handshake)Enum.Parse(typeof(Handshake), cboHandShaking.Text);
                 ComPort.Parity = (Parity)Enum.Parse(typeof(Parity), cboParity.Text);
                 ComPort.Open();
-            }
-            else if (cmdConnect.Content == "Open")
-            {
+
+                ComPort.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(Recieve);
+
+        }
+
+        private void CmdDisconnect_Click(object sender, RoutedEventArgs e)
+        {
 
                 cmdConnect.Content = "Closed";
                 ComPort.Close();
 
-            }
+         
         }
 
 
-        
+
+        #region Recieving
+
+        private delegate void UpdateUiTextDelegate(string text);
+        private void Recieve(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
+        {
+            // Collecting the characters received to our 'buffer' (string).
+            recieved_data = ComPort.ReadExisting();
+            Dispatcher.Invoke(DispatcherPriority.Send, new UpdateUiTextDelegate(WriteData), recieved_data);
+        }
+        private void WriteData(string text)
+        {
+            // Assign the value of the recieved_data to the RichTextBox.
+            para.Inlines.Add(text);
+            mcFlowDoc.Blocks.Add(para);
+            Commdata.Document = mcFlowDoc;
+            Commdata.ScrollToEnd();
+        }
+
+        #endregion
+
+
         private void cmdSend1_Click(object sender, RoutedEventArgs e) 
 
         {
+            SerialCmdSend(tbCommand1.Text);            
+        }
 
+        private void CmdSend2_Click(object sender, RoutedEventArgs e)
+        {
+            SerialCmdSend(tbCommand2.Text);
+        }
+
+
+        private void CmdSend3_Click(object sender, RoutedEventArgs e)
+        {
+            SerialCmdSend(tbCommand3.Text);
+        }
+
+        private void CmdSend4_Click(object sender, RoutedEventArgs e)
+        {
+            SerialCmdSend(tbCommand4.Text);
+        }
+
+
+        public void SerialCmdSend(string data)
+        {
+            if (ComPort.IsOpen)
+            {
+                try
+                {
+
+                    para.Inlines.Add("->" + data + "\r\n");
+                    mcFlowDoc.Blocks.Add(para);
+                    Commdata.Document = mcFlowDoc;
+                    Commdata.ScrollToEnd();
+
+
+
+                    // Send the binary data out the port
+                    byte[] hexstring = Encoding.ASCII.GetBytes(data);
+                    //There is a intermitant problem that I came across
+                    //If I write more than one byte in succesion without a 
+                    //delay the PIC i'm communicating with will Crash
+                    //I expect this id due to PC timing issues ad they are
+                    //not directley connected to the COM port the solution
+                    //Is a ver small 1 millisecound delay between chracters
+                    foreach (byte hexval in hexstring)
+                    {
+                        byte[] _hexval = new byte[] { hexval }; // need to convert byte to byte[] to write
+                        ComPort.Write(_hexval, 0, 1);
+                        Thread.Sleep(1);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    para.Inlines.Add("Failed to SEND" + data + "\n" + ex + "\n");
+                    mcFlowDoc.Blocks.Add(para);
+                    Commdata.Document = mcFlowDoc;
+                }
+            }
+            else
+            {
+            }
+        }
+
+        private void CmdClear_Click(object sender, RoutedEventArgs e)
+        {
+
+            para.Inlines.Clear();
+            mcFlowDoc.Blocks.Clear();
+            Commdata.Document = mcFlowDoc;
+            Commdata.ScrollToEnd();
         }
     }
 

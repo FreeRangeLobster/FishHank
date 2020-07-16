@@ -9,6 +9,95 @@
     <Window.Resources>
         <XmlDataProvider x:Key="ComPorts" Source="CommsData.xml" XPath="/Comms/Ports" />
         <XmlDataProvider x:Key="ComSpeed" Source="CommsData.xml" XPath="/Comms/Baud" />
+        <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
+        <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
+        <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
+        <Style x:Key="{x:Type TextBoxBase}" TargetType="{x:Type TextBoxBase}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                        <Condition Property="IsSelectionActive" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="{x:Type Hyperlink}" TargetType="{x:Type Hyperlink}">
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}"/>
+            <Setter Property="TextDecorations" Value="Underline"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Foreground" Value="Red"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="true">
+                    <Setter Property="Cursor" Value="Hand"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="RichTextBoxStyle1" TargetType="{x:Type RichTextBox}">
+            <Style.Resources>
+                <Style x:Key="{x:Type FlowDocument}" TargetType="{x:Type FlowDocument}">
+                    <Setter Property="OverridesDefaultStyle" Value="true"/>
+
+                </Style>
+                <Style x:Key="{x:Type Hyperlink}" BasedOn="{StaticResource {x:Type Hyperlink}}" TargetType="{x:Type Hyperlink}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Foreground" Value="Blue"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Style.Resources>
+            <Setter Property="MinWidth" Value="10"/>
+            <Style.BasedOn>
+                <StaticResource ResourceKey="{x:Type TextBoxBase}"/>
+            </Style.BasedOn>
+        </Style>
+        <Style x:Key="RichTextBoxStyle2" TargetType="{x:Type RichTextBox}">
+            <Style.Resources>
+
+
+
+                <Style x:Key="{x:Type FlowDocument}" TargetType="{x:Type FlowDocument}">
+                    <Setter Property="OverridesDefaultStyle" Value="true"/>
+
+                </Style>
+                <Style x:Key="{x:Type Hyperlink}" BasedOn="{StaticResource {x:Type Hyperlink}}" TargetType="{x:Type Hyperlink}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Foreground" Value="Blue"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Style.Resources>
+            <Setter Property="MinWidth" Value="10"/>
+            <Style.BasedOn>
+                <StaticResource ResourceKey="{x:Type TextBoxBase}"/>
+            </Style.BasedOn>
+
+
+        </Style>
+
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -24,8 +113,8 @@
                         <ColumnDefinition Width="461*"/>
                         <ColumnDefinition Width="264*"/>
                     </Grid.ColumnDefinitions>
-                    <Button Content="Save" Grid.Column="2" HorizontalAlignment="Left" Margin="55.6,216,0,0" VerticalAlignment="Top" Width="75" Click="CmdConnect_Click"/>
-                    <Label Content="Baud Rate" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Width="78" Grid.ColumnSpan="2"/>
+                    <Button Content="Save" Grid.Column="2" HorizontalAlignment="Left" Margin="15,239,0,0" VerticalAlignment="Top" Width="75" Click="CmdConnect_Click"/>
+                    <Label Content="Baud Rate" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Width="90" Grid.ColumnSpan="3"/>
                     <Label Content="Parity" HorizontalAlignment="Left" Margin="10,113,0,0" VerticalAlignment="Top" Width="60"/>
                     <Label Content="Handshake" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" Width="88" Grid.ColumnSpan="2"/>
                     <Label Content="Databits" HorizontalAlignment="Left" Margin="10,87,0,0" VerticalAlignment="Top" Width="88" Grid.ColumnSpan="2"/>
@@ -36,7 +125,7 @@
                     <ComboBox x:Name="cboParity" Grid.Column="2" HorizontalAlignment="Left" Margin="56,118,0,0" VerticalAlignment="Top" Width="120" />
                     <ComboBox x:Name="cboStopBits" Grid.Column="2" HorizontalAlignment="Left" Margin="56,144,0,0" VerticalAlignment="Top" Width="120" />
                     <ComboBox x:Name="cboHandShaking" Grid.Column="2" HorizontalAlignment="Left" Margin="56,175,0,0" VerticalAlignment="Top" Width="120" />
-                    <Label x:Name="lblComName" Content="Comms Name" HorizontalAlignment="Left" Margin="10,29,0,0" VerticalAlignment="Top" Width="78" Grid.ColumnSpan="2"/>
+                    <Label x:Name="lblComName" Content="Comms Name" HorizontalAlignment="Left" Margin="10,29,0,0" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="3"/>
                 </Grid>
             </TabItem>
 
@@ -48,19 +137,26 @@
                         <ColumnDefinition Width="479*"/>
                         <ColumnDefinition Width="264*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Row="0" TextAlignment="Center" Text="Send String" Margin="36,28,292,341" Grid.Column="2" />
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="9,55,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="238" Grid.Column="2"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="9,83,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="238" Grid.Column="2"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="10,111,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="237" Grid.Column="2"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="9,139,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="238" Grid.Column="2"/>
-                    <Button x:Name="cmdConnect" Content="Connect" Grid.Column="3" HorizontalAlignment="Left" Margin="54.8,54,0,0" VerticalAlignment="Top" Width="75" Click="CmdConnect_Click"/>
-                    <TextBox HorizontalAlignment="Left" Height="151" Margin="10,219,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="435" Grid.Column="2"/>
-                    <Label Content="Received" Grid.Column="2" HorizontalAlignment="Left" Margin="10,193,0,0" VerticalAlignment="Top"/>
-                    <Button x:Name="cmdSend1" Content="Button" Grid.Column="2" HorizontalAlignment="Left" Margin="266,54,0,0" VerticalAlignment="Top" Width="75" Click="cmdSend1_Click"/>
-                    <Button x:Name="cmdSend2" Content="Button" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="266,83,0,0" VerticalAlignment="Top" Width="75"/>
-                    <Button x:Name="cmdSend3" Content="Button" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="266,111,0,0" VerticalAlignment="Top" Width="75"/>
-                    <Button x:Name="cmdSend4" Content="Button" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="266,136,0,0" VerticalAlignment="Top" Width="74"/>
-                    <Button x:Name="cmdDisconnectPort" Content="Disconnect Port" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="54.8,139,0,0" VerticalAlignment="Top" Width="101"/>
+                    <TextBlock Grid.Row="0" TextAlignment="Center" Text="Send String" Margin="448,10,144,359" Grid.Column="2" Grid.ColumnSpan="2" />
+                    <TextBox x:Name="tbCommand1" HorizontalAlignment="Left" Height="23" Margin="345,38,0,0" TextWrapping="Wrap" Text="?" VerticalAlignment="Top" Width="238" Grid.Column="2" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="tbCommand2" HorizontalAlignment="Left" Height="23" Margin="346,68,0,0" TextWrapping="Wrap" Text="O11" VerticalAlignment="Top" Width="238" Grid.Column="2" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="tbCommand3" HorizontalAlignment="Left" Height="23" Margin="347,96,0,0" TextWrapping="Wrap" Text="O10" VerticalAlignment="Top" Width="237" Grid.Column="2" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="tbCommand4" HorizontalAlignment="Left" Height="23" Margin="346,124,0,0" TextWrapping="Wrap" Text="Hello Cruel World" VerticalAlignment="Top" Width="238" Grid.Column="2" Grid.ColumnSpan="2"/>
+                    <Button x:Name="cmdConnect" Content="Connect" HorizontalAlignment="Left" Margin="56,219,0,0" VerticalAlignment="Top" Width="110" Click="CmdConnect_Click" Grid.Column="3" Height="54"/>
+                    <Button x:Name="cmdSend1" Content="Button" Grid.Column="3" HorizontalAlignment="Left" Margin="121,40,0,0" VerticalAlignment="Top" Width="75" Click="cmdSend1_Click"/>
+                    <Button x:Name="cmdSend2" Content="Button" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="121,66,0,0" VerticalAlignment="Top" Width="75" Click="CmdSend2_Click"/>
+                    <Button x:Name="cmdSend3" Content="Button" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="121,94,0,0" VerticalAlignment="Top" Width="75" Click="CmdSend3_Click"/>
+                    <Button x:Name="cmdSend4" Content="Button" Grid.Column="3" HorizontalAlignment="Left" Height="24" Margin="121,119,0,0" VerticalAlignment="Top" Width="74" Click="CmdSend4_Click"/>
+                    <Button x:Name="cmdDisconnectPort" Content="Disconnect Port" HorizontalAlignment="Left" Height="56" Margin="331,218,0,0" VerticalAlignment="Top" Width="112" Click="CmdDisconnect_Click" Grid.Column="2"/>
+                    <RichTextBox x:Name="Commdata" Grid.Column="1" HorizontalAlignment="Left" Height="324" Margin="26,37,0,0" VerticalAlignment="Top" Width="332" VerticalScrollBarVisibility="Visible"  Style="{DynamicResource RichTextBoxStyle1}" Grid.ColumnSpan="2">
+                        <FlowDocument>
+                            <Paragraph>
+                                <Run Text=""/>
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+                    <TextBlock Grid.Row="0" TextAlignment="Center" Text="Received" Margin="45,13,283,356" Grid.Column="2" />
+                    <Button x:Name="cmdClear" Content="Clear Terminal" HorizontalAlignment="Left" Margin="294,319,0,0" VerticalAlignment="Top" Width="110"  Grid.Column="2" Height="42" Click="CmdClear_Click"/>
 
 
 
