@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Serial_Communication_WPF.SDCard
 {
-    class Configuration
+    class SDCardConfiguration
     {
 
 

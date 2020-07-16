@@ -46,6 +46,9 @@ namespace Serial_Communication_WPF
             Array.Sort(ArrayComPortsNames);
 
 
+           
+
+
             //Baud Rate
             cboBaudRate.Items.Add(300);
             cboBaudRate.Items.Add(600);
@@ -59,19 +62,19 @@ namespace Serial_Communication_WPF
             cboBaudRate.Items.Add(115200);
             cboBaudRate.Items.ToString();
             //get first item print in text
-            cboBaudRate.Text = cboBaudRate.Items[9].ToString();
+        //    cboBaudRate.Text = cboBaudRate.Items[9].ToString();
             //Data Bits
             cboDataBits.Items.Add(7);
             cboDataBits.Items.Add(8);
             //get the first item print it in the text 
-            cboDataBits.Text = cboDataBits.Items[1].ToString();
+      //      cboDataBits.Text = cboDataBits.Items[1].ToString();
 
             //Stop Bits
             cboStopBits.Items.Add("One");
             cboStopBits.Items.Add("OnePointFive");
             cboStopBits.Items.Add("Two");
             //get the first item print in the text
-            cboStopBits.Text = cboStopBits.Items[0].ToString();
+    //        cboStopBits.Text = cboStopBits.Items[0].ToString();
             //Parity 
             cboParity.Items.Add("None");
             cboParity.Items.Add("Even");
@@ -79,14 +82,25 @@ namespace Serial_Communication_WPF
             cboParity.Items.Add("Odd");
             cboParity.Items.Add("Space");
             //get the first item print in the text
-            cboParity.Text = cboParity.Items[0].ToString();
+  //          cboParity.Text = cboParity.Items[0].ToString();
             //Handshake
             cboHandShaking.Items.Add("None");
             cboHandShaking.Items.Add("XOnXOff");
             cboHandShaking.Items.Add("RequestToSend");
             cboHandShaking.Items.Add("RequestToSendXOnXOff");
             //get the first item print it in the text 
-            cboHandShaking.Text = cboHandShaking.Items[0].ToString();
+//            cboHandShaking.Text = cboHandShaking.Items[0].ToString();
+
+            //Load settings
+            cboComPortsAvailable.Text = Properties.Settings.Default.CommsName;
+            cboBaudRate.Text= Properties.Settings.Default.BaudRate;
+            cboDataBits.Text=Properties.Settings.Default.Databits;
+            cboParity.Text=Properties.Settings.Default.Parity;
+            cboStopBits.Text=Properties.Settings.Default.StopBits;
+            cboHandShaking.Text=Properties.Settings.Default.Handshake;
+
+
+
 
         }
 
@@ -209,6 +223,17 @@ namespace Serial_Communication_WPF
             mcFlowDoc.Blocks.Clear();
             Commdata.Document = mcFlowDoc;
             Commdata.ScrollToEnd();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.CommsName = cboComPortsAvailable.Text;
+            Properties.Settings.Default.BaudRate = cboBaudRate.Text;
+            Properties.Settings.Default.Databits = cboDataBits.Text;
+            Properties.Settings.Default.Parity = cboParity.Text;
+            Properties.Settings.Default.StopBits = cboStopBits.Text;
+            Properties.Settings.Default.Handshake = cboHandShaking.Text ;
+            Properties.Settings.Default.Save();
         }
     }
 

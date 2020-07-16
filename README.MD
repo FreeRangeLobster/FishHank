@@ -68,6 +68,7 @@ git add . | updates (adds, removes) files and infor from local to remote reposit
 git commit -m "" | Commits the changes and allows for a message to be updated
 git push origin master| Pushes changes to remote repository
 git checkout --| Reverts the files to the last commited version
+git reset --hard | UNDO local file changes and KEEP your last commit
 
 special thanks to for the atmega library
 https://github.com/njh/eagle-library

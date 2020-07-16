@@ -113,7 +113,7 @@
                         <ColumnDefinition Width="461*"/>
                         <ColumnDefinition Width="264*"/>
                     </Grid.ColumnDefinitions>
-                    <Button Content="Save" Grid.Column="2" HorizontalAlignment="Left" Margin="15,239,0,0" VerticalAlignment="Top" Width="75" Click="CmdConnect_Click"/>
+                    <Button Content="Save" Grid.Column="2" HorizontalAlignment="Left" Margin="15,239,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" />
                     <Label Content="Baud Rate" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Width="90" Grid.ColumnSpan="3"/>
                     <Label Content="Parity" HorizontalAlignment="Left" Margin="10,113,0,0" VerticalAlignment="Top" Width="60"/>
                     <Label Content="Handshake" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" Width="88" Grid.ColumnSpan="2"/>
@@ -165,7 +165,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Configuration" Height="22" VerticalAlignment="Top" Margin="12.4,0,-16.6,0">
+            <TabItem Header="Configuration SD" Height="22" VerticalAlignment="Top" Margin="12.4,0,-16.6,0">
                 <Grid Background="#FFE5E5E5" Margin="0,0,-5.2,-0.4">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="11*"/>
@@ -179,6 +179,15 @@
                 </Grid>
             </TabItem>
 
+
+            <TabItem Header="System Status" Height="22" VerticalAlignment="Top" Margin="12.4,0,-16.6,0">
+                <Grid Background="#FFE5E5E5" Margin="0,0,-5.2,-0.4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="11*"/>
+                        <ColumnDefinition Width="69*"/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </TabItem>
 
         </TabControl>
     </Grid>

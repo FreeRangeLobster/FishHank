@@ -22,5 +22,77 @@ namespace Serial_Communication_WPF.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CommsName {
+            get {
+                return ((string)(this["CommsName"]));
+            }
+            set {
+                this["CommsName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string BaudRate {
+            get {
+                return ((string)(this["BaudRate"]));
+            }
+            set {
+                this["BaudRate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Databits {
+            get {
+                return ((string)(this["Databits"]));
+            }
+            set {
+                this["Databits"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Parity {
+            get {
+                return ((string)(this["Parity"]));
+            }
+            set {
+                this["Parity"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string StopBits {
+            get {
+                return ((string)(this["StopBits"]));
+            }
+            set {
+                this["StopBits"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Handshake {
+            get {
+                return ((string)(this["Handshake"]));
+            }
+            set {
+                this["Handshake"] = value;
+            }
+        }
     }
 }

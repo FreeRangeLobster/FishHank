@@ -1,0 +1,57 @@
+* [33md60a7da[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m Basic Serial application ready for testing
+* [33m0f56481[m Addin field sto the terminal screen
+* [33m7687a12[m Implemented serial Configuration and Open Port
+* [33m300f456[m supervisory app UI
+* [33m43777fb[m Designing the user interface for supervisory sys
+* [33m426f4e9[m Laying out the supervisory user interface
+* [33ma8baf1b[m Laying out the config/supervisory c# app
+* [33mfbf1e17[m Started to implement the serial command handler
+* [33m7878d20[m Starting to implement the state machine, added some functionality in the supervisory function
+* [33m95ccb35[m Started development of configuration and supervisory app
+* [33maedc984[m Serial_1 Working, this is to be connected to the ext Bluetooth
+* [33m36cdf5a[m added the arduino version using from home pc to the readme file
+* [33m71208dd[m Added Third Serial, 1 file in the spressif hardware core needs to be patched
+* [33m08181b9[m Added the SD card to the dev program
+* [33m6be9315[m Merging RTC, OLED and Temperature Sensor
+* [33m0000198[m Oled showing current time
+* [33mbb1cb61[m Merging RTC and OLED
+* [33md9dc2d7[m updating Oled and RTC
+* [33m6d4a45a[m SD card sister board is not happy with 3.3V, needs at least 5 to operate properly. Temperature sensore tested succesfully
+* [33m9d1580d[m Tested comminication with esp-arduino, only works if the ftdi is connected, need to find out why
+* [33me50860c[m WIP arduino IO controller, code finished next test with the ESP32 to stablish comms
+* [33m3a97950[m WIP arduino IO controller, to implement the input int and the ACK
+* [33ma61f57f[m Working on Arduino IO controller, work in progress to set up the outputs
+* [33mb162a30[m Added sample code for SD card reading using esp32, still to be tested
+* [33mae4bf22[m Added ESP32 Development file
+* [33mef9d06c[m Added screengrab with the production process
+* [33ma432074[m Updated Production files and added the purchase order
+* [33m78b7b79[m Updated PCB files
+* [33m72efbe1[m Updated exports
+* [33m55cd392[m Updated parts schedule
+* [33m382fad1[m tidying up libraries
+* [33mc0c0439[m Added more info to the README file
+* [33mf0a9f70[m Added more info to the README file
+* [33me5514a7[m Finilised the pcb and sent to production
+* [33m47f9636[m MAkng progress in the PCB
+* [33m8e46382[m PCB routing session
+* [33mfaa86ea[m Trying to set up the positions of the components in the PCB
+* [33m3c250b6[m Changed the VRegs and Added a crowbar circuit to handle overvoltage conditions
+* [33m3a1a50d[m Updating parts footprint in the brd
+* [33m38e22fa[m Added parts schedule
+* [33mb34e413[m Started arranging components in the PCB
+* [33m8926144[m Added Atmega 328-20P to the pcb and wired, still to be verified and tidied up
+* [33m1affee8[m Tested the Atmega 328P and is fit for porpuse, Also got the Eagle library to add the Ic in the PCB
+* [33m9e10cac[m Mods to the arduino code
+* [33m6f1b897[m Clarifyng ports in Arduino micro, more testing required
+* [33m63ac4f6[m Changed v-regs and updated arduino program ready to test the ssrs
+* [33m9e814b0[m Tiding up files
+* [33mc1d5ca3[m Tiding up files
+* [33m473821b[m Adding Arduino Serial communication and tiding up code
+* [33m79f7dc7[m Changed the interface of the SSR to Arduino. Added Arduino Sketch
+* [33mec52b58[m Adding Arduino micro to the libraries, it will handle buttons and outputs. communication intended to be serial
+* [33m88d9873[m Placed components in PCB and exported some pics to verify footprints
+* [33m0834506[m Finished first draft of the schematic, started organising the PCB
+* [33m480d771[m Added microcontroller connections
+* [33mf19f88e[m Wired SSR circuits
+* [33m448eedc[m finished library of sub assemblies, added ssr circuits
+* [33m0bc0f69[m initial project version
