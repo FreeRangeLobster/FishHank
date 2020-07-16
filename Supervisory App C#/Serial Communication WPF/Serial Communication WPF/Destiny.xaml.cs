@@ -108,6 +108,14 @@ namespace Serial_Communication_WPF
 
             }
         }
+
+
+        
+        private void cmdSend1_Click(object sender, RoutedEventArgs e) 
+
+        {
+
+        }
     }
 
     }

@@ -49,13 +49,18 @@
                         <ColumnDefinition Width="264*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Row="0" TextAlignment="Center" Text="Send String" Margin="36,28,292,341" Grid.Column="2" />
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="9,55,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="201" Grid.Column="2"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="9,83,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="201" Grid.Column="2"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="9,111,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="201" Grid.Column="2"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="9,139,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="201" Grid.Column="2"/>
-                    <Button x:Name="cmdConnect" Content="Connect" Grid.Column="2" HorizontalAlignment="Left" Margin="314,178,0,0" VerticalAlignment="Top" Width="75" Click="CmdConnect_Click"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="9,55,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="238" Grid.Column="2"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="9,83,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="238" Grid.Column="2"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="10,111,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="237" Grid.Column="2"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="9,139,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="238" Grid.Column="2"/>
+                    <Button x:Name="cmdConnect" Content="Connect" Grid.Column="3" HorizontalAlignment="Left" Margin="54.8,54,0,0" VerticalAlignment="Top" Width="75" Click="CmdConnect_Click"/>
                     <TextBox HorizontalAlignment="Left" Height="151" Margin="10,219,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="435" Grid.Column="2"/>
                     <Label Content="Received" Grid.Column="2" HorizontalAlignment="Left" Margin="10,193,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="cmdSend1" Content="Button" Grid.Column="2" HorizontalAlignment="Left" Margin="266,54,0,0" VerticalAlignment="Top" Width="75" Click="cmdSend1_Click"/>
+                    <Button x:Name="cmdSend2" Content="Button" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="266,83,0,0" VerticalAlignment="Top" Width="75"/>
+                    <Button x:Name="cmdSend3" Content="Button" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="266,111,0,0" VerticalAlignment="Top" Width="75"/>
+                    <Button x:Name="cmdSend4" Content="Button" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="266,136,0,0" VerticalAlignment="Top" Width="74"/>
+                    <Button x:Name="cmdDisconnectPort" Content="Disconnect Port" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="54.8,139,0,0" VerticalAlignment="Top" Width="101"/>
 
 
 
