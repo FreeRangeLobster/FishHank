@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.IO.Ports;
 using System.Threading;
 using System.Windows.Threading;
+using System.IO;
 
 namespace Serial_Communication_WPF
 {
@@ -234,6 +235,47 @@ namespace Serial_Communication_WPF
             Properties.Settings.Default.StopBits = cboStopBits.Text;
             Properties.Settings.Default.Handshake = cboHandShaking.Text ;
             Properties.Settings.Default.Save();
+        }
+
+        private void cmdOpenConfigFilePC_Click(object sender, RoutedEventArgs e)
+        {
+            // Create OpenFileDialog
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+
+            // Set filter for file extension and default file extension
+            dlg.DefaultExt = ".txt";
+            dlg.Filter = "Text documents (.txt)|*.txt";
+
+            // Display OpenFileDialog by calling ShowDialog method
+            Nullable<bool> result = dlg.ShowDialog();
+
+            // Get the selected file name and display in a TextBox
+            if (result == true)
+            {
+                // Open document
+                string filename = dlg.FileName;
+                FileNameTextBox.Text  = filename;
+
+                Paragraph paragraph = new Paragraph();
+                paragraph.Inlines.Add(System.IO.File.ReadAllText(filename));
+                FlowDocument document = new FlowDocument(paragraph);
+                //FlowDocReader.Document = document;
+            }
+        }
+
+        private void cmdReadOutputSchedule_Click(object sender, RoutedEventArgs e)
+        {
+            TextRange range;
+            FileStream fStream;
+
+            if (File.Exists(FileNameTextBox.Text))
+            {
+                range = new TextRange(rtbFileContents.Document.ContentStart, rtbFileContents.Document.ContentEnd);
+                fStream = new FileStream(FileNameTextBox.Text, FileMode.OpenOrCreate);
+                range.Load(fStream, DataFormats.Text);
+                fStream.Close();
+            }
+
         }
     }
 

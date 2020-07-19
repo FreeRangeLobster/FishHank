@@ -1,0 +1,8 @@
+Hank Configuration File
+19072020
+SSID__________=HelloCruelWorld
+PASSWORD______=HelloPassword
+MeasTemp______=1
+EnDisplay_____=1
+EnLogger______=1
+UpdateInterval=1

@@ -166,16 +166,25 @@
             </TabItem>
 
             <TabItem Header="Configuration SD" Height="22" VerticalAlignment="Top" Margin="12.4,0,-16.6,0">
-                <Grid Background="#FFE5E5E5" Margin="0,0,-5.2,-0.4">
+                <Grid Background="#FFE5E5E5" Margin="0,0,-5.2,-0.4" RenderTransformOrigin="0.368,0.444">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="11*"/>
                         <ColumnDefinition Width="69*"/>
                     </Grid.ColumnDefinitions>
-                    <Button Content="Save Config File" HorizontalAlignment="Left" Margin="345.8,178,0,0" VerticalAlignment="Top" Width="167" Grid.Column="1"/>
-                    <Button Content="Save Outputs Schedule" HorizontalAlignment="Left" Margin="345.8,202,0,0" VerticalAlignment="Top" Width="167" Grid.Column="1"/>
-                    <Button Content="Unmount SD Card" HorizontalAlignment="Left" Margin="345.8,247,0,0" VerticalAlignment="Top" Width="167" Grid.Column="1"/>
-                    <Button Content="Read Config File" HorizontalAlignment="Left" Margin="345.8,108,0,0" VerticalAlignment="Top" Width="167" Grid.Column="1"/>
-                    <Button Content="Read Output Schedule" HorizontalAlignment="Left" Margin="345.8,73,0,0" VerticalAlignment="Top" Width="167" Grid.Column="1"/>
+                    <Button Content="Save Config File" HorizontalAlignment="Left" Margin="481.8,178,0,0" VerticalAlignment="Top" Width="167" Grid.Column="1" />
+                    <Button Content="Save Outputs Schedule" HorizontalAlignment="Left" Margin="481.8,202,0,0" VerticalAlignment="Top" Width="167" Grid.Column="1"/>
+                    <Button Content="Unmount SD Card" HorizontalAlignment="Left" Margin="481.8,247,0,0" VerticalAlignment="Top" Width="167" Grid.Column="1"/>
+                    <Button Content="Read Config File" HorizontalAlignment="Left" Margin="479.8,108,0,0" VerticalAlignment="Top" Width="167" Grid.Column="1"/>
+                    <Button x:Name="cmdReadOutputSchedule" Content="Read Output Schedule" HorizontalAlignment="Left" Margin="481.8,73,0,0" VerticalAlignment="Top" Width="167" Grid.Column="1" Click="cmdReadOutputSchedule_Click"/>
+                    <Button x:Name="cmdBrowseFilePC" Content="Browse" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="535.8,31,0,0" VerticalAlignment="Top" Width="113" Click="cmdOpenConfigFilePC_Click"/>
+                    <TextBox x:Name="FileNameTextBox" HorizontalAlignment="Left" Height="22" Margin="26,31,0,0" TextWrapping="Wrap" Text="C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\ConfigurationFiles\HankConfigFile.txt" VerticalAlignment="Top" Width="594" Grid.ColumnSpan="2"/>
+                    <RichTextBox x:Name="rtbFileContents" HorizontalAlignment="Left" Height="288" Margin="26,73,0,0" VerticalAlignment="Top" Width="533" VerticalScrollBarVisibility="Visible"  Style="{DynamicResource RichTextBoxStyle1}" Grid.ColumnSpan="2">
+                        <FlowDocument>
+                            <Paragraph>
+                                <Run Text=""/>
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
                 </Grid>
             </TabItem>
 
@@ -186,6 +195,11 @@
                         <ColumnDefinition Width="11*"/>
                         <ColumnDefinition Width="69*"/>
                     </Grid.ColumnDefinitions>
+                    <Button x:Name="cmdUpdateTime" Content="Update Time" Grid.Column="1" HorizontalAlignment="Left" Margin="306.8,52,0,0" VerticalAlignment="Top" Width="114"/>
+                    <Button x:Name="cmdGetCurrentStatus" Content="Get Current Status" Grid.Column="1" HorizontalAlignment="Left" Margin="306.8,115,0,0" VerticalAlignment="Top" Width="114"/>
+                    <Button x:Name="cmdDumpMemory" Content="Dump Memory" Grid.Column="1" HorizontalAlignment="Left" Height="21" Margin="306.8,159,0,0" VerticalAlignment="Top" Width="114"/>
+                    <Button x:Name="cmdStartLogging" Content="Start Logging" Grid.Column="1" HorizontalAlignment="Left" Height="21" Margin="306.8,206,0,0" VerticalAlignment="Top" Width="114"/>
+                    <Button x:Name="cmdStopLogging" Content="Stop Logging" Grid.Column="1" HorizontalAlignment="Left" Height="21" Margin="438.8,206,0,0" VerticalAlignment="Top" Width="114"/>
                 </Grid>
             </TabItem>
 

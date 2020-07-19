@@ -18,3 +18,4 @@ C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\LoadTextFileInFlowDo
 C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\LoadTextFileInFlowDocumentViewerSample\LoadTextFileInFlowDocumentViewerSample\obj\x86\Debug\LoadTextFileInFlowDocumentViewerSample.Properties.Resources.resources
 C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\LoadTextFileInFlowDocumentViewerSample\LoadTextFileInFlowDocumentViewerSample\obj\x86\Debug\LoadTextFileInFlowDocumentViewerSample.csproj.GenerateResource.Cache
 C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\LoadTextFileInFlowDocumentViewerSample\LoadTextFileInFlowDocumentViewerSample\obj\x86\Debug\LoadTextFileInFlowDocumentViewerSample.csproj.CoreCompileInputs.cache
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\LoadTextFileInFlowDocumentViewerSample\LoadTextFileInFlowDocumentViewerSample\obj\x86\Debug\LoadTextFileInFlowDocumentViewerSample.csprojResolveAssemblyReference.cache
