@@ -174,7 +174,7 @@
                     <Button Content="Save Config File" HorizontalAlignment="Left" Margin="481.8,178,0,0" VerticalAlignment="Top" Width="167" Grid.Column="1" />
                     <Button Content="Save Outputs Schedule" HorizontalAlignment="Left" Margin="481.8,202,0,0" VerticalAlignment="Top" Width="167" Grid.Column="1"/>
                     <Button Content="Unmount SD Card" HorizontalAlignment="Left" Margin="481.8,247,0,0" VerticalAlignment="Top" Width="167" Grid.Column="1"/>
-                    <Button Content="Read Config File" HorizontalAlignment="Left" Margin="479.8,108,0,0" VerticalAlignment="Top" Width="167" Grid.Column="1"/>
+                    <Button Content="Read Config File" HorizontalAlignment="Left" Margin="479.8,108,0,0" VerticalAlignment="Top" Width="167" Grid.Column="1" Click="Button_Click_1"/>
                     <Button x:Name="cmdReadOutputSchedule" Content="Read Output Schedule" HorizontalAlignment="Left" Margin="481.8,73,0,0" VerticalAlignment="Top" Width="167" Grid.Column="1" Click="cmdReadOutputSchedule_Click"/>
                     <Button x:Name="cmdBrowseFilePC" Content="Browse" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="535.8,31,0,0" VerticalAlignment="Top" Width="113" Click="cmdOpenConfigFilePC_Click"/>
                     <TextBox x:Name="FileNameTextBox" HorizontalAlignment="Left" Height="22" Margin="26,31,0,0" TextWrapping="Wrap" Text="C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\ConfigurationFiles\HankConfigFile.txt" VerticalAlignment="Top" Width="594" Grid.ColumnSpan="2"/>
@@ -184,6 +184,11 @@
                                 <Run Text=""/>
                             </Paragraph>
                         </FlowDocument>
+                        <RichTextBox.Resources>
+                            <Style TargetType="{x:Type Paragraph}">
+                                <Setter Property="Margin" Value="0"/>
+                            </Style>
+                        </RichTextBox.Resources>
                     </RichTextBox>
                 </Grid>
             </TabItem>

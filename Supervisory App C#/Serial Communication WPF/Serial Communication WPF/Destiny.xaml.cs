@@ -15,6 +15,7 @@ using System.IO.Ports;
 using System.Threading;
 using System.Windows.Threading;
 using System.IO;
+using System.Xml.Linq;
 
 namespace Serial_Communication_WPF
 {
@@ -276,6 +277,14 @@ namespace Serial_Communication_WPF
                 fStream.Close();
             }
 
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            //XElement booksFromFile = XElement.Load(@"books.xml");
+            XElement booksFromFile = XElement.Load("C:/Users/Juan/Desktop/HankEagle/FishHank/Supervisory App C#/Serial Communication WPF/Settings/Sample.xml");
+            Console.WriteLine(booksFromFile);
+            Console.WriteLine(booksFromFile.FirstNode);
         }
     }
 
