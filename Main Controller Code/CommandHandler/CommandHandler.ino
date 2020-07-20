@@ -13,7 +13,7 @@ String readStringB;
 String sSerialUSB;
 char nOption;
 
-enum StatesEnum { Start, Initialise, ReadSD, EnablePeripherals, UpdateStatus, updateTFT,  CheckSerialComms,HandleSerials };
+enum StatesEnum {Start , Initialise, ReadSD, EnablePeripherals, UpdateStatus, updateTFT,  CheckSerialComms,HandleSerials,Idle };
 StatesEnum CurrentState;
 StatesEnum LastState;
 
@@ -32,56 +32,65 @@ void setup() {
 
   Serial_2.print("Serial2 working");
   Serial_2.print('\n');
+
+  CurrentState=Start;
 }
 
 
-void checkSerial_2(){
-    if (!Serial_2.available()) return;
-    char c = Serial_2.read();
-    if (c == '\n') {
-      Serial.println(readString);
-      //executeCommand(readString);
-      readString = "";    
-    }
-    else readString += c;
-}
+void checkSerial_2();
+void checkSerial_1();
+void checkSerial1();
+void SerialCommandHandller();
+void CheckSerialVer2();
+void CheckSerialVer3();
 
 
-void checkSerial_1(){
-    if (!Serial_1.available()) return;
-    char c = Serial_1.read();
-    if (c == '\n') {
-      Serial.println(readString);
-      //executeCommand(readString);
-      readString = "";    
-    }
-    else readString += c;
-} 
+void loop() {
 
-void checkSerial1(){
-    if (!Serial.available()) return;
-    char c = Serial.read();
-    if (c == '\n') {
-      Serial2.print(readStringB);
-      Serial2.print('\n');
-      //executeCommand(readStringB);
-      readStringB = "";    
-    }
-    else readStringB += c;
-}
 
-void CheckSerialVer2(){  
-    if (!Serial.available()) return;
+  switch (CurrentState){
+
+    case Start: 
+      CurrentState=Initialise;
+    break;
     
-    if (Serial.available()) {   
-      sSerialUSB = Serial.readStringUntil('\n');// s1 is String type variable.
-      //delay(10);
-      Serial.print("Received Data = ");
-      Serial.println(sSerialUSB);//display same received Data back in serial monitor. 
-      nOption=sSerialUSB[0];
-    }
+    case Initialise: 
+      CurrentState=ReadSD;    
+    break;
+            
+    case ReadSD:
+       CurrentState=HandleSerials;     
+    break;
+    
+    case HandleSerials: 
+        //CheckSerialVer2();
+        CheckSerialVer3();
+        SerialCommandHandller();
+        CurrentState=Idle;
+    break;
+
+    case Idle:
+      CurrentState=UpdateStatus;      
+    break;
+
+    case UpdateStatus:
+       CurrentState=ReadSD;     
+    break;
+
+   }
+
+  
+//  checkSerial_2();
+//  checkSerial_1();
+
+  //Serial_1.print("Serial1 Working");
+  //Serial_1.print('\n');
+//delay(200);
+  //Serial_2.print("Serial2 working");
+  //Serial_2.print('\n');
  
- }
+}
+
 
 
 void SerialCommandHandller(){
@@ -109,6 +118,11 @@ void SerialCommandHandller(){
   
       case 'O':
         Serial.println("O Update Outputs");     
+        sSerialUSB="";
+      break;
+
+      case 'S':
+        Serial.println("S Get Status");     
         sSerialUSB="";
       break;
   
@@ -168,11 +182,12 @@ void SerialCommandHandller(){
       break;
   
       case '?':
-        Serial.println("Help");
+        Serial.println("? Help");
         Serial.println("K Initialise");  
         Serial.println("I Idle");
         Serial.println("N Update Screen");   
         Serial.println("M Check Events");
+        Serial.println("S Get Status");
         Serial.println("O Update Outputs");
         Serial.println("D Delete Memory");     
         Serial.println("0 Read Page Number 0_0000");
@@ -197,46 +212,64 @@ void SerialCommandHandller(){
       }  
 }
 
-void loop() {
-// Do something wonderful
-//  checkSerial_2();
-//  checkSerial_1();
-
-  //Serial_1.print("Serial1 Working");
-  //Serial_1.print('\n');
-//delay(200);
-  //Serial_2.print("Serial2 working");
-  //Serial_2.print('\n');
-
-  CheckSerialVer2();
-  SerialCommandHandller();
-
-  switch (CurrentState){
-
-    //Start, Initialise, ReadSD, EnablePeripherals, UpdateStatus, updateTFT,  CheckSerialComms, HandleSerials 
-
-    case Start: 
-      CurrentState=Initialise;
-    break;
+void CheckSerialVer2(){  
+    if (!Serial.available()) return;
     
-    case Initialise: 
-      CurrentState=Initialise;
-    break;
-    
-    case ReadSD: 
-      CurrentState=Initialise;
-    break;
-    
-   case HandleSerials: 
-      CurrentState=Initialise;
-    break;
-   
-   
-   }
-
-  
-
+    if (Serial.available()) {   
+      sSerialUSB = Serial.readStringUntil('\n');// s1 is String type variable.
+      //delay(10);
+      Serial.print("Received Data = ");
+      Serial.println(sSerialUSB);//display same received Data back in serial monitor. 
+      nOption=sSerialUSB[0];
+    }
  
+ }
+
+void CheckSerialVer3(){  
+    if (!Serial.available()) return;
+    
+  
+  while (Serial.available()) {
+    sSerialUSB = Serial.readStringUntil('\n');// s1 is String type variable.
+      //delay(10);
+      Serial.print("Received Data = ");
+      Serial.println(sSerialUSB);//display same received Data back in serial monitor. 
+      nOption=sSerialUSB[0];
+  }
+ 
+ }
+
+ void checkSerial_2(){
+    if (!Serial_2.available()) return;
+    char c = Serial_2.read();
+    if (c == '\n') {
+      Serial.println(readString);
+      //executeCommand(readString);
+      readString = "";    
+    }
+    else readString += c;
 }
 
 
+void checkSerial_1(){
+    if (!Serial_1.available()) return;
+    char c = Serial_1.read();
+    if (c == '\n') {
+      Serial.println(readString);
+      //executeCommand(readString);
+      readString = "";    
+    }
+    else readString += c;
+} 
+
+void checkSerial1(){
+    if (!Serial.available()) return;
+    char c = Serial.read();
+    if (c == '\n') {
+      Serial2.print(readStringB);
+      Serial2.print('\n');
+      //executeCommand(readStringB);
+      readStringB = "";    
+    }
+    else readStringB += c;
+}
