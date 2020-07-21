@@ -1,5 +1,24 @@
 //https://esp32.com/viewtopic.php?t=328  
+//RTC lib https://github.com/adafruit/RTClib
+//http://www.esp32learning.com/code/esp32-and-ds3231-rtc-example.php
 /* ESP32 3 UARTs */
+
+#include <SPI.h>
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+#include <RTClib.h>
+
+
+
+RTC_DS3231 rtc;
+char daysOfTheWeek[7][12] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+ 
+#define SCREEN_WIDTH 128  // OLED display width, in pixels
+#define SCREEN_HEIGHT 64  // OLED display height, in pixels
+#define OLED_RESET    -1  // Reset pin # (or -1 if sharing reset pin)
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+
 
 HardwareSerial Serial_1(1);
 HardwareSerial Serial_2(2);
@@ -34,7 +53,15 @@ void setup() {
   Serial_2.print('\n');
 
   CurrentState=Start;
-}
+
+  if (! rtc.begin()) {
+    Serial.println("Couldn't find RTC"); 
+  }
+    else{
+   Serial.println("RTC Detected"); 
+   }
+  }
+
 
 
 void checkSerial_2();
