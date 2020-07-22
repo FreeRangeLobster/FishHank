@@ -54,13 +54,35 @@ void setup() {
 
   CurrentState=Start;
 
+  if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { 
+      Serial.println(F("SSD1306 allocation failed"));   
+  }
+  else{    
+    Serial.println("Display Initialised"); 
+  }
+
   if (! rtc.begin()) {
     Serial.println("Couldn't find RTC"); 
   }
-    else{
+  else{
    Serial.println("RTC Detected"); 
+   DateTime now = rtc.now(); 
+   Serial.print(now.year(), DEC);
+   Serial.print('/');
+   Serial.print(now.month(), DEC);
+   Serial.print('/');
+   Serial.print(now.day(), DEC);
+   Serial.print(" (");
+   Serial.print(daysOfTheWeek[now.dayOfTheWeek()]);
+   Serial.print(") ");
+   Serial.print(now.hour(), DEC);
+   Serial.print(':');
+   Serial.print(now.minute(), DEC);
+   Serial.print(':');
+   Serial.print(now.second(), DEC);
+   Serial.println();
    }
-  }
+ }
 
 
 
