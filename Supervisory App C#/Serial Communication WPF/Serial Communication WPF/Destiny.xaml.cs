@@ -286,6 +286,28 @@ namespace Serial_Communication_WPF
             Console.WriteLine(booksFromFile);
             Console.WriteLine(booksFromFile.FirstNode);
         }
+
+        private void cmdUpdateTime_Click(object sender, RoutedEventArgs e)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                System.Windows.Controls.Button newBtn = new Button();
+
+                newBtn.Content = i.ToString();
+                newBtn.Name = "Button" + i.ToString();
+                newBtn.Click += new RoutedEventHandler(button_Click);
+                sp.Children.Add(newBtn);
+            }
+        }
+
+        void button_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine(string.Format("You clicked on the {0}. button.", (sender as Button).Name));
+        }
+
+    
+
+
     }
 
     }

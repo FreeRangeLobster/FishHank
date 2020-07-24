@@ -1,0 +1,17 @@
+<EmbeddedCompatibleInstructions>  
+  <Instruction id="1">  
+    <ButtonName>Get Current Status</ButtonName>  
+    <Command>S</Command>  
+    <Parameter1></Parameter1>  
+    <Parameter2></Parameter2>  
+    <Comments>No comments</Comments>    
+  </Instruction>  
+  
+  <Instruction id="2">  
+     <ButtonName>Get Current Time</ButtonName>  
+    <Command>T</Command>  
+    <Parameter1></Parameter1>  
+    <Parameter2></Parameter2>  
+    <Comments>No comments</Comments>
+  </Instruction>  
+</EmbeddedCompatibleInstructions>

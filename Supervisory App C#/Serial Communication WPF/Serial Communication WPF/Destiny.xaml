@@ -200,11 +200,12 @@
                         <ColumnDefinition Width="11*"/>
                         <ColumnDefinition Width="69*"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="cmdUpdateTime" Content="Update Time" Grid.Column="1" HorizontalAlignment="Left" Margin="306.8,52,0,0" VerticalAlignment="Top" Width="114"/>
+                    <Button x:Name="cmdUpdateTime" Content="Update Time" Grid.Column="1" HorizontalAlignment="Left" Margin="306.8,52,0,0" VerticalAlignment="Top" Width="114" Click="cmdUpdateTime_Click"/>
                     <Button x:Name="cmdGetCurrentStatus" Content="Get Current Status" Grid.Column="1" HorizontalAlignment="Left" Margin="306.8,115,0,0" VerticalAlignment="Top" Width="114"/>
                     <Button x:Name="cmdDumpMemory" Content="Dump Memory" Grid.Column="1" HorizontalAlignment="Left" Height="21" Margin="306.8,159,0,0" VerticalAlignment="Top" Width="114"/>
                     <Button x:Name="cmdStartLogging" Content="Start Logging" Grid.Column="1" HorizontalAlignment="Left" Height="21" Margin="306.8,206,0,0" VerticalAlignment="Top" Width="114"/>
                     <Button x:Name="cmdStopLogging" Content="Stop Logging" Grid.Column="1" HorizontalAlignment="Left" Height="21" Margin="438.8,206,0,0" VerticalAlignment="Top" Width="114"/>
+                    <StackPanel x:Name="sp" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="225" Margin="50,115,0,0" VerticalAlignment="Top" Width="231"/>
                 </Grid>
             </TabItem>
 
