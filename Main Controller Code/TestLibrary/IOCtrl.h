@@ -14,6 +14,16 @@ class IOCtrl
     IOCtrl(int pin);
     void dot();
     void dash();
+    void dash2();
+    
+    char* GetStatus();
+    //void SetOutputTo(OutputNumber,State)();
+    //void SetOutput(OutputNumber)();
+    //void ClearOutput(OutputNumber)();
+    void GetInputs();
+    void ClearEvent();
+    void ClearOutputs();
+
   private:
     int _pin;
 };
