@@ -16,16 +16,18 @@ class IOCtrl
     void dash();
     void dash2();
     
-    char* GetStatus();
-    //void SetOutputTo(OutputNumber,State)();
-    //void SetOutput(OutputNumber)();
-    //void ClearOutput(OutputNumber)();
-    void GetInputs();
-    void ClearEvent();
-    void ClearOutputs();
+    const char* GetStatus();
+    const char* GetInputs();
+    const char* SetOutputTo(int OutputNumber, int State);
+    const char* SetOutput(int OutputNumber);
+    const char* ClearOutput(int OutputNumber); 
+    const char* ClearEvent();
+    const char* ClearOutputs();
 
   private:
     int _pin;
+    String str = "Online,11111111,24.7,MON1030,SD_OK";
+    String strb = "hello";
 };
 
 #endif

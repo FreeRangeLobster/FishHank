@@ -38,28 +38,73 @@ void IOCtrl::dash2()
 }
 
 
-char* IOCtrl::GetStatus()
+const char* IOCtrl::GetStatus()
+{
+String  mystring="OK,11110000,0000000";
+const char* cnv=mystring.c_str();
+return cnv;
+}
+
+
+const char* IOCtrl::GetInputs()
+{
+const char* ssid = "GetInputs=OK;11001100";
+return ssid;
+}
+
+const char* IOCtrl::SetOutputTo(int OutputNumber,int State){
+  String  Result= "SetOutputTo=OK;" + String(OutputNumber) + String(State);
+  const char* cResult=Result.c_str();
+  return cResult;
+}
+
+const char* IOCtrl::SetOutput(int OutputNumber){
+   String  Result= "SetOutput=OK;" + String(OutputNumber);
+   const char* cResult=Result.c_str();
+   return cResult;
+}
+
+const char* IOCtrl::ClearOutput(int OutputNumber){
+ String  Result= "ClearOutput=OK;" + String(OutputNumber);
+ const char* cResult=Result.c_str();
+ return cResult;
+}
+
+const char* IOCtrl::ClearEvent(){
+   String  Result= "ClearEvent=OK;";
+  const char* cResult=Result.c_str();
+  return cResult;
+  }
+
+
+const char* IOCtrl::ClearOutputs(){
+  String  Result= "ClearOutputs=OK;";
+  const char* cResult=Result.c_str();
+  return cResult;
+}
+
+/* does not work
+
+void IOCtrl::GetStatus2(char sStatus[50])
 {
 
    //char *sStatus ;
 // Define 
-String str = "this is my string"; 
+String str = "hello"; 
  
 // Length (with one extra character for the null terminator)
 int str_len = str.length() + 1; 
  
 // Prepare the character array (the buffer) 
-char char_array[20];
+//char char_array[30];
  
 // Copy it over 
-str.toCharArray(char_array, str_len);
+str.toCharArray(sStatus, str_len);
 //adds null character at the end
-char_array[str_len+1]=0;
-
-return char_array;
-}
+sStatus[str_len+1]=0;
 
 
+} */ 
 
 /*
 
