@@ -23,7 +23,6 @@ void CheckSerialVer3();
 
 void loop()
 { 
-   ioCtrl.dot();
    fii=ioCtrl.GetInputs();
    Serial.println(fii);
    delay(1000);

@@ -57,7 +57,7 @@ void checkSerial_1(){
     else readString += c;
 } 
 
-void checkSerial1(){
+/*void checkSerial1(){
     if (!Serial.available()) return;
     char c = Serial.read();
     if (c == '\n') {
@@ -67,7 +67,7 @@ void checkSerial1(){
       readStringB = "";    
     }
     else readStringB += c;
-}
+}*/
 
 void CheckSerialVer2(){  
     if (!Serial.available()) return;
