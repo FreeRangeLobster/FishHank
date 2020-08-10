@@ -28,10 +28,12 @@ class IOCtrl
     const char* ClearOutput(int OutputNumber); 
     const char* ClearEvent();
     const char* ClearOutputs();
+    const char* CheckSerialAuxController();
     
 
   private:
     int _pin;
+
     //HardwareSerial(int uart_nr);
 //    HardwareSerial Serial_1(1);
     String str = "Online,11111111,24.7,MON1030,SD_OK";

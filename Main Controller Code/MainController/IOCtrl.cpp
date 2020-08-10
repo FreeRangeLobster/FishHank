@@ -8,9 +8,10 @@
 #include "IOCtrl.h"
 HardwareSerial Serial_1(1);
 
+
+
 IOCtrl::IOCtrl(int pin)
-{
-  
+{  
   Serial_1.begin(9600, SERIAL_8N1, SERIAL1_RXPIN, SERIAL1_TXPIN,false);
   pinMode(pin, OUTPUT);
   _pin = pin;
@@ -21,17 +22,22 @@ IOCtrl::IOCtrl(int pin)
 
 const char* IOCtrl::GetStatus()
 {
-  Serial_1.print("Serial1 Working");
-String  mystring="OK,11110000,0000000";
-const char* cnv=mystring.c_str();
-return cnv;
+  //Serial_1.print("?ID");
+  //String  mystring="OK,11110000,0000000";
+  //const char* cnv=mystring.c_str();
+  //return cnv;
+  
+  const char* test=CheckSerialAuxController();
+  
+ return test;
+  
 }
 
 
 const char* IOCtrl::GetInputs()
 {
-const char* ssid = "GetInputs=OK;11001100";
-return ssid;
+const char* sInputs = "00100000";
+return sInputs;
 }
 
 const char* IOCtrl::SetOutputTo(int OutputNumber,int State){
@@ -65,6 +71,30 @@ const char* IOCtrl::ClearOutputs(){
   return cResult;
 }
 
+
+
+const char* IOCtrl::CheckSerialAuxController(){  
+
+  String  mystring="OK,11110000,00001111";
+  const char* cnv=mystring.c_str();
+  return  cnv;
+  /*String  sString="";
+  const char* cResult=sString.c_str();
+    if (!Serial_1.available()){
+      return cResult;
+    } 
+      
+    while (Serial_1.available()) {
+      
+      sString = Serial_1.readStringUntil('\n');// s1 is String type variable.
+      //delay(10);
+      //Serial.print("Received Data = ");
+      //Serial.println(sString);//display same received Data back in serial monitor. 
+      //nOption=sSerialUSB[0];
+    }
+    Serial.println(cResult);
+    return cResult; */
+ }
 /* does not work
 
 void IOCtrl::GetStatus2(char sStatus[50])

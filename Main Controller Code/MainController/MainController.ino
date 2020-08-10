@@ -23,29 +23,32 @@ void CheckSerialVer3();
 
 void loop()
 { 
-   fii=ioCtrl.GetInputs();
-   Serial.println(fii);
-   delay(1000);
+
+  foo=ioCtrl.GetStatus();
+   Serial.println(foo);
+   delay(1000);  
+  
+   //fii=ioCtrl.GetInputs();
+   //Serial.println(fii);
+   //delay(1000);
     
-   foo=ioCtrl.GetStatus();
-   Serial.println(foo);
-   delay(1000);
+   
 
-   CheckSerialVer3();
-    delay(1000);
+   //CheckSerialVer3();
+   // delay(1000);
 
-   foo=ioCtrl.SetOutputTo(2,1);
-   Serial.println(foo);
+   //foo=ioCtrl.SetOutputTo(2,1);
+   //Serial.println(foo);
 
-    delay(1000);
-    foo=ioCtrl.SetOutput(2);
-    Serial.println(foo);
-    foo=ioCtrl.ClearOutput(2); 
-    Serial.println(foo);
-    foo=ioCtrl.ClearEvent();
-    Serial.println(foo);
-    foo=ioCtrl.ClearOutputs();
-    Serial.println(foo);
+    //delay(1000);
+    //foo=ioCtrl.SetOutput(2);
+    //Serial.println(foo);
+    //foo=ioCtrl.ClearOutput(2); 
+    //Serial.println(foo);
+    //foo=ioCtrl.ClearEvent();
+    //Serial.println(foo);
+    //foo=ioCtrl.ClearOutputs();
+    //Serial.println(foo);
 }
 
 
