@@ -1,33 +1,58 @@
-#include "IOCtrl.h"
-#include "Display.h"
-#include "RTC.h"
-#include "SDCard.h"
-#include "Temperature.h"
+#include <HardwareSerial.h>
+//#include "IOCtrl.h"
+//#include "Display.h"
+//#include "RTC.h"
+//#include "SDCard.h"
+//#include "Temperature.h"
 
 
-IOCtrl ioCtrl(13);
+//IOCtrl ioCtrl(13);
 const char *foo;
 const char* fii;
 
 String readStringB;
 String sSerialUSB;
 char nOption;
+String readStringIOCtrl;
+//HardwareSerial Serial2(2);
 
 void setup()
 {
+
   Serial.begin(115200);
+  Serial2.begin(115200);
+
+  Serial2.print("?I");
+  Serial2.print('\n');
 }
 
 void CheckSerialVer3();
 
 
+void checkIOCtrlSerial(){
+    if (!Serial2.available()) return;
+    char c = Serial2.read();
+    if (c == '\n') {
+      Serial.println(readStringIOCtrl);
+      //executeCommand(readString);
+      readStringIOCtrl = "";    
+    }
+    else readStringIOCtrl += c;
+}
+
+
 void loop()
 { 
 
-  foo=ioCtrl.GetStatus();
-   Serial.println(foo);
-   delay(1000);  
-  
+   //foo=ioCtrl.GetStatus();
+   //Serial.println(foo);
+   //delay(1000);  
+
+   //Serial_1.print("?N");
+   //Serial_1.print('\n');
+   
+   checkIOCtrlSerial();
+   
    //fii=ioCtrl.GetInputs();
    //Serial.println(fii);
    //delay(1000);
@@ -63,4 +88,6 @@ void CheckSerialVer3(){
       nOption=sSerialUSB[0];
     }
  }
+
+
 

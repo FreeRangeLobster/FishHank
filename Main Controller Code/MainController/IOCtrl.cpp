@@ -6,13 +6,13 @@
 
 
 #include "IOCtrl.h"
-HardwareSerial Serial_1(1);
+//HardwareSerial Serial_1(1);
 
 
 
 IOCtrl::IOCtrl(int pin)
 {  
-  Serial_1.begin(9600, SERIAL_8N1, SERIAL1_RXPIN, SERIAL1_TXPIN,false);
+//  Serial_1.begin(9600, SERIAL_8N1, SERIAL1_RXPIN, SERIAL1_TXPIN,false);
   pinMode(pin, OUTPUT);
   _pin = pin;
 }

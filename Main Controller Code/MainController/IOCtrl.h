@@ -33,6 +33,7 @@ class IOCtrl
 
   private:
     int _pin;
+//    HardwareSerial *Serial_1(1);
 
     //HardwareSerial(int uart_nr);
 //    HardwareSerial Serial_1(1);
