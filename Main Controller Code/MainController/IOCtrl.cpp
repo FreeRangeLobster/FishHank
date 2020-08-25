@@ -1,13 +1,7 @@
-/*
-  Morse.cpp - Library for flashing Morse code.
-  Created by David A. Mellis, November 2, 2007.
-  Released into the public domain.
-*/
-
 
 #include "IOCtrl.h"
 //HardwareSerial Serial_1(1);
-
+//String readStringIOCtrl;
 
 
 IOCtrl::IOCtrl(int pin)
@@ -70,6 +64,16 @@ const char* IOCtrl::ClearOutputs(){
   const char* cResult=Result.c_str();
   return cResult;
 }
+
+/*
+void checkIOCtrlSerial(){
+    if (!Serial2.available()) return;
+    while(Serial2.available()){
+      readStringIOCtrl += char(Serial2.read());
+    }
+    Serial.println("Received data = " + readStringIOCtrl);
+    //readStringIOCtrl = "";   
+}*/
 
 
 

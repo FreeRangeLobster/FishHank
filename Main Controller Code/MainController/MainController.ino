@@ -1,20 +1,23 @@
 #include <HardwareSerial.h>
-//#include "IOCtrl.h"
+#include "IOCtrl.h"
 //#include "Display.h"
 //#include "RTC.h"
 //#include "SDCard.h"
 //#include "Temperature.h"
 
 
-//IOCtrl ioCtrl(13);
-const char *foo;
-const char* fii;
+
 
 String readStringB;
 String sSerialUSB;
 char nOption;
 String readStringIOCtrl;
 //HardwareSerial Serial2(2);
+
+void CheckSerialVer3();
+void checkIOCtrlSerial();
+void checkIOCtrlSetOutputTo(int OutputNumber, int State);
+
 
 void setup()
 {
@@ -23,63 +26,38 @@ void setup()
   Serial2.begin(115200);
 
   Serial2.print("?I");
-  Serial2.print('\n');
+  Serial2.print('\n'); 
+  checkIOCtrlSerial();
 }
 
-void CheckSerialVer3();
 
 
-void checkIOCtrlSerial(){
-    if (!Serial2.available()) return;
-    char c = Serial2.read();
-    if (c == '\n') {
-      Serial.println(readStringIOCtrl);
-      //executeCommand(readString);
-      readStringIOCtrl = "";    
-    }
-    else readStringIOCtrl += c;
-}
 
 
 void loop()
 { 
 
-   //foo=ioCtrl.GetStatus();
-   //Serial.println(foo);
-   //delay(1000);  
+  //clear variables
+  readStringIOCtrl = ""; 
+  checkIOCtrlSetOutputTo(1,1);
+  checkIOCtrlSerial();  
+  delay(1000);  
 
-   //Serial_1.print("?N");
-   //Serial_1.print('\n');
-   
-   checkIOCtrlSerial();
-   
-   //fii=ioCtrl.GetInputs();
-   //Serial.println(fii);
-   //delay(1000);
-    
-   
+  readStringIOCtrl = ""; 
+  checkIOCtrlSetOutputTo(1,0);  
+  checkIOCtrlSerial(); 
+  delay(1000);  
 
-   //CheckSerialVer3();
-   // delay(1000);
-
-   //foo=ioCtrl.SetOutputTo(2,1);
-   //Serial.println(foo);
-
-    //delay(1000);
-    //foo=ioCtrl.SetOutput(2);
-    //Serial.println(foo);
-    //foo=ioCtrl.ClearOutput(2); 
-    //Serial.println(foo);
-    //foo=ioCtrl.ClearEvent();
-    //Serial.println(foo);
-    //foo=ioCtrl.ClearOutputs();
-    //Serial.println(foo);
+  readStringIOCtrl = ""; 
+  checkIOCtrlInputs();
+  checkIOCtrlSerial(); 
+  delay(1000);  
+  
 }
 
 
 void CheckSerialVer3(){  
-    if (!Serial.available()) return;
-      
+    if (!Serial.available()) return;      
     while (Serial.available()) {
       sSerialUSB = Serial.readStringUntil('\n');// s1 is String type variable.
       //delay(10);
@@ -88,6 +66,39 @@ void CheckSerialVer3(){
       nOption=sSerialUSB[0];
     }
  }
+
+
+void checkIOCtrlInputs(){
+    Serial2.print("?I");
+    Serial2.print('\n');     
+}
+
+void checkIOCtrlOutputs(){
+    if (!Serial2.available()) return;
+    while(Serial2.available()){
+      readStringIOCtrl += char(Serial2.read());
+    }
+    Serial.println("Received data = " + readStringIOCtrl);
+    //readStringIOCtrl = "";   
+}
+
+
+
+void checkIOCtrlSetOutputTo(int OutputNumber, int State){
+     String  sCommand= "!" + String(OutputNumber) + String(State);
+     Serial2.print(sCommand);
+     Serial2.print('\n');   
+}
+
+
+void checkIOCtrlSerial(){
+    if (!Serial2.available()) return;
+    while(Serial2.available()){
+      readStringIOCtrl += char(Serial2.read());
+    }
+    Serial.println("Received data = " + readStringIOCtrl);
+    //readStringIOCtrl = "";   
+}
 
 
 

@@ -29,6 +29,7 @@ class IOCtrl
     const char* ClearEvent();
     const char* ClearOutputs();
     const char* CheckSerialAuxController();
+    String readStringIOCtrl;
     
 
   private:
