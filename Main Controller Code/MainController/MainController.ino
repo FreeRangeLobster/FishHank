@@ -1,5 +1,24 @@
+
+#include <SPI.h>
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+#include "RTClib.h"
+
+
 #include <HardwareSerial.h>
 #include "IOCtrl.h"
+
+
+RTC_DS3231 rtc;
+char daysOfTheWeek[7][12] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+ 
+#define SCREEN_WIDTH 128  // OLED display width, in pixels
+#define SCREEN_HEIGHT 64  // OLED display height, in pixels
+#define OLED_RESET    -1  // Reset pin # (or -1 if sharing reset pin)
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+
+
 //#include "Display.h"
 //#include "RTC.h"
 //#include "SDCard.h"
@@ -28,6 +47,38 @@ void setup()
   Serial2.print("?I");
   Serial2.print('\n'); 
   checkIOCtrlSerial();
+
+  if (! rtc.begin()) {
+  Serial.println("Couldn't find RTC");
+  }
+   else{
+    Serial.println(F("RTC Started"));   
+  }
+
+  if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) 
+  { 
+    Serial.println(F("SSD1306 allocation failed"));   
+  }
+  else{
+    Serial.println(F("Display started"));   
+  }
+
+  rtc.adjust(DateTime(__DATE__, __TIME__));
+ 
+ display.display();
+ delay(2);
+ display.clearDisplay();
+ 
+ 
+  display.clearDisplay();
+  display.setTextColor(WHITE);
+  //display.startscrollright(0x00, 0x0F);
+  display.setTextSize(2);
+  display.setCursor(0,5);
+  display.print("  Clock ");
+  display.display();
+  delay(3000);
+  
 }
 
 
