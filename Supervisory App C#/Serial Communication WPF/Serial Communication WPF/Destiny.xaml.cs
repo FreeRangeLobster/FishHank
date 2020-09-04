@@ -264,7 +264,7 @@ namespace Serial_Communication_WPF
             }
         }
 
-        private void cmdReadOutputSchedule_Click(object sender, RoutedEventArgs e)
+        private void cmdOpenFile_Click(object sender, RoutedEventArgs e)
         {
             TextRange range;
             FileStream fStream;
@@ -306,8 +306,6 @@ namespace Serial_Communication_WPF
         }
 
     
-
-
     }
 
     }
