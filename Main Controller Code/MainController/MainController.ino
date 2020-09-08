@@ -18,6 +18,13 @@ char daysOfTheWeek[7][12] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursd
 #define OLED_RESET    -1  // Reset pin # (or -1 if sharing reset pin)
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
+//OLED Display Offsets
+#define OffsetOutputsRaw1 128
+#define OffsetOutputsRaw2 128
+#define OffsetOutputsColumn1 128
+#define OffsetOutputsColumn2 128
+#define OffsetOutputsColumn3 128
+#define OffsetOutputsColumn4 128
 
 //#include "Display.h"
 //#include "RTC.h"
@@ -37,6 +44,7 @@ void CheckSerialVer3();
 void checkIOCtrlSerial();
 void checkIOCtrlSetOutputTo(int OutputNumber, int State);
 void ShowCurrentTime();
+void OLEDDrawTable();
 
 
 void setup()
@@ -105,8 +113,8 @@ void loop()
   checkIOCtrlSerial(); 
   delay(1000); 
 
-  ShowCurrentTime();
-  
+  //ShowCurrentTime();
+  OLEDDrawTable();
 }
 
 
@@ -156,9 +164,7 @@ void checkIOCtrlSerial(){
 
 
 void ShowCurrentTime(){
- 
-    DateTime now = rtc.now();
-     
+    DateTime now = rtc.now();     
     display.clearDisplay();
     display.setTextSize(2);
     display.setCursor(75,0);
@@ -206,6 +212,70 @@ void ShowCurrentTime(){
      
     display.display(); 
 
+}
+
+void OLEDDrawTable(){
+    //first Raw
+    display.clearDisplay();    
+    display.setTextSize(1.5);
+    display.setTextColor(WHITE);
+    
+    display.drawRect(0,20,128/4,12.5, WHITE);
+    display.setCursor(5,22);
+    display.printf("--");    
+    display.display(); 
+    
+    display.drawRect((128/4)*1,20,128/4,12.5, WHITE);
+    display.setCursor(((128/4)*1)+5,22);
+    display.printf("--");    
+    display.display(); 
+    
+    display.drawRect((128/4)*2,20,128/4,12.5, WHITE);
+    display.setCursor(((128/4)*2)+5,22);
+    display.printf("--");
+    display.display(); 
+    
+    display.drawRect((128/4)*3,20,128/4,12.5, WHITE);
+    display.setCursor(((128/4)*3)+5,22);
+    display.printf("--");
+    display.display();
+    
+    //second raw
+    display.drawRect((128/4)*0,40,(128/4)*2,12.5, WHITE);
+    display.setCursor(((128/4)*0)+5,42);
+    display.printf("ON");    
+    display.display();
+
+     display.drawRect((128/4)*1,40,(128/4)*2,12.5, WHITE);
+    display.setCursor(((128/4)*1)+5,42);
+    display.printf("ON");    
+    display.display();
+
+     display.drawRect((128/4)*2,40,(128/4)*2,12.5, WHITE);
+    display.setCursor(((128/4)*2)+5,42);
+    display.printf("ON");    
+    display.display();
+
+     display.drawRect((128/4)*3,40,(128/4)*2,12.5, WHITE);
+    display.setCursor(((128/4)*3)+5,42);
+    display.printf("ON");    
+    display.display();
+     
+
+
+    
+    
+    display.setCursor(3,10);
+    display.printf("Booting...");
+    display.setCursor(3,1);
+    display.printf("DAY");
+    display.setCursor(60,1);        
+    display.printf("00");
+    display.setCursor(80,1);
+    display.printf(":");
+    display.setCursor(90,1);
+    display.printf("00");
+    display.display(); 
 }
 
 
