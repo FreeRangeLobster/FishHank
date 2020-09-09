@@ -19,12 +19,17 @@ char daysOfTheWeek[7][12] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursd
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 //OLED Display Offsets
-#define OffsetOutputsRaw1 128
-#define OffsetOutputsRaw2 128
-#define OffsetOutputsColumn1 128
-#define OffsetOutputsColumn2 128
-#define OffsetOutputsColumn3 128
-#define OffsetOutputsColumn4 128
+#define OffsetOutputsRaw1 20
+#define OffsetOutputsRaw2 40
+#define OutputsColumnCorner1 128/4
+#define OutputsColumnWidth 128/8
+#define OutputsColumnCorner2  128/4
+
+#define DisplayColumnX  128/4
+#define DisplayColumnY  20
+#define DisplayColumnY2  32
+#define DisplayColumnWidth 128/4
+#define DisplayColumnHight 12.5
 
 //#include "Display.h"
 //#include "RTC.h"
@@ -220,44 +225,50 @@ void OLEDDrawTable(){
     display.setTextSize(1.5);
     display.setTextColor(WHITE);
     
-    display.drawRect(0,20,128/4,12.5, WHITE);
+    //Column1  
+    display.drawRect(DisplayColumnX*0,DisplayColumnY,DisplayColumnWidth,DisplayColumnHight, WHITE);    
     display.setCursor(5,22);
     display.printf("--");    
-    display.display(); 
-    
-    display.drawRect((128/4)*1,20,128/4,12.5, WHITE);
-    display.setCursor(((128/4)*1)+5,22);
+    display.display();     
+    //Column2    
+    display.drawRect(DisplayColumnX*1,DisplayColumnY,DisplayColumnWidth,DisplayColumnHight, WHITE);    
+    display.setCursor((DisplayColumnX*1)+5,22);
     display.printf("--");    
-    display.display(); 
-    
-    display.drawRect((128/4)*2,20,128/4,12.5, WHITE);
-    display.setCursor(((128/4)*2)+5,22);
+    display.display();     
+    //Column3    
+    display.drawRect(DisplayColumnX*2,DisplayColumnY,DisplayColumnWidth,DisplayColumnHight, WHITE);    
+    display.setCursor((DisplayColumnX*2)+5,22);
     display.printf("--");
     display.display(); 
-    
-    display.drawRect((128/4)*3,20,128/4,12.5, WHITE);
-    display.setCursor(((128/4)*3)+5,22);
+    //Column4    
+    display.drawRect(DisplayColumnX*3,DisplayColumnY,DisplayColumnWidth,DisplayColumnHight, WHITE);    
+    display.setCursor((DisplayColumnX*3)+5,22);
     display.printf("--");
     display.display();
     
     //second raw
-    display.drawRect((128/4)*0,40,(128/4)*2,12.5, WHITE);
-    display.setCursor(((128/4)*0)+5,42);
+    //Column1
+    //display.drawRect(OutputsColumnCorner1*0,OffsetOutputsRaw2,OutputsColumnCorner2*2,12.5, WHITE);
+    display.drawRect(DisplayColumnX*0,DisplayColumnY2,DisplayColumnWidth,DisplayColumnHight, WHITE);    
+    display.setCursor((DisplayColumnX*0)+5,DisplayColumnY2+2);
+    display.printf("ON");    
+    display.display();    
+    //Column2
+    //display.drawRect(OutputsColumnCorner1*1,OffsetOutputsRaw2,OutputsColumnCorner2*2,12.5, WHITE);
+    display.drawRect(DisplayColumnX*1,DisplayColumnY2,DisplayColumnWidth,DisplayColumnHight, WHITE);    
+    display.setCursor((DisplayColumnX*1)+5,DisplayColumnY2+2);
     display.printf("ON");    
     display.display();
-
-     display.drawRect((128/4)*1,40,(128/4)*2,12.5, WHITE);
-    display.setCursor(((128/4)*1)+5,42);
+    //Column3
+    //display.drawRect(OutputsColumnCorner1*2,OffsetOutputsRaw2,OutputsColumnCorner2*2,12.5, WHITE);
+    display.drawRect(DisplayColumnX*2,DisplayColumnY2,DisplayColumnWidth,DisplayColumnHight, WHITE);    
+    display.setCursor((DisplayColumnX*2)+5,DisplayColumnY2+2);
     display.printf("ON");    
     display.display();
-
-     display.drawRect((128/4)*2,40,(128/4)*2,12.5, WHITE);
-    display.setCursor(((128/4)*2)+5,42);
-    display.printf("ON");    
-    display.display();
-
-     display.drawRect((128/4)*3,40,(128/4)*2,12.5, WHITE);
-    display.setCursor(((128/4)*3)+5,42);
+    //Column4
+    //display.drawRect(OutputsColumnCorner1*3,OffsetOutputsRaw2,OutputsColumnCorner2*2,12.5, WHITE);
+    display.drawRect(DisplayColumnX*3,DisplayColumnY2,DisplayColumnWidth,DisplayColumnHight, WHITE);    
+    display.setCursor((DisplayColumnX*3)+5,DisplayColumnY2+2);
     display.printf("ON");    
     display.display();
      
