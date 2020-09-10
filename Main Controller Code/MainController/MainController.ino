@@ -44,12 +44,18 @@ String sSerialUSB;
 char nOption;
 String readStringIOCtrl;
 //HardwareSerial Serial2(2);
+char cStatus[10];
+char cCurrentTime[25];
+String sCurrentTime;
+DateTime now;// = rtc.now();  
 
 void CheckSerialVer3();
 void checkIOCtrlSerial();
 void checkIOCtrlSetOutputTo(int OutputNumber, int State);
 void ShowCurrentTime();
 void OLEDDrawTable();
+void DisplayModifyStatus( char *status);
+void DisplayModifyTime( char *status);
 
 
 void setup()
@@ -92,7 +98,27 @@ void setup()
   display.print("  Clock ");
   display.display();
   delay(3000);
+
   
+  //ShowCurrentTime();
+  OLEDDrawTable();
+
+  //Show status
+  strcpy(cStatus, "Auto" );
+  DisplayModifyStatus(cStatus);
+
+  //Show time  
+  now = rtc.now();  
+  //sCurrentTime=now.second()+now.minute()+now.hour()+now.day()+daysOfTheWeek[now.dayOfTheWeek()];  
+  
+  //sCurrentTime=now.minute() + ':' + now.hour() + ':' + now.day() + '-' + daysOfTheWeek[now.dayOfTheWeek()];  
+  //sCurrentTime=String("DateTime::TIMESTAMP_FULL:\t")+now.timestamp(DateTime::TIMESTAMP_FULL);
+  
+  sCurrentTime=now.DateTime::TIMESTAMP_FULL;
+  sCurrentTime.toCharArray (cCurrentTime,15);
+  DisplayModifyTime(cCurrentTime);
+
+  //ShowCurrentTime();
 }
 
 
@@ -117,9 +143,7 @@ void loop()
   checkIOCtrlInputs();
   checkIOCtrlSerial(); 
   delay(1000); 
-
-  //ShowCurrentTime();
-  OLEDDrawTable();
+  
 }
 
 
@@ -287,6 +311,21 @@ void OLEDDrawTable(){
     display.setCursor(90,1);
     display.printf("00");
     display.display(); 
+}
+
+
+void DisplayModifyStatus( char *status){
+    display.fillRect(1,10,60,10, BLACK);    
+    display.setCursor(15,10);
+    display.printf(status);
+    display.display();
+}
+
+void DisplayModifyTime( char *status){
+    display.fillRect(1,1,128,7, BLACK);
+    display.setCursor(4,1);
+    display.printf(status);
+    display.display();
 }
 
 
