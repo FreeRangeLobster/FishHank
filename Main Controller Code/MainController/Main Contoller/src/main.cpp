@@ -21,6 +21,10 @@ String readStringIOCtrl;
 enum StatesEnum { Start, Initialise, ReadSD, EnablePeripherals, UpdateStatus, updateTFT,  CheckSerialComms };
 StatesEnum CurrentState; 
 
+enum eStateEnum{eInitialise,eReadSDConfig,eIdle,eUpdateIO,eUpdateScreen};
+eStateEnum StateEnum;
+
+
 void setup() {
   sSerialUSB="NOthing";
   Serial.begin(115200);
@@ -36,6 +40,8 @@ void setup() {
 
   //Serial_2.print("Serial2 working");
   //Serial_2.print('\n');
+  StateEnum=eInitialise;
+
 }
 
 void checkSerial_2();
@@ -69,6 +75,29 @@ void loop() {
   checkIOCtrlSetOutputTo(1,0);  
   checkIOCtrlSerial(); 
   delay(1000);  
+
+
+ switch (StateEnum)
+    {
+        case eInitialise :
+        {
+            StateEnum=eReadSDConfig;// do stuff
+            break;
+        }
+        case eReadSDConfig:
+        {
+            StateEnum=eInitialise;
+            break;
+        }
+
+        default:
+        {
+            // is likely to be an error
+            StateEnum=eInitialise;
+        }
+    };
+
+
 
 }
 
