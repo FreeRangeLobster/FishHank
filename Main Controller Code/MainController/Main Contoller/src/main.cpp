@@ -1,4 +1,14 @@
 #include <Arduino.h>
+#include <SPI.h>
+#include <Wire.h>
+#include <Adafruit_I2CDevice.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+#include "RTClib.h"
+#include <SPI.h>
+#include <mySD.h>
+
+
 
 //https://esp32.com/viewtopic.php?t=328  
 /* ESP32 3 UARTs */
@@ -16,13 +26,48 @@ String sSerialUSB;
 char nOption;
 //String used in the communication with Arduino Aux Board
 String readStringIOCtrl;
+unsigned long nCurrentMillis = millis();
+unsigned long nPreviousMillis ;
 
 
 enum StatesEnum { Start, Initialise, ReadSD, EnablePeripherals, UpdateStatus, updateTFT,  CheckSerialComms };
 StatesEnum CurrentState; 
 
-enum eStateEnum{eInitialise,eReadSDConfig,eIdle,eUpdateIO,eUpdateScreen};
+enum eStateEnum{eCalculateNextTimeCheck,eCheckSD,eUpdateOutputs,eUpdateDisplay,eIdle};
 eStateEnum StateEnum;
+
+
+//Delay implementation
+// constants won't change :
+const long interval = 1000;     
+
+//RTC
+RTC_DS3231 rtc;
+char daysOfTheWeek[7][12] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+DateTime now;
+
+//Display
+#define SCREEN_WIDTH 128  // OLED display width, in pixels
+#define SCREEN_HEIGHT 64  // OLED display height, in pixels
+#define OLED_RESET    -1  // Reset pin # (or -1 if sharing reset pin)
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+#define OffsetOutputsRaw1 20
+#define OffsetOutputsRaw2 40
+#define OutputsColumnCorner1 128/4
+#define OutputsColumnWidth 128/8
+#define OutputsColumnCorner2  128/4
+
+#define DisplayColumnX  128/4
+#define DisplayColumnY  40
+#define DisplayColumnY2  DisplayColumnY+12 //32
+#define DisplayColumnWidth 128/4
+#define DisplayColumnHight 12.5
+char cStatus[10];
+void OLEDDrawTable();
+void DisplayModifyStatus( char *status);
+void DisplayModifyTime( char *status);
+void ShowCurrentTime();
+
 
 
 void setup() {
@@ -40,7 +85,72 @@ void setup() {
 
   //Serial_2.print("Serial2 working");
   //Serial_2.print('\n');
-  StateEnum=eInitialise;
+  StateEnum=eCalculateNextTimeCheck;
+
+  if (! rtc.begin()) {
+  Serial.println("Couldn't find RTC");
+  }
+   else{
+    Serial.println(F("RTC Started"));   
+  }
+
+   if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) 
+  { 
+    Serial.println(F("SSD1306 allocation failed"));   
+  }
+  else{
+    Serial.println(F("Display started"));   
+  }
+
+
+  OLEDDrawTable();
+    //Show status
+  strcpy(cStatus, "Auto" );
+  DisplayModifyStatus(cStatus);
+
+  //Show time  
+  now = rtc.now(); 
+
+  //SD Card
+  File myFile;
+  const int chipSelect = 5;
+  pinMode(SS, OUTPUT);
+
+  if (!SD.begin(chipSelect, 23, 19, 18)) {
+    Serial.println(" SD initialization failed!");
+    return;
+  }
+  else
+  {
+     Serial.println("SD Card Initialised");
+  }
+  
+  if(SD.exists("Schedule.txt")) {
+    Serial.println("Schedule file Present");
+  }
+
+   if(SD.exists("Configuration.txt")) {
+    Serial.println("Configuration file Present");
+  }
+
+  // Open the file for reading:
+  myFile = SD.open("Schedule.txt");
+  if (myFile) {
+    Serial.println("Schedule.txt:");
+    
+    // read from the file until there's nothing else in it:
+    while (myFile.available()) {
+    	Serial.write(myFile.read());
+    }
+    // close the file:
+    myFile.close();
+  } else {
+  	// if the file didn't open, print an error:
+    Serial.println("error opening test.txt");
+  }
+
+
+  Serial.println("initialization done.");
 
 }
 
@@ -79,26 +189,50 @@ void loop() {
 
  switch (StateEnum)
     {
-        case eInitialise :
+        
+        case eCalculateNextTimeCheck:
         {
-            StateEnum=eReadSDConfig;// do stuff
+            StateEnum=eCheckSD;
             break;
         }
-        case eReadSDConfig:
-        {
-            StateEnum=eInitialise;
+
+        case eCheckSD:{
+           StateEnum=eUpdateOutputs;
             break;
         }
+
+         case eUpdateOutputs:{
+           StateEnum=eUpdateDisplay;
+            break;
+        }
+
+
+         case eUpdateDisplay:{
+           StateEnum=eIdle;
+            break;
+        }
+
+         case eIdle:{
+          nCurrentMillis=millis();
+          if (nCurrentMillis - nPreviousMillis >= interval) {
+                // save the last time you blinked the LED
+                nPreviousMillis = nCurrentMillis;
+
+           StateEnum=eCalculateNextTimeCheck;
+            break;
+        }
+        
 
         default:
         {
             // is likely to be an error
-            StateEnum=eInitialise;
+            StateEnum=eCalculateNextTimeCheck;
         }
     };
 
 
 
+}
 }
 
 #pragma region "Serial Communication Handling"
@@ -263,5 +397,143 @@ void checkIOCtrlSerial(){
     }
     Serial.println("Received data = " + readStringIOCtrl);
     //readStringIOCtrl = "";   
+}
+#pragma endregion
+
+#pragma region Display
+void ShowCurrentTime(){
+    DateTime now = rtc.now();     
+    display.clearDisplay();
+    display.setTextSize(2);
+    display.setCursor(75,0);
+    display.println(now.second(), DEC);
+     
+    display.setTextSize(2);
+    display.setCursor(25,0);
+    display.println(":");
+     
+    display.setTextSize(2);
+    display.setCursor(65,0);
+    display.println(":");
+     
+    display.setTextSize(2);
+    display.setCursor(40,0);
+    display.println(now.minute(), DEC);
+     
+    display.setTextSize(2);
+    display.setCursor(0,0);
+    display.println(now.hour(), DEC);
+     
+    display.setTextSize(2);
+    display.setCursor(0,20);
+    display.println(now.day(), DEC);
+     
+    display.setTextSize(2);
+    display.setCursor(25,20);
+    display.println("-");
+     
+    display.setTextSize(2);
+    display.setCursor(40,20);
+    display.println(now.month(), DEC);
+     
+    display.setTextSize(2);
+    display.setCursor(55,20);
+    display.println("-");
+     
+    display.setTextSize(2);
+    display.setCursor(70,20);
+    display.println(now.year(), DEC);
+     
+    display.setTextSize(2);
+    display.setCursor(0,40);
+    display.print(daysOfTheWeek[now.dayOfTheWeek()]);
+     
+    display.display(); 
+
+}
+
+void OLEDDrawTable(){
+    //first Raw
+    display.clearDisplay();    
+    display.setTextSize(1.5);
+    display.setTextColor(WHITE);
+    
+    //Column1  
+    display.drawRect(DisplayColumnX*0,DisplayColumnY,DisplayColumnWidth,DisplayColumnHight, WHITE);    
+    display.setCursor(5,DisplayColumnY+2);
+    display.printf("--");    
+    display.display();     
+    //Column2    
+    display.drawRect(DisplayColumnX*1,DisplayColumnY,DisplayColumnWidth,DisplayColumnHight, WHITE);    
+    display.setCursor((DisplayColumnX*1)+5,DisplayColumnY+2);
+    display.printf("--");    
+    display.display();     
+    //Column3    
+    display.drawRect(DisplayColumnX*2,DisplayColumnY,DisplayColumnWidth,DisplayColumnHight, WHITE);    
+    display.setCursor((DisplayColumnX*2)+5,DisplayColumnY+2);
+    display.printf("--");
+    display.display(); 
+    //Column4    
+    display.drawRect(DisplayColumnX*3,DisplayColumnY,DisplayColumnWidth,DisplayColumnHight, WHITE);    
+    display.setCursor((DisplayColumnX*3)+5,DisplayColumnY+2);
+    display.printf("--");
+    display.display();
+    
+    //second raw
+    //Column1
+    //display.drawRect(OutputsColumnCorner1*0,OffsetOutputsRaw2,OutputsColumnCorner2*2,12.5, WHITE);
+    display.drawRect(DisplayColumnX*0,DisplayColumnY2,DisplayColumnWidth,DisplayColumnHight, WHITE);    
+    display.setCursor((DisplayColumnX*0)+5,DisplayColumnY2+2);
+    display.printf("ON");    
+    display.display();    
+    //Column2
+    //display.drawRect(OutputsColumnCorner1*1,OffsetOutputsRaw2,OutputsColumnCorner2*2,12.5, WHITE);
+    display.drawRect(DisplayColumnX*1,DisplayColumnY2,DisplayColumnWidth,DisplayColumnHight, WHITE);    
+    display.setCursor((DisplayColumnX*1)+5,DisplayColumnY2+2);
+    display.printf("ON");    
+    display.display();
+    //Column3
+    //display.drawRect(OutputsColumnCorner1*2,OffsetOutputsRaw2,OutputsColumnCorner2*2,12.5, WHITE);
+    display.drawRect(DisplayColumnX*2,DisplayColumnY2,DisplayColumnWidth,DisplayColumnHight, WHITE);    
+    display.setCursor((DisplayColumnX*2)+5,DisplayColumnY2+2);
+    display.printf("ON");    
+    display.display();
+    //Column4
+    //display.drawRect(OutputsColumnCorner1*3,OffsetOutputsRaw2,OutputsColumnCorner2*2,12.5, WHITE);
+    display.drawRect(DisplayColumnX*3,DisplayColumnY2,DisplayColumnWidth,DisplayColumnHight, WHITE);    
+    display.setCursor((DisplayColumnX*3)+5,DisplayColumnY2+2);
+    display.printf("ON");    
+    display.display();
+     
+
+
+    
+    
+    display.setCursor(3,10);
+    display.printf("Booting...");
+    display.setCursor(3,1);
+    display.printf("DAY");
+    display.setCursor(60,1);        
+    display.printf("00");
+    display.setCursor(80,1);
+    display.printf(":");
+    display.setCursor(90,1);
+    display.printf("00");
+    display.display(); 
+}
+
+
+void DisplayModifyStatus( char *status){
+    display.fillRect(1,10,60,10, BLACK);    
+    display.setCursor(15,10);
+    display.printf(status);
+    display.display();
+}
+
+void DisplayModifyTime( char *status){
+    display.fillRect(1,1,128,7, BLACK);
+    display.setCursor(4,1);
+    display.printf(status);
+    display.display();
 }
 #pragma endregion
