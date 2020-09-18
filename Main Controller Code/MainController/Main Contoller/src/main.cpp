@@ -39,11 +39,12 @@ eStateEnum StateEnum;
 
 //Delay implementation
 // constants won't change :
-const long interval = 2000;     
+const long interval = 5*1000;     //in seconds
 
 //RTC
 RTC_DS3231 rtc;
-char daysOfTheWeek[7][12] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+char daysOfTheWeek[7][12] = {"SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"};
+char char_arrayTime[10];
 DateTime now;
 
 //Display
@@ -67,7 +68,7 @@ void OLEDDrawTable();
 void DisplayModifyStatus( char *status);
 void DisplayModifyTime( char *status);
 void ShowCurrentTime();
-
+void TimeFormatForDisplay();
 
 
 void setup() {
@@ -202,6 +203,7 @@ void loop() {
              //Show time  
             now = rtc.now(); 
             Serial.println(String("DateTime::TIMESTAMP_FULL:\t")+now.timestamp(DateTime::TIMESTAMP_FULL));
+           
 
             StateEnum=eCheckSD;
             break;
@@ -220,10 +222,11 @@ void loop() {
         }
 
 
-         case eUpdateDisplay:{
-           Serial.println("State: eUpdateDisplay");
-           StateEnum=eIdle;
-            break;
+         case eUpdateDisplay:{          
+          DisplayShowCurrentTime();
+          Serial.println("State: eUpdateDisplay");
+          StateEnum=eIdle;
+          break;
         }
 
          case eIdle:{
@@ -536,7 +539,6 @@ void OLEDDrawTable(){
     display.display(); 
 }
 
-
 void DisplayModifyStatus( char *status){
     display.fillRect(1,10,60,10, BLACK);    
     display.setCursor(15,10);
@@ -544,10 +546,31 @@ void DisplayModifyStatus( char *status){
     display.display();
 }
 
-void DisplayModifyTime( char *status){
+void DisplayShowCurrentTime(){
+    now = rtc.now(); 
+    char Buff[15];
+    String sTime;
+    String sCurrentTime;
+
+    sCurrentTime=now.timestamp(DateTime::TIMESTAMP_TIME);      
+    sTime= daysOfTheWeek[now.dayOfTheWeek()]+ String("  " + now.timestamp(DateTime::TIMESTAMP_HANK));
+    sTime.toCharArray(Buff,15);
+    //string.toCharArray(buf, len)
     display.fillRect(1,1,128,7, BLACK);
     display.setCursor(4,1);
-    display.printf(status);
+    display.printf(Buff);
     display.display();
+    Serial.println(sTime);
 }
+
+
+#pragma endregion
+
+#pragma region  Time
+
+
+
+
+
+
 #pragma endregion
