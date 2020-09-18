@@ -39,7 +39,7 @@ eStateEnum StateEnum;
 
 //Delay implementation
 // constants won't change :
-const long interval = 1000;     
+const long interval = 2000;     
 
 //RTC
 RTC_DS3231 rtc;
@@ -85,7 +85,7 @@ void setup() {
 
   //Serial_2.print("Serial2 working");
   //Serial_2.print('\n');
-  StateEnum=eCalculateNextTimeCheck;
+  
 
   if (! rtc.begin()) {
   Serial.println("Couldn't find RTC");
@@ -152,6 +152,10 @@ void setup() {
 
   Serial.println("initialization done.");
 
+
+  StateEnum=eCalculateNextTimeCheck;
+  nPreviousMillis=millis();
+
 }
 
 void checkSerial_2();
@@ -176,6 +180,7 @@ void loop() {
   //CheckSerialVer2();
   //SerialCommandHandller();
 
+  /*
   readStringIOCtrl = ""; 
   checkIOCtrlSetOutputTo(1,1);
   checkIOCtrlSerial();  
@@ -184,7 +189,7 @@ void loop() {
   readStringIOCtrl = ""; 
   checkIOCtrlSetOutputTo(1,0);  
   checkIOCtrlSerial(); 
-  delay(1000);  
+  delay(1000);  */
 
 
  switch (StateEnum)
@@ -192,40 +197,49 @@ void loop() {
         
         case eCalculateNextTimeCheck:
         {
+            Serial.println("State: eCalculateNextTimeCheck");
+
+             //Show time  
+            now = rtc.now(); 
+            Serial.println(String("DateTime::TIMESTAMP_FULL:\t")+now.timestamp(DateTime::TIMESTAMP_FULL));
+
             StateEnum=eCheckSD;
             break;
         }
 
         case eCheckSD:{
+           Serial.println("State: eCheckSD");
            StateEnum=eUpdateOutputs;
             break;
         }
 
          case eUpdateOutputs:{
+            Serial.println("State: eUpdateOutputs");
            StateEnum=eUpdateDisplay;
             break;
         }
 
 
          case eUpdateDisplay:{
+           Serial.println("State: eUpdateDisplay");
            StateEnum=eIdle;
             break;
         }
 
          case eIdle:{
+          //Serial.println("State: eIdle");
           nCurrentMillis=millis();
-          if (nCurrentMillis - nPreviousMillis >= interval) {
-                // save the last time you blinked the LED
-                nPreviousMillis = nCurrentMillis;
-
-           StateEnum=eCalculateNextTimeCheck;
-            break;
-        }
-        
+          if (nCurrentMillis - nPreviousMillis >= interval) {            
+            nPreviousMillis = nCurrentMillis;
+            StateEnum=eCalculateNextTimeCheck;
+            delay(500);
+          }
+         break;
 
         default:
         {
             // is likely to be an error
+             Serial.println("error opening test.txt");
             StateEnum=eCalculateNextTimeCheck;
         }
     };
