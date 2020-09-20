@@ -3,9 +3,14 @@ This embedded system is designed to control control devices of a fish tank such 
 
 The system is also equiped with the following systems: SD card, Real time clock, Bluetooth connection, flash memory and temperature sensor. This devices are available to be connected to a IOT terminal, which could be a Raspberry pi or a ESP32 or a ST Nucleo.
 
-Developing using platform IO
+## Weapons of choice
+Embedded System ESP32: Visual Studio Code with platform IO
+Aux IO Control syste : Visual Studio Code with platform IO
+Supervisory system   : Visual Studio .net C# and WPF
+PCB Development      : Eagle
+Source Control and housekeeping: GitHub 
 
-Arduino IDE 1.8.5
+ and Arduino IDE 1.6 for quick prototyoing
 
 ## PCB BOM
 See parts schedule file ![Application](/Parts Schedule.ods)
@@ -131,4 +136,49 @@ https://github.com/sparkfun/SparkFun-Eagle-Libraries
 
 
 
+#### Controller Pins
+Top View 
+
+ down conting from top - Right
+GPIO23 -> MOSI SD Card
+GPIO22 -> I2C SCL Oled and RTC 
+GPIO1  -> NC
+GPIO3  -> NC
+GPIO21 -> I2C SDA Oled and RTC 
+GPIO19 -> MISO SD Card
+GPIO18 -> CLK SD Card
+GPIO5  -> Chip Select SD Card
+GPIO17 -> Serial2 TX IO Controller 
+GPIO16 -> Serial2 RX IO Controller
+GPIO4  -> 
+GPIO2  -> Serial2 TX Bluetooth
+GPIO15 ->
+GPIO0  -> Serial2 RX Bluetooth
+GPIO8  ->
+GPIO7  ->
+GPIO6  ->
+3v3
+USB Connection
+
+
+down conting from top - Left
+EN     ->
+GPIO36 ->
+GPIO39 ->
+GPIO34 ->
+GPIO35 ->
+GPIO32 ->
+GPIO33 ->
+GPIO25 ->
+GPIO26 ->
+GPIO27 -> 
+GPIO14 ->
+GPIO12 ->
+GPIO13 ->
+GPIO9  ->
+GPIO10 ->
+GPIO11 ->
+GND    ->
+VIN    -> 
+USB Connection
 
