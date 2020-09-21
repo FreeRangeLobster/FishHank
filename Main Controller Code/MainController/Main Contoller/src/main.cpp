@@ -56,7 +56,7 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 #define OffsetOutputsRaw2 40
 #define OutputsColumnCorner1 128/4
 #define OutputsColumnWidth 128/8
-#define OutputsColumnCorner2  128/4
+#define OutputsColumnCorner2  128/4 
 
 #define DisplayColumnX  128/4
 #define DisplayColumnY  40
