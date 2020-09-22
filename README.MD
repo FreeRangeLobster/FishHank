@@ -1,7 +1,7 @@
 # Description
-This embedded system is designed to control control devices of a fish tank such as lights, filter pumps, air pumps, CO2 reactors amoung others. The system is capable of controllng 8 channels 220V AC at max 2A. 
+This embedded system is designed to control control devices used in a fish tank. Includes but is not limited to lights, filter pumps, air pumps, CO2 reactors, UV lights and others. The system is capable of controllng 8 channels 220V AC at max 2A. 
 
-The system is also equiped with the following systems: SD card, Real time clock, Bluetooth connection, flash memory and temperature sensor. This devices are available to be connected to a IOT terminal, which could be a Raspberry pi or a ESP32 or a ST Nucleo.
+The system is also equiped with the following systems: SD card, Real time clock, Bluetooth connection, flash memory and temperature sensor. This devices are available to be connected to a IOT terminal, which could be a Raspberry pi or a ESP32 or a ST Nucleo. In this iteration it was selected an ESP32 WRoom 32.
 
 ## Weapons of choice
 Embedded System ESP32: Visual Studio Code with platform IO
@@ -9,8 +9,7 @@ Aux IO Control syste : Visual Studio Code with platform IO
 Supervisory system   : Visual Studio .net C# and WPF
 PCB Development      : Eagle
 Source Control and housekeeping: GitHub 
-
- and Arduino IDE 1.6 for quick prototyoing
+Quick prototyping    :Arduino IDE 1.6
 
 ## PCB BOM
 See parts schedule file ![Application](/Parts Schedule.ods)
@@ -40,6 +39,7 @@ RTC
 GetTimeNumber
 GetTimeString
 SetTimeString
+CalculateFutureTimeCheck
 
 OLED
 DrawTable
@@ -58,8 +58,6 @@ DumpEvents
 INPUTOUTPUT CONTROLLER 
 GetStatus
 SetOutputTo(OutputNumber,State)
-SetOutput(OutputNumber)
-ClearOutput(OutputNumber)
 GetInputs
 ClearEvent
 ClearOutputs
@@ -93,20 +91,19 @@ Developed to test the SSRs and User Inputs
 |RTC|GetTimeNumber |  |  |  |  |  |
 |RTC|GetTimeString |  |  |  |  |  |
 |RTC|SetTimeString |  |  |  |  |  |
-|OLED|DrawTable |  |  |  |  |  |
-|OLED|ShowStatus  |  |  |  |  |  |
+|OLED|DrawTable |YES  |YES  |  |  |  |
+|OLED|ShowStatus  |YES|YES  |  |  |  |
 |OLED|ShowTemperature |  |  |  |  |  |
 |OLED|ShowOutputs |  |  |  |  |  |
-|OLED|ShowTime |  |  |  |  |  |
+|OLED|ShowTime |YES|YES  |  |  |  |
 |OLED|InitialDisplayShow |  |  |  |  |  |
+|OLED|CalculateFutureTimeCheck |  |  |  |  |  |
 |SD|FindEvent(CurrentTime) |  |  |  |  |  |
 |SD|GetStatus|  |  |  |  |  |
 |SD|GetConfiguration|  |  |  |  |  |
-|SD|DumpEvents|  |  |  |  |  |
-|IO Ctrl|GetStatus|  |  |  |  |  |
-|IO Ctrl|SetOutputTo(OutputNumber,State)|  |  |  |  |  |
-|IO Ctrl|SetOutput(OutputNumber)|  |  |  |  |  |
-|IO Ctrl|ClearOutput(OutputNumber)|  |  |  |  |  |
+|SD|DumpEvents| YES |  |  |  |  |
+|IO Ctrl|GetStatus| YES |  |  |  |  |
+|IO Ctrl|SetOutputTo(OutputNumber,State)| YES |  |  |  |  |
 |IO Ctrl|ClearEvent|  |  |  |  |  |
 |IO Ctrl|ClearOutputs|  |  |  |  |  |
 
@@ -140,20 +137,22 @@ https://github.com/sparkfun/SparkFun-Eagle-Libraries
 Top View 
 
  down conting from top - Right
+GND    -> GND 
 GPIO23 -> MOSI SD Card
 GPIO22 -> I2C SCL Oled and RTC 
-GPIO1  -> NC
-GPIO3  -> NC
-GPIO21 -> I2C SDA Oled and RTC 
+GPIO1  -> 
+GPIO3  -> 
+GPIO21 -> I2C SDA Oled and RTC
+GND    -> 
 GPIO19 -> MISO SD Card
 GPIO18 -> CLK SD Card
 GPIO5  -> Chip Select SD Card
 GPIO17 -> Serial2 TX IO Controller 
 GPIO16 -> Serial2 RX IO Controller
-GPIO4  -> 
+GPIO4  -> Serial2 RX Bluetooth
+GPIO0  -> 
 GPIO2  -> Serial2 TX Bluetooth
-GPIO15 ->
-GPIO0  -> Serial2 RX Bluetooth
+GPIO15 -> Temp 1 Wire
 GPIO8  ->
 GPIO7  ->
 GPIO6  ->
@@ -162,8 +161,9 @@ USB Connection
 
 
 down conting from top - Left
-EN     ->
-GPIO36 ->
+3v3    -> Level Shifter Power
+EN     -> 
+GPIO36 -> New Event IOCtrl
 GPIO39 ->
 GPIO34 ->
 GPIO35 ->
@@ -174,11 +174,10 @@ GPIO26 ->
 GPIO27 -> 
 GPIO14 ->
 GPIO12 ->
+GND    ->
 GPIO13 ->
 GPIO9  ->
 GPIO10 ->
 GPIO11 ->
-GND    ->
 VIN    -> 
-USB Connection
-
+USB Connection to PC
