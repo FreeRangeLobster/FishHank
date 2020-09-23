@@ -7,8 +7,16 @@
 #include "RTClib.h"
 #include <SPI.h>
 #include <mySD.h>
+#include <OneWire.h>
+#include <DallasTemperature.h>
 
 
+//Temperature Sensor
+#define ONE_WIRE_BUS 15
+
+OneWire oneWire(ONE_WIRE_BUS); // Setup a oneWire instance to communicate with any OneWire devices (not just Maxim/Dallas temperature ICs)
+DallasTemperature sensors(&oneWire); // Pass our oneWire reference to Dallas Temperature. 
+DeviceAddress insideThermometer, outsideThermometer; // arrays to hold device addresses
 
 //https://esp32.com/viewtopic.php?t=328  
 /* ESP32 3 UARTs */
@@ -67,8 +75,36 @@ char cStatus[10];
 void OLEDDrawTable();
 void DisplayModifyStatus( char *status);
 void DisplayModifyTime( char *status);
-void ShowCurrentTime();
+void DisplayCurrentTime();
 void TimeFormatForDisplay();
+void DisplayUpdateTemperature();
+
+
+
+
+// function to print a device address
+void printAddress(DeviceAddress deviceAddress)
+{
+  for (uint8_t i = 0; i < 8; i++)
+  {
+    if (deviceAddress[i] < 16) Serial.print("0");
+    Serial.print(deviceAddress[i], HEX);
+  }
+}
+
+// function to print the temperature for a device
+void printTemperature(DeviceAddress deviceAddress)
+{
+  float tempC = sensors.getTempC(deviceAddress);
+  Serial.print("Temp C: ");
+  Serial.print(tempC);
+  Serial.print(" Temp F: ");
+  Serial.print(DallasTemperature::toFahrenheit(tempC));
+}
+
+
+
+
 
 
 void setup() {
@@ -154,6 +190,34 @@ void setup() {
   Serial.println("initialization done.");
 
 
+
+  //Temperature sensor
+
+
+
+
+   // Start up the library
+  sensors.begin();  
+  // locate devices on the bus
+  Serial.print("Found ");
+  Serial.print(sensors.getDeviceCount(), DEC);
+  Serial.println(" devices.");
+  // search for devices on the bus and assign based on an index.
+  if (!sensors.getAddress(insideThermometer, 0)) Serial.println("Unable to find address for Device 0"); 
+  if (!sensors.getAddress(outsideThermometer, 1)) Serial.println("Unable to find address for Device 1"); 
+
+  // show the addresses we found on the bus
+  Serial.print("Device 0 Address: ");
+  printAddress(insideThermometer);
+  Serial.println();
+  sensors.requestTemperatures();
+  sensors.requestTemperatures(); // Send the command to get temperatures
+  Serial.println("DONE");
+  
+  // It responds almost immediately. Let's print out the data
+  printTemperature(insideThermometer); // Use a simple function to print out the data
+
+
   StateEnum=eCalculateNextTimeCheck;
   nPreviousMillis=millis();
 
@@ -223,7 +287,8 @@ void loop() {
 
 
          case eUpdateDisplay:{          
-          DisplayShowCurrentTime();
+          DisplayCurrentTime();
+          DisplayUpdateTemperature();
           Serial.println("State: eUpdateDisplay");
           StateEnum=eIdle;
           break;
@@ -546,7 +611,7 @@ void DisplayModifyStatus( char *status){
     display.display();
 }
 
-void DisplayShowCurrentTime(){
+void DisplayCurrentTime(){
     now = rtc.now(); 
     char Buff[15];
     String sTime;
@@ -564,11 +629,37 @@ void DisplayShowCurrentTime(){
 }
 
 
+void DisplayUpdateTemperature(){
+    sensors.requestTemperatures();
+
+    float tempC = sensors.getTempC(insideThermometer);    
+    char result[8]; // Buffer big enough for 7-character float
+    dtostrf(tempC, 6, 2, result);
+
+    
+    
+    display.fillRect(75,10,25,7, BLACK);    
+    display.setCursor(75,10);
+    display.printf(result);
+    display.display();
+}
+
 #pragma endregion
 
 #pragma region  Time
 
+  // void DisplayShowCurrentTime(){
+  //   //Get current Time
+  //   now = rtc.now();     
+  //   char charBuf[15];
+  //   now.timestamp(DateTime::TIMESTAMP_HANK).toCharArray(charBuf,15);
 
+  //   //Show on display
+  //   display.fillRect(1,1,128,7, BLACK);    
+  //   display.setCursor(4,1);    
+  //   display.printf(charBuf);
+  //   display.display();
+  // }
 
 
 
