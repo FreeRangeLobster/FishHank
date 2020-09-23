@@ -16,6 +16,8 @@ using System.Threading;
 using System.Windows.Threading;
 using System.IO;
 using System.Xml.Linq;
+using System.Drawing;
+using System.Runtime.CompilerServices;
 
 namespace Serial_Communication_WPF
 {
@@ -106,6 +108,15 @@ namespace Serial_Communication_WPF
 
         }
 
+
+        //public event RoutedPropertyChangedEventHandler PropertyChanged;
+        //private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        //{
+        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        //}
+
+
+
         private void CmdConnect_Click(object sender, RoutedEventArgs e)
         {
             
@@ -124,11 +135,8 @@ namespace Serial_Communication_WPF
 
         private void CmdDisconnect_Click(object sender, RoutedEventArgs e)
         {
-
-                cmdConnect.Content = "Closed";
+                //cmdConnect.Content = "Closed";
                 ComPort.Close();
-
-         
         }
 
 
@@ -149,6 +157,11 @@ namespace Serial_Communication_WPF
             mcFlowDoc.Blocks.Add(para);
             Commdata.Document = mcFlowDoc;
             Commdata.ScrollToEnd();
+
+            //CommdataStatus.Document = mcFlowDoc;
+            //CommdataStatus.ScrollToEnd();
+
+
         }
 
         #endregion
@@ -189,7 +202,8 @@ namespace Serial_Communication_WPF
                     Commdata.Document = mcFlowDoc;
                     Commdata.ScrollToEnd();
 
-
+                    //CommdataStatus.Document = mcFlowDoc;
+                    //CommdataStatus.ScrollToEnd();
 
                     // Send the binary data out the port
                     byte[] hexstring = Encoding.ASCII.GetBytes(data);
@@ -211,6 +225,8 @@ namespace Serial_Communication_WPF
                     para.Inlines.Add("Failed to SEND" + data + "\n" + ex + "\n");
                     mcFlowDoc.Blocks.Add(para);
                     Commdata.Document = mcFlowDoc;
+
+                    //CommdataStatus.Document = mcFlowDoc;
                 }
             }
             else
@@ -225,6 +241,9 @@ namespace Serial_Communication_WPF
             mcFlowDoc.Blocks.Clear();
             Commdata.Document = mcFlowDoc;
             Commdata.ScrollToEnd();
+
+            //CommdataStatus.Document = mcFlowDoc;
+            //CommdataStatus.ScrollToEnd();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -296,7 +315,7 @@ namespace Serial_Communication_WPF
                 newBtn.Content = i.ToString();
                 newBtn.Name = "Button" + i.ToString();
                 newBtn.Click += new RoutedEventHandler(button_Click);
-                sp.Children.Add(newBtn);
+                //sp.Children.Add(newBtn);
             }
         }
 
@@ -305,8 +324,84 @@ namespace Serial_Communication_WPF
             Console.WriteLine(string.Format("You clicked on the {0}. button.", (sender as Button).Name));
         }
 
-    
-        
+       
+
+        private void HandleStatusTestButton(object sender, RoutedEventArgs e)
+        {
+            Button myButton = (Button)sender;
+
+            switch (myButton.Name)
+            {
+                case "cmdHelp":
+                    myButton.Background   = Brushes.Yellow; 
+                    break;
+
+                case "cmdInitilise":
+                    myButton.Background = Brushes.Yellow;
+                    break;
+
+                case "cmdIdle":
+                    myButton.Background = Brushes.Yellow;
+                    break;
+
+                case "cmdUpdateScreen":
+                    myButton.Background = Brushes.Yellow;
+                    break;
+
+                case "cmdCheckEvents":
+                    myButton.Background = Brushes.Yellow;
+                    break;
+
+                case "cmdUpdateOutputs":
+                    myButton.Background = Brushes.Yellow;
+                    break;
+
+                case "cmdDeleteMemory":
+                    myButton.Background = Brushes.Yellow;
+                    break;
+
+                case "cmdReadEvents":
+                    myButton.Background = Brushes.Yellow;
+                    break;
+
+                case "cmdAddEvent":
+                    myButton.Background = Brushes.Yellow;
+                    break;
+
+                case "cmdDisableEvent":
+                    myButton.Background = Brushes.Yellow;
+                    break;
+
+                case "cmdSpare1":
+                    myButton.Background = Brushes.Yellow;
+                    break;
+
+                case "cmdUpdateOutputOne":
+                    myButton.Background = Brushes.Yellow;
+                    break;
+
+                case "cmdWriteStatus":
+                    myButton.Background = Brushes.Yellow;
+                    break;
+
+                case "cmdSetRTC":
+                    myButton.Background = Brushes.Yellow;
+                    break;
+
+                case "cmdReadTime":
+                    myButton.Background = Brushes.Yellow;
+                    break;
+
+                case "cmdCheckCurrentEvent":
+                    myButton.Background = Brushes.Yellow;
+                    break;
+
+                case "cmdSpare2":
+                    myButton.Background = Brushes.Yellow;
+                    break;
+
+            }
+        } 
 
     }
 

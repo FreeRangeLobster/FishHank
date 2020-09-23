@@ -13,17 +13,16 @@
 
 //Temperature Sensor
 #define ONE_WIRE_BUS 15
-
 OneWire oneWire(ONE_WIRE_BUS); // Setup a oneWire instance to communicate with any OneWire devices (not just Maxim/Dallas temperature ICs)
 DallasTemperature sensors(&oneWire); // Pass our oneWire reference to Dallas Temperature. 
 DeviceAddress insideThermometer, outsideThermometer; // arrays to hold device addresses
 
+
+
 //https://esp32.com/viewtopic.php?t=328  
 /* ESP32 3 UARTs */
-
 HardwareSerial Serial_1(1);
 HardwareSerial Serial_2(2);
-
 // Choose two free pins
 #define SERIAL1_RXPIN 2//12
 #define SERIAL1_TXPIN 4//13
@@ -32,6 +31,7 @@ String readString;
 String readStringB;
 String sSerialUSB;
 char nOption;
+
 //String used in the communication with Arduino Aux Board
 String readStringIOCtrl;
 unsigned long nCurrentMillis = millis();
@@ -45,8 +45,7 @@ enum eStateEnum{eCalculateNextTimeCheck,eCheckSD,eUpdateOutputs,eUpdateDisplay,e
 eStateEnum StateEnum;
 
 
-//Delay implementation
-// constants won't change :
+//Time system is idle
 const long interval = 5*1000;     //in seconds
 
 //RTC
@@ -54,30 +53,31 @@ RTC_DS3231 rtc;
 char daysOfTheWeek[7][12] = {"SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"};
 char char_arrayTime[10];
 DateTime now;
+void RTCSetTimeAndDate();
 
-//Display
-#define SCREEN_WIDTH 128  // OLED display width, in pixels
-#define SCREEN_HEIGHT 64  // OLED display height, in pixels
-#define OLED_RESET    -1  // Reset pin # (or -1 if sharing reset pin)
-Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
-#define OffsetOutputsRaw1 20
-#define OffsetOutputsRaw2 40
-#define OutputsColumnCorner1 128/4
-#define OutputsColumnWidth 128/8
-#define OutputsColumnCorner2  128/4 
 
-#define DisplayColumnX  128/4
-#define DisplayColumnY  40
-#define DisplayColumnY2  DisplayColumnY+12 //32
-#define DisplayColumnWidth 128/4
-#define DisplayColumnHight 12.5
-char cStatus[10];
-void OLEDDrawTable();
-void DisplayModifyStatus( char *status);
-void DisplayModifyTime( char *status);
-void DisplayCurrentTime();
-void TimeFormatForDisplay();
-void DisplayUpdateTemperature();
+#pragma region Display  
+  #define SCREEN_WIDTH 128  // OLED display width, in pixels
+  #define SCREEN_HEIGHT 64  // OLED display height, in pixels
+  #define OLED_RESET    -1  // Reset pin # (or -1 if sharing reset pin)
+  Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+  #define OffsetOutputsRaw1 20
+  #define OffsetOutputsRaw2 40
+  #define OutputsColumnCorner1 128/4
+  #define OutputsColumnWidth 128/8
+  #define OutputsColumnCorner2  128/4 
+  #define DisplayColumnX  128/4
+  #define DisplayColumnY  40
+  #define DisplayColumnY2  DisplayColumnY+12 //32
+  #define DisplayColumnWidth 128/4
+  #define DisplayColumnHight 12.5
+  char cStatus[10];
+  void OLEDDrawTable();
+  void DisplayModifyStatus( char *status);
+  void DisplayCurrentTime();
+  void DisplayUpdateTemperature();
+#pragma endregion
+
 
 
 
@@ -302,6 +302,9 @@ void loop() {
             StateEnum=eCalculateNextTimeCheck;
             delay(500);
           }
+
+          CheckSerialVer2();
+          SerialCommandHandller();
          break;
 
         default:
@@ -414,7 +417,8 @@ void SerialCommandHandller(){
       break;
   
       case '6':
-        Serial.println("6 Set Time RTC 6_DDMMY_HHmmss");     
+        Serial.println("6 Set Time RTC 6_DDMMY_HHmmss"); 
+        RTCSetTimeAndDate();    
         sSerialUSB="";
       break;
   
@@ -628,7 +632,6 @@ void DisplayCurrentTime(){
     Serial.println(sTime);
 }
 
-
 void DisplayUpdateTemperature(){
     sensors.requestTemperatures();
 
@@ -648,20 +651,26 @@ void DisplayUpdateTemperature(){
 
 #pragma region  Time
 
-  // void DisplayShowCurrentTime(){
-  //   //Get current Time
-  //   now = rtc.now();     
-  //   char charBuf[15];
-  //   now.timestamp(DateTime::TIMESTAMP_HANK).toCharArray(charBuf,15);
+// void RTCSetTimeAndDate(char *Currenttime){
 
-  //   //Show on display
-  //   display.fillRect(1,1,128,7, BLACK);    
-  //   display.setCursor(4,1);    
-  //   display.printf(charBuf);
-  //   display.display();
-  // }
+//   rtc.adjust(Currenttime);
+//   rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+
+// }
+
+void RTCSetTimeAndDate(){
+  // This line sets the RTC with an explicit date & time, for example to set
+    // January 21, 2014 at 3am you would call:
+    // rtc.adjust(DateTime(2014, 1, 21, 3, 0, 0));
+  
+  
+  //rtc.adjust(Currenttime);
+  rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
 
 
+
+
+}
 
 
 #pragma endregion

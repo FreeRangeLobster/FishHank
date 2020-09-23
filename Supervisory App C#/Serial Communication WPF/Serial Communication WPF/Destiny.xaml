@@ -101,8 +101,8 @@
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="13*"/>
-            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="97*"/>
+            <ColumnDefinition Width="101*"/>
         </Grid.ColumnDefinitions>
         <TabControl HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="782" Grid.ColumnSpan="2">
             <TabItem Header="Serial Conf">
@@ -134,29 +134,30 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="10*"/>
                         <ColumnDefinition Width="70*"/>
-                        <ColumnDefinition Width="479*"/>
+                        <ColumnDefinition Width="191*"/>
+                        <ColumnDefinition Width="288*"/>
                         <ColumnDefinition Width="264*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Row="0" TextAlignment="Center" Text="Send String" Margin="448,10,144,359" Grid.Column="2" Grid.ColumnSpan="2" />
-                    <TextBox x:Name="tbCommand1" HorizontalAlignment="Left" Height="23" Margin="345,38,0,0" TextWrapping="Wrap" Text="?" VerticalAlignment="Top" Width="238" Grid.Column="2" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="tbCommand2" HorizontalAlignment="Left" Height="23" Margin="346,68,0,0" TextWrapping="Wrap" Text="O11" VerticalAlignment="Top" Width="238" Grid.Column="2" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="tbCommand3" HorizontalAlignment="Left" Height="23" Margin="347,96,0,0" TextWrapping="Wrap" Text="O10" VerticalAlignment="Top" Width="237" Grid.Column="2" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="tbCommand4" HorizontalAlignment="Left" Height="23" Margin="346,124,0,0" TextWrapping="Wrap" Text="Hello Cruel World" VerticalAlignment="Top" Width="238" Grid.Column="2" Grid.ColumnSpan="2"/>
-                    <Button x:Name="cmdConnect" Content="Connect" HorizontalAlignment="Left" Margin="56,219,0,0" VerticalAlignment="Top" Width="110" Click="CmdConnect_Click" Grid.Column="3" Height="54"/>
-                    <Button x:Name="cmdSend1" Content="Button" Grid.Column="3" HorizontalAlignment="Left" Margin="121,40,0,0" VerticalAlignment="Top" Width="75" Click="cmdSend1_Click"/>
-                    <Button x:Name="cmdSend2" Content="Button" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="121,66,0,0" VerticalAlignment="Top" Width="75" Click="CmdSend2_Click"/>
-                    <Button x:Name="cmdSend3" Content="Button" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="121,94,0,0" VerticalAlignment="Top" Width="75" Click="CmdSend3_Click"/>
-                    <Button x:Name="cmdSend4" Content="Button" Grid.Column="3" HorizontalAlignment="Left" Height="24" Margin="121,119,0,0" VerticalAlignment="Top" Width="74" Click="CmdSend4_Click"/>
-                    <Button x:Name="cmdDisconnectPort" Content="Disconnect Port" HorizontalAlignment="Left" Height="56" Margin="331,218,0,0" VerticalAlignment="Top" Width="112" Click="CmdDisconnect_Click" Grid.Column="2"/>
-                    <RichTextBox x:Name="Commdata" Grid.Column="1" HorizontalAlignment="Left" Height="324" Margin="26,37,0,0" VerticalAlignment="Top" Width="332" VerticalScrollBarVisibility="Visible"  Style="{DynamicResource RichTextBoxStyle1}" Grid.ColumnSpan="2">
+                    <TextBlock Grid.Row="0" TextAlignment="Center" Text="Send String" Margin="257,10,144,359" Grid.Column="3" Grid.ColumnSpan="2" />
+                    <TextBox x:Name="tbCommand1" HorizontalAlignment="Left" Height="23" Margin="154,38,0,0" TextWrapping="Wrap" Text="?" VerticalAlignment="Top" Width="238" Grid.Column="3" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="tbCommand2" HorizontalAlignment="Left" Height="23" Margin="155,68,0,0" TextWrapping="Wrap" Text="O11" VerticalAlignment="Top" Width="238" Grid.Column="3" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="tbCommand3" HorizontalAlignment="Left" Height="23" Margin="156,96,0,0" TextWrapping="Wrap" Text="O10" VerticalAlignment="Top" Width="237" Grid.Column="3" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="tbCommand4" HorizontalAlignment="Left" Height="23" Margin="155,124,0,0" TextWrapping="Wrap" Text="Hello Cruel World" VerticalAlignment="Top" Width="238" Grid.Column="3" Grid.ColumnSpan="2"/>
+                    <Button x:Name="cmdConnect" Content="Connect" HorizontalAlignment="Left" Margin="56,219,0,0" VerticalAlignment="Top" Width="110" Click="CmdConnect_Click" Grid.Column="4" Height="54"/>
+                    <Button x:Name="cmdSend1" Content="Button" Grid.Column="4" HorizontalAlignment="Left" Margin="121,40,0,0" VerticalAlignment="Top" Width="75" Click="cmdSend1_Click"/>
+                    <Button x:Name="cmdSend2" Content="Button" Grid.Column="4" HorizontalAlignment="Left" Height="23" Margin="121,66,0,0" VerticalAlignment="Top" Width="75" Click="CmdSend2_Click"/>
+                    <Button x:Name="cmdSend3" Content="Button" Grid.Column="4" HorizontalAlignment="Left" Height="23" Margin="121,94,0,0" VerticalAlignment="Top" Width="75" Click="CmdSend3_Click"/>
+                    <Button x:Name="cmdSend4" Content="Button" Grid.Column="4" HorizontalAlignment="Left" Height="24" Margin="121,119,0,0" VerticalAlignment="Top" Width="74" Click="CmdSend4_Click"/>
+                    <Button x:Name="cmdDisconnectPort" Content="Disconnect Port" HorizontalAlignment="Left" Height="56" Margin="140,218,0,0" VerticalAlignment="Top" Width="112" Click="CmdDisconnect_Click" Grid.Column="3"/>
+                    <RichTextBox x:Name="Commdata" Grid.Column="1" HorizontalAlignment="Left" Height="324" Margin="26,37,0,0" VerticalAlignment="Top" Width="332" VerticalScrollBarVisibility="Visible"  Style="{DynamicResource RichTextBoxStyle1}" Grid.ColumnSpan="3">
                         <FlowDocument>
                             <Paragraph>
                                 <Run Text=""/>
                             </Paragraph>
                         </FlowDocument>
                     </RichTextBox>
-                    <TextBlock Grid.Row="0" TextAlignment="Center" Text="Received" Margin="45,13,283,356" Grid.Column="2" />
-                    <Button x:Name="cmdClear" Content="Clear Terminal" HorizontalAlignment="Left" Margin="294,319,0,0" VerticalAlignment="Top" Width="110"  Grid.Column="2" Height="42" Click="CmdClear_Click"/>
+                    <TextBlock Grid.Row="0" TextAlignment="Center" Text="Received" Margin="45,13,283,356" Grid.Column="2" Grid.ColumnSpan="2" />
+                    <Button x:Name="cmdClear" Content="Clear Terminal" HorizontalAlignment="Left" Margin="103,319,0,0" VerticalAlignment="Top" Width="110"  Grid.Column="3" Height="42" Click="CmdClear_Click"/>
 
 
 
@@ -202,12 +203,30 @@
                         <ColumnDefinition Width="11*"/>
                         <ColumnDefinition Width="69*"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="cmdUpdateTime" Content="Update Time" Grid.Column="1" HorizontalAlignment="Left" Margin="306.8,52,0,0" VerticalAlignment="Top" Width="114" Click="cmdUpdateTime_Click"/>
-                    <Button x:Name="cmdGetCurrentStatus" Content="Get Current Status" Grid.Column="1" HorizontalAlignment="Left" Margin="306.8,115,0,0" VerticalAlignment="Top" Width="114"/>
-                    <Button x:Name="cmdDumpMemory" Content="Dump Memory" Grid.Column="1" HorizontalAlignment="Left" Height="21" Margin="306.8,159,0,0" VerticalAlignment="Top" Width="114"/>
-                    <Button x:Name="cmdStartLogging" Content="Start Logging" Grid.Column="1" HorizontalAlignment="Left" Height="21" Margin="306.8,206,0,0" VerticalAlignment="Top" Width="114"/>
-                    <Button x:Name="cmdStopLogging" Content="Stop Logging" Grid.Column="1" HorizontalAlignment="Left" Height="21" Margin="438.8,206,0,0" VerticalAlignment="Top" Width="114"/>
-                    <StackPanel x:Name="sp" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="225" Margin="50,115,0,0" VerticalAlignment="Top" Width="231"/>
+                    <Button x:Name="cmdHelp" Content="? Help" HorizontalAlignment="Left" Margin="26,11,0,0" VerticalAlignment="Top" Width="114" Click="HandleStatusTestButton" Grid.ColumnSpan="2"/>
+                    <Button x:Name="cmdInitilise" Content="K Initialise" HorizontalAlignment="Left" Margin="26,41,0,0" VerticalAlignment="Top" Width="114" Click="HandleStatusTestButton" Grid.ColumnSpan="2"/>
+                    <Button x:Name="cmdIdle" Content="I Idle" HorizontalAlignment="Left" Margin="26,67,0,0" VerticalAlignment="Top" Width="114" Click="HandleStatusTestButton" Grid.ColumnSpan="2"/>
+                    <Button x:Name="cmdUpdateScreen" Content="N update Screen" HorizontalAlignment="Left" Margin="26,96,0,0" VerticalAlignment="Top" Width="114" Click="HandleStatusTestButton" Grid.ColumnSpan="2"/>
+                    <Button x:Name="cmdCheckEvents" Content="M Check Events" HorizontalAlignment="Left" Margin="26,121,0,0" VerticalAlignment="Top" Width="114" Click="HandleStatusTestButton" Grid.ColumnSpan="2"/>
+                    <Button x:Name="cmdUpdateOutputs" Content="O Update Outputs" HorizontalAlignment="Left" Margin="26,147,0,0" VerticalAlignment="Top" Width="114" Click="HandleStatusTestButton" Grid.ColumnSpan="2"/>
+                    <Button x:Name="cmdDeleteMemory" Content="D Delete Memory" HorizontalAlignment="Left" Margin="26,174,0,0" VerticalAlignment="Top" Width="114" Click="HandleStatusTestButton" Grid.ColumnSpan="2"/>
+                    <Button x:Name="cmdReadEvents" Content="0 Read Events" HorizontalAlignment="Left" Margin="128,18,0,0" VerticalAlignment="Top" Width="114" Click="HandleStatusTestButton" Grid.Column="1"/>
+                    <Button x:Name="cmdAddEvent" Content="1 Add Events" HorizontalAlignment="Left" Margin="128,47,0,0" VerticalAlignment="Top" Width="114" Click="HandleStatusTestButton" Grid.Column="1" RenderTransformOrigin="-0.658,2.2"/>
+                    <Button x:Name="cmdDisableEvent" Content="2 Disable Event" HorizontalAlignment="Left" Margin="128,72,0,0" VerticalAlignment="Top" Width="114" Click="HandleStatusTestButton" Grid.Column="1"/>
+                    <Button x:Name="cmdSpare1" Content="3 Spare1 " HorizontalAlignment="Left" Margin="128,99,0,0" VerticalAlignment="Top" Width="114" Click="HandleStatusTestButton" Grid.Column="1"/>
+                    <Button x:Name="cmdUpdateOutputOne" Content="4 Update Output 11" HorizontalAlignment="Left" Margin="128,126,0,0" VerticalAlignment="Top" Width="114" Click="HandleStatusTestButton" Grid.Column="1"/>
+                    <Button x:Name="cmdWriteStatus" Content="5 WriteStatus" HorizontalAlignment="Left" Margin="128,153,0,0" VerticalAlignment="Top" Width="114" Click="HandleStatusTestButton" Grid.Column="1"/>
+                    <Button x:Name="cmdSetRTC" Content="6 Update RTC" HorizontalAlignment="Left" Margin="128,180,0,0" VerticalAlignment="Top" Width="114" Click="HandleStatusTestButton" Grid.Column="1" RenderTransformOrigin="0.509,0.9"/>
+                    <Button x:Name="cmdReadTime" Content="7 ReadTime" HorizontalAlignment="Left" Margin="128,211,0,0" VerticalAlignment="Top" Width="114" Click="HandleStatusTestButton" Grid.Column="1"/>
+                    <Button x:Name="cmdCheckCurrentEvent" Content="8 Check Current Event" HorizontalAlignment="Left" Margin="128,240,0,0" VerticalAlignment="Top" Width="114" Click="HandleStatusTestButton" Grid.Column="1"/>
+                    <Button x:Name="cmdSpare2" Content="9 Spare 2" HorizontalAlignment="Left" Margin="128,269,0,0" VerticalAlignment="Top" Width="114" Click="HandleStatusTestButton" Grid.Column="1"/>
+                    <RichTextBox x:Name="CommdataStatus" HorizontalAlignment="Left" Height="324" Margin="299,44,0,0" VerticalAlignment="Top" Width="332" VerticalScrollBarVisibility="Visible"  Style="{DynamicResource RichTextBoxStyle1}" Grid.Column="1">
+                        <FlowDocument>
+                            <Paragraph>
+                                <Run Text=""/>
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
                 </Grid>
             </TabItem>
 
