@@ -1,0 +1,15 @@
+C:\Users\Juan\Desktop\Fishank\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\bin\Debug\Destiny.exe.config
+C:\Users\Juan\Desktop\Fishank\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\bin\Debug\Destiny.exe
+C:\Users\Juan\Desktop\Fishank\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\bin\Debug\Destiny.pdb
+C:\Users\Juan\Desktop\Fishank\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\obj\Debug\Destiny.csprojAssemblyReference.cache
+C:\Users\Juan\Desktop\Fishank\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\obj\Debug\MainWindow.g.cs
+C:\Users\Juan\Desktop\Fishank\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\obj\Debug\App.g.cs
+C:\Users\Juan\Desktop\Fishank\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\obj\Debug\Destiny_MarkupCompile.cache
+C:\Users\Juan\Desktop\Fishank\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\obj\Debug\Destiny_MarkupCompile.lref
+C:\Users\Juan\Desktop\Fishank\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\obj\Debug\MainWindow.baml
+C:\Users\Juan\Desktop\Fishank\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\obj\Debug\Destiny.g.resources
+C:\Users\Juan\Desktop\Fishank\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\obj\Debug\Destiny.Properties.Resources.resources
+C:\Users\Juan\Desktop\Fishank\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\obj\Debug\Destiny.csproj.GenerateResource.cache
+C:\Users\Juan\Desktop\Fishank\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\obj\Debug\Destiny.csproj.CoreCompileInputs.cache
+C:\Users\Juan\Desktop\Fishank\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\obj\Debug\Destiny.exe
+C:\Users\Juan\Desktop\Fishank\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\obj\Debug\Destiny.pdb
