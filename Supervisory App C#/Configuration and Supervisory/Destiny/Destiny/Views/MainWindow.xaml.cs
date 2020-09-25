@@ -24,45 +24,45 @@ namespace Destiny
     {
         public MainWindow()
         {
-            DataContext = this;
+            //DataContext = this;
             InitializeComponent();
         }
 
        
 
 
-        private void Select_ComPort(object sender, RoutedEventArgs e) {
+        //private void Select_ComPort(object sender, RoutedEventArgs e) {
 
-        }
+        //}
 
-        private void CboComPortsAvailable_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        //private void CboComPortsAvailable_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
 
-        }
+        //}
 
-        private void CboBaudRate_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        //private void CboBaudRate_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
 
-        }
+        //}
 
-        private void CboDataBits_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        //private void CboDataBits_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
 
-        }
+        //}
 
-        private void CboParity_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        //private void CboParity_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
 
-        }
+        //}
 
-        private void CboStopBits_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        //private void CboStopBits_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
 
-        }
+        //}
 
-        private void CboHandShaking_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        //private void CboHandShaking_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
 
-        }
+        //}
     }
 }

@@ -1,0 +1,15 @@
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\bin\Release\Destiny.exe.config
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\bin\Release\Destiny.exe
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\bin\Release\Destiny.pdb
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\obj\Release\Views\MainWindow.g.cs
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\obj\Release\App.g.cs
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\obj\Release\Destiny_MarkupCompile.cache
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\obj\Release\Destiny_MarkupCompile.lref
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\obj\Release\Views\MainWindow.baml
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\obj\Release\Destiny.g.resources
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\obj\Release\Destiny.Properties.Resources.resources
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\obj\Release\Destiny.csproj.GenerateResource.Cache
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\obj\Release\Destiny.csproj.CoreCompileInputs.cache
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\obj\Release\Destiny.exe
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\Configuration and Supervisory\Destiny\Destiny\obj\Release\Destiny.pdb

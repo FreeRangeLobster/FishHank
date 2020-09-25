@@ -32,3 +32,19 @@ C:\Users\Juan\Desktop\MVVMCombobox\MVVM_Combobox\obj\Debug\MVVM_Combobox.csproj.
 C:\Users\Juan\Desktop\MVVMCombobox\MVVM_Combobox\obj\Debug\MVVM_Combobox.csproj.CoreCompileInputs.cache
 C:\Users\Juan\Desktop\MVVMCombobox\MVVM_Combobox\obj\Debug\MVVM_Combobox.exe
 C:\Users\Juan\Desktop\MVVMCombobox\MVVM_Combobox\obj\Debug\MVVM_Combobox.pdb
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\MVVMCombobox\MVVM_Combobox\bin\Debug\MVVM_Combobox.exe.config
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\MVVMCombobox\MVVM_Combobox\bin\Debug\MVVM_Combobox.exe
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\MVVMCombobox\MVVM_Combobox\bin\Debug\MVVM_Combobox.pdb
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\MVVMCombobox\MVVM_Combobox\obj\Debug\MVVM_Combobox.csprojResolveAssemblyReference.cache
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\MVVMCombobox\MVVM_Combobox\obj\Debug\MainWindow.g.cs
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\MVVMCombobox\MVVM_Combobox\obj\Debug\App.g.cs
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\MVVMCombobox\MVVM_Combobox\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\MVVMCombobox\MVVM_Combobox\obj\Debug\MVVM_Combobox_MarkupCompile.cache
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\MVVMCombobox\MVVM_Combobox\obj\Debug\MVVM_Combobox_MarkupCompile.lref
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\MVVMCombobox\MVVM_Combobox\obj\Debug\MainWindow.baml
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\MVVMCombobox\MVVM_Combobox\obj\Debug\MVVM_Combobox.g.resources
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\MVVMCombobox\MVVM_Combobox\obj\Debug\MVVM_Combobox.Properties.Resources.resources
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\MVVMCombobox\MVVM_Combobox\obj\Debug\MVVM_Combobox.csproj.GenerateResource.Cache
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\MVVMCombobox\MVVM_Combobox\obj\Debug\MVVM_Combobox.csproj.CoreCompileInputs.cache
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\MVVMCombobox\MVVM_Combobox\obj\Debug\MVVM_Combobox.exe
+C:\Users\Juan\Desktop\HankEagle\FishHank\Supervisory App C#\MVVMCombobox\MVVM_Combobox\obj\Debug\MVVM_Combobox.pdb
