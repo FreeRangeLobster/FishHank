@@ -401,8 +401,12 @@ namespace Serial_Communication_WPF
                     break;
 
             }
-        } 
+        }
 
+        private void CboComPortsAvailable_SelectionChanged()
+        {
+
+        }
     }
 
     }

@@ -1,0 +1,35 @@
+﻿<Window x:Class="MVVM_Combobox.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewmodel="clr-namespace:MVVM_Combobox.ViewModel"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <viewmodel:ViewModel x:Key="vm"></viewmodel:ViewModel>
+    </Window.Resources>
+    <StackPanel Orientation="Vertical" DataContext="{Binding Source={StaticResource vm}}">
+    
+        <ComboBox HorizontalAlignment="Left" 
+                  Margin="183,39,0,0" 
+                  VerticalAlignment="Top" 
+                  Width="120" 
+                  ItemsSource="{Binding Path=Persons}"  
+                  SelectedItem="{Binding Path=SPerson}"
+                  DisplayMemberPath="Name"/>
+        <ComboBox ItemsSource="{Binding Path=Persons}"
+                  SelectedItem="{Binding Path=SPerson}"
+                  Width="120"
+                  HorizontalAlignment="Left" 
+                  Margin="183,39,0,0" 
+                  VerticalAlignment="Top"  >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Path=Id}"/>
+                        <TextBlock Text=" - "/>
+                        <TextBlock Text="{Binding Path=Name}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+    </StackPanel>
+</Window>

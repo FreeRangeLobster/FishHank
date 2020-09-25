@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
+
 
 namespace Destiny
 {
@@ -26,11 +28,41 @@ namespace Destiny
             InitializeComponent();
         }
 
+       
+
+
         private void Select_ComPort(object sender, RoutedEventArgs e) {
 
         }
 
+        private void CboComPortsAvailable_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
+        }
 
+        private void CboBaudRate_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void CboDataBits_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void CboParity_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void CboStopBits_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void CboHandShaking_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
