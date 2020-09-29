@@ -1,0 +1,20 @@
+2020-09-24 14:07:45.6180 INFO --- PROGRAM STARTED ---
+2020-09-24 14:07:45.7786 DEBUG New instance of SerialPort() is initialized.
+2020-09-24 14:07:48.9706 DEBUG All lists of settings objects are loaded.
+2020-09-24 14:07:48.9706 DEBUG All default values are set. End of SerialCommViewModel() constructor!
+2020-09-24 14:08:04.9709 DEBUG SerialPort.Open() is executed.
+2020-09-24 14:08:04.9918 INFO Connected to: COM24, 115200 baud, Parity.None, 8, StopBits.One, RTS=True, DTR=True
+2020-09-24 14:08:04.9918 DEBUG Ready to receive data...
+2020-09-24 14:08:33.3126 INFO Disconnected from COM24
+2020-09-24 15:40:05.9648 INFO --- PROGRAM STARTED ---
+2020-09-24 15:40:05.9807 DEBUG New instance of SerialPort() is initialized.
+2020-09-24 15:40:06.6021 DEBUG All lists of settings objects are loaded.
+2020-09-24 15:40:06.6021 DEBUG All default values are set. End of SerialCommViewModel() constructor!
+2020-09-24 15:40:18.2054 DEBUG SerialPort.Open() is executed.
+2020-09-24 15:40:18.2274 INFO Connected to: COM24, 115200 baud, Parity.None, 8, StopBits.One, RTS=True, DTR=True
+2020-09-24 15:40:18.2274 DEBUG Ready to receive data...
+2020-09-24 15:40:25.3438 INFO Disconnected from COM24
+2020-09-24 15:40:41.7466 DEBUG SerialPort.Open() is executed.
+2020-09-24 15:40:41.7586 INFO Connected to: COM24, 115200 baud, Parity.None, 8, StopBits.One, RTS=True, DTR=True
+2020-09-24 15:40:41.7586 DEBUG Ready to receive data...
+2020-09-24 15:40:43.4822 DEBUG SerialPort.Dispose() & SerialPort.Close() are executed on OnWindowClosing() method.
