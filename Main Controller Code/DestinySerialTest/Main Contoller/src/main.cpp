@@ -175,88 +175,89 @@ void SerialCommandHandller(){
 
   switch ( sSerialUSB[0]) {
       case 'K':
-        Serial.println("Initialise");
+        Serial.println("OK,K Initialise");
         sSerialUSB="";
       break;
       
       case 'I':
-        Serial.println("I Idle");
+        Serial.println("OK,I Idle");
         sSerialUSB="";
       break;
   
       case 'N':
-        Serial.println("N Update Screen");     
+        Serial.println("OK,N Update Screen");     
         sSerialUSB="";
       break;
   
       case 'M':
-        Serial.println("M Check Events");
+        Serial.println("OK,M Check Events");
         sSerialUSB="";
       break;
   
       case 'O':
-        Serial.println("O Update Outputs");     
+        Serial.println("OK,O Update Outputs");     
         sSerialUSB="";
       break;
   
       case 'D':
-        Serial.println("D Delete Memory");
+        Serial.println("OK,D Delete Memory");
         sSerialUSB="";
       break;
   
       case '0':
-        Serial.println("0 Read Page Number 0_0000");     
+        Serial.println("OK,0 Read Page Number 0_0000");     
         sSerialUSB="";
       break;
   
       case '1':
-        Serial.println("1 AddEvent  1_1030WED31");     
+        Serial.println("OK,1 AddEvent  1_1030WED31");     
         sSerialUSB="";
       break;
   
       case '2':
-        Serial.println("2 Disable Event  2_001");     
+        Serial.println("OK,2 Disable Event  2_001");     
         sSerialUSB="";
       break;
   
       case '3':
-        Serial.println("3 Spare");
+        Serial.println("OK,3 Spare");
         sSerialUSB="";
       break;
   
       case '4':
-        Serial.println("4 Update Output 4_11 Output 1 ON");     
+        Serial.println("OK,4 Update Output 4_11 Output 1 ON");     
         sSerialUSB="";
       break;
   
       case '5':
-        Serial.println("5 Write Status on OLED 5_Hello");     
+        Serial.println("OK,5 Write Status on OLED 5_Hello");     
         sSerialUSB="";
       break;
   
       case '6':
-        Serial.println("6 Set Time RTC 6_DDMMY_HHmmss"); 
+        Serial.println("OK,6 Set Time RTC 6_DDMMY_HHmmss"); 
         
         sSerialUSB="";
       break;
   
       case '7':
-        Serial.println("7 Read Time");     
+        Serial.println("OK,7 Read Time");     
         sSerialUSB="";
       break;
   
       case '8':
-        Serial.println("8 Check Current Event");     
+        Serial.println("Ok,8 Check Current Event");     
         sSerialUSB="";
       break;
              
       case '9':
-        Serial.println("9 Spare");     
+        Serial.println("OK,9 Spare");     
         sSerialUSB="";
       break;
   
       case '?':
-        Serial.println("Help");
+        Serial.println("OK,? Help"); 
+        Serial.println("? Help");
         Serial.println("K Initialise");  
         Serial.println("I Idle");
         Serial.println("N Update Screen");   

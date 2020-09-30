@@ -160,16 +160,14 @@ namespace Serial_Communication_WPF
         {
             // Collecting the characters received to our 'buffer' (string).
             recieved_data = ComPort.ReadExisting();
+
+
             Dispatcher.Invoke(DispatcherPriority.Send, new UpdateUiTextDelegate(WriteData), recieved_data);
-
-
+            //Update Testboxes
             Dispatcher.Invoke(DispatcherPriority.Send, new UpdateUiTextDelegate(UpdateTerminal), recieved_data);
             Dispatcher.Invoke(DispatcherPriority.Send, new UpdateUiTextDelegate(UpdateTerminal2), recieved_data);
 
-            //string s = Encoding.GetEncoding("Windows-1252").GetString(recieved_data);
-            //string s = recieved_data;
-            //OutputText += s + "";
-            //OnPropertyChanged("OutputText");
+            
 
             //OutputText = OutputText + recieved_data;
             //UpdateTerminal(OutputText);
@@ -388,7 +386,9 @@ namespace Serial_Communication_WPF
             switch (myButton.Name)
             {
                 case "cmdHelp":
+                    SerialCmdSend("?");
                     myButton.Background   = Brushes.Yellow; 
+
                     break;
 
                 case "cmdInitilise":
