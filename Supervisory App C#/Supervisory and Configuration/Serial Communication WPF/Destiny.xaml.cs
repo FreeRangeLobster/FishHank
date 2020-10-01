@@ -30,8 +30,7 @@ namespace Serial_Communication_WPF
     {
         SerialPort ComPort = new SerialPort();
         string recieved_data;
-        Paragraph para = new Paragraph();
-        FlowDocument mcFlowDoc = new FlowDocument();
+      
 
         string OutputText;
 
@@ -162,7 +161,7 @@ namespace Serial_Communication_WPF
             recieved_data = ComPort.ReadExisting();
 
 
-            Dispatcher.Invoke(DispatcherPriority.Send, new UpdateUiTextDelegate(WriteData), recieved_data);
+          
             //Update Testboxes
             Dispatcher.Invoke(DispatcherPriority.Send, new UpdateUiTextDelegate(UpdateTerminal), recieved_data);
             Dispatcher.Invoke(DispatcherPriority.Send, new UpdateUiTextDelegate(UpdateTerminal2), recieved_data);
@@ -195,11 +194,15 @@ namespace Serial_Communication_WPF
         private void UpdateTerminal(string text)
         {
             OutputBox.Text = OutputBox.Text + text;
+            OutputBox.ScrollToEnd();
         }
+
+      
 
         private void UpdateTerminal2(string text)
         {
             OutputBox2.Text = OutputBox2.Text + text;
+            OutputBox2.ScrollToEnd();
         }
 
 
@@ -208,10 +211,7 @@ namespace Serial_Communication_WPF
         private void WriteData(string text)
         {
             // Assign the value of the recieved_data to the RichTextBox.
-            para.Inlines.Add(text);
-            mcFlowDoc.Blocks.Add(para);
-            Commdata.Document = mcFlowDoc;
-            Commdata.ScrollToEnd();
+          
 
             //CommdataStatus.Document = mcFlowDoc;
             //CommdataStatus.ScrollToEnd();
@@ -250,10 +250,13 @@ namespace Serial_Communication_WPF
                 try
                 {
 
-                    para.Inlines.Add("->" + data + "\r\n");
-                    mcFlowDoc.Blocks.Add(para);
-                    Commdata.Document = mcFlowDoc;
-                    Commdata.ScrollToEnd();
+                    
+
+                    String sStringTx = "    TX->" + data + "\r\n";
+
+                    Dispatcher.Invoke(DispatcherPriority.Send, new UpdateUiTextDelegate(UpdateTerminal), sStringTx);
+                    Dispatcher.Invoke(DispatcherPriority.Send, new UpdateUiTextDelegate(UpdateTerminal2), sStringTx);
+
 
                     //CommdataStatus.Document = mcFlowDoc;
                     //CommdataStatus.ScrollToEnd();
@@ -275,11 +278,10 @@ namespace Serial_Communication_WPF
                 }
                 catch (Exception ex)
                 {
-                    para.Inlines.Add("Failed to SEND" + data + "\n" + ex + "\n");
-                    mcFlowDoc.Blocks.Add(para);
-                    Commdata.Document = mcFlowDoc;
+                    
+                    Dispatcher.Invoke(DispatcherPriority.Send, new UpdateUiTextDelegate(UpdateTerminal), "Failed to SEND" + data + "\n" + ex + "\n");
+                    Dispatcher.Invoke(DispatcherPriority.Send, new UpdateUiTextDelegate(UpdateTerminal2), "Failed to SEND" + data + "\n" + ex + "\n");
 
-                    //CommdataStatus.Document = mcFlowDoc;
                 }
             }
             else
@@ -290,13 +292,11 @@ namespace Serial_Communication_WPF
         private void CmdClear_Click(object sender, RoutedEventArgs e)
         {
 
-            para.Inlines.Clear();
-            mcFlowDoc.Blocks.Clear();
-            Commdata.Document = mcFlowDoc;
-            Commdata.ScrollToEnd();
+           
+            OutputBox.Clear();
+            OutputBox2.Clear();
 
-            //CommdataStatus.Document = mcFlowDoc;
-            //CommdataStatus.ScrollToEnd();
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

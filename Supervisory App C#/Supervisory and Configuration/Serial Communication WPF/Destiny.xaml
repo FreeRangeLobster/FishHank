@@ -100,7 +100,7 @@
 
     </Window.Resources>
     <Grid>
-        
+
         <TabControl>
             <TabItem Header="Serial Conf">
                 <Grid Background="#FFE5E5E5" Margin="0,0,-47,0">
@@ -155,7 +155,8 @@
                 <Grid >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="20" />
-                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="261.705" />
+                        <ColumnDefinition Width="148.295"/>
                         <ColumnDefinition Width="auto" />
                         <ColumnDefinition Width="200"/>
                         <ColumnDefinition Width="200" />
@@ -181,34 +182,89 @@
                     </Grid.RowDefinitions>
 
 
-                    <TextBlock  Grid.Column="1" Grid.Row="1" TextAlignment="Center" Text="Send String"    />
-                    <TextBlock  Grid.Column="3" Grid.Row="1" Text="Received" />
+                    <TextBlock  Grid.Column="1" Grid.Row="1" TextAlignment="Center" Text="Send String" Grid.ColumnSpan="2"    />
+                    <TextBlock  Grid.Column="3" Grid.Row="1" Text="Received" Grid.ColumnSpan="2" />
 
-                    <Button     Grid.Column="3" Grid.Row="2" Width=" 80" Margin=" 5,5" x:Name="cmdDisconnectPort" Content="Close Port" Click="CmdDisconnect_Click" />
-                    <Button     Grid.Column="4" Grid.Row="2" Width=" 80" Margin=" 5,5" x:Name="cmdConnect" Content="Open Port" HorizontalAlignment="Center" Click="CmdConnect_Click"/>
-
-
-                    <TextBox    Width=" 200" Grid.Column="3" Grid.Row="3" Margin=" 5,5" x:Name="tbCommand1" HorizontalAlignment="Left" VerticalAlignment="Center" />
-                    <TextBox    Width=" 200"  Grid.Column="3" Grid.Row="4" Margin=" 5,5" x:Name="tbCommand2" HorizontalAlignment="Left" Text="O11" VerticalAlignment="Center"   Grid.ColumnSpan="2"/>
-                    <TextBox    Width=" 200"  Grid.Column="3" Grid.Row="5" Margin=" 5,5" x:Name="tbCommand3" HorizontalAlignment="Left" Text="O10" VerticalAlignment="Center"   Grid.ColumnSpan="2"/>
-                    <TextBox    Width=" 200"  Grid.Column="3" Grid.Row="6" Margin=" 5,5" x:Name="tbCommand4" HorizontalAlignment="Left" Text="Hello Cruel World" VerticalAlignment="Center"  Grid.ColumnSpan="2"/>
-                    <Button     Width=" 60" Grid.Column="4" Grid.Row="3" Margin=" 5,5" x:Name="cmdSend1" Content="Send"   Click="cmdSend1_Click"/>
-                    <Button     Width=" 60" Grid.Column="4" Grid.Row="4" Margin=" 5,5" x:Name="cmdSend2" Content="Send"   Click="CmdSend2_Click"/>
-                    <Button     Width=" 60" Grid.Column="4" Grid.Row="5" Margin=" 5,5" x:Name="cmdSend3" Content="Send"   Click="CmdSend3_Click"/>
-                    <Button     Width=" 60" Grid.Column="4" Grid.Row="6" Margin=" 5,5" x:Name="cmdSend4" Content="Send"   Click="CmdSend4_Click"/>
-
-                    <Button     Grid.Column="3" Grid.Row="8" Width=" 75" Height="20" Margin=" 5,5" x:Name="cmdClear" Content="Clear Terminal"  Click="CmdClear_Click"/>
+                    <Button     Grid.Column="3" Grid.Row="2" Width=" 80" Margin="60,5" x:Name="cmdDisconnectPort" Content="Close Port" Click="CmdDisconnect_Click" Grid.ColumnSpan="2" />
+                    <Button     Grid.Column="5" Grid.Row="2" Width=" 80" Margin="60,5" x:Name="cmdConnect" Content="Open Port" HorizontalAlignment="Center" Click="CmdConnect_Click"/>
 
 
-                    <RichTextBox x:Name="Commdata" Grid.Column="1" Grid.Row="3" Width="400" Height ="150" Grid.RowSpan=" 5" HorizontalAlignment="Left" VerticalScrollBarVisibility="Visible"  Style="{DynamicResource RichTextBoxStyle1}">
-                        <FlowDocument>
-                            <Paragraph>
-                                <Run Text=""/>
-                            </Paragraph>
-                        </FlowDocument>
-                    </RichTextBox>
+                    <TextBox    Width=" 200" Grid.Column="3" Grid.Row="3" Margin="5,10,0,10" x:Name="tbCommand1" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="3" />
+                    <TextBox    Width=" 200"  Grid.Column="3" Grid.Row="4" Margin="5,10,0,10" x:Name="tbCommand2" HorizontalAlignment="Left" Text="O11" VerticalAlignment="Center"   Grid.ColumnSpan="3"/>
+                    <TextBox    Width=" 200"  Grid.Column="3" Grid.Row="5" Margin="5,10,0,10" x:Name="tbCommand3" HorizontalAlignment="Left" Text="O10" VerticalAlignment="Center"   Grid.ColumnSpan="3"/>
+                    <TextBox    Width=" 200"  Grid.Column="3" Grid.Row="6" Margin="5,10,0,10" x:Name="tbCommand4" HorizontalAlignment="Left" Text="Hello Cruel World" VerticalAlignment="Center"  Grid.ColumnSpan="3"/>
+                    <Button     Width=" 60" Grid.Column="5" Grid.Row="3" Margin="70,5" x:Name="cmdSend1" Content="Send"   Click="cmdSend1_Click"/>
+                    <Button     Width=" 60" Grid.Column="5" Grid.Row="4" Margin="70,5" x:Name="cmdSend2" Content="Send"   Click="CmdSend2_Click"/>
+                    <Button     Width=" 60" Grid.Column="5" Grid.Row="5" Margin="70,5" x:Name="cmdSend3" Content="Send"   Click="CmdSend3_Click"/>
+                    <Button     Width=" 60" Grid.Column="5" Grid.Row="6" Margin="70,5" x:Name="cmdSend4" Content="Send"   Click="CmdSend4_Click"/>
 
-                    <TextBox Grid.Column="1" Grid.Row="8" Height ="130" x:Name="OutputBox" Text="{Binding OutputText}" Margin="5" IsReadOnly="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" FontFamily="Consolas"/>
+                    <Button     Grid.Column="3" Grid.Row="8" Width=" 85" Height="20" Margin="58,60" x:Name="cmdClear" Content="Clear Terminal"  Click="CmdClear_Click" Grid.ColumnSpan="2"/>
+
+
+              
+
+                    <TextBox Grid.Column="1"  Grid.RowSpan="8" Height="350" x:Name="OutputBox" Grid.Row="1"  Width="400"  Text="{Binding OutputText}" Margin="5" IsReadOnly="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" FontFamily="Consolas" Grid.ColumnSpan="2"/>
+
+                </Grid>
+            </TabItem>
+
+
+
+            <TabItem Header="System Status">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="77.456" />
+                        <ColumnDefinition Width="282.544"/>
+                        <ColumnDefinition Width="38" />
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Button Grid.Column="4" Grid.Row="1" Margin="5,5" Width=" 150" x:Name="cmdHelp"       Content="? Help" Click="HandleStatusTestButton" />
+                    <Button Grid.Column="4" Grid.Row="2" Margin="5,5" x:Name="cmdInitilise"  Content="K Initialise" Click="HandleStatusTestButton" />
+                    <Button Grid.Column="4" Grid.Row="3" Margin="5,5" x:Name="cmdIdle"       Content="I Idle" Click="HandleStatusTestButton" />
+                    <Button Grid.Column="4" Grid.Row="4" Margin="5,5" x:Name="cmdUpdateScreen" Content="N update Screen" Click="HandleStatusTestButton" />
+                    <Button Grid.Column="4" Grid.Row="5" Margin="5,5" x:Name="cmdCheckEvents" Content="M Check Events" Click="HandleStatusTestButton" />
+                    <Button Grid.Column="4" Grid.Row="6" Margin="5,5" x:Name="cmdUpdateOutputs" Content="O Update Outputs" Click="HandleStatusTestButton" />
+                    <Button Grid.Column="4" Grid.Row="7" Margin="5,5" x:Name="cmdDeleteMemory" Content="D Delete Memory" Click="HandleStatusTestButton" />
+                    <Button Grid.Column="4" Grid.Row="8" Margin="5,5" x:Name="cmdReadEvents" Content="0 Read Events" Click="HandleStatusTestButton" />
+                    <Button Grid.Column="5" Grid.Row="1" Margin="5,5" Width="150"  x:Name="cmdAddEvent"   Content="1 Add Events" Click="HandleStatusTestButton"/>
+                    <Button Grid.Column="5" Grid.Row="2" Margin="5,5" x:Name="cmdDisableEvent" Content="2 Disable Event" Click="HandleStatusTestButton" />
+                    <Button Grid.Column="5" Grid.Row="3" Margin="5,5"  x:Name="cmdSpare1"     Content="3 Spare1 " Click="HandleStatusTestButton" />
+                    <Button Grid.Column="5" Grid.Row="4" Margin="5,5" x:Name="cmdUpdateOutputOne" Content="4 Update Output 11" Click="HandleStatusTestButton" />
+                    <Button Grid.Column="5" Grid.Row="5" Margin="5,5" x:Name="cmdWriteStatus" Content="5 WriteStatus" Click="HandleStatusTestButton" />
+                    <Button Grid.Column="5" Grid.Row="6" Margin="5,5" x:Name="cmdSetRTC"     Content="6 Update RTC"  Click="HandleStatusTestButton" />
+                    <Button Grid.Column="5" Grid.Row="7" Margin="5,5" x:Name="cmdReadTime"   Content="7 ReadTime"  Click="HandleStatusTestButton" />
+                    <Button Grid.Column="5" Grid.Row="8" Margin="5,5" x:Name="cmdCheckCurrentEvent" Content="8 Check Current Event" Click="HandleStatusTestButton" />
+                    <Button Grid.Column="5" Grid.Row="9" Margin="5,5" x:Name="cmdSpare2"     Content="9 Spare 2" Click="HandleStatusTestButton" />
+
+                    <Button     Grid.Column="4" Grid.Row="10" Width=" 85" Height="20" Margin="38,5" x:Name="cmdClear2" Content="Clear Terminal"  Click="CmdClear_Click"/>
+
+
+                    <TextBox Grid.Column="1" Grid.Row="1" Width=" 350" x:Name="OutputBox2" Grid.ColumnSpan="2" Grid.RowSpan=" 11" Text="{Binding OutputText}" Margin="5" IsReadOnly="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" FontFamily="Consolas"/>
+
 
                 </Grid>
             </TabItem>
@@ -243,61 +299,6 @@
                 </Grid>
             </TabItem>
 
-
-            <TabItem Header="System Status">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="20" />
-                        <ColumnDefinition Width="auto" />
-                        <ColumnDefinition Width="38" />
-                        <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width="auto" />
-                        <ColumnDefinition Width="auto" />
-                        <ColumnDefinition Width="auto" />
-                        <ColumnDefinition Width="auto" />
-                        <ColumnDefinition Width="auto" />
-                        <ColumnDefinition Width="auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="20" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    
-                    <Button Grid.Column="3" Grid.Row="1" Margin="5,5" Width=" 150" x:Name="cmdHelp"       Content="? Help" Click="HandleStatusTestButton" />
-                    <Button Grid.Column="3" Grid.Row="2" Margin="5,5" x:Name="cmdInitilise"  Content="K Initialise" Click="HandleStatusTestButton" />
-                    <Button Grid.Column="3" Grid.Row="3" Margin="5,5" x:Name="cmdIdle"       Content="I Idle" Click="HandleStatusTestButton" />
-                    <Button Grid.Column="3" Grid.Row="4" Margin="5,5" x:Name="cmdUpdateScreen" Content="N update Screen" Click="HandleStatusTestButton" />
-                    <Button Grid.Column="3" Grid.Row="5" Margin="5,5" x:Name="cmdCheckEvents" Content="M Check Events" Click="HandleStatusTestButton" />
-                    <Button Grid.Column="3" Grid.Row="6" Margin="5,5" x:Name="cmdUpdateOutputs" Content="O Update Outputs" Click="HandleStatusTestButton" />
-                    <Button Grid.Column="3" Grid.Row="7" Margin="5,5" x:Name="cmdDeleteMemory" Content="D Delete Memory" Click="HandleStatusTestButton" />
-                    <Button Grid.Column="3" Grid.Row="8" Margin="5,5" x:Name="cmdReadEvents" Content="0 Read Events" Click="HandleStatusTestButton" />
-                    <Button Grid.Column="4" Grid.Row="1" Margin="5,5" Width="150"  x:Name="cmdAddEvent"   Content="1 Add Events" Click="HandleStatusTestButton"/>
-                    <Button Grid.Column="4" Grid.Row="2" Margin="5,5" x:Name="cmdDisableEvent" Content="2 Disable Event" Click="HandleStatusTestButton" />
-                    <Button Grid.Column="4" Grid.Row="3" Margin="5,5"  x:Name="cmdSpare1"     Content="3 Spare1 " Click="HandleStatusTestButton" />
-                    <Button Grid.Column="4" Grid.Row="4" Margin="5,5" x:Name="cmdUpdateOutputOne" Content="4 Update Output 11" Click="HandleStatusTestButton" />
-                    <Button Grid.Column="4" Grid.Row="5" Margin="5,5" x:Name="cmdWriteStatus" Content="5 WriteStatus" Click="HandleStatusTestButton" />
-                    <Button Grid.Column="4" Grid.Row="6" Margin="5,5" x:Name="cmdSetRTC"     Content="6 Update RTC"  Click="HandleStatusTestButton" />
-                    <Button Grid.Column="4" Grid.Row="7" Margin="5,5" x:Name="cmdReadTime"   Content="7 ReadTime"  Click="HandleStatusTestButton" />
-                    <Button Grid.Column="4" Grid.Row="8" Margin="5,5" x:Name="cmdCheckCurrentEvent" Content="8 Check Current Event" Click="HandleStatusTestButton" />
-                    <Button Grid.Column="4" Grid.Row="9" Margin="5,5" x:Name="cmdSpare2"     Content="9 Spare 2" Click="HandleStatusTestButton" />
-
-                    <TextBox Grid.Column="1" Grid.Row="1" Width=" 350" x:Name="OutputBox2" Grid.ColumnSpan=" 1" Grid.RowSpan=" 11" Text="{Binding OutputText}" Margin="5" IsReadOnly="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" FontFamily="Consolas"/>
-                   
-
-                </Grid>
-            </TabItem>
 
         </TabControl>
     </Grid>
