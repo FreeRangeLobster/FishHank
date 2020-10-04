@@ -382,80 +382,104 @@ namespace Serial_Communication_WPF
         private void HandleStatusTestButton(object sender, RoutedEventArgs e)
         {
             Button myButton = (Button)sender;
+            String sMessage = "";
 
             switch (myButton.Name)
             {
                 case "cmdHelp":
-                    SerialCmdSend("?");
-                    myButton.Background   = Brushes.Yellow; 
-
+                    sMessage = "?" + txtParameter1.Text;
                     break;
 
                 case "cmdInitilise":
-                    myButton.Background = Brushes.Yellow;
-                    break;
+                    sMessage = "K" + txtParameter1.Text;
+                                        break;
 
                 case "cmdIdle":
-                    myButton.Background = Brushes.Yellow;
+                    sMessage = "I" + txtParameter1.Text;
                     break;
+
+                    
+                    
 
                 case "cmdUpdateScreen":
-                    myButton.Background = Brushes.Yellow;
+                    sMessage = "N" + txtParameter1.Text;
                     break;
+
+                    
 
                 case "cmdCheckEvents":
-                    myButton.Background = Brushes.Yellow;
+                    sMessage = "M" + txtParameter1.Text;
                     break;
+
+                    
 
                 case "cmdUpdateOutputs":
-                    myButton.Background = Brushes.Yellow;
+                    sMessage = "O" + txtParameter1.Text;
                     break;
+                    
 
                 case "cmdDeleteMemory":
-                    myButton.Background = Brushes.Yellow;
+                    sMessage = "D" + txtParameter1.Text;
                     break;
+
+                    
 
                 case "cmdReadEvents":
-                    myButton.Background = Brushes.Yellow;
+                    sMessage = "0" + txtParameter1.Text;
                     break;
+                    
 
                 case "cmdAddEvent":
-                    myButton.Background = Brushes.Yellow;
+                    sMessage = "1" + txtParameter1.Text;
                     break;
+
 
                 case "cmdDisableEvent":
-                    myButton.Background = Brushes.Yellow;
+                    sMessage = "2" + txtParameter1.Text;
                     break;
+                    
+                    
 
                 case "cmdSpare1":
-                    myButton.Background = Brushes.Yellow;
+                    sMessage = "3" + txtParameter1.Text;
                     break;
 
+                    
+
                 case "cmdUpdateOutputOne":
-                    myButton.Background = Brushes.Yellow;
+                    sMessage = "4" + txtParameter1.Text;
                     break;
 
                 case "cmdWriteStatus":
-                    myButton.Background = Brushes.Yellow;
+                    sMessage = "5" + txtParameter1.Text;
                     break;
+
+                    
 
                 case "cmdSetRTC":
-                    myButton.Background = Brushes.Yellow;
+                    sMessage = "6" + txtParameter1.Text;
                     break;
+
+                    
 
                 case "cmdReadTime":
-                    myButton.Background = Brushes.Yellow;
+                    sMessage = "7" + txtParameter1.Text;
                     break;
+
 
                 case "cmdCheckCurrentEvent":
-                    myButton.Background = Brushes.Yellow;
+                    sMessage = "8" + txtParameter1.Text;
                     break;
 
+                    
                 case "cmdSpare2":
-                    myButton.Background = Brushes.Yellow;
+                    sMessage = "9" + txtParameter1.Text;
                     break;
+
 
             }
+            SerialCmdSend(sMessage);
+            myButton.Background = Brushes.Yellow;
         }
 
         private void CboComPortsAvailable_SelectionChanged()
