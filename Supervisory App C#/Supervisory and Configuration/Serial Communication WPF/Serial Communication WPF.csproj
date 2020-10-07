@@ -76,7 +76,7 @@
     <Compile Include="Destiny.xaml.cs">
       <DependentUpon>Destiny.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\Commands.cs" />
+    <Compile Include="Models\CommandClass.cs" />
     <Compile Include="Models\SerialCommSettings.cs" />
     <Compile Include="SDCard\SDCardConfiguration.cs" />
     <Compile Include="Settings.cs" />

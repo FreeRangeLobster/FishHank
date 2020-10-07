@@ -19,6 +19,13 @@ using System.Xml.Linq;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.ComponentModel;
+using Serial_Communication_WPF.Models;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml;
+using System.Xml.Serialization;
+
+
 
 
 namespace Serial_Communication_WPF
@@ -26,6 +33,10 @@ namespace Serial_Communication_WPF
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
+    /// 
+
+
+
     public partial class Window1 : Window
     {
         SerialPort ComPort = new SerialPort();
@@ -36,15 +47,138 @@ namespace Serial_Communication_WPF
 
 
 
+
+
+
         /// <summary>
         /// Raised when a property on this object has a new value.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+        private void serializer_UnknownNode(object sender, XmlNodeEventArgs e)
+        {
+            Console.WriteLine("Unknown Node:" + e.Name + "\t" + e.Text);
+        }
+
+        private void serializer_UnknownAttribute
+        (object sender, XmlAttributeEventArgs e)
+        {
+            System.Xml.XmlAttribute attr = e.Attr;
+            Console.WriteLine("Unknown attribute " +
+            attr.Name + "='" + attr.Value + "'");
+        }
+
 
         public Window1()
         {
             InitializeComponent();
+
+
+
+            CommandClass[] Commands = new CommandClass[4];
+
+            Commands[0] = new CommandClass();
+            Commands[0].Command = "?";
+            Commands[0].Description = "Help";
+            Commands[0].ExpectedReply = "OK";
+            Commands[0].ID = 0;
+            
+            Commands[1] = new CommandClass();
+            Commands[1].Command = "K";
+            Commands[1].Description = "Initialise";
+            Commands[1].ExpectedReply = "OK";
+            Commands[1].ID = 0;
+            
+
+            Commands[2] = new CommandClass();
+            Commands[2].Command = "U";
+            Commands[2].Description = "Update Screen";
+            Commands[2].ExpectedReply = "OK";
+            Commands[2].ID = 0;
+
+            Commands[3] = new CommandClass();
+            Commands[3].Command = "M";
+            Commands[3].Description = "Check Events";
+            Commands[3].ExpectedReply = "OK";
+            Commands[3].ID = 0;
+
+
+            //Serialise
+                      string fileName = @"C:\Temp\Mahesh.txt";
+            FileStream fs = File.Create(fileName);
+            XmlSerializer serializer = new XmlSerializer(typeof(CommandClass[]));
+            serializer.Serialize(fs,Commands);
+            fs.Close();
+
+
+            //Deserialise
+            
+                // Create an instance of the XmlSerializer class;
+                // specify the type of object to be deserialized.
+                XmlSerializer deserializer = new XmlSerializer(typeof(CommandClass[]));
+                /* If the XML document has been altered with unknown
+                nodes or attributes, handle them with the
+                UnknownNode and UnknownAttribute events.*/
+                deserializer.UnknownNode += new
+                XmlNodeEventHandler(serializer_UnknownNode);
+
+                deserializer.UnknownAttribute += new
+                XmlAttributeEventHandler(serializer_UnknownAttribute);
+
+                // A FileStream is needed to read the XML document.
+                FileStream dfs = new FileStream(fileName, FileMode.Open);
+            // Declare an object variable of the type to be deserialized.
+            CommandClass[] deCommands = new CommandClass[4];
+            /* Use the Deserialize method to restore the object's state with
+            data from the XML document. */
+           
+
+            
+
+
+            deCommands = (CommandClass[])serializer.Deserialize(dfs);
+                
+                foreach (CommandClass oi in deCommands)
+                {
+                Console.WriteLine("\t" +
+                oi.Command + "\t" +
+                oi.Description + "\t" +
+                oi.ExpectedReply + "\t" +
+                oi.ID);
+
+
+                //nButton.Width = 100;
+                //nButton.Height = 40;
+                //nButton.Content = "hello cruel";
+
+
+                Button lButton = new Button();
+               // lButton.AddHandler()
+                lButton.Content = oi.Description;
+                this.stackPanelCommandButtons.Children.Add(lButton);
+
+            }
+
+
+
+
+            //Adding buttons to command panel
+            //this.MyStackPanel.Children.Add(new Button());
+            Button nButton = new Button();
+
+            nButton.Width = 100;
+            nButton.Height = 40;
+            nButton.Content = "hello cruel";
+
+
+
+            this.stackPanelCommandButtons.Children.Add(nButton);
+
+
+
+
+
+
 
             string[] ArrayComPortsNames = null;
             int index = -1;
@@ -126,7 +260,7 @@ namespace Serial_Communication_WPF
         //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         //}
 
-
+           
 
         private void CmdConnect_Click(object sender, RoutedEventArgs e)
         {

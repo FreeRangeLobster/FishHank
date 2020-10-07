@@ -304,6 +304,45 @@
             </TabItem>
 
 
+            <TabItem Header="Development"  >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <StackPanel x:Name="stackPanelCommandButtons" Grid.Row="3" Grid.Column="2"  Height="500" Width="500"/>
+                </Grid>
+            </TabItem>
+           
+
+
+
         </TabControl>
     </Grid>
 </Window>

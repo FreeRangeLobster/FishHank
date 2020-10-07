@@ -3,11 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace Serial_Communication_WPF.Models
 {
-    class Commands
+    
+    //[XmlRootAttribute("Commands", Namespace = "http://www.cpandl.com",IsNullable = false)]
+    [XmlRootAttribute("Commands", Namespace = "", IsNullable = false)]
+    public class CommandClass
     {
+
+
+
         private int _id;
 
         public int ID
