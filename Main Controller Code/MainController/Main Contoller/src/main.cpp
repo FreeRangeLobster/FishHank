@@ -230,6 +230,10 @@ void SerialCommandHandller();
 //Serial Communication Handling
 void checkIOCtrlSetOutputTo(int OutputNumber, int State);
 void checkIOCtrlSerial();
+void RTCSetTimeAndDate(char *Currenttime);
+void DumpSchedule();
+void SetOutputTo();
+void CheckEvent(String sTime);
 
 void loop() {
   // Do something wonderful
@@ -377,7 +381,8 @@ void SerialCommandHandller(){
       break;
   
       case 'O':
-        Serial.println("O Update Outputs");     
+        Serial.println("O Update Outputs");  
+        SetOutputTo();   
         sSerialUSB="";
       break;
   
@@ -387,7 +392,8 @@ void SerialCommandHandller(){
       break;
   
       case '0':
-        Serial.println("0 Read Page Number 0_0000");     
+        Serial.println("0 Dumps Events");     
+        DumpSchedule();
         sSerialUSB="";
       break;
   
@@ -407,7 +413,8 @@ void SerialCommandHandller(){
       break;
   
       case '4':
-        Serial.println("4 Update Output 4_11 Output 1 ON");     
+        Serial.println("4 Update Output 4_11 Output 1 ON");    
+        checkIOCtrlSetOutputTo(1,1);
         sSerialUSB="";
       break;
   
@@ -417,18 +424,20 @@ void SerialCommandHandller(){
       break;
   
       case '6':
-        Serial.println("6 Set Time RTC 6_DDMMY_HHmmss"); 
+        Serial.println("6 Set Time RTC 6_DDMMYYYY_HH:mm:ss"); 
         RTCSetTimeAndDate();    
         sSerialUSB="";
       break;
   
       case '7':
-        Serial.println("7 Read Time");     
+        Serial.println("7 Read Time"); 
+        Serial.println(String("DateTime::TIMESTAMP_FULL:\t")+now.timestamp(DateTime::TIMESTAMP_FULL));    
         sSerialUSB="";
       break;
   
       case '8':
-        Serial.println("8 Check Current Event");     
+        Serial.println("8 Check Current Event");   
+        CheckEvent("1030");  
         sSerialUSB="";
       break;
              
@@ -470,6 +479,16 @@ void SerialCommandHandller(){
 #pragma endregion
 
 #pragma region "Aux IO Board Communication"
+
+void SetOutputTo(){
+    int nOutput ;
+    int nState;
+    nOutput= int(sSerialUSB[2]-'0');
+    nState= int(sSerialUSB[3]-'0'); 
+    checkIOCtrlSetOutputTo(nOutput,nState);
+}
+
+
 void checkIOCtrlSetOutputTo(int OutputNumber, int State){
      String  sCommand= "!" + String(OutputNumber) + String(State);
      Serial_2.print(sCommand);
@@ -651,25 +670,92 @@ void DisplayUpdateTemperature(){
 
 #pragma region  Time
 
-// void RTCSetTimeAndDate(char *Currenttime){
-
-//   rtc.adjust(Currenttime);
-//   rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
-
-// }
-
 void RTCSetTimeAndDate(){
-  // This line sets the RTC with an explicit date & time, for example to set
+    // This line sets the RTC with an explicit date & time, for example to set
     // January 21, 2014 at 3am you would call:
-    // rtc.adjust(DateTime(2014, 1, 21, 3, 0, 0));
+    //rtc.adjust(DateTime(2014, 1, 21, 3, 0, 0));
+    //Received signal  "6_ddMMyyyy HH:mm:ss"    
+
+    int year ;
+    int month;
+    int day;
+    int hour;
+    int min; 
+    int sec;
+
+    day= int(sSerialUSB[2]-'0')*10 + int(sSerialUSB[3]-'0');
+    Serial.printf(" Day: %d ",day);
+
+    month=int(sSerialUSB[4]-'0')*10 + int(sSerialUSB[5]-'0');
+    Serial.printf(" month: %d ",month);
+
+    year = int(sSerialUSB[6]-'0')*1000 + int(sSerialUSB[7]-'0')*100 + int(sSerialUSB[8]-'0')*10 + int(sSerialUSB[9]-'0');
+    Serial.printf(" year: %d ",year);
+    
+    //space [10] 
+    hour=int(sSerialUSB[11]-'0')*10 + int(sSerialUSB[12]-'0');
+    Serial.printf(" hour: %d ",hour); 
+
+    min=int(sSerialUSB[14]-'0')*10 + int(sSerialUSB[15]-'0'); 
+    Serial.printf(" min: %d ",min);
+
+    sec=int(sSerialUSB[17]-'0')*10 + int(sSerialUSB[18]-'0');
+    Serial.printf(" sec: %d ",sec);
+
+    Serial.println(" -- ");
+    rtc.adjust(DateTime(year, month, day, hour, min, sec));
   
-  
-  //rtc.adjust(Currenttime);
-  rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+
+}
 
 
+#pragma endregion
+
+#pragma region Events
+
+void DumpSchedule(){
+
+    // Open the file for reading:
+  File myFile;
+  myFile = SD.open("Schedule.txt");
+  if (myFile) {
+    Serial.println("Schedule.txt:");
+    
+    // read from the file until there's nothing else in it:
+    while (myFile.available()) {
+    	Serial.write(myFile.read());
+    }
+    // close the file:
+    myFile.close();
+  } else {
+  	// if the file didn't open, print an error:
+    Serial.println("error opening Schedule.txt");
+  }
+}
+
+void CheckEvent(String sTime){
+
+    // Open the file for reading:
+  String sBuffer="";
+  String sSchTime="";
+  String sOutputs="";
 
 
+  File myFile;
+  myFile = SD.open("Schedule.txt");
+  if (myFile) {
+    Serial.println("Schedule.txt:");
+    
+    // read from the file until there's nothing else in it:
+    while (myFile.available()) {
+      sBuffer=myFile.read();  
+    }
+    // close the file:
+    myFile.close();
+  } else {
+  	// if the file didn't open, print an error:
+    Serial.println("error opening Schedule.txt");
+  }
 }
 
 

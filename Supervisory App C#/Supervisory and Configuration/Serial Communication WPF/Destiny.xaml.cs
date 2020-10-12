@@ -548,7 +548,7 @@ namespace Serial_Communication_WPF
                     
 
                 case "cmdUpdateOutputs":
-                    sMessage = "O" + txtParameter1.Text;
+                    sMessage = "O " + txtParameter1.Text;
                     break;
                     
 
@@ -581,7 +581,7 @@ namespace Serial_Communication_WPF
                     
 
                 case "cmdUpdateOutputOne":
-                    sMessage = "4" + txtParameter1.Text;
+                    sMessage = "4";
                     break;
 
                 case "cmdWriteStatus":
@@ -591,7 +591,10 @@ namespace Serial_Communication_WPF
                     
 
                 case "cmdSetRTC":
-                    sMessage = "6" + txtParameter1.Text;
+                    DateTime now = DateTime.Now;
+                                       
+                         sMessage = "6" + " " + now.ToString("ddMMyyyy HH:mm:ss");   //txtParameter1.Text;
+                   
                     break;
 
                     

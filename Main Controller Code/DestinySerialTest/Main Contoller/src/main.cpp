@@ -235,7 +235,7 @@ void SerialCommandHandller(){
       break;
   
       case '6':
-        Serial.println("OK,6 Set Time RTC 6_DDMMY_HHmmss"); 
+        Serial.println("OK,6 Set Time RTC 6_YYYYMMDD_HHmmss"); 
         
         sSerialUSB="";
       break;
