@@ -9,7 +9,7 @@ Aux IO Control syste : Visual Studio Code with platform IO
 Supervisory system   : Visual Studio .net C# and WPF
 PCB Development      : Eagle
 Source Control and housekeeping: GitHub 
-Quick prototyping    :Arduino IDE 1.6
+Fast prototyping    :Arduino IDE 1.6
 
 ## PCB BOM
 See parts schedule file ![Application](/Parts Schedule.ods)
@@ -82,21 +82,22 @@ Developed to test the SSRs and User Inputs
 |6|realtime clock DONE |DONE|
 |7|Temperature DONE |DONE|
 |8|Make APIs libraries to deal with peripherals |DONE|
-|9|Develop Supervisory |InProgress|
+|9|Develop Supervisory |DONE|
+|10|Testing program ||
 
 
 # To Do is To Be Embedded system
 | API | Function | Implemented | Tested Works | Doesnt work | Not Tested | Notes | 
 | ------ | ------ | ------ | ------ | ------ | ------ | ----------------------------------- | 
-|RTC|GetTimeNumber |  |  |  |  |  |
-|RTC|GetTimeString |  |  |  |  |  |
-|RTC|SetTimeString |  |  |  |  |  |
+|RTC|GetTimeNumber | YES |  |  |  |  |
+|RTC|GetTimeString | YES |  |  |  |  |
+|RTC|SetTimeString | YES |  |  |  |  |
 |OLED|DrawTable |YES  |YES  |  |  |  |
 |OLED|ShowStatus  |YES|YES  |  |  |  |
-|OLED|ShowTemperature |  |  |  |  |  |
+|OLED|ShowTemperature | YES |  |  |  |  |
 |OLED|ShowOutputs |  |  |  |  |  |
 |OLED|ShowTime |YES|YES  |  |  |  |
-|OLED|InitialDisplayShow |  |  |  |  |  |
+|OLED|InitialDisplayShow | YES |  |  |  |  |
 |OLED|CalculateFutureTimeCheck |  |  |  |  |  |
 |SD|FindEvent(CurrentTime) |  |  |  |  |  |
 |SD|GetStatus|  |  |  |  |  |
@@ -104,11 +105,37 @@ Developed to test the SSRs and User Inputs
 |SD|DumpEvents| YES |  |  |  |  |
 |IO Ctrl|GetStatus| YES |  |  |  |  |
 |IO Ctrl|SetOutputTo(OutputNumber,State)| YES |  |  |  |  |
-|IO Ctrl|ClearEvent|  |  |  |  |  |
+|IO Ctrl|ClearInputEvent|  |  |  |  |  |
 |IO Ctrl|ClearOutputs|  |  |  |  |  |
 
 
 # Debugging and Testing
+Comands form supervisory
+
+
+
+K Initialise
+I Idle
+N Update Screen
+M Check Events
+O Update Outputs  
+D Delete Memory
+T Trace
+S Stop Trace
+
+0 Dumps Schedule
+1 AddEvent  1_1030WED31"     
+2 Disable Event  2_001"     
+3 Spare
+4 Update Output 4_11 Output 1 ON    
+5 Write Status on OLED 5_Hello     
+6 Set Time RTC 6_DDMMYYYY_HH:mm:ss 
+7 Read Time
+8 Check Current Event   
+9 Spare
+? Help
+        
+    
 
 -
 ---
