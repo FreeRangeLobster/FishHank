@@ -253,13 +253,13 @@
                     <Button Grid.Column="4" Grid.Row="9" Margin="5,5" x:Name="cmdReadEvents" Content="0 Read Events" Click="HandleStatusTestButton" />
                     <Button Grid.Column="5" Grid.Row="2" Margin="5,5" Width="150"  x:Name="cmdAddEvent"   Content="1 Add Events" Click="HandleStatusTestButton"/>
                     <Button Grid.Column="5" Grid.Row="3" Margin="5,5" x:Name="cmdDisableEvent" Content="2 Disable Event" Click="HandleStatusTestButton" />
-                    <Button Grid.Column="5" Grid.Row="4" Margin="5,5"  x:Name="cmdSpare1"     Content="3 Spare1 " Click="HandleStatusTestButton" />
+                    <Button Grid.Column="5" Grid.Row="4" Margin="5,5"  x:Name="cmdTraceON"     Content="3 Trace On " Click="HandleStatusTestButton" />
                     <Button Grid.Column="5" Grid.Row="5" Margin="5,5" x:Name="cmdUpdateOutputOne" Content="4 Update Output 11" Click="HandleStatusTestButton" />
                     <Button Grid.Column="5" Grid.Row="6" Margin="5,5" x:Name="cmdWriteStatus" Content="5 WriteStatus" Click="HandleStatusTestButton" />
                     <Button Grid.Column="5" Grid.Row="7" Margin="5,5" x:Name="cmdSetRTC"     Content="6 Update RTC"  Click="HandleStatusTestButton" />
                     <Button Grid.Column="5" Grid.Row="8" Margin="5,5" x:Name="cmdReadTime"   Content="7 ReadTime"  Click="HandleStatusTestButton" />
                     <Button Grid.Column="5" Grid.Row="9" Margin="5,5" x:Name="cmdCheckCurrentEvent" Content="8 Check Current Event" Click="HandleStatusTestButton" />
-                    <Button Grid.Column="5" Grid.Row="10" Margin="5,5" x:Name="cmdSpare2"     Content="9 Spare 2" Click="HandleStatusTestButton" />
+                    <Button Grid.Column="5" Grid.Row="10" Margin="5,5" x:Name="cmdTraceOff"     Content="9 Trace Off" Click="HandleStatusTestButton" />
 
                     <TextBlock  Grid.Column="4" Grid.Row="1" Text="Parameter 1" Grid.ColumnSpan="1" HorizontalAlignment="Right" VerticalAlignment="Center" />
                     <TextBox     Grid.Column="5" Grid.Row="1" Margin="5,5" x:Name="txtParameter1"  VerticalAlignment="Center" Grid.ColumnSpan="2" />

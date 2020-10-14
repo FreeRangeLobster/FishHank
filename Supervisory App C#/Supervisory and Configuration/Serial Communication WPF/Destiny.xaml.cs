@@ -574,7 +574,7 @@ namespace Serial_Communication_WPF
                     
                     
 
-                case "cmdSpare1":
+                case "cmdTraceON":
                     sMessage = "3" + txtParameter1.Text;
                     break;
 
@@ -609,7 +609,7 @@ namespace Serial_Communication_WPF
                     break;
 
                     
-                case "cmdSpare2":
+                case "cmdTraceOff":
                     sMessage = "9" + txtParameter1.Text;
                     break;
 
