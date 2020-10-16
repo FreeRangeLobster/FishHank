@@ -39,7 +39,9 @@ unsigned long nPreviousMillis ;
  
 int nCtrlOutputs [8] = { 0, 0, 0, 0, 0,0, 0, 0}; 
 int nLastCtrlOutputs [8] = { 0, 0, 0, 0, 0,0, 0, 0}; 
+bool bNewOutputUpdate=false;
 bool bShowTrace =true;
+String sCurrentTime;
 
 
 
@@ -238,6 +240,7 @@ void SetOutputTo();
 void CheckEvent(String sTime);
 void IOCtrlUpdateOutputs();
 void DisplayUpdateOutputs();
+void FormatCurrrentTime();
 
 void loop() {
   
@@ -247,22 +250,20 @@ void loop() {
         
         case eCalculateNextTimeCheck:
         {
-            if (bShowTrace){Serial.println("State: eCalculateNextTimeCheck");}
-
-             //Show time  
-            now = rtc.now(); 
-            
-           
-           if (bShowTrace){Serial.println(now.timestamp(DateTime::TIMESTAMP_FULL));}
-
-            StateEnum=eCheckSD;
-            break;
+          if (bShowTrace){Serial.println("State: eCalculateNextTimeCheck");}
+           //Show time  
+          now = rtc.now();                      
+          if (bShowTrace){Serial.println(now.timestamp(DateTime::TIMESTAMP_FULL));}
+          StateEnum=eCheckSD;
+          break;
         }
 
         case eCheckSD:{
-           if (bShowTrace){Serial.println("State: eCheckSD");}
-           StateEnum=eUpdateOutputs;
-            break;
+          if (bShowTrace){Serial.println("State: eCheckSD");}           
+          StateEnum=eUpdateOutputs;
+          FormatCurrrentTime();
+          //CheckEvent(sCurrentTime);
+          break;
         }
 
          case eUpdateOutputs:{
@@ -491,18 +492,15 @@ void checkIOCtrlSerial(){
 }
 
 void IOCtrlUpdateOutputs(){
-   int i=0;
-   for(i=0;i<=7;i++){
-
-    Serial.printf("output register: %d %d %d %d %d %d %d %d \n",nCtrlOutputs[0],nCtrlOutputs[1],nCtrlOutputs[2],nCtrlOutputs[3],nCtrlOutputs[4],nCtrlOutputs[5],nCtrlOutputs[6],nCtrlOutputs[7]);
-
-     //if (nLastCtrlOutputs[i] != nLastCtrlOutputs[i] ){
-     //   nLastCtrlOutputs[i] = nLastCtrlOutputs[i];
-       checkIOCtrlSetOutputTo(i,nCtrlOutputs[i]);
-       
-       delay(500);
-     //}    
+  if (bNewOutputUpdate==true){
+    int i=0;
+    for(i=0;i<=7;i++){
+      if (bShowTrace){Serial.printf("output register: %d %d %d %d %d %d %d %d \n",nCtrlOutputs[0],nCtrlOutputs[1],nCtrlOutputs[2],nCtrlOutputs[3],nCtrlOutputs[4],nCtrlOutputs[5],nCtrlOutputs[6],nCtrlOutputs[7]);}
+      checkIOCtrlSetOutputTo(i,nCtrlOutputs[i]);       
+      delay(500);     
    }
+   bNewOutputUpdate=false;
+  }
 }
 
 #pragma endregion
@@ -821,6 +819,23 @@ void RTCSetTimeAndDate(){
 
 }
 
+void FormatCurrrentTime(){
+  DateTime now = rtc.now();
+  //Required format eg: 1034 MON
+
+  
+  String sTimeFull;
+  String sTimeMod;
+  String sMinutes;
+
+  sTimeFull=now.timestamp(DateTime::TIMESTAMP_TIME);
+  sTimeMod=sTimeFull.substring(0,2);// + sTimeFull.substring(3,4);
+  sMinutes=sTimeFull.substring(3,5);
+  
+  sCurrentTime = daysOfTheWeek[now.dayOfTheWeek()]  + String( ' ' + sTimeMod + sMinutes );
+  Serial.print("Current time: ");
+  Serial.println(sCurrentTime);
+}
 
 #pragma endregion
 
@@ -848,7 +863,7 @@ void DumpSchedule(){
 
 void CheckEvent(String sTime){
 
-    // Open the file for reading:
+  
   String sBuffer="";
   String sSchTime="";
   String sOutputNumber="";
@@ -859,15 +874,14 @@ void CheckEvent(String sTime){
   Serial.println(sTime);
 
   File myFile;
+  // Open the file for reading:
   myFile = SD.open("Schedule.txt");
   
   if (myFile) {
-    Serial.println("Schedule.txt:");
-    
+    Serial.println("Schedule.txt:");  
     // read from the file until there's nothing else in it:
       while (myFile.available()) {
         sBuffer=myFile.readStringUntil('\n');
-
         //Check if the event is enabled
         sEnable = sBuffer.substring(16, 17);
         Serial.println(sEnable);
@@ -885,18 +899,13 @@ void CheckEvent(String sTime){
                   Serial.print(sOutputNumber);
                   Serial.println(sOutputState);
                   _nOutput=sOutputNumber[0]-'0';
-
+                  bNewOutputUpdate=true;
                   if (sOutputState="1"){
-                    nCtrlOutputs[_nOutput]=1;
-                    //checkIOCtrlSetOutputTo(_nOutput, 1);
-                    // checkIOCtrlSetOutputTo(_nOutput,  nCtrlOutputs[_nOutput]);
+                    nCtrlOutputs[_nOutput]=1;                    
 
                   }
                   else{
-                    nCtrlOutputs[_nOutput]=0;
-                    //checkIOCtrlSetOutputTo(_nOutput, 0);
-                    // checkIOCtrlSetOutputTo(_nOutput,  nCtrlOutputs[_nOutput]);
-
+                    nCtrlOutputs[_nOutput]=0;                    
                   }                
             }
           }
@@ -912,6 +921,5 @@ void CheckEvent(String sTime){
     Serial.println("error opening Schedule.txt");
   }
 }
-
 
 #pragma endregion

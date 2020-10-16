@@ -153,7 +153,9 @@ namespace Serial_Communication_WPF
 
 
                 Button lButton = new Button();
-               // lButton.AddHandler()
+                // lButton.AddHandler()
+
+                
                 lButton.Content = oi.Description;
                 this.stackPanelCommandButtons.Children.Add(lButton);
 
