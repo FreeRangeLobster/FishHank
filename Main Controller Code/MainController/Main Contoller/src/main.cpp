@@ -262,7 +262,7 @@ void loop() {
           if (bShowTrace){Serial.println("State: eCheckSD");}           
           StateEnum=eUpdateOutputs;
           FormatCurrrentTime();
-          //CheckEvent(sCurrentTime);
+          CheckEvent(sCurrentTime);
           break;
         }
 
@@ -786,6 +786,7 @@ void RTCSetTimeAndDate(){
     // January 21, 2014 at 3am you would call:
     //rtc.adjust(DateTime(2014, 1, 21, 3, 0, 0));
     //Received signal  "6_ddMMyyyy HH:mm:ss"    
+    //Received signal  "6_19102020 10:32:50"    
 
     int year ;
     int month;
@@ -832,7 +833,7 @@ void FormatCurrrentTime(){
   sTimeMod=sTimeFull.substring(0,2);// + sTimeFull.substring(3,4);
   sMinutes=sTimeFull.substring(3,5);
   
-  sCurrentTime = daysOfTheWeek[now.dayOfTheWeek()]  + String( ' ' + sTimeMod + sMinutes );
+  sCurrentTime = String( sTimeMod + sMinutes + ' ' ) + daysOfTheWeek[now.dayOfTheWeek()] ;
   Serial.print("Current time: ");
   Serial.println(sCurrentTime);
 }
@@ -884,20 +885,24 @@ void CheckEvent(String sTime){
         sBuffer=myFile.readStringUntil('\n');
         //Check if the event is enabled
         sEnable = sBuffer.substring(16, 17);
-        Serial.println(sEnable);
+        if (bShowTrace){Serial.println(sEnable);}
         
           if(sEnable=="E"){
-            Serial.println("All good baby baby");        
+           if (bShowTrace){ Serial.println("All good baby baby");   }     
             //Get time of the schedule
             sSchTime = sBuffer.substring(4, 12);
-            Serial.println(sSchTime);
+            if (bShowTrace){Serial.print("Compare CurrentTime: ");}
+            if (bShowTrace){Serial.print(sTime);}
+            if (bShowTrace){Serial.print(" Vs Event: ");}
+            if (bShowTrace){Serial.println(sSchTime);}
+
             if (sTime == sSchTime) {
                   Serial.print("Event Found: ");
                   //Get Output to be activated
                   sOutputNumber=sBuffer.substring(13, 14);
                   sOutputState=sBuffer.substring(14, 15);
-                  Serial.print(sOutputNumber);
-                  Serial.println(sOutputState);
+                  if (bShowTrace){Serial.print(sOutputNumber);}
+                  if (bShowTrace){Serial.println(sOutputState);}
                   _nOutput=sOutputNumber[0]-'0';
                   bNewOutputUpdate=true;
                   if (sOutputState="1"){
