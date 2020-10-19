@@ -497,7 +497,7 @@ void IOCtrlUpdateOutputs(){
     for(i=0;i<=7;i++){
       if (bShowTrace){Serial.printf("output register: %d %d %d %d %d %d %d %d \n",nCtrlOutputs[0],nCtrlOutputs[1],nCtrlOutputs[2],nCtrlOutputs[3],nCtrlOutputs[4],nCtrlOutputs[5],nCtrlOutputs[6],nCtrlOutputs[7]);}
       checkIOCtrlSetOutputTo(i,nCtrlOutputs[i]);       
-      delay(500);     
+      delay(100);     
    }
    bNewOutputUpdate=false;
   }
