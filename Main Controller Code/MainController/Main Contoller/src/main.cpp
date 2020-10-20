@@ -210,7 +210,7 @@ void setup() {
   if (!sensors.getAddress(insideThermometer, 0)) Serial.println("Unable to find address for Device 0"); 
   if (!sensors.getAddress(outsideThermometer, 1)) Serial.println("Unable to find address for Device 1"); 
 
-  // show the addresses we found on the bus
+  // show the a ddresses we found on the bus
   Serial.print("Device 0 Address: ");
   printAddress(insideThermometer);
   Serial.println();
@@ -905,7 +905,7 @@ void CheckEvent(String sTime){
                   if (bShowTrace){Serial.println(sOutputState);}
                   _nOutput=sOutputNumber[0]-'0';
                   bNewOutputUpdate=true;
-                  if (sOutputState="1"){
+                  if (sOutputState=="1"){
                     nCtrlOutputs[_nOutput]=1;                    
 
                   }
