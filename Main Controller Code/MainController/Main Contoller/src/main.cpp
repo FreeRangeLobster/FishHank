@@ -473,11 +473,12 @@ void SetOutputTo(){
     int nState;
     nOutput= int(sSerialUSB[2]-'0');
     nState= int(sSerialUSB[3]-'0'); 
-    checkIOCtrlSetOutputTo(nOutput,nState);
+    nCtrlOutputs[nOutput-1]=nState;     
+    checkIOCtrlSetOutputTo(nOutput-1,nState);
 }
 
 void checkIOCtrlSetOutputTo(int OutputNumber, int State){
-     String  sCommand= "!" + String(OutputNumber) + String(State);
+     String  sCommand= "!" + String(OutputNumber+1) + String(State);
      Serial_2.print(sCommand);
      Serial_2.print('\n');   
 }
@@ -906,11 +907,11 @@ void CheckEvent(String sTime){
                   _nOutput=sOutputNumber[0]-'0';
                   bNewOutputUpdate=true;
                   if (sOutputState=="1"){
-                    nCtrlOutputs[_nOutput]=1;                    
+                    nCtrlOutputs[_nOutput-1]=1;                    
 
                   }
                   else{
-                    nCtrlOutputs[_nOutput]=0;                    
+                    nCtrlOutputs[_nOutput-1]=0;                    
                   }                
             }
           }

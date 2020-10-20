@@ -190,8 +190,8 @@
 
 
                     <TextBox    Width=" 200" Grid.Column="3" Grid.Row="3" Margin="5,10,0,10" x:Name="tbCommand1" HorizontalAlignment="Left" Text="6_19102020 10:32:50" VerticalAlignment="Center" Grid.ColumnSpan="3" />
-                    <TextBox    Width=" 200"  Grid.Column="3" Grid.Row="4" Margin="5,10,0,10" x:Name="tbCommand2" HorizontalAlignment="Left" Text="O11" VerticalAlignment="Center"   Grid.ColumnSpan="3"/>
-                    <TextBox    Width=" 200"  Grid.Column="3" Grid.Row="5" Margin="5,10,0,10" x:Name="tbCommand3" HorizontalAlignment="Left" Text="O10" VerticalAlignment="Center"   Grid.ColumnSpan="3"/>
+                    <TextBox    Width=" 200"  Grid.Column="3" Grid.Row="4" Margin="5,10,0,10" x:Name="tbCommand2" HorizontalAlignment="Left" Text="O 11" VerticalAlignment="Center"   Grid.ColumnSpan="3"/>
+                    <TextBox    Width=" 200"  Grid.Column="3" Grid.Row="5" Margin="5,10,0,10" x:Name="tbCommand3" HorizontalAlignment="Left" Text="O 10" VerticalAlignment="Center"   Grid.ColumnSpan="3"/>
                     <TextBox    Width=" 200"  Grid.Column="3" Grid.Row="6" Margin="5,10,0,10" x:Name="tbCommand4" HorizontalAlignment="Left" Text="Hello Cruel World" VerticalAlignment="Center"  Grid.ColumnSpan="3"/>
                     <Button     Width=" 60" Grid.Column="5" Grid.Row="3" Margin="70,5" x:Name="cmdSend1" Content="Send"   Click="cmdSend1_Click"/>
                     <Button     Width=" 60" Grid.Column="5" Grid.Row="4" Margin="70,5" x:Name="cmdSend2" Content="Send"   Click="CmdSend2_Click"/>
