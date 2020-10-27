@@ -10,8 +10,7 @@
 #include <OneWire.h>
 #include <DallasTemperature.h>
 
-//status
-
+//Stay alive LEDS
 const int ledPin1 = 32;
 const int ledPin2 = 33;
 
@@ -20,8 +19,6 @@ const int ledPin2 = 33;
 OneWire oneWire(ONE_WIRE_BUS); // Setup a oneWire instance to communicate with any OneWire devices (not just Maxim/Dallas temperature ICs)
 DallasTemperature sensors(&oneWire); // Pass our oneWire reference to Dallas Temperature. 
 DeviceAddress insideThermometer, outsideThermometer; // arrays to hold device addresses
-
-
 
 //https://esp32.com/viewtopic.php?t=328  
 /* ESP32 3 UARTs */
@@ -48,15 +45,12 @@ bool bShowTrace =true;
 String sCurrentTime;
 
 
-
+//State machine states used in the main look or to handle the supervisory
 enum StatesEnum { Start, Initialise, ReadSD, EnablePeripherals, UpdateStatus, updateTFT,  CheckSerialComms };
 StatesEnum CurrentState; 
-
 enum eStateEnum{eCalculateNextTimeCheck,eCheckSD,eUpdateOutputs,eUpdateDisplay,eIdle};
 eStateEnum StateEnum;
-
-
-//Time system is idle
+//Time system is in idle state
 const long interval = 5*1000;     //in seconds
 
 //RTC
@@ -67,7 +61,7 @@ DateTime now;
 void RTCSetTimeAndDate();
 
 
-#pragma region Display  
+#pragma region "Display constants"
   #define SCREEN_WIDTH 128  // OLED display width, in pixels
   #define SCREEN_HEIGHT 64  // OLED display height, in pixels
   #define OLED_RESET    -1  // Reset pin # (or -1 if sharing reset pin)
@@ -93,26 +87,6 @@ void RTCSetTimeAndDate();
 
 
 
-// function to print a device address
-void printAddress(DeviceAddress deviceAddress)
-{
-  for (uint8_t i = 0; i < 8; i++)
-  {
-    if (deviceAddress[i] < 16) Serial.print("0");
-    Serial.print(deviceAddress[i], HEX);
-  }
-}
-
-// function to print the temperature for a device
-void printTemperature(DeviceAddress deviceAddress)
-{
-  float tempC = sensors.getTempC(deviceAddress);
-  Serial.print("Temp C: ");
-  Serial.print(tempC);
-  Serial.print(" Temp F: ");
-  Serial.print(DallasTemperature::toFahrenheit(tempC));
-}
-
 //Prototypes 
 void checkSerial_2();
 void checkSerial_1();
@@ -129,6 +103,9 @@ void DisplayUpdateOutputs();
 void FormatCurrrentTime();
 void ToggleLED1();
 void ToggleLED2();
+void printAddress(DeviceAddress deviceAddress);
+void printTemperature(DeviceAddress deviceAddress);
+
 
 void setup() {
 
@@ -269,20 +246,24 @@ void loop() {
         }
 
         case eCheckSD:{
-          if (bShowTrace){Serial.println("State: eCheckSD");}           
-          StateEnum=eUpdateOutputs;
+          if (bShowTrace){Serial.println("State: eCheckSD");}                     
           FormatCurrrentTime();
-          CheckEvent(sCurrentTime);
+          if (now.second()<10){
+            if (bShowTrace){Serial.println("----> Check Events");}                     
+            CheckEvent(sCurrentTime);          
+          }            
+            StateEnum=eUpdateOutputs;
+          
           break;
         }
 
-         case eUpdateOutputs:{
-            if (bShowTrace){Serial.println("State: eUpdateOutputs");}            
-            //IOCtrlUpdateOutputs();
-            IOCtrlUpdateOutputs();
-            DisplayUpdateOutputs();
-           StateEnum=eUpdateDisplay;
-            break;
+        case eUpdateOutputs:{
+          if (bShowTrace){Serial.println("State: eUpdateOutputs");}            
+          //IOCtrlUpdateOutputs();
+          IOCtrlUpdateOutputs();
+          DisplayUpdateOutputs();
+          StateEnum=eUpdateDisplay;
+          break;
         }
 
 
@@ -874,6 +855,7 @@ void FormatCurrrentTime(){
   if (bShowTrace){Serial.println(sCurrentTime);}
 }
 
+
 #pragma endregion
 
 #pragma region "Events"
@@ -900,9 +882,9 @@ void DumpSchedule(){
 
 void CheckEvent(String sTime){
 
-  
   String sBuffer="";
   String sSchTime="";
+  String sSchTimeAll="";
   String sOutputNumber="";
   String sOutputState="";
   String sEnable="";
@@ -930,7 +912,7 @@ void CheckEvent(String sTime){
             if (bShowTrace){Serial.print(sTime);}
             if (bShowTrace){Serial.print(" Vs Event: ");}
             if (bShowTrace){Serial.println(sSchTime);}
-
+            //IN case the day is from MON to SUN
             if (sTime == sSchTime) {
                   Serial.print("Event Found: ");
                   //Get Output to be activated
@@ -948,9 +930,18 @@ void CheckEvent(String sTime){
                     nCtrlOutputs[_nOutput-1]=0;                    
                   }                
             }
+            
+            //ALL In case it is an event that happend everyday
+            sSchTimeAll=sBuffer.substring(9, 12);
+            if (bShowTrace){Serial.print("Time All: ");}
+            if (bShowTrace){Serial.println(sSchTimeAll);}
+            if (sSchTimeAll=="ALL" ){
+              if (bShowTrace){Serial.println("Time All: ");}
+              if (bShowTrace){Serial.println(sSchTimeAll);}
+            }
+                
           }
-
-    }
+      }
 
     // close the file:
     myFile.close();
@@ -962,4 +953,25 @@ void CheckEvent(String sTime){
   }
 }
 
+#pragma endregion
+
+#pragma region "Tempertaure sensor"
+  void printAddress(DeviceAddress deviceAddress)
+{
+  for (uint8_t i = 0; i < 8; i++)
+  {
+    if (deviceAddress[i] < 16) Serial.print("0");
+    Serial.print(deviceAddress[i], HEX);
+  }
+}
+
+// function to print the temperature for a device
+void printTemperature(DeviceAddress deviceAddress)
+{
+  float tempC = sensors.getTempC(deviceAddress);
+  Serial.print("Temp C: ");
+  Serial.print(tempC);
+  Serial.print(" Temp F: ");
+  Serial.print(DallasTemperature::toFahrenheit(tempC));
+}
 #pragma endregion
