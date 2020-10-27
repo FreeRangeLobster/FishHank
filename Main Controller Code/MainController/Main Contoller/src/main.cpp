@@ -10,6 +10,10 @@
 #include <OneWire.h>
 #include <DallasTemperature.h>
 
+//status
+
+const int ledPin1 = 32;
+const int ledPin2 = 33;
 
 //Temperature Sensor
 #define ONE_WIRE_BUS 15
@@ -109,11 +113,30 @@ void printTemperature(DeviceAddress deviceAddress)
   Serial.print(DallasTemperature::toFahrenheit(tempC));
 }
 
-
+//Prototypes 
+void checkSerial_2();
+void checkSerial_1();
+void CheckSerialVer2();
+void SerialCommandHandller();
+void checkIOCtrlSetOutputTo(int OutputNumber, int State);
+void checkIOCtrlSerial();
+void RTCSetTimeAndDate(char *Currenttime);
+void DumpSchedule();
+void SetOutputTo();
+void CheckEvent(String sTime);
+void IOCtrlUpdateOutputs();
+void DisplayUpdateOutputs();
+void FormatCurrrentTime();
+void ToggleLED1();
+void ToggleLED2();
 
 void setup() {
+
   sSerialUSB="NOthing";
   Serial.begin(115200);
+  Serial.println("-------Initialization Started-----");
+
+
   //Serial1.begin();
   Serial_1.begin(9600, SERIAL_8N1, SERIAL1_RXPIN, SERIAL1_TXPIN,false);
   Serial_2.begin(115200);  // pin 16=RX, pin 17=TX
@@ -127,15 +150,16 @@ void setup() {
   //Serial_2.print("Serial2 working");
   //Serial_2.print('\n');
   
-
+  //RTC initialisation
   if (! rtc.begin()) {
   Serial.println("Couldn't find RTC");
   }
    else{
     Serial.println(F("RTC Started"));   
   }
-
-   if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) 
+  
+  //Display initialisation
+  if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) 
   { 
     Serial.println(F("SSD1306 allocation failed"));   
   }
@@ -143,9 +167,8 @@ void setup() {
     Serial.println(F("Display started"));   
   }
 
-
   OLEDDrawTable();
-    //Show status
+  //Show status
   strcpy(cStatus, "Auto" );
   DisplayModifyStatus(cStatus);
 
@@ -190,17 +213,8 @@ void setup() {
     Serial.println("error opening test.txt");
   }
 
-
-  Serial.println("initialization done.");
-
-
-
-  //Temperature sensor
-
-
-
-
-   // Start up the library
+  // Temperature sensor 
+  // Start up the library
   sensors.begin();  
   // locate devices on the bus
   Serial.print("Found ");
@@ -209,38 +223,34 @@ void setup() {
   // search for devices on the bus and assign based on an index.
   if (!sensors.getAddress(insideThermometer, 0)) Serial.println("Unable to find address for Device 0"); 
   if (!sensors.getAddress(outsideThermometer, 1)) Serial.println("Unable to find address for Device 1"); 
-
-  // show the a ddresses we found on the bus
+  //show the a ddresses we found on the bus
   Serial.print("Device 0 Address: ");
   printAddress(insideThermometer);
   Serial.println();
   sensors.requestTemperatures();
-  sensors.requestTemperatures(); // Send the command to get temperatures
+  sensors.requestTemperatures(); 
   Serial.println("DONE");
   
   // It responds almost immediately. Let's print out the data
   printTemperature(insideThermometer); // Use a simple function to print out the data
-
-
+  
+  //State machine parameters
   StateEnum=eCalculateNextTimeCheck;
   nPreviousMillis=millis();
 
+  //Stay alive signals
+  pinMode(ledPin1, OUTPUT);
+  pinMode(ledPin2, OUTPUT);
+
+  digitalWrite(ledPin1, HIGH);
+  digitalWrite(ledPin2, LOW);
+  
+  Serial.println("-");
+  Serial.println("-------Initialization Finished-----");
+
 }
 
-void checkSerial_2();
-void checkSerial_1();
-void CheckSerialVer2();
-void SerialCommandHandller();
-//Serial Communication Handling
-void checkIOCtrlSetOutputTo(int OutputNumber, int State);
-void checkIOCtrlSerial();
-void RTCSetTimeAndDate(char *Currenttime);
-void DumpSchedule();
-void SetOutputTo();
-void CheckEvent(String sTime);
-void IOCtrlUpdateOutputs();
-void DisplayUpdateOutputs();
-void FormatCurrrentTime();
+
 
 void loop() {
   
@@ -253,7 +263,7 @@ void loop() {
           if (bShowTrace){Serial.println("State: eCalculateNextTimeCheck");}
            //Show time  
           now = rtc.now();                      
-          if (bShowTrace){Serial.println(now.timestamp(DateTime::TIMESTAMP_FULL));}
+          Serial.println(String("->") + now.timestamp(DateTime::TIMESTAMP_FULL));
           StateEnum=eCheckSD;
           break;
         }
@@ -290,9 +300,10 @@ void loop() {
           if (nCurrentMillis - nPreviousMillis >= interval) {            
             nPreviousMillis = nCurrentMillis;
             StateEnum=eCalculateNextTimeCheck;
+            ToggleLED1();               
             delay(500);
-          }
-
+          }          
+          ToggleLED2();  
           CheckSerialVer2();
           SerialCommandHandller();
          break;
@@ -308,6 +319,30 @@ void loop() {
 
 }
 }
+
+#pragma region "Stay Alive Signals LEDs"
+
+  void ToggleLED1(){
+  if(digitalRead(ledPin1)==1){
+      digitalWrite (ledPin1, LOW);
+    }
+    else
+    {
+      digitalWrite (ledPin1, HIGH);
+    }
+  }
+
+  void ToggleLED2(){
+if(digitalRead(ledPin2)==1){
+    digitalWrite (ledPin2, LOW);
+  }
+  else
+  {
+    digitalWrite (ledPin2, HIGH);
+  }
+}
+
+#pragma endregion
 
 #pragma region "Serial Communication Handling"
 void CheckSerialVer2(){  
@@ -506,7 +541,7 @@ void IOCtrlUpdateOutputs(){
 
 #pragma endregion
 
-#pragma region Display
+#pragma region "Display"
 void ShowCurrentTime(){
     DateTime now = rtc.now();     
     display.clearDisplay();
@@ -780,7 +815,7 @@ void DisplayUpdateTemperature(){
 
 #pragma endregion
 
-#pragma region  Time
+#pragma region "Time"
 
 void RTCSetTimeAndDate(){
     // This line sets the RTC with an explicit date & time, for example to set
@@ -835,13 +870,13 @@ void FormatCurrrentTime(){
   sMinutes=sTimeFull.substring(3,5);
   
   sCurrentTime = String( sTimeMod + sMinutes + ' ' ) + daysOfTheWeek[now.dayOfTheWeek()] ;
-  Serial.print("Current time: ");
-  Serial.println(sCurrentTime);
+  if (bShowTrace){Serial.print("Current time: ");}
+  if (bShowTrace){Serial.println(sCurrentTime);}
 }
 
 #pragma endregion
 
-#pragma region Events
+#pragma region "Events"
 
 void DumpSchedule(){
 
@@ -873,14 +908,14 @@ void CheckEvent(String sTime){
   String sEnable="";
   int _nOutput;
 
-  Serial.println(sTime);
+  if (bShowTrace){Serial.println(sTime);}
 
   File myFile;
   // Open the file for reading:
   myFile = SD.open("Schedule.txt");
   
   if (myFile) {
-    Serial.println("Schedule.txt:");  
+    if (bShowTrace){Serial.println("Schedule.txt:"); }
     // read from the file until there's nothing else in it:
       while (myFile.available()) {
         sBuffer=myFile.readStringUntil('\n');
@@ -888,8 +923,7 @@ void CheckEvent(String sTime){
         sEnable = sBuffer.substring(16, 17);
         if (bShowTrace){Serial.println(sEnable);}
         
-          if(sEnable=="E"){
-           if (bShowTrace){ Serial.println("All good baby baby");   }     
+          if(sEnable=="E"){            
             //Get time of the schedule
             sSchTime = sBuffer.substring(4, 12);
             if (bShowTrace){Serial.print("Compare CurrentTime: ");}
