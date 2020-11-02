@@ -1,0 +1,5 @@
+Configuration
+Last Modified 17092020
+1 EnableTrace
+1 EnableBluetooth
+1 Clear Outputs 

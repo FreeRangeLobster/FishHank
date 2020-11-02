@@ -884,6 +884,9 @@ void CheckEvent(String sTime){
 
   String sBuffer="";
   String sSchTime="";
+  String sSchTimeTrim="";
+  String sTimeTrim="";
+
   String sSchTimeAll="";
   String sOutputNumber="";
   String sOutputState="";
@@ -936,9 +939,42 @@ void CheckEvent(String sTime){
             if (bShowTrace){Serial.print("Time All: ");}
             if (bShowTrace){Serial.println(sSchTimeAll);}
             if (sSchTimeAll=="ALL" ){
-              if (bShowTrace){Serial.println("Time All: ");}
+              if (bShowTrace){Serial.println("-->Time All found: ");}
               if (bShowTrace){Serial.println(sSchTimeAll);}
+              //Trim the sTime and sSchTime
+              sSchTimeTrim=sSchTime.substring(0, 4);
+              sTimeTrim=sTime.substring(0, 4);   
+              if (bShowTrace){Serial.println("-->Time Trim ");}                         
+              if (bShowTrace){Serial.print(sSchTimeTrim);}
+              if (bShowTrace){Serial.print("VS");}                         
+              if (bShowTrace){Serial.println(sTimeTrim);}
+
+
+              //Check time and Outputs
+
+
+
+              if (sTimeTrim == sSchTimeTrim) {
+                  Serial.print("Event FoundB: ");
+                  //Get Output to be activated
+                  sOutputNumber=sBuffer.substring(13, 14);
+                  sOutputState=sBuffer.substring(14, 15);
+                  if (bShowTrace){Serial.print(sOutputNumber);}
+                  if (bShowTrace){Serial.println(sOutputState);}
+                  _nOutput=sOutputNumber[0]-'0';
+                  bNewOutputUpdate=true;
+                  if (sOutputState=="1"){
+                    nCtrlOutputs[_nOutput-1]=1;                    
+
+                  }
+                  else{
+                    nCtrlOutputs[_nOutput-1]=0;                    
+                  }                
+              }
+
+
             }
+
                 
           }
       }
