@@ -22,7 +22,7 @@ Files submited to produce PCB
 Schematic and PCB files. Developed using Eagle
 
 ## Supervisory and config App
-
+Developed using c#
 
 ## Images
 Schematic
@@ -82,28 +82,33 @@ Developed to test the SSRs and User Inputs
 |6|realtime clock DONE |DONE|
 |7|Temperature DONE |DONE|
 |8|Make APIs libraries to deal with peripherals |DONE|
-|9|Develop Supervisory |DONE|
-|10|Testing program ||
+|9|add ALL days event |DONE|
+|10|Tidy up oled screen, clear display square before writing output ||
+|11|test bluetooth debugging messages||
+|12|mod the arduino auc board to update and toggle output||
+|13|add Auto/Manual switch to the controller||
+|14|Apply loads and test outputs||
+|15|Rearrange outputs in arduino aux||
 
 
 # To Do is To Be Embedded system
 | API | Function | Implemented | Tested Works | Doesnt work | Not Tested | Notes | 
 | ------ | ------ | ------ | ------ | ------ | ------ | ----------------------------------- | 
-|RTC|GetTimeNumber | YES |  |  |  |  |
-|RTC|GetTimeString | YES |  |  |  |  |
-|RTC|SetTimeString | YES |  |  |  |  |
-|OLED|DrawTable |YES  |YES  |  |  |  |
-|OLED|ShowStatus  |YES|YES  |  |  |  |
-|OLED|ShowTemperature | YES |  |  |  |  |
-|OLED|ShowOutputs |  |  |  |  |  |
-|OLED|ShowTime |YES|YES  |  |  |  |
-|OLED|InitialDisplayShow | YES |  |  |  |  |
-|OLED|CalculateFutureTimeCheck |  |  |  |  |  |
-|SD|FindEvent(CurrentTime) |  |  |  |  |  |
-|SD|GetStatus|  |  |  |  |  |
-|SD|GetConfiguration|  |  |  |  |  |
-|SD|DumpEvents| YES |  |  |  |  |
-|IO Ctrl|GetStatus| YES |  |  |  |  |
+|RTC  |GetTimeNumber 	| YES |  |  |  |  |
+|RTC  |GetTimeString 	| YES |  |  |  |  |
+|RTC  |SetTimeString 	| YES |  |  |  |  |
+|OLED |DrawTable     	|YES  |YES  |  |  |  |
+|OLED |ShowStatus  		|YES|YES  |  |  |  |
+|OLED |ShowTemperature 	| YES |  |  |  |  |
+|OLED |ShowOutputs 		|  |  |  |  |  |
+|OLED |ShowTime 		|YES|YES  |  |  |  |
+|OLED |InitialDisplayShow | YES |  |  |  |  |
+|OLED |CalculateFutureTimeCheck | YES |  |  |  |  |
+|SD   |FindEvent(CurrentTime) |YES|YES  |  |  |  |
+|SD   |GetStatus		| YES |YES  |  |  |  |
+|SD   |GetConfiguration	|  |  |  |  |  |
+|SD   |DumpEvents		| YES 	| YES|  |  |  |
+|IO Ctrl|GetStatus		| YES |  |  |  |  |
 |IO Ctrl|SetOutputTo(OutputNumber,State)| YES |  |  |  |  |
 |IO Ctrl|ClearInputEvent|  |  |  |  |  |
 |IO Ctrl|ClearOutputs|  |  |  |  |  |
@@ -126,13 +131,13 @@ S Stop Trace
 0 Dumps Schedule
 1 AddEvent  1_1030WED31"     
 2 Disable Event  2_001"     
-3 Spare
+3 Enable Debbugging Trace
 4 Update Output 4_11 Output 1 ON    
 5 Write Status on OLED 5_Hello     
 6 Set Time RTC 6_DDMMYYYY_HH:mm:ss 
 7 Read Time
 8 Check Current Event   
-9 Spare
+9 Dissable Debbugging Trace
 ? Help
         
     
