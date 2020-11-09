@@ -91,6 +91,7 @@ void RTCSetTimeAndDate();
 void checkSerial_2();
 void checkSerial_1();
 void CheckSerialVer2();
+void CheckSerialBlueT();
 void SerialCommandHandller();
 void checkIOCtrlSetOutputTo(int OutputNumber, int State);
 void checkIOCtrlSerial();
@@ -105,6 +106,8 @@ void ToggleLED1();
 void ToggleLED2();
 void printAddress(DeviceAddress deviceAddress);
 void printTemperature(DeviceAddress deviceAddress);
+void CheckConfigurationFile();
+
 
 
 void setup() {
@@ -121,8 +124,8 @@ void setup() {
   Serial.println("Restarted");
   Serial.println("");
   Serial.println("");
-  //Serial_1.print("Serial1 Working");
-  //Serial_1.print('\n');
+  Serial_1.print("Serial1 Working");
+  Serial_1.print('\n');
 
   //Serial_2.print("Serial2 working");
   //Serial_2.print('\n');
@@ -170,25 +173,14 @@ void setup() {
     Serial.println("Schedule file Present");
   }
 
-   if(SD.exists("Configuration.txt")) {
-    Serial.println("Configuration file Present");
+   if(SD.exists("Config.txt")) {
+    Serial.println("Config file Present");
   }
 
-  // Open the file for reading:
-  myFile = SD.open("Schedule.txt");
-  if (myFile) {
-    Serial.println("Schedule.txt:");
-    
-    // read from the file until there's nothing else in it:
-    while (myFile.available()) {
-    	Serial.write(myFile.read());
-    }
-    // close the file:
-    myFile.close();
-  } else {
-  	// if the file didn't open, print an error:
-    Serial.println("error opening test.txt");
-  }
+
+  CheckConfigurationFile();
+  DumpSchedule();
+
 
   // Temperature sensor 
   // Start up the library
@@ -221,6 +213,8 @@ void setup() {
 
   digitalWrite(ledPin1, HIGH);
   digitalWrite(ledPin2, LOW);
+
+  //CheckConfigurationFile();
   
   Serial.println("-");
   Serial.println("-------Initialization Finished-----");
@@ -237,16 +231,18 @@ void loop() {
         
         case eCalculateNextTimeCheck:
         {
-          if (bShowTrace){Serial.println("State: eCalculateNextTimeCheck");}
+          if (bShowTrace){Serial.println("State: eCalculateNextTimeCheck");}          
            //Show time  
           now = rtc.now();                      
           Serial.println(String("->") + now.timestamp(DateTime::TIMESTAMP_FULL));
+          Serial_1.println(String("->") + now.timestamp(DateTime::TIMESTAMP_FULL));
           StateEnum=eCheckSD;
           break;
         }
 
         case eCheckSD:{
-          if (bShowTrace){Serial.println("State: eCheckSD");}                     
+          if (bShowTrace){Serial.println("State: eCheckSD");}
+          if (bShowTrace){Serial_1.println("State: eCheckSD");}                                         
           FormatCurrrentTime();
           if (now.second()<10){
             if (bShowTrace){Serial.println("----> Check Events");}                     
@@ -258,7 +254,8 @@ void loop() {
         }
 
         case eUpdateOutputs:{
-          if (bShowTrace){Serial.println("State: eUpdateOutputs");}            
+          if (bShowTrace){Serial.println("State: eUpdateOutputs");}
+          if (bShowTrace){Serial_1.println("State: eUpdateOutputs");}               
           //IOCtrlUpdateOutputs();
           IOCtrlUpdateOutputs();
           DisplayUpdateOutputs();
@@ -271,6 +268,7 @@ void loop() {
           DisplayCurrentTime();
           DisplayUpdateTemperature();
           if (bShowTrace){Serial.println("State: eUpdateDisplay");}
+          if (bShowTrace){Serial_1.println("State: eUpdateDisplay");}
           StateEnum=eIdle;
           break;
         }
@@ -292,7 +290,7 @@ void loop() {
         default:
         {
             // is likely to be an error
-             Serial.println("error opening test.txt");
+            Serial.println("error opening test.txt");
             StateEnum=eCalculateNextTimeCheck;
         }
     };
@@ -336,8 +334,20 @@ void CheckSerialVer2(){
       Serial.println(sSerialUSB);//display same received Data back in serial monitor. 
       nOption=sSerialUSB[0];
     }
- 
  }
+
+void CheckSerialBlueT(){  
+    if (!Serial_1.available()) return;
+    
+    if (Serial_1.available()) {   
+      sSerialUSB = Serial_1.readStringUntil('\n');// s1 is String type variable.
+      //delay(10);
+      Serial_1.print("Received Data = ");
+      Serial_1.println(sSerialUSB);//display same received Data back in serial monitor. 
+      nOption=sSerialUSB[0];
+    }
+ }
+
 void checkSerial_1(){
     if (!Serial_1.available()) return;
     char c = Serial_1.read();
@@ -643,7 +653,8 @@ void OLEDDrawTable(){
 
 void DisplayUpdateOutputs(){
 
- //Column1  
+    //Column1  
+    display.fillRect(DisplayColumnX*0,DisplayColumnY,DisplayColumnWidth,DisplayColumnHight, BLACK);   
     display.drawRect(DisplayColumnX*0,DisplayColumnY,DisplayColumnWidth,DisplayColumnHight, WHITE);    
     display.setCursor(5,DisplayColumnY+2);
     if (nCtrlOutputs [0]==1){
@@ -654,11 +665,8 @@ void DisplayUpdateOutputs(){
        display.printf("OFF");  
     }
      
-    
-
-      
-   
     //Column2    
+    display.fillRect(DisplayColumnX*1,DisplayColumnY,DisplayColumnWidth,DisplayColumnHight, BLACK); 
     display.drawRect(DisplayColumnX*1,DisplayColumnY,DisplayColumnWidth,DisplayColumnHight, WHITE);    
     display.setCursor((DisplayColumnX*1)+5,DisplayColumnY+2);
     //display.printf("--");    
@@ -668,11 +676,11 @@ void DisplayUpdateOutputs(){
     else
     {
        display.printf("OFF");  
-    }
-    //display.display();     
+    }    
     
     //Column3    
-    display.drawRect(DisplayColumnX*2,DisplayColumnY,DisplayColumnWidth,DisplayColumnHight, WHITE);    
+    display.fillRect(DisplayColumnX*2,DisplayColumnY,DisplayColumnWidth,DisplayColumnHight, BLACK);
+    display.drawRect(DisplayColumnX*2,DisplayColumnY,DisplayColumnWidth,DisplayColumnHight, WHITE);        
     display.setCursor((DisplayColumnX*2)+5,DisplayColumnY+2);
     if (nCtrlOutputs [2]==1){
       display.printf("ON");  
@@ -681,10 +689,9 @@ void DisplayUpdateOutputs(){
     {
        display.printf("OFF");  
     }
-    //display.printf("--");
-    //display.display(); 
-    
-    //Column4    
+        
+    //Column4  
+    display.fillRect(DisplayColumnX*3,DisplayColumnY,DisplayColumnWidth,DisplayColumnHight, BLACK);      
     display.drawRect(DisplayColumnX*3,DisplayColumnY,DisplayColumnWidth,DisplayColumnHight, WHITE);    
     display.setCursor((DisplayColumnX*3)+5,DisplayColumnY+2);
     if (nCtrlOutputs [3]==1){
@@ -694,16 +701,12 @@ void DisplayUpdateOutputs(){
     {
        display.printf("OFF");  
     }
-    //display.printf("--");
-    //display.display();
     
     //second raw
-    //Column1
-    //display.drawRect(OutputsColumnCorner1*0,OffsetOutputsRaw2,OutputsColumnCorner2*2,12.5, WHITE);
+    //Column1    
+    display.fillRect(DisplayColumnX*0,DisplayColumnY2,DisplayColumnWidth,DisplayColumnHight, BLACK);
     display.drawRect(DisplayColumnX*0,DisplayColumnY2,DisplayColumnWidth,DisplayColumnHight, WHITE);    
-    display.setCursor((DisplayColumnX*0)+5,DisplayColumnY2+2);
-    //display.printf("ON");    
-    //display.display();    
+    display.setCursor((DisplayColumnX*0)+5,DisplayColumnY2+2);    
     if (nCtrlOutputs [4]==1){
       display.printf("ON");  
     }
@@ -711,8 +714,9 @@ void DisplayUpdateOutputs(){
     {
        display.printf("OFF");  
     }
-    //Column2
-    //display.drawRect(OutputsColumnCorner1*1,OffsetOutputsRaw2,OutputsColumnCorner2*2,12.5, WHITE);
+
+    //Column2    
+    display.fillRect(DisplayColumnX*1,DisplayColumnY2,DisplayColumnWidth,DisplayColumnHight, BLACK);   
     display.drawRect(DisplayColumnX*1,DisplayColumnY2,DisplayColumnWidth,DisplayColumnHight, WHITE);    
     display.setCursor((DisplayColumnX*1)+5,DisplayColumnY2+2);
     if (nCtrlOutputs [5]==1){
@@ -722,11 +726,9 @@ void DisplayUpdateOutputs(){
     {
        display.printf("OFF");  
     }
-    
-    //display.printf("ON");    
-    //display.display();
+        
     //Column3
-    //display.drawRect(OutputsColumnCorner1*2,OffsetOutputsRaw2,OutputsColumnCorner2*2,12.5, WHITE);
+    display.fillRect(DisplayColumnX*2,DisplayColumnY2,DisplayColumnWidth,DisplayColumnHight, BLACK); 
     display.drawRect(DisplayColumnX*2,DisplayColumnY2,DisplayColumnWidth,DisplayColumnHight, WHITE);    
     display.setCursor((DisplayColumnX*2)+5,DisplayColumnY2+2);
     if (nCtrlOutputs [6]==1){
@@ -737,10 +739,8 @@ void DisplayUpdateOutputs(){
        display.printf("OFF");  
     }
     
-    //display.printf("ON");    
-    //display.display();
     //Column4
-    //display.drawRect(OutputsColumnCorner1*3,OffsetOutputsRaw2,OutputsColumnCorner2*2,12.5, WHITE);
+    display.fillRect(DisplayColumnX*3,DisplayColumnY2,DisplayColumnWidth,DisplayColumnHight, BLACK); 
     display.drawRect(DisplayColumnX*3,DisplayColumnY2,DisplayColumnWidth,DisplayColumnHight, WHITE);    
     display.setCursor((DisplayColumnX*3)+5,DisplayColumnY2+2);
     if (nCtrlOutputs [7]==1){
@@ -749,8 +749,8 @@ void DisplayUpdateOutputs(){
     else
     {
        display.printf("OFF");  
-    }
-    //display.printf("ON");    
+    }    
+
     display.display();
   
 }
@@ -788,7 +788,7 @@ void DisplayUpdateTemperature(){
 
     
     
-    display.fillRect(75,10,25,7, BLACK);    
+    display.fillRect(75,10,30,7, BLACK);    
     display.setCursor(75,10);
     display.printf(result);
     display.display();
@@ -858,7 +858,7 @@ void FormatCurrrentTime(){
 
 #pragma endregion
 
-#pragma region "Events"
+#pragma region "SD Events and Config"
 
 void DumpSchedule(){
 
@@ -986,6 +986,98 @@ void CheckEvent(String sTime){
   else {
   	// if the file didn't open, print an error:
     Serial.println("error opening Schedule.txt");
+  }
+}
+
+void CheckConfigurationFile(){
+ File myFile2;
+ String sEntry="";
+ String sEnable="";
+  myFile2 = SD.open("Config.txt");
+  if (myFile2) {
+    Serial.println("Config.txt");
+    
+    int i=0;
+    // read from the file until there's nothing else in it:
+    //Sample file:
+    // close the file:
+    //Configuration
+    // Last Modified 17092020
+    // 1 EnableTrace
+    // 1 EnableBluetooth
+    // 1 Clear Outputs
+
+
+    while (myFile2.available()) {
+    	
+        sEntry=myFile2.readStringUntil('\n');
+        //Check if the event is enabled
+        sEnable = sEntry.substring(0, 1);
+
+      //sEntry=myFile2.read();
+      //Prints the file       
+      Serial.println(sEntry);
+
+      switch(i){
+        case 0:
+        //'Header'
+        Serial.print("Header: ");
+        Serial.println(sEntry);        
+        break;
+
+        case 1:
+        //Last modified
+        Serial.print("Last Modified: ");
+        Serial.println(sEntry);
+        break;
+
+        case 2:
+          //Enable trace
+          Serial.print("Enable Trace: ");
+          Serial.println(sEntry);
+          Serial.println(sEnable);
+          if (sEnable=="1") {
+            bShowTrace =true;    
+            Serial.println("Trace enabled in the SD card");
+          }
+          else {
+            bShowTrace =false;    
+            Serial.println("Trace disabled in the SD card");
+          }
+
+        break;
+
+        case 3:
+        //Enable Bluetooth
+        Serial.print("Enable Bluetooth: ");
+        Serial.println(sEntry);
+        Serial.println(sEnable);
+        break;
+
+        case 4:
+        //Clear outputs
+        Serial.print("Clear Oututs: ");
+        Serial.println(sEntry);
+        Serial.println(sEnable);
+        break;
+
+        default:
+        //nothing
+        break;
+
+      }          
+      i=i+1;
+    }
+
+
+
+
+
+
+    myFile2.close();
+  } else {
+  	// if the file didn't open, print an error:
+    Serial.println("error opening Config.txt");
   }
 }
 
