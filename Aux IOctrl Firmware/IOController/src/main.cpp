@@ -12,30 +12,43 @@
  * New Data B4
  * Tx/RxD0,D1
  * Pinout ATMEga328P//http://www.hobbytronics.co.uk/arduino-atmega328-pinout
+ * USB to Serial Adapter for Arduino 3.3V / 5V Switchable adaptor
+ * Connection using the programmer:
+ * Programmer side   --- PCB Side
+ * DTR - RTS
+ * RXT - UTS
+ * TXD - URX
+ * 5V  - +5V(Optional)
+ * CTS - No connected
+ * GND - GND
+ * Serial Comms 115200
 */
 
 
 //Outputs
-#define Out1  2 //D2
-#define Out2  3 //D3
-#define Out3  4 //D4
-#define Out4  5 //D5
-#define Out5  6 //D6
-#define Out6  7 //D6
-#define Out7  8 //B0
-#define Out8  9 //B1
+#define Out1  5 //D5
+#define Out2  4 //D4
+#define Out3  3 //D3
+#define Out4  2 //D2
+#define Out5  9 //B1
+#define Out6  8 //B0
+#define Out7  7 //D6
+#define Out8  6 //D7
+
+
+
 //New Data Available
 #define NewDataAvailable  10 //B2
 
-//Inputs
-#define In1 A5
-#define In2 A4
-#define In3 A3
-#define In4 A2
-#define In5 A1
-#define In6 A0
-#define In7 13 //B5
-#define In8 12 //B4
+
+#define In1 12 //A5      
+#define In2 13 //A4      
+#define In3 A0 //A3      
+#define In4 A1 //A2       
+#define In5 A2 //A1      
+#define In6 A3 //A0      
+#define In7 A4 //13      
+#define In8 A5 //12      
 
 int Inputs[8];
 //debouncing values
@@ -96,7 +109,6 @@ void ClearLatchInputs(){
     }
     digitalWrite(NewDataAvailable, LOW);
 }
-
 
 void executeCommand(String cmd)
 {
@@ -185,7 +197,6 @@ void executeCommand(String cmd)
       
 }
 
-
 void UpdateOutputs(){
     if (Outputs[0]==1)digitalWrite(Out1, HIGH); else digitalWrite(Out1, LOW);
     if (Outputs[1]==1)digitalWrite(Out2, HIGH); else digitalWrite(Out2, LOW);
@@ -211,37 +222,16 @@ void checkSerial(){
 
 void CheckInputPressedAndLatch(){
 
-  //   //Read signal
-  //   CurrentInputValue[0] = digitalRead(In1);
-  //   // If the switch changed, due to noise or pressing:
-  // if (CurrentInputValue[0]  != LastInputValue[0] ) {
-  //   // reset the debouncing timer
-  //   lastDebounceTime = millis();
-  // }
-
-  // if ((millis() - lastDebounceTime) > debounceDelay) {
-  //   // whatever the reading is at, it's been there for longer than the debounce
-  //   // delay, so take it as the actual current state:
-
-  //   // if the button state has changed:
-  //   if (reading != buttonState) {
-  //     buttonState = reading;
-
-  //     // only toggle the LED if the new button state is HIGH
-  //     if (buttonState == HIGH) {
-  //       ledState = !ledState;
-  //     }
-  //   }
-  // }
-
-
-
     if (digitalRead (In1)==HIGH) {
       Inputs[0]=1;
       digitalWrite(NewDataAvailable, HIGH);
       Outputs[0]=!Outputs[0];
       UpdateOutputs();
-      delay(1000);
+      delay(500);
+      do
+      {    
+        delay(10);
+      } while ( digitalRead (In1)==HIGH );
     }
 
     if (digitalRead (In2)==HIGH) {
@@ -249,7 +239,12 @@ void CheckInputPressedAndLatch(){
       digitalWrite(NewDataAvailable, HIGH);
       Outputs[1]=!Outputs[1];
       UpdateOutputs();
-      delay(1000);
+      delay(500);
+      do
+      {    
+        //Waiting for user to release the button    
+        delay(10);
+      } while ( digitalRead (In2)==HIGH );
     }
 
     if (digitalRead (In3)==HIGH) {
@@ -257,7 +252,12 @@ void CheckInputPressedAndLatch(){
       digitalWrite(NewDataAvailable, HIGH);
       Outputs[2]=!Outputs[2];
       UpdateOutputs();
-      delay(1000);
+      delay(500);
+      do
+      {    
+        //Waiting for user to release the button    
+         delay(10);
+      } while ( digitalRead (In3)==HIGH );
     }
 
     if (digitalRead (In4)==HIGH) {
@@ -265,7 +265,11 @@ void CheckInputPressedAndLatch(){
       digitalWrite(NewDataAvailable, HIGH);
       Outputs[3]=!Outputs[3];
       UpdateOutputs();
-      delay(1000);
+      delay(500);
+      do
+      {    
+        delay(10);
+      } while ( digitalRead (In4)==HIGH );
     }
     
     if (digitalRead (In5)==HIGH) {
@@ -273,7 +277,12 @@ void CheckInputPressedAndLatch(){
       digitalWrite(NewDataAvailable, HIGH);
       Outputs[4]=!Outputs[4];
       UpdateOutputs();
-      delay(1000);
+      delay(500);
+      do
+      {    
+        //Waiting for user to release the button    
+        delay(10);;
+      } while ( digitalRead (In5)==HIGH );
     }
     
     if (digitalRead (In6)==HIGH) {
@@ -281,7 +290,12 @@ void CheckInputPressedAndLatch(){
       digitalWrite(NewDataAvailable, HIGH);
       Outputs[5]=!Outputs[5];
       UpdateOutputs();
-      delay(1000);
+      delay(500);
+      do
+      {    
+        //Waiting for user to release the button    
+        delay(10);
+      } while ( digitalRead (In6)==HIGH );
     }
     
     if (digitalRead (In7)==HIGH) {
@@ -289,7 +303,12 @@ void CheckInputPressedAndLatch(){
       digitalWrite(NewDataAvailable, HIGH);
       Outputs[6]=!Outputs[6];
       UpdateOutputs();
-      delay(1000);
+      delay(500);
+      do
+      {    
+        //Waiting for user to release the button    
+        delay(10);
+      } while ( digitalRead (In7)==HIGH );
     }
     
     if (digitalRead (In8)==HIGH) {
@@ -297,7 +316,12 @@ void CheckInputPressedAndLatch(){
       digitalWrite(NewDataAvailable, HIGH);
       Outputs[7]=!Outputs[7];
       UpdateOutputs();
-      delay(1000);
+      delay(500);
+      do
+      {    
+        //Waiting for user to release the button    
+        delay(10);
+      } while ( digitalRead (In8)==HIGH );
     }
 }
 
