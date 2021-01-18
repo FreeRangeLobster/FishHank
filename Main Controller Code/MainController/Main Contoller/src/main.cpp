@@ -9,6 +9,8 @@
 #include <mySD.h>
 #include <OneWire.h>
 #include <DallasTemperature.h>
+#include <WiFi.h>
+#include <AsyncMqttClient.h>
 
 //Stay alive LEDS
 const int ledPin1 = 32;
@@ -44,14 +46,149 @@ bool bNewOutputUpdate=false;
 bool bShowTrace =true;
 String sCurrentTime;
 
+#pragma region "Wifi MQTT"
+//Wifi connections
+//Home Address
+#define WIFI_SSID "TALKTALK77D706"
+#define WIFI_PASSWORD "DWTJF8G9"
+//#define WIFI_SSID "ALPHR_SFLR_2G"
+//#define WIFI_PASSWORD "AlphrWork24"
+#define MQTT_HOST IPAddress(192, 168, 1, 11)
+#define MQTT_PORT 1883
+#define MQTT_PUB_TEMP "esp/bme680/temperature"
+#define MQTT_SUS_BT1  "esp/bme680/button1"
+#define MQTT_SUS_BT2  "esp/bme680/button2"
+#define MQTT_SUS_BT3  "esp/bme680/button3"
+#define MQTT_SUS_BT4  "esp/bme680/button4"
+#define MQTT_SUS_BT5  "esp/bme680/button5"
+#define MQTT_SUS_BT6  "esp/bme680/button6"
+#define MQTT_SUS_BT7  "esp/bme680/button7"
+#define MQTT_SUS_BT8  "esp/bme680/button8"
+float temperature=25;
+AsyncMqttClient mqttClient;
+TimerHandle_t mqttReconnectTimer;
+TimerHandle_t wifiReconnectTimer;
+unsigned long previousMillis = 0;   // Stores last time temperature was published
+const long interval = 10000;        // Interval at which to publish sensor readings
+
+
+
+
+void connectToWifi() {
+  Serial.println("Connecting to Wi-Fi...");
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+}
+
+void connectToMqtt() {
+  Serial.println("Connecting to MQTT...");
+  mqttClient.connect();
+}
+
+void WiFiEvent(WiFiEvent_t event) {
+  Serial.printf("[WiFi-event] event: %d\n", event);
+  switch(event) {
+    case SYSTEM_EVENT_STA_GOT_IP:
+      Serial.println("WiFi connected");
+      Serial.println("IP address: ");
+      Serial.println(WiFi.localIP());
+      connectToMqtt();
+      break;
+    case SYSTEM_EVENT_STA_DISCONNECTED:
+      Serial.println("WiFi lost connection");
+      xTimerStop(mqttReconnectTimer, 0); // ensure we don't reconnect to MQTT while reconnecting to Wi-Fi
+      xTimerStart(wifiReconnectTimer, 0);
+      break;
+  }
+}
+
+void onMqttConnect(bool sessionPresent) {
+  Serial.println("Connected to MQTT.");
+  Serial.print("Session present: ");
+  Serial.println(sessionPresent);
+
+  uint16_t packetIdSub1 = mqttClient.subscribe(MQTT_SUS_BT1, 2);
+  uint16_t packetIdSub2 = mqttClient.subscribe(MQTT_SUS_BT2, 2);
+  uint16_t packetIdSub3 = mqttClient.subscribe(MQTT_SUS_BT3, 2);
+  uint16_t packetIdSub4 = mqttClient.subscribe(MQTT_SUS_BT4, 2);
+  uint16_t packetIdSub5 = mqttClient.subscribe(MQTT_SUS_BT5, 2);
+  uint16_t packetIdSub6 = mqttClient.subscribe(MQTT_SUS_BT6, 2);
+  uint16_t packetIdSub7 = mqttClient.subscribe(MQTT_SUS_BT7, 2);
+  uint16_t packetIdSub8 = mqttClient.subscribe(MQTT_SUS_BT8, 2);
+  Serial.print("Subscribing at QoS 2, packetId: ");
+  Serial.println(packetIdSub1);
+
+}
+
+void onMqttDisconnect(AsyncMqttClientDisconnectReason reason) {
+  Serial.println("Disconnected from MQTT.");
+  if (WiFi.isConnected()) {
+    xTimerStart(mqttReconnectTimer, 0);
+  }
+}
+
+void onMqttSubscribe(uint16_t packetId, uint8_t qos) {
+  Serial.println("Subscribe acknowledged.");
+  Serial.print("  packetId: ");
+  Serial.println(packetId);
+  Serial.print("  qos: ");
+  Serial.println(qos);
+}
+void onMqttUnsubscribe(uint16_t packetId) {
+  Serial.println("Unsubscribe acknowledged.");
+  Serial.print("  packetId: ");
+  Serial.println(packetId);
+}
+
+void onMqttPublish(uint16_t packetId) {
+  Serial.print("Publish acknowledged.");
+  Serial.print("  packetId: ");
+  Serial.println(packetId);
+}
+
+void onMqttMessage(char* topic, char* payload, AsyncMqttClientMessageProperties properties, size_t len, size_t index, size_t total) {
+  Serial.println("Publish received.");
+  Serial.print("  topic: ");
+  Serial.println(topic);
+  Serial.print("  qos: ");
+  Serial.println(properties.qos);
+  Serial.print("  dup: ");
+  Serial.println(properties.dup);
+  Serial.print("  retain: ");
+  Serial.println(properties.retain);
+  Serial.print("  len: ");
+  Serial.println(len);
+  Serial.print("  index: ");
+  Serial.println(index);
+  Serial.print("  total: ");
+  Serial.println(total);
+
+  if ((String(topic) == MQTT_SUS_BT1) || (String(topic) == MQTT_SUS_BT2) || (String(topic) == MQTT_SUS_BT3)||(String(topic) == MQTT_SUS_BT4)
+    ||(String(topic) == MQTT_SUS_BT5) || (String(topic) == MQTT_SUS_BT6) || (String(topic) == MQTT_SUS_BT7)||(String(topic) == MQTT_SUS_BT8)) {
+    Serial.println("Changing output");
+    // if (digitalRead(LED)==HIGH){
+    //   digitalWrite(LED,LOW);
+    // }else
+    // {
+    //   digitalWrite(LED,HIGH);
+    // }
+  }
+}
+
+
+
+
+#pragma endregion
 
 //State machine states used in the main look or to handle the supervisory
 enum StatesEnum { Start, Initialise, ReadSD, EnablePeripherals, UpdateStatus, updateTFT,  CheckSerialComms };
 StatesEnum CurrentState; 
 enum eStateEnum{eCalculateNextTimeCheck,eCheckSD,eUpdateOutputs,eUpdateDisplay,eIdle};
 eStateEnum StateEnum;
+
+enum eSerialPort{eUSBPC,eBluetooth};
+
 //Time system is in idle state
-const long interval = 5*1000;     //in seconds
+const long interval2 = 5*1000;     //in seconds
 
 //RTC
 RTC_DS3231 rtc;
@@ -59,6 +196,7 @@ char daysOfTheWeek[7][12] = {"SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"};
 char char_arrayTime[10];
 DateTime now;
 void RTCSetTimeAndDate();
+float gTemperature=0;
 
 
 #pragma region "Display constants"
@@ -93,6 +231,7 @@ void checkSerial_1();
 void CheckSerialVer2();
 void CheckSerialBlueT();
 void SerialCommandHandller();
+void SerialCommandHandller2( eSerialPort  nSerial );
 void checkIOCtrlSetOutputTo(int OutputNumber, int State);
 void checkIOCtrlSerial();
 void RTCSetTimeAndDate(char *Currenttime);
@@ -129,7 +268,25 @@ void setup() {
 
   //Serial_2.print("Serial2 working");
   //Serial_2.print('\n');
+
+  //Wifi MQTT
+  mqttReconnectTimer = xTimerCreate("mqttTimer", pdMS_TO_TICKS(2000), pdFALSE, (void*)0, reinterpret_cast<TimerCallbackFunction_t>(connectToMqtt));
+  wifiReconnectTimer = xTimerCreate("wifiTimer", pdMS_TO_TICKS(2000), pdFALSE, (void*)0, reinterpret_cast<TimerCallbackFunction_t>(connectToWifi));
   
+  WiFi.onEvent(WiFiEvent);
+
+  mqttClient.onConnect(onMqttConnect);
+  mqttClient.onDisconnect(onMqttDisconnect);
+  mqttClient.onSubscribe(onMqttSubscribe);
+  mqttClient.onUnsubscribe(onMqttUnsubscribe);
+  mqttClient.onMessage(onMqttMessage);
+  mqttClient.onPublish(onMqttPublish);
+  mqttClient.setServer(MQTT_HOST, MQTT_PORT);
+  // If your broker requires authentication (username and password), set them below
+  //mqttClient.setCredentials("REPlACE_WITH_YOUR_USER", "REPLACE_WITH_YOUR_PASSWORD");
+  connectToWifi();
+
+
   //RTC initialisation
   if (! rtc.begin()) {
   Serial.println("Couldn't find RTC");
@@ -241,6 +398,11 @@ void loop() {
         }
 
         case eCheckSD:{
+
+          uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_TEMP, 1, true, String(gTemperature).c_str());
+          Serial.printf("Publishing on topic %s at QoS 1, packetId: %i", MQTT_PUB_TEMP, packetIdPub1);
+          Serial.printf("Message: %.2f \n", gTemperature);
+
           if (bShowTrace){Serial.println("State: eCheckSD");}
           if (bShowTrace){Serial_1.println("State: eCheckSD");}                                         
           FormatCurrrentTime();
@@ -284,7 +446,10 @@ void loop() {
           }          
           ToggleLED2();  
           CheckSerialVer2();
-          SerialCommandHandller();
+          SerialCommandHandller2(eUSBPC);
+          CheckSerialBlueT();
+          SerialCommandHandller2(eBluetooth);
+          
          break;
 
         default:
@@ -488,6 +653,156 @@ void SerialCommandHandller(){
         //sSerialUSB="";
         break;
       }  
+}
+
+void SerialCommandHandller2( eSerialPort  nSerial ){    
+
+  String sResponse;
+
+  switch ( sSerialUSB[0]) {
+      case 'K':
+        //Serial.println("Initialise");
+        sResponse="Initialise";
+        sSerialUSB="";
+      break;
+      
+      case 'I':
+        //Serial.println("I Idle");
+        sResponse=
+        sSerialUSB="I Idle";
+      break;
+  
+      case 'N':
+        //Serial.println("N Update Screen");
+        sResponse="I Idle";     
+        sSerialUSB="";
+      break;
+  
+      case 'M':
+        //Serial.println("M Check Events");
+        sResponse="M Check Events";
+        CheckEvent("1038 MON");
+        sSerialUSB="";
+      break;
+  
+      case 'O':
+        //Serial.println("O Update Outputs");  
+        sResponse="O Update Outputs";
+        SetOutputTo();   
+        sSerialUSB="";
+      break;
+  
+      case 'D':
+        //Serial.println("D Delete Memory");
+        sResponse="D Delete Memory";
+        sSerialUSB="";
+      break;
+  
+      case '0':
+        //Serial.println("0 Dumps Events"); 
+        sResponse="0 Dumps Events";   
+        DumpSchedule();
+        sSerialUSB="";
+      break;
+  
+      case '1':
+        //Serial.println("1 AddEvent  1_1030WED31"); 
+        sResponse="1 AddEvent  1_1030WED31"; 
+        sSerialUSB="";
+      break;
+  
+      case '2':
+        //Serial.println("2 Disable Event  2_001");
+        sResponse="2 Disable Event  2_001";     
+        sSerialUSB="";
+      break;
+  
+      case '3':
+        
+        //Serial.println("3 Trace On");
+        sResponse="0 Dumps Events";
+        bShowTrace =true;
+        sSerialUSB="";
+      break;
+  
+      case '4':
+        //Serial.println("4 Update Output 4_11 Output 1 ON");
+        sResponse="4 Update Output 4_11 Output 1 ON";    
+        checkIOCtrlSetOutputTo(1,1);
+        sSerialUSB="";
+      break;
+  
+      case '5':
+        //Serial.println("5 Write Status on OLED 5_Hello");
+        sResponse="5 Write Status on OLED 5_Hello";     
+        sSerialUSB="";
+      break;
+  
+      case '6':
+        //Serial.println("6 Set Time RTC 6_DDMMYYYY_HH:mm:ss");
+        sResponse="6 Set Time RTC 6_DDMMYYYY_HH:mm:ss"; 
+        RTCSetTimeAndDate();    
+        sSerialUSB="";
+      break;
+  
+      case '7':
+        //Serial.println("7 Read Time");
+        sResponse="7 Read Time"; 
+        Serial.println(String("DateTime::TIMESTAMP_FULL:\t")+now.timestamp(DateTime::TIMESTAMP_FULL));    
+        sSerialUSB="";
+      break;
+  
+      case '8':
+
+        //Serial.println("8 Check Current Event");
+        sResponse="8 Check Current Event";   
+        CheckEvent("1044 MON");  
+        sSerialUSB="";
+      break;
+             
+      case '9':
+        //Serial.println("9 Trace Off");
+        sResponse="9 Trace Off"; 
+        bShowTrace =false;    
+        sSerialUSB="";
+      break;
+  
+      case '?':
+      sResponse="Help";
+        Serial.println("Help");
+        Serial.println("K Initialise");  
+        Serial.println("I Idle");
+        Serial.println("N Update Screen");   
+        Serial.println("M Check Events");
+        Serial.println("O Update Outputs");
+        Serial.println("D Delete Memory");     
+        Serial.println("0 Read Page Number 0_0000");
+        Serial.println("1 AddEvent  1_1030WED31");
+        Serial.println("2 Disable Event  2_001");             
+        Serial.println("3 Trace ON");
+        Serial.println("4 Update Output 4_11 Output 1 ON");
+        Serial.println("5 Write Status on OLED 5_Hello"); 
+        Serial.println("6 Set Time RTC 6_DDMMY_HHmmss"); 
+        Serial.println("7 Read Time"); 
+        Serial.println("8 Check Current Event");
+        Serial.println("9 Trace OFF");              
+        sSerialUSB="";
+      break;
+       
+      
+      default:
+       //Serial.println("! Not supported");   
+       
+        //sSerialUSB="";
+        break;
+      }  
+        if (nSerial==eUSBPC){
+            Serial.println(sResponse);
+        }
+        else if(nSerial==eBluetooth){
+            Serial_1.println(sResponse);
+        }
+       sSerialUSB="";
 }
 
 #pragma endregion
@@ -782,7 +1097,8 @@ void DisplayCurrentTime(){
 void DisplayUpdateTemperature(){
     sensors.requestTemperatures();
 
-    float tempC = sensors.getTempC(insideThermometer);    
+    float tempC = sensors.getTempC(insideThermometer); 
+    gTemperature=   tempC;
     char result[8]; // Buffer big enough for 7-character float
     dtostrf(tempC, 6, 2, result);
 
