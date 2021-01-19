@@ -658,6 +658,8 @@ void SerialCommandHandller(){
 void SerialCommandHandller2( eSerialPort  nSerial ){    
 
   String sResponse;
+  
+  
 
   switch ( sSerialUSB[0]) {
       case 'K':
@@ -720,7 +722,7 @@ void SerialCommandHandller2( eSerialPort  nSerial ){
       case '3':
         
         //Serial.println("3 Trace On");
-        sResponse="0 Dumps Events";
+        sResponse="3 Trace ON";
         bShowTrace =true;
         sSerialUSB="";
       break;
@@ -768,41 +770,58 @@ void SerialCommandHandller2( eSerialPort  nSerial ){
       break;
   
       case '?':
-      sResponse="Help";
-        Serial.println("Help");
-        Serial.println("K Initialise");  
-        Serial.println("I Idle");
-        Serial.println("N Update Screen");   
-        Serial.println("M Check Events");
-        Serial.println("O Update Outputs");
-        Serial.println("D Delete Memory");     
-        Serial.println("0 Read Page Number 0_0000");
-        Serial.println("1 AddEvent  1_1030WED31");
-        Serial.println("2 Disable Event  2_001");             
-        Serial.println("3 Trace ON");
-        Serial.println("4 Update Output 4_11 Output 1 ON");
-        Serial.println("5 Write Status on OLED 5_Hello"); 
-        Serial.println("6 Set Time RTC 6_DDMMY_HHmmss"); 
-        Serial.println("7 Read Time"); 
-        Serial.println("8 Check Current Event");
-        Serial.println("9 Trace OFF");              
+        sResponse="Help";
+        // Serial.println("Help");
+        // Serial.println("K Initialise");  
+        // Serial.println("I Idle");
+        // Serial.println("N Update Screen");   
+        // Serial.println("M Check Events");
+        // Serial.println("O Update Outputs");
+        // Serial.println("D Delete Memory");     
+        // Serial.println("0 Read Page Number 0_0000");
+        // Serial.println("1 AddEvent  1_1030WED31");
+        // Serial.println("2 Disable Event  2_001");             
+        // Serial.println("3 Trace ON");
+        // Serial.println("4 Update Output 4_11 Output 1 ON");
+        // Serial.println("5 Write Status on OLED 5_Hello"); 
+        // Serial.println("6 Set Time RTC 6_DDMMY_HHmmss"); 
+        // Serial.println("7 Read Time"); 
+        // Serial.println("8 Check Current Event");
+        // Serial.println("9 Trace OFF");         
+
+        sResponse="? Help \n \
+        K Initialise \n \
+        I Idle \n \
+        N Update Screen \n \
+        M Check Events\n \
+        O Update Outputs\n \
+        D Delete Memory\n \
+        0 Read Page Number 0_0000\n \
+        1 AddEvent  1_1030WED31\n \
+        2 Disable Event  2_001\n \
+        3 Trace ON\n \
+        4 Update Output 4_11 Output 1 ON\n \
+        5 Write Status on OLED 5_Hello\n \
+        6 Set Time RTC 6_DDMMY_HHmmss\n \
+        7 Read Time\n \
+        8 Check Current Event\n \
+        9 Trace OFF";
         sSerialUSB="";
       break;
        
       
       default:
-       //Serial.println("! Not supported");   
-       
-        //sSerialUSB="";
+       //'In case nothing was received exits procedure'
+        return ;
         break;
       }  
-        if (nSerial==eUSBPC){
-            Serial.println(sResponse);
-        }
-        else if(nSerial==eBluetooth){
-            Serial_1.println(sResponse);
-        }
-       sSerialUSB="";
+      if (nSerial==eUSBPC){
+          Serial.println(sResponse);
+      }
+      else if(nSerial==eBluetooth){
+          Serial_1.println(sResponse);
+      }
+      sSerialUSB="";
 }
 
 #pragma endregion

@@ -83,13 +83,13 @@ Developed to test the SSRs and User Inputs
 |7|Temperature DONE |DONE|
 |8|Make APIs libraries to deal with peripherals |DONE|
 |9|add ALL days event |DONE|
-|10|Tidy up oled screen, clear display square before writing output ||
-|11|test bluetooth debugging messages||
-|12|mod the arduino auc board to update and toggle output||
+|10|Tidy up oled screen, clear display square before writing output |DONE|
+|11|test bluetooth debugging messages|DONE|
+|12|mod the arduino auc board to update and toggle output|DONE|
 |13|add Auto/Manual switch to the controller||
 |14|Apply loads and test outputs||
-|15|Rearrange outputs in arduino aux||
-
+|15|Rearrange outputs in arduino aux|DONE|
+|16|Read IOAux output state||
 
 # To Do is To Be Embedded system
 | API | Function | Implemented | Tested Works | Doesnt work | Not Tested | Notes | 
