@@ -3,7 +3,6 @@
 ## RTC
 PASS Get time using USB port 
 PASS Set Time using USB port
-
 PASS Get time using Bluetooth port 
 PASS Set Time using Bluetooth port
 
@@ -13,7 +12,7 @@ PASS Change Date using usb port check display
 PASS Change Date using bluetooth port check display
 PASS Change Output State using usb port, check all 8 outputs
 PASS Change Output State using bluetooth, check all 8 outputs
-Change output state using inputs from Arduino, check all 8 outputs
+PASS Change output state using inputs from Arduino, check all 8 outputs
 
 
 ## Temperature
@@ -35,7 +34,7 @@ PASS Turn ON/OFF all outputs using Inputs
 
 ## SD Card
 PASS Dump SD card schedule contents using USB Port
-Dump SD Card schedule contents using Bluetooth port
+PASS Dump SD Card schedule contents using Bluetooth port
 Check Events manually using USB Port
 Check Events manually using Bluetooth Port
 
