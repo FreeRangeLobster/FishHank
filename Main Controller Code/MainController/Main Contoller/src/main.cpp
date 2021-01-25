@@ -47,8 +47,9 @@ int nCurrentOutputs [9] = { 0, 0, 0, 0, 0,0, 0, 0,0};
 
 int nLastCtrlOutputs [8] = { 0, 0, 0, 0, 0,0, 0, 0}; 
 bool bNewOutputUpdate=false;
-bool bShowTrace =true;
+bool bShowTrace =false;
 String sCurrentTime;
+String sTraceString="";
 
 #pragma region "Wifi MQTT"
 //Wifi connections
@@ -137,6 +138,7 @@ void onMqttSubscribe(uint16_t packetId, uint8_t qos) {
   Serial.print("  qos: ");
   Serial.println(qos);
 }
+
 void onMqttUnsubscribe(uint16_t packetId) {
   Serial.println("Unsubscribe acknowledged.");
   Serial.print("  packetId: ");
@@ -144,9 +146,10 @@ void onMqttUnsubscribe(uint16_t packetId) {
 }
 
 void onMqttPublish(uint16_t packetId) {
-  Serial.print("Publish acknowledged.");
-  Serial.print("  packetId: ");
-  Serial.println(packetId);
+  
+  //Serial.print("Publish acknowledged.");
+  //Serial.print("  packetId: ");
+  //Serial.println(packetId);
 }
 
 void onMqttMessage(char* topic, char* payload, AsyncMqttClientMessageProperties properties, size_t len, size_t index, size_t total) {
@@ -188,11 +191,13 @@ enum StatesEnum { Start, Initialise, ReadSD, EnablePeripherals, UpdateStatus, up
 StatesEnum CurrentState; 
 enum eStateEnum{eCalculateNextTimeCheck,eShowStatus,ePublish,eCheckSD,ePrecheckOutputs,eUpdateOutputs,eUpdateDisplay,eIdle};
 eStateEnum StateEnum;
+eStateEnum LastStateEnum;
 
 enum eSerialPort{eUSBPC,eBluetooth};
 
 enum eIOCtrlCommsState{eStart,eSendCommand,eWaitForReply,eFormat,eCompare,eFinish,eTimeOut};
 
+String sState ="";
 
 //Time system is in idle state
 const long interval2 = 5*1000;     //in seconds
@@ -238,8 +243,7 @@ void checkSerial_2();
 void checkSerial_1();
 void CheckSerialVer2();
 void CheckSerialBlueT();
-void SerialCommandHandller();
-void SerialCommandHandller2( eSerialPort  nSerial );
+void SerialCommandHandller( eSerialPort  nSerial );
 void checkIOCtrlSetOutputTo(int OutputNumber, int State);
 void checkIOCtrlSerial();
 void RTCSetTimeAndDate(char *Currenttime);
@@ -394,16 +398,17 @@ void loop() {
  switch (StateEnum){
         
   case eCalculateNextTimeCheck:{
-    if (bShowTrace){Serial.println("State: eCalculateNextTimeCheck");}          
+    sState="eCalculateNextTimeCheck";     
     now = rtc.now();                      
     StateEnum=eShowStatus;
   }
   break;
 
   case eShowStatus:{
-    sSystemStatus= ">t:" +  now.timestamp(DateTime::TIMESTAMP_FULL)+ ">T[C]:" +  String(gTemperature) + ">O:"\
+    sState="eCalculateNextTimeCheck";
+    sSystemStatus= "->t:" +  now.timestamp(DateTime::TIMESTAMP_FULL)+ ">T[C]:" +  String(gTemperature) + ">O:"\
     + String(nCtrlOutputs[7]) + String(nCtrlOutputs[6]) + String(nCtrlOutputs[5]) + String(nCtrlOutputs[4])\
-    + String(nCtrlOutputs[3]) + String(nCtrlOutputs[2]) + String(nCtrlOutputs[1]) + String(nCtrlOutputs[0]) +">";
+    + String(nCtrlOutputs[3]) + String(nCtrlOutputs[2]) + String(nCtrlOutputs[1]) + String(nCtrlOutputs[0]) +">-";
     Serial.println(sSystemStatus);
     Serial_1.println(sSystemStatus);
     StateEnum=ePublish;
@@ -411,24 +416,24 @@ void loop() {
   break;
 
   case ePublish:{
+    sState="ePublish";
     uint16_t packetIdPub1 = mqttClient.publish(MQTT_PUB_TEMP, 1, true, String(gTemperature).c_str());
-    Serial.printf("Publishing on topic %s at QoS 1, packetId: %i", MQTT_PUB_TEMP, packetIdPub1);
-    Serial.printf("Message: %.2f \n", gTemperature);
+    //Serial.printf("Publishing on topic %s at QoS 1, packetId: %i", MQTT_PUB_TEMP, packetIdPub1);
+    //Serial.printf("Message: %.2f \n", gTemperature);
     StateEnum=ePrecheckOutputs;
   }
   break;
 
   case ePrecheckOutputs:{
+    sState="ePrecheckOutputs";
     IOCtrlCheckCurrentOutputState();
-    Serial.println("Update display outputs");
     DisplayUpdateOutputs();
     StateEnum=eCheckSD;
   }
   break;
 
   case eCheckSD:{
-    if (bShowTrace){Serial.println("State: eCheckSD");}
-    if (bShowTrace){Serial_1.println("State: eCheckSD");}                                         
+     sState="eCheckSD";                             
     FormatCurrrentTime();
     if (now.second()<10){
       if (bShowTrace){Serial.println("----> Check Events");}                     
@@ -439,24 +444,22 @@ void loop() {
   break;
   
   case eUpdateOutputs:{
-    if (bShowTrace){Serial.println("State: eUpdateOutputs");}
-    if (bShowTrace){Serial_1.println("State: eUpdateOutputs");}               
+    sState="eUpdateOutputs";          
     IOCtrlUpdateOutputs(); 
     StateEnum=eUpdateDisplay;
   }
   break;
 
-  case eUpdateDisplay:{          
+  case eUpdateDisplay:{  
+    sState="eUpdateDisplay";         
     DisplayCurrentTime();
     DisplayUpdateTemperature();
-    if (bShowTrace){Serial.println("State: eUpdateDisplay");}
-    if (bShowTrace){Serial_1.println("State: eUpdateDisplay");}
     StateEnum=eIdle;
   }
   break;
 
   case eIdle:{
-    //Serial.println("State: eIdle");
+    sState="eIdle";  
     nCurrentMillis=millis();
     if (nCurrentMillis - nPreviousMillis >= interval) {            
       nPreviousMillis = nCurrentMillis;
@@ -466,9 +469,17 @@ void loop() {
     }          
     ToggleLED2();  
     CheckSerialVer2();
-    SerialCommandHandller2(eUSBPC);
+    if (sSerialUSB != ""){
+      SerialCommandHandller(eUSBPC);
+      StateEnum=eCalculateNextTimeCheck;
+    } 
+    
     CheckSerialBlueT();
-    SerialCommandHandller2(eBluetooth);
+    if (sSerialUSB != ""){
+      SerialCommandHandller(eBluetooth);
+      StateEnum=eCalculateNextTimeCheck;
+    }
+ 
   }
   break;
 
@@ -478,8 +489,25 @@ void loop() {
       StateEnum=eCalculateNextTimeCheck;
   }
   }
-}
 
+  //Updates trace after state
+if (StateEnum != LastStateEnum){
+  sTraceString= sTraceString + " LastState: " + sState + \
+  "\n Internal Output Register: " + \
+  String(nCtrlOutputs[7]) + String(nCtrlOutputs[6]) + String(nCtrlOutputs[5]) + String(nCtrlOutputs[4]) + \
+  String(nCtrlOutputs[3]) + String(nCtrlOutputs[2]) + String(nCtrlOutputs[1]) + String(nCtrlOutputs[0]) + \
+  "\n" ;
+
+  LastStateEnum=StateEnum; 
+
+  if (bShowTrace){
+    Serial.println(sTraceString + "\n");
+    Serial_1.println(sTraceString + "\n"); 
+  }    
+  sTraceString="";  
+}
+  
+}
 
 #pragma region "Stay Alive Signals LEDs"
 
@@ -549,129 +577,9 @@ void checkSerial_2(){
     }
     else readString += c;
 }
-void SerialCommandHandller(){    
 
-  switch ( sSerialUSB[0]) {
-      case 'K':
-        Serial.println("Initialise");
-        sSerialUSB="";
-      break;
-      
-      case 'I':
-        Serial.println("I Idle");
-        sSerialUSB="";
-      break;
-  
-      case 'N':
-        Serial.println("N Update Screen");     
-        sSerialUSB="";
-      break;
-  
-      case 'M':
-        Serial.println("M Check Events");
-        CheckEvent("1038 MON");
-        sSerialUSB="";
-      break;
-  
-      case 'O':
-        Serial.println("O Update Outputs");  
-        SetOutputTo();   
-        sSerialUSB="";
-      break;
-  
-      case 'D':
-        Serial.println("D Delete Memory");
-        sSerialUSB="";
-      break;
-  
-      case '0':
-        Serial.println("0 Dumps Events");     
-        DumpSchedule();
-        sSerialUSB="";
-      break;
-  
-      case '1':
-        Serial.println("1 AddEvent  1_1030WED31");     
-        sSerialUSB="";
-      break;
-  
-      case '2':
-        Serial.println("2 Disable Event  2_001");     
-        sSerialUSB="";
-      break;
-  
-      case '3':
-        Serial.println("3 Trace On");
-        bShowTrace =true;
-        sSerialUSB="";
-      break;
-  
-      case '4':
-        Serial.println("4 Update Output 4_11 Output 1 ON");    
-        checkIOCtrlSetOutputTo(1,1);
-        sSerialUSB="";
-      break;
-  
-      case '5':
-        Serial.println("5 Write Status on OLED 5_Hello");     
-        sSerialUSB="";
-      break;
-  
-      case '6':
-        Serial.println("6 Set Time RTC 6_DDMMYYYY_HH:mm:ss"); 
-        RTCSetTimeAndDate();    
-        sSerialUSB="";
-      break;
-  
-      case '7':
-        Serial.println("7 Read Time"); 
-        Serial.println(String("DateTime::TIMESTAMP_FULL:\t")+now.timestamp(DateTime::TIMESTAMP_FULL));    
-        sSerialUSB="";
-      break;
-  
-      case '8':
-        Serial.println("8 Check Current Event");   
-        CheckEvent("1044 MON");  
-        sSerialUSB="";
-      break;
-             
-      case '9':
-        Serial.println("9 Trace Off"); 
-        bShowTrace =false;    
-        sSerialUSB="";
-      break;
-  
-      case '?':
-        Serial.println("Help");
-        Serial.println("K Initialise");  
-        Serial.println("I Idle");
-        Serial.println("N Update Screen");   
-        Serial.println("M Check Events");
-        Serial.println("O Update Outputs");
-        Serial.println("D Delete Memory");     
-        Serial.println("0 Read Page Number 0_0000");
-        Serial.println("1 AddEvent  1_1030WED31");
-        Serial.println("2 Disable Event  2_001");             
-        Serial.println("3 Trace ON");
-        Serial.println("4 Update Output 4_11 Output 1 ON");
-        Serial.println("5 Write Status on OLED 5_Hello"); 
-        Serial.println("6 Set Time RTC 6_DDMMY_HHmmss"); 
-        Serial.println("7 Read Time"); 
-        Serial.println("8 Check Current Event");
-        Serial.println("9 Trace OFF");              
-        sSerialUSB="";
-      break;
-       
-      
-      default:
-       //Serial.println("! Not supported");   
-       
-        //sSerialUSB="";
-        break;
-      }  
-}
 
-void SerialCommandHandller2( eSerialPort  nSerial ){    
+void SerialCommandHandller( eSerialPort  nSerial ){    
   String sResponse;
   switch ( sSerialUSB[0]) {
       case 'K':
@@ -697,7 +605,9 @@ void SerialCommandHandller2( eSerialPort  nSerial ){
   
       case 'O':
         sResponse="O Update Outputs";
-        SetOutputTo();   
+        SetOutputTo();  
+        IOCtrlCheckCurrentOutputState();
+        IOCtrlCheckCurrentOutputState(); 
         sSerialUSB="";
       break;
   
@@ -724,7 +634,7 @@ void SerialCommandHandller2( eSerialPort  nSerial ){
   
       case '3':
         sResponse="3 Trace ON";
-        bShowTrace =true;
+        bShowTrace = true;
         sSerialUSB="";
       break;
   
@@ -759,7 +669,7 @@ void SerialCommandHandller2( eSerialPort  nSerial ){
              
       case '9':
         sResponse="9 Trace Off"; 
-        bShowTrace =false;    
+        bShowTrace = false;    
         sSerialUSB="";
       break;
   
@@ -823,7 +733,7 @@ void checkIOCtrlSerial(){
     while(Serial_2.available()){
       readStringIOCtrl += char(Serial_2.read());
     }
-    Serial.println("Received data IO CTRL= " + readStringIOCtrl);
+    //Serial.println("Received data IO CTRL= " + readStringIOCtrl);
     //readStringIOCtrl = "";   
 }
 
@@ -831,7 +741,7 @@ void IOCtrlUpdateOutputs(){
   if (bNewOutputUpdate==true){
     int i=0;
     for(i=0;i<=7;i++){
-      if (bShowTrace){Serial.printf("output register: %d %d %d %d %d %d %d %d \n",nCtrlOutputs[0],nCtrlOutputs[1],nCtrlOutputs[2],nCtrlOutputs[3],nCtrlOutputs[4],nCtrlOutputs[5],nCtrlOutputs[6],nCtrlOutputs[7]);}
+      if (bShowTrace){Serial.printf("IOCtrlUpdateOutputs: nCtrlOutputs: %d %d %d %d %d %d %d %d \n",nCtrlOutputs[7],nCtrlOutputs[6],nCtrlOutputs[5],nCtrlOutputs[4],nCtrlOutputs[3],nCtrlOutputs[2],nCtrlOutputs[1],nCtrlOutputs[0]);}
       checkIOCtrlSetOutputTo(i,nCtrlOutputs[i]);       
       delay(100);     
    }
@@ -855,7 +765,7 @@ void IOCtrlCheckCurrentOutputState(){
   {
     //Timeout verification to avoid locking system
     tCurrentTime=millis();
-    if ( tCurrentTime-tTimeStart  >= 1000) {  
+    if ( tCurrentTime-tTimeStart  >= 2000) {  
       Serial.println("IOCtrlCheckCurrentOutputState - timeout Waiting, State: " + nState);          
       bFinish=true;
     }  
@@ -894,15 +804,12 @@ void IOCtrlCheckCurrentOutputState(){
           nIndexOutput=nIndexOutput+1;
         }
         else{
+          delay(20);
         }    
-        delay(20);
+        
       } 
       else
       {
-        //Rearrange the vector
-        Serial.println("Received data IO CTRL Current Outputs= " + sCurrentOutoutState);
-        Serial.printf("output register: %d %d %d %d %d %d %d %d %d \n",nCurrentOutputs[0],nCurrentOutputs[1],nCurrentOutputs[2],nCurrentOutputs[3],nCurrentOutputs[4],nCurrentOutputs[5],nCurrentOutputs[6],nCurrentOutputs[7],nCurrentOutputs[8]);
-        Serial.println("");
         nState=eCompare;
       }     
     break;
@@ -920,8 +827,13 @@ void IOCtrlCheckCurrentOutputState(){
     break;
 
     case  eFinish:
-     nState=eSendCommand;
-     bFinish=true;
+     //nState=eSendCommand;
+     
+     if(bShowTrace){
+          Serial.printf("output register: %d %d %d %d %d %d %d %d %d \n",nCurrentOutputs[0],nCurrentOutputs[1],nCurrentOutputs[2],nCurrentOutputs[3],nCurrentOutputs[4],nCurrentOutputs[5],nCurrentOutputs[6],nCurrentOutputs[7],nCurrentOutputs[8]);
+        
+        }
+      bFinish=true;
     break;
 
     default:
@@ -1287,7 +1199,6 @@ void DumpSchedule(){
   }
 }
 
-
 void DumpSchedule2(eSerialPort  nSerial ){
 
     // Open the file for reading:
@@ -1327,8 +1238,6 @@ void DumpSchedule2(eSerialPort  nSerial ){
   }
 }
 
-
-
 void CheckEvent(String sTime){
 
   String sBuffer="";
@@ -1366,7 +1275,7 @@ void CheckEvent(String sTime){
             if (bShowTrace){Serial.println(sSchTime);}
             //IN case the day is from MON to SUN
             if (sTime == sSchTime) {
-                  Serial.print("Event Found: ");
+                  Serial.print("*Event Found");
                   //Get Output to be activated
                   sOutputNumber=sBuffer.substring(13, 14);
                   sOutputState=sBuffer.substring(14, 15);
@@ -1376,7 +1285,6 @@ void CheckEvent(String sTime){
                   bNewOutputUpdate=true;
                   if (sOutputState=="1"){
                     nCtrlOutputs[_nOutput-1]=1;                    
-
                   }
                   else{
                     nCtrlOutputs[_nOutput-1]=0;                    
@@ -1399,7 +1307,7 @@ void CheckEvent(String sTime){
               if (bShowTrace){Serial.println(sTimeTrim);}
               //Check time and Outputs
               if (sTimeTrim == sSchTimeTrim) {
-                  Serial.print("Event FoundB: ");
+                  Serial.print("Event Found");
                   //Get Output to be activated
                   sOutputNumber=sBuffer.substring(13, 14);
                   sOutputState=sBuffer.substring(14, 15);
