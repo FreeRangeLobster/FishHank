@@ -14,10 +14,9 @@ PASS Change Output State using usb port, check all 8 outputs
 PASS Change Output State using bluetooth, check all 8 outputs
 PASS Change output state using inputs from Arduino, check all 8 outputs
 
-
 ## Temperature
-Not Implemented Read Temperature using usb port
-Not Implemented Read Temperature using bluetooth port
+PASS Implemented Read Temperature using usb port
+PASS Implemented Read Temperature using bluetooth port
 PASS Read Temperature using Display
 
 ## Bluetooth
@@ -25,7 +24,7 @@ PASS Connect and and provide same menu functionality(Parameters speed:9600, Pari
 
 ## Inputs
 PASS Toggle every single output on/off
-Check the display reflects the state of the output
+PASS Check the display reflects the state of the output
 
 ## Outputs
 PASS Turn ON/OFF all outputs using USB port
@@ -35,8 +34,8 @@ PASS Turn ON/OFF all outputs using Inputs
 ## SD Card
 PASS Dump SD card schedule contents using USB Port
 PASS Dump SD Card schedule contents using Bluetooth port
-Check Events manually using USB Port
-Check Events manually using Bluetooth Port
+PASS Check Events manually using USB Port
+PASS Check Events manually using Bluetooth Port
 
 ## System Running
 Run system for a full day as follows:

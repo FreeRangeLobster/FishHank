@@ -239,9 +239,9 @@ float gTemperature=0;
 
 
 //Prototypes 
-void checkSerial_2();
-void checkSerial_1();
-void CheckSerialVer2();
+
+
+void CheckSerialUSB();
 void CheckSerialBlueT();
 void SerialCommandHandller( eSerialPort  nSerial );
 void checkIOCtrlSetOutputTo(int OutputNumber, int State);
@@ -465,10 +465,11 @@ void loop() {
       nPreviousMillis = nCurrentMillis;
       StateEnum=eCalculateNextTimeCheck;
       ToggleLED1();               
-      delay(500);
-    }          
+      //delay(500);
+    }  
+
     ToggleLED2();  
-    CheckSerialVer2();
+    CheckSerialUSB();
     if (sSerialUSB != ""){
       SerialCommandHandller(eUSBPC);
       StateEnum=eCalculateNextTimeCheck;
@@ -492,19 +493,21 @@ void loop() {
 
   //Updates trace after state
 if (StateEnum != LastStateEnum){
+  LastStateEnum=StateEnum; 
+
   sTraceString= sTraceString + " LastState: " + sState + \
   "\n Internal Output Register: " + \
   String(nCtrlOutputs[7]) + String(nCtrlOutputs[6]) + String(nCtrlOutputs[5]) + String(nCtrlOutputs[4]) + \
   String(nCtrlOutputs[3]) + String(nCtrlOutputs[2]) + String(nCtrlOutputs[1]) + String(nCtrlOutputs[0]) + \
   "\n" ;
 
-  LastStateEnum=StateEnum; 
-
   if (bShowTrace){
     Serial.println(sTraceString + "\n");
     Serial_1.println(sTraceString + "\n"); 
   }    
-  sTraceString="";  
+  
+  sTraceString="";
+
 }
   
 }
@@ -534,7 +537,7 @@ if(digitalRead(ledPin2)==1){
 #pragma endregion
 
 #pragma region "Serial Communication Handling"
-void CheckSerialVer2(){  
+void CheckSerialUSB(){  
     if (!Serial.available()) return;
     
     if (Serial.available()) {   
@@ -557,26 +560,7 @@ void CheckSerialBlueT(){
       nOption=sSerialUSB[0];
     }
  }
-void checkSerial_1(){
-    if (!Serial_1.available()) return;
-    char c = Serial_1.read();
-    if (c == '\n') {
-      Serial.println(readString);
-      //executeCommand(readString);
-      readString = "";    
-    }
-    else readString += c;
-} 
-void checkSerial_2(){
-    if (!Serial_2.available()) return;
-    char c = Serial_2.read();
-    if (c == '\n') {
-      Serial.println(readString);
-      //executeCommand(readString);
-      readString = "";    
-    }
-    else readString += c;
-}
+
 
 
 void SerialCommandHandller( eSerialPort  nSerial ){    
@@ -605,7 +589,9 @@ void SerialCommandHandller( eSerialPort  nSerial ){
   
       case 'O':
         sResponse="O Update Outputs";
-        SetOutputTo();  
+        SetOutputTo(); 
+        //Request information twice because there is a bug on the 
+        //Aux arduino system. 
         IOCtrlCheckCurrentOutputState();
         IOCtrlCheckCurrentOutputState(); 
         sSerialUSB="";
