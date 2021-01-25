@@ -420,6 +420,8 @@ void loop() {
 
   case ePrecheckOutputs:{
     IOCtrlCheckCurrentOutputState();
+    Serial.println("Update display outputs");
+    DisplayUpdateOutputs();
     StateEnum=eCheckSD;
   }
   break;
@@ -439,8 +441,7 @@ void loop() {
   case eUpdateOutputs:{
     if (bShowTrace){Serial.println("State: eUpdateOutputs");}
     if (bShowTrace){Serial_1.println("State: eUpdateOutputs");}               
-    IOCtrlUpdateOutputs();
-    DisplayUpdateOutputs();
+    IOCtrlUpdateOutputs(); 
     StateEnum=eUpdateDisplay;
   }
   break;
@@ -807,7 +808,7 @@ void SetOutputTo(){
     int nState;
     nOutput= int(sSerialUSB[2]-'0');
     nState= int(sSerialUSB[3]-'0'); 
-    nCtrlOutputs[nOutput-1]=nState;     
+    //nCtrlOutputs[nOutput-1]=nState;     
     checkIOCtrlSetOutputTo(nOutput-1,nState);
 }
 
