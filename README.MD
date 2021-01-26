@@ -167,7 +167,7 @@ D Delete Memory
 ||8|Add level converters, BSS138|
 ||9|Add 2 additional LEDs to show stay alive signal|
 ||10|Change output numbers in PCB to make it more readable|
-||11||
+||11|Add ESP32-WRoom to the PCB|
 ||12||
 ||13||
   

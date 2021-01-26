@@ -1,0 +1,4 @@
+2021-01-26 15:09:35.3274 INFO --- PROGRAM STARTED ---
+2021-01-26 15:09:35.3384 DEBUG New instance of SerialPort() is initialized.
+2021-01-26 15:09:40.5310 DEBUG All lists of settings objects are loaded.
+2021-01-26 15:09:40.5320 DEBUG All default values are set. End of SerialCommViewModel() constructor!
