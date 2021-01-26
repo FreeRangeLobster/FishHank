@@ -96,7 +96,7 @@ Developed to test the SSRs and User Inputs
 ||19|Add the leds to the NodeRed|
 ||20|Top acrilic cover to test mains|
 ||21|Modify and update PCB layout and components-See notes in logbook|
-||22|Tidy up code, files and merge to master|
+|DONE|22|Tidy up code, files and merge to master|
 ||24|Double check and record output schedule|
 ||25||
 ||26||
