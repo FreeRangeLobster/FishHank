@@ -17,7 +17,7 @@ const int ledPin1 = 32;
 const int ledPin2 = 33;
 
 //Auto/Manual
-const int Auto_Manual = 27;
+const int Pin_Auto_Manual = 27;
 int AutoManualState=0;
 int LastAutoManualState=0;
 
@@ -394,7 +394,7 @@ void setup() {
   digitalWrite(ledPin2, LOW);
 
   //Auto/Manual Switch
-  pinMode(Auto_Manual, INPUT_PULLDOWN);
+  pinMode(Pin_Auto_Manual, INPUT_PULLDOWN);
 
   //CheckConfigurationFile();
   
@@ -498,7 +498,7 @@ void loop() {
     ToggleLED2(); 
 
     //Check if manual/auto has changed
-    AutoManualState = digitalRead(Auto_Manual);
+    AutoManualState = digitalRead(Pin_Auto_Manual);
     if (LastAutoManualState !=  AutoManualState)
     {
       if (bShowTrace){Serial.println("Auto/Manual Changed");}  
