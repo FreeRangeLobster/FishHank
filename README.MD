@@ -97,7 +97,7 @@ Developed to test the SSRs and User Inputs
 ||20|Top acrilic cover to test mains|
 ||21|Modify and update PCB layout and components-See notes in logbook|
 |DONE|22|Tidy up code, files and merge to master|
-||24|Double check and record output schedule|
+|DONE|24|Double check and record GPIOs schedule ESP32-WROOM| 
 ||25||
 ||26||
 ||27||

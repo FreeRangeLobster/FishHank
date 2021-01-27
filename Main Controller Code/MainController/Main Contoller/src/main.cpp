@@ -16,8 +16,14 @@
 const int ledPin1 = 32;
 const int ledPin2 = 33;
 
+//Auto/Manual
+const int Auto_Manual = 27;
+int AutoManualState=0;
+int LastAutoManualState=0;
+
 //Temperature Sensor
-#define ONE_WIRE_BUS 15
+//#define ONE_WIRE_BUS 15
+#define ONE_WIRE_BUS 26
 OneWire oneWire(ONE_WIRE_BUS); // Setup a oneWire instance to communicate with any OneWire devices (not just Maxim/Dallas temperature ICs)
 DallasTemperature sensors(&oneWire); // Pass our oneWire reference to Dallas Temperature. 
 DeviceAddress insideThermometer, outsideThermometer; // arrays to hold device addresses
@@ -27,8 +33,9 @@ DeviceAddress insideThermometer, outsideThermometer; // arrays to hold device ad
 HardwareSerial Serial_1(1);
 HardwareSerial Serial_2(2);
 // Choose two free pins
-#define SERIAL1_RXPIN 2//12
-#define SERIAL1_TXPIN 4//13
+//#define SERIAL1_RXPIN 2
+#define SERIAL1_RXPIN 25
+#define SERIAL1_TXPIN 4
 
 String readString;
 String readStringB;
@@ -260,6 +267,7 @@ void printAddress(DeviceAddress deviceAddress);
 void printTemperature(DeviceAddress deviceAddress);
 void CheckConfigurationFile();
 void IOCtrlCheckCurrentOutputState();
+void DisplayUpdateStatus(int nState);
 
 
 
@@ -385,10 +393,16 @@ void setup() {
   digitalWrite(ledPin1, HIGH);
   digitalWrite(ledPin2, LOW);
 
+  //Auto/Manual Switch
+  pinMode(Auto_Manual, INPUT_PULLDOWN);
+
   //CheckConfigurationFile();
   
   Serial.println("-");
   Serial.println("-------Initialization Finished-----");
+
+  AutoManualState = digitalRead(Auto_Manual);
+  LastAutoManualState =  AutoManualState;
 
 }
 
@@ -408,7 +422,8 @@ void loop() {
     sState="eCalculateNextTimeCheck";
     sSystemStatus= "->t:" +  now.timestamp(DateTime::TIMESTAMP_FULL)+ ">T[C]:" +  String(gTemperature) + ">O:"\
     + String(nCtrlOutputs[7]) + String(nCtrlOutputs[6]) + String(nCtrlOutputs[5]) + String(nCtrlOutputs[4])\
-    + String(nCtrlOutputs[3]) + String(nCtrlOutputs[2]) + String(nCtrlOutputs[1]) + String(nCtrlOutputs[0]) +">-";
+    + String(nCtrlOutputs[3]) + String(nCtrlOutputs[2]) + String(nCtrlOutputs[1]) + String(nCtrlOutputs[0]) +">Status:" \
+    + cStatus + "<--";
     Serial.println(sSystemStatus);
     Serial_1.println(sSystemStatus);
     StateEnum=ePublish;
@@ -428,7 +443,17 @@ void loop() {
     sState="ePrecheckOutputs";
     IOCtrlCheckCurrentOutputState();
     DisplayUpdateOutputs();
-    StateEnum=eCheckSD;
+    if (AutoManualState == HIGH){
+      //System in Auto
+      StateEnum=eCheckSD;
+    }
+    else{
+      //System in Manual
+      StateEnum=eUpdateDisplay;
+    }
+      
+    
+    
   }
   break;
 
@@ -454,6 +479,7 @@ void loop() {
     sState="eUpdateDisplay";         
     DisplayCurrentTime();
     DisplayUpdateTemperature();
+    DisplayUpdateStatus(AutoManualState);
     StateEnum=eIdle;
   }
   break;
@@ -464,11 +490,22 @@ void loop() {
     if (nCurrentMillis - nPreviousMillis >= interval) {            
       nPreviousMillis = nCurrentMillis;
       StateEnum=eCalculateNextTimeCheck;
-      ToggleLED1();               
-      //delay(500);
-    }  
+      ToggleLED1(); 
+      //High for auto              
+      
+    }
+   
+    ToggleLED2(); 
 
-    ToggleLED2();  
+    //Check if manual/auto has changed
+    AutoManualState = digitalRead(Auto_Manual);
+    if (LastAutoManualState !=  AutoManualState)
+    {
+      if (bShowTrace){Serial.println("Auto/Manual Changed");}  
+      LastAutoManualState =  AutoManualState;
+      StateEnum=eCalculateNextTimeCheck;
+    }
+    
     CheckSerialUSB();
     if (sSerialUSB != ""){
       SerialCommandHandller(eUSBPC);
@@ -1097,6 +1134,18 @@ void DisplayUpdateTemperature(){
     display.setCursor(75,10);
     display.printf(result);
     display.display();
+}
+
+void DisplayUpdateStatus(int nState){
+  if ( nState == HIGH ) {
+    strcpy(cStatus, "Auto" );
+    DisplayModifyStatus(cStatus);
+  }
+  else
+  {
+    strcpy(cStatus, "Manual" );
+    DisplayModifyStatus(cStatus);
+  }
 }
 
 #pragma endregion
