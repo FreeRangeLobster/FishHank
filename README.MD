@@ -87,7 +87,7 @@ Developed to test the SSRs and User Inputs
 |DONE|10|Tidy up oled screen, clear display square before writing output |
 |DONE|11|test bluetooth debugging messages|
 |DONE|12|mod the arduino auc board to update and toggle output|
-|NA|13|add Auto/Manual switch to the controller|
+|DONE|13|add Auto/Manual switch to the controller|
 ||14|Apply loads and test outputs|
 |DONE|15|Rearrange outputs in arduino aux|
 |DONE|16|Read IOAux output state|
@@ -97,7 +97,7 @@ Developed to test the SSRs and User Inputs
 ||20|Top acrilic cover to test mains|
 ||21|Modify and update PCB layout and components-See notes in logbook|
 |DONE|22|Tidy up code, files and merge to master|
-|DONE|24|Double check and record GPIOs schedule ESP32-WROOM| 
+|DONE|24|Double check and record GPIOs schedule ESP32-DevKit| 
 ||25||
 ||26||
 ||27||
@@ -167,9 +167,12 @@ D Delete Memory
 ||8|Add level converters, BSS138|
 ||9|Add 2 additional LEDs to show stay alive signal|
 ||10|Change output numbers in PCB to make it more readable|
-||11|Add ESP32-WRoom to the PCB|
-||12||
-||13||
+||11|Add ESP32-DevKit to the PCB|
+||12|R_UTX1=Link, R_UTX2 = Not Fitted|
+||13|Remove Flash memory|
+||14|SD Card Feed 5V|
+||15|Add Auto/Manual trhough the level converter|
+
   
 ### Cheatsheet
 #### Git
