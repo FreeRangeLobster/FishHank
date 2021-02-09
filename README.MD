@@ -159,9 +159,9 @@ D Delete Memory
 | ------ | ------ | ------ |
 ||1|Remove JLCJLCJCL, manufacturer disregarded the notes |
 ||2|Git webpage is not legible, find a better place|
-||3|Bluetooth pinout is back to front in the eagle pcb library|
+|DONE|3|Bluetooth pinout is back to front in the eagle pcb library|
 ||4|Transistor not BCE, evaluate to use another one- Wrong footprint|
-||5|SSR Output changed to 150ohm for a 10K resistor, so far is working fine|
+|DONE|5|SSR Output changed to 150ohm for a 10K resistor, so far is working fine|
 ||6|Breakout connector pin 1 and 2 to be renamed. INT1-> 5V, INT2->3V|
 ||7|Footprint of SSR to be adjusted|
 ||8|Add level converters, BSS138|
@@ -172,6 +172,7 @@ D Delete Memory
 ||13|Remove Flash memory|
 ||14|SD Card Feed 5V|
 ||15|Add Auto/Manual trhough the level converter|
+|DONE|16|SD Card back to front|
 
   
 ### Cheatsheet
