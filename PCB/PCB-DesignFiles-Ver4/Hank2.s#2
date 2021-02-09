@@ -18551,6 +18551,12 @@ Source: 008-0260-0_E.pdf</description>
 <part name="BREAKOUT" library="con-lstb" deviceset="MA10-2" device=""/>
 <part name="P+1" library="supply1" deviceset="+5V" device=""/>
 <part name="P+16" library="supply1" deviceset="+5V" device=""/>
+<part name="LED1" library="led" deviceset="LED" device="3MM"/>
+<part name="LED2" library="led" deviceset="LED" device="3MM"/>
+<part name="PR_5V1" library="rcl" deviceset="R-US_" device="0207/10" value="1k"/>
+<part name="PR_5V2" library="rcl" deviceset="R-US_" device="0207/10" value="1k"/>
+<part name="GND35" library="SparkFun" deviceset="GND" device=""/>
+<part name="GND36" library="SparkFun" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -18825,6 +18831,16 @@ Source: 008-0260-0_E.pdf</description>
 <instance part="BREAKOUT" gate="G$1" x="53.34" y="154.94" rot="R180"/>
 <instance part="P+1" gate="1" x="149.86" y="170.18"/>
 <instance part="P+16" gate="1" x="20.32" y="66.04"/>
+<instance part="LED1" gate="G$1" x="109.22" y="33.02"/>
+<instance part="LED2" gate="G$1" x="119.38" y="33.02"/>
+<instance part="PR_5V1" gate="G$1" x="109.22" y="20.32" rot="R90"/>
+<instance part="PR_5V2" gate="G$1" x="119.38" y="20.32" rot="R90"/>
+<instance part="GND35" gate="1" x="109.22" y="12.7" smashed="yes">
+<attribute name="VALUE" x="106.68" y="10.16" size="1.778" layer="96"/>
+</instance>
+<instance part="GND36" gate="1" x="119.38" y="12.7" smashed="yes">
+<attribute name="VALUE" x="116.84" y="10.16" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -19082,6 +19098,14 @@ Source: 008-0260-0_E.pdf</description>
 <pinref part="RI7" gate="G$1" pin="2"/>
 <junction x="157.48" y="132.08"/>
 <pinref part="RI8" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="PR_5V1" gate="G$1" pin="1"/>
+<pinref part="GND35" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="PR_5V2" gate="G$1" pin="1"/>
+<pinref part="GND36" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="SCK" class="0">
@@ -20355,6 +20379,34 @@ Source: 008-0260-0_E.pdf</description>
 <pinref part="SSR5" gate="G$1" pin="L2"/>
 <pinref part="FUSE5" gate="G$1" pin="1"/>
 <wire x1="335.28" y1="228.6" x2="335.28" y2="233.68" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$6" class="0">
+<segment>
+<pinref part="PR_5V1" gate="G$1" pin="2"/>
+<pinref part="LED1" gate="G$1" pin="C"/>
+<wire x1="109.22" y1="27.94" x2="109.22" y2="25.4" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="LED2" class="0">
+<segment>
+<pinref part="PR_5V2" gate="G$1" pin="2"/>
+<pinref part="LED2" gate="G$1" pin="C"/>
+<wire x1="119.38" y1="27.94" x2="119.38" y2="25.4" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="STAY_ALIVE1" class="0">
+<segment>
+<pinref part="LED1" gate="G$1" pin="A"/>
+<wire x1="109.22" y1="35.56" x2="109.22" y2="40.64" width="0.1524" layer="91"/>
+<label x="109.22" y="40.64" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="STAY_ALIVE2" class="0">
+<segment>
+<pinref part="LED2" gate="G$1" pin="A"/>
+<wire x1="119.38" y1="35.56" x2="119.38" y2="38.1" width="0.1524" layer="91"/>
+<label x="119.38" y="38.1" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

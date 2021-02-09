@@ -18728,7 +18728,7 @@ Source: 008-0260-0_E.pdf</description>
 <attribute name="VALUE" x="124.46" y="124.46" size="1.778" layer="96"/>
 </instance>
 <instance part="IN_BUTTONS" gate="1" x="180.34" y="154.94" rot="MR0"/>
-<instance part="FUSE1" gate="G$1" x="259.08" y="226.06"/>
+<instance part="FUSE1" gate="G$1" x="259.08" y="233.68"/>
 <instance part="FUSE2" gate="G$1" x="259.08" y="175.26"/>
 <instance part="FUSE3" gate="G$1" x="259.08" y="121.92"/>
 <instance part="FUSE4" gate="G$1" x="259.08" y="68.58"/>
@@ -18990,7 +18990,9 @@ Source: 008-0260-0_E.pdf</description>
 <segment>
 <pinref part="PR_3.3V" gate="G$1" pin="1"/>
 <pinref part="GND33" gate="1" pin="GND"/>
-<wire x1="68.58" y1="45.72" x2="81.28" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="45.72" x2="68.58" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="40.64" x2="68.58" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="38.1" x2="81.28" y2="38.1" width="0.1524" layer="91"/>
 <pinref part="CP31" gate="G$1" pin="-"/>
 <wire x1="68.58" y1="45.72" x2="45.72" y2="45.72" width="0.1524" layer="91"/>
 <junction x="68.58" y="45.72"/>
@@ -19332,7 +19334,8 @@ Source: 008-0260-0_E.pdf</description>
 <pinref part="RO53" gate="G$1" pin="2"/>
 <wire x1="302.26" y1="243.84" x2="302.26" y2="241.3" width="0.1524" layer="91"/>
 <pinref part="SSR5" gate="G$1" pin="+"/>
-<wire x1="320.04" y1="233.68" x2="309.88" y2="231.14" width="0.1524" layer="91"/>
+<wire x1="320.04" y1="233.68" x2="320.04" y2="231.14" width="0.1524" layer="91"/>
+<wire x1="320.04" y1="231.14" x2="309.88" y2="231.14" width="0.1524" layer="91"/>
 <wire x1="309.88" y1="231.14" x2="309.88" y2="241.3" width="0.1524" layer="91"/>
 <wire x1="309.88" y1="241.3" x2="302.26" y2="241.3" width="0.1524" layer="91"/>
 <junction x="302.26" y="241.3"/>
@@ -19750,8 +19753,8 @@ Source: 008-0260-0_E.pdf</description>
 <pinref part="SSR2" gate="G$1" pin="L1"/>
 </segment>
 <segment>
-<wire x1="271.78" y1="233.68" x2="259.08" y2="238.76" width="0.1524" layer="91"/>
-<label x="271.78" y="233.68" size="1.778" layer="95"/>
+<wire x1="271.78" y1="238.76" x2="259.08" y2="238.76" width="0.1524" layer="91"/>
+<label x="271.78" y="238.76" size="1.778" layer="95"/>
 <pinref part="SSR1" gate="G$1" pin="L1"/>
 </segment>
 </net>
@@ -19965,8 +19968,8 @@ Source: 008-0260-0_E.pdf</description>
 <pinref part="SKT1" gate="-4" pin="KL"/>
 </segment>
 <segment>
-<wire x1="264.16" y1="226.06" x2="271.78" y2="226.06" width="0.1524" layer="91"/>
-<label x="271.78" y="226.06" size="1.778" layer="95"/>
+<wire x1="264.16" y1="233.68" x2="271.78" y2="233.68" width="0.1524" layer="91"/>
+<label x="271.78" y="233.68" size="1.778" layer="95"/>
 <pinref part="FUSE1" gate="G$1" pin="2"/>
 </segment>
 </net>
@@ -20302,7 +20305,7 @@ Source: 008-0260-0_E.pdf</description>
 <segment>
 <pinref part="SSR1" gate="G$1" pin="L2"/>
 <pinref part="FUSE1" gate="G$1" pin="1"/>
-<wire x1="254" y1="226.06" x2="254" y2="238.76" width="0.1524" layer="91"/>
+<wire x1="254" y1="233.68" x2="254" y2="238.76" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$14" class="0">

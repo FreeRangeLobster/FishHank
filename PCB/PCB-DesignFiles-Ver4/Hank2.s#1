@@ -460,55 +460,6 @@ DS3231SN</text>
 </deviceset>
 </devicesets>
 </library>
-<library name="frames">
-<description>&lt;b&gt;Frames for Sheet and Layout&lt;/b&gt;</description>
-<packages>
-</packages>
-<symbols>
-<symbol name="A3L-LOC">
-<wire x1="288.29" y1="3.81" x2="342.265" y2="3.81" width="0.1016" layer="94"/>
-<wire x1="342.265" y1="3.81" x2="373.38" y2="3.81" width="0.1016" layer="94"/>
-<wire x1="373.38" y1="3.81" x2="383.54" y2="3.81" width="0.1016" layer="94"/>
-<wire x1="383.54" y1="3.81" x2="383.54" y2="8.89" width="0.1016" layer="94"/>
-<wire x1="383.54" y1="8.89" x2="383.54" y2="13.97" width="0.1016" layer="94"/>
-<wire x1="383.54" y1="13.97" x2="383.54" y2="19.05" width="0.1016" layer="94"/>
-<wire x1="383.54" y1="19.05" x2="383.54" y2="24.13" width="0.1016" layer="94"/>
-<wire x1="288.29" y1="3.81" x2="288.29" y2="24.13" width="0.1016" layer="94"/>
-<wire x1="288.29" y1="24.13" x2="342.265" y2="24.13" width="0.1016" layer="94"/>
-<wire x1="342.265" y1="24.13" x2="383.54" y2="24.13" width="0.1016" layer="94"/>
-<wire x1="373.38" y1="3.81" x2="373.38" y2="8.89" width="0.1016" layer="94"/>
-<wire x1="373.38" y1="8.89" x2="383.54" y2="8.89" width="0.1016" layer="94"/>
-<wire x1="373.38" y1="8.89" x2="342.265" y2="8.89" width="0.1016" layer="94"/>
-<wire x1="342.265" y1="8.89" x2="342.265" y2="3.81" width="0.1016" layer="94"/>
-<wire x1="342.265" y1="8.89" x2="342.265" y2="13.97" width="0.1016" layer="94"/>
-<wire x1="342.265" y1="13.97" x2="383.54" y2="13.97" width="0.1016" layer="94"/>
-<wire x1="342.265" y1="13.97" x2="342.265" y2="19.05" width="0.1016" layer="94"/>
-<wire x1="342.265" y1="19.05" x2="383.54" y2="19.05" width="0.1016" layer="94"/>
-<wire x1="342.265" y1="19.05" x2="342.265" y2="24.13" width="0.1016" layer="94"/>
-<text x="344.17" y="15.24" size="2.54" layer="94">&gt;DRAWING_NAME</text>
-<text x="344.17" y="10.16" size="2.286" layer="94">&gt;LAST_DATE_TIME</text>
-<text x="357.505" y="5.08" size="2.54" layer="94">&gt;SHEET</text>
-<text x="343.916" y="4.953" size="2.54" layer="94">Sheet:</text>
-<frame x1="0" y1="0" x2="387.35" y2="260.35" columns="8" rows="5" layer="94"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="A3L-LOC" prefix="FRAME" uservalue="yes">
-<description>&lt;b&gt;FRAME&lt;/b&gt;&lt;p&gt;
-DIN A3, landscape with location and doc. field</description>
-<gates>
-<gate name="G$1" symbol="A3L-LOC" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="supply1">
 <description>&lt;b&gt;Supply Symbols&lt;/b&gt;&lt;p&gt;
  GND, VCC, 0V, +5V, -5V, etc.&lt;p&gt;
@@ -18366,6 +18317,72 @@ Source: 008-0260-0_E.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="HankLibrariesV2">
+<description>Components based on off the shelf PCB components. 
+Developed to handle Digital IO of a fishtank controller</description>
+<packages>
+<package name="BLUETOOTH_FOOTPRINT">
+<pad name="KEY" x="-15.24" y="-6.35" drill="0.9" shape="long"/>
+<pad name="RXD" x="-15.24" y="-3.81" drill="0.9" shape="long"/>
+<pad name="TXD" x="-15.24" y="-1.27" drill="0.9" shape="long"/>
+<pad name="5V" x="-15.24" y="1.27" drill="0.9" shape="long"/>
+<pad name="+3.3" x="-15.24" y="3.81" drill="0.9" shape="long"/>
+<pad name="GND" x="-15.24" y="6.35" drill="0.9" shape="long"/>
+<wire x1="-17.78" y1="7.62" x2="-17.78" y2="-7.62" width="0.127" layer="21"/>
+<wire x1="-17.78" y1="-7.62" x2="17.78" y2="-7.62" width="0.127" layer="21"/>
+<wire x1="17.78" y1="-7.62" x2="17.78" y2="7.62" width="0.127" layer="21"/>
+<wire x1="17.78" y1="7.62" x2="-17.78" y2="7.62" width="0.127" layer="21"/>
+<text x="-12.7" y="0.635" size="1.016" layer="21">5V</text>
+<text x="-12.7" y="-6.985" size="1.016" layer="21">Key</text>
+<text x="-12.7" y="-4.445" size="1.016" layer="21">RxD</text>
+<text x="-12.7" y="-1.905" size="1.016" layer="21">TxD</text>
+<text x="-12.7" y="3.175" size="1.016" layer="21">+3.3V</text>
+<text x="-12.7" y="5.715" size="1.016" layer="21">GND</text>
+<text x="2.54" y="-5.715" size="2.1844" layer="21">Bluetooth
+HC-05</text>
+</package>
+</packages>
+<symbols>
+<symbol name="BLUETOOTH_SYMBOL">
+<pin name="KEY" x="-22.86" y="17.78" length="middle"/>
+<pin name="RXD" x="-22.86" y="12.7" length="middle"/>
+<pin name="TXD" x="-22.86" y="7.62" length="middle"/>
+<pin name="5V" x="-22.86" y="2.54" length="middle"/>
+<pin name="+3.3V" x="-22.86" y="-2.54" length="middle"/>
+<pin name="GND" x="-22.86" y="-7.62" length="middle"/>
+<wire x1="-17.78" y1="-10.16" x2="15.24" y2="-10.16" width="0.254" layer="94"/>
+<text x="-1.27" y="8.89" size="2.1844" layer="94" align="center">Bluetooth HC-05
+wireless Bluetooth 
+to Serial RS232 TTL
+30ft</text>
+<wire x1="-17.78" y1="-10.16" x2="-17.78" y2="20.32" width="0.1524" layer="94"/>
+<wire x1="-17.78" y1="20.32" x2="15.24" y2="20.32" width="0.1524" layer="94"/>
+<wire x1="15.24" y1="20.32" x2="15.24" y2="-10.16" width="0.1524" layer="94"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="BLUETOOTH">
+<gates>
+<gate name="G$1" symbol="BLUETOOTH_SYMBOL" x="2.54" y="2.54"/>
+</gates>
+<devices>
+<device name="" package="BLUETOOTH_FOOTPRINT">
+<connects>
+<connect gate="G$1" pin="+3.3V" pad="+3.3"/>
+<connect gate="G$1" pin="5V" pad="5V"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="KEY" pad="KEY"/>
+<connect gate="G$1" pin="RXD" pad="RXD"/>
+<connect gate="G$1" pin="TXD" pad="TXD"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -18379,7 +18396,6 @@ Source: 008-0260-0_E.pdf</description>
 </classes>
 <parts>
 <part name="U$4" library="HankLibraries" deviceset="BLUETOOTH" device=""/>
-<part name="FRAME2" library="frames" deviceset="A3L-LOC" device=""/>
 <part name="U$1" library="HankLibraries" deviceset="FLASH_MEMORY" device=""/>
 <part name="U$6" library="HankLibraries" deviceset="RTC" device=""/>
 <part name="U$7" library="HankLibraries" deviceset="SD_CARD_READER" device=""/>
@@ -18557,6 +18573,7 @@ Source: 008-0260-0_E.pdf</description>
 <part name="PR_5V2" library="rcl" deviceset="R-US_" device="0207/10" value="1k"/>
 <part name="GND35" library="SparkFun" deviceset="GND" device=""/>
 <part name="GND36" library="SparkFun" deviceset="GND" device=""/>
+<part name="U$2" library="HankLibrariesV2" deviceset="BLUETOOTH" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -18579,7 +18596,6 @@ Source: 008-0260-0_E.pdf</description>
 </plain>
 <instances>
 <instance part="U$4" gate="G$1" x="45.72" y="233.68"/>
-<instance part="FRAME2" gate="G$1" x="0" y="0"/>
 <instance part="U$1" gate="G$1" x="104.14" y="218.44"/>
 <instance part="U$6" gate="G$1" x="45.72" y="190.5" rot="MR0"/>
 <instance part="U$7" gate="G$1" x="162.56" y="233.68"/>
@@ -18841,6 +18857,7 @@ Source: 008-0260-0_E.pdf</description>
 <instance part="GND36" gate="1" x="119.38" y="12.7" smashed="yes">
 <attribute name="VALUE" x="116.84" y="10.16" size="1.778" layer="96"/>
 </instance>
+<instance part="U$2" gate="G$1" x="45.72" y="271.78"/>
 </instances>
 <busses>
 </busses>
