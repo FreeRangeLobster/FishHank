@@ -94,11 +94,11 @@ Developed to test the SSRs and User Inputs
 |DONE|17|Test using Bluetooth|
 |DONE|18|Test Application|
 ||19|Add the leds to the NodeRed|
-||20|Top acrilic cover to test mains|
+|DONE|20|Top acrilic cover to test mains|
 ||21|Modify and update PCB layout and components-See notes in logbook|
 |DONE|22|Tidy up code, files and merge to master|
 |DONE|24|Double check and record GPIOs schedule ESP32-DevKit| 
-||25||
+||25|Get enclosure out of fishtank and replace components|
 ||26||
 ||27||
 ||28||
