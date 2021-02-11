@@ -18941,8 +18941,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="P+16" library="supply1" deviceset="+5V" device=""/>
 <part name="LED1" library="led" deviceset="LED" device="3MM"/>
 <part name="LED2" library="led" deviceset="LED" device="3MM"/>
-<part name="SA_1" library="rcl" deviceset="R-US_" device="0207/10" value="1k"/>
-<part name="SA_2" library="rcl" deviceset="R-US_" device="0207/10" value="1k"/>
+<part name="PR_5V1" library="rcl" deviceset="R-US_" device="0207/10" value="1k"/>
+<part name="PR_5V2" library="rcl" deviceset="R-US_" device="0207/10" value="1k"/>
 <part name="GND35" library="SparkFun" deviceset="GND" device=""/>
 <part name="GND36" library="SparkFun" deviceset="GND" device=""/>
 <part name="U$2" library="HankLibrariesV2" deviceset="BLUETOOTH" device=""/>
@@ -19319,8 +19319,8 @@ Display - RTC - Spare I2C Bus</text>
 <instance part="P+16" gate="1" x="190.5" y="182.88"/>
 <instance part="LED1" gate="G$1" x="215.9" y="177.8"/>
 <instance part="LED2" gate="G$1" x="226.06" y="177.8"/>
-<instance part="SA_1" gate="G$1" x="215.9" y="165.1" rot="R90"/>
-<instance part="SA_2" gate="G$1" x="226.06" y="165.1" rot="R90"/>
+<instance part="PR_5V1" gate="G$1" x="215.9" y="165.1" rot="R90"/>
+<instance part="PR_5V2" gate="G$1" x="226.06" y="165.1" rot="R90"/>
 <instance part="GND35" gate="1" x="215.9" y="157.48" smashed="yes">
 <attribute name="VALUE" x="213.36" y="154.94" size="1.778" layer="96"/>
 </instance>
@@ -19626,11 +19626,11 @@ Display - RTC - Spare I2C Bus</text>
 <pinref part="RI8" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="SA_1" gate="G$1" pin="1"/>
+<pinref part="PR_5V1" gate="G$1" pin="1"/>
 <pinref part="GND35" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="SA_2" gate="G$1" pin="1"/>
+<pinref part="PR_5V2" gate="G$1" pin="1"/>
 <pinref part="GND36" gate="1" pin="GND"/>
 </segment>
 <segment>
@@ -20939,14 +20939,14 @@ Display - RTC - Spare I2C Bus</text>
 </net>
 <net name="N$6" class="0">
 <segment>
-<pinref part="SA_1" gate="G$1" pin="2"/>
+<pinref part="PR_5V1" gate="G$1" pin="2"/>
 <pinref part="LED1" gate="G$1" pin="C"/>
 <wire x1="215.9" y1="172.72" x2="215.9" y2="170.18" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="LED2" class="0">
 <segment>
-<pinref part="SA_2" gate="G$1" pin="2"/>
+<pinref part="PR_5V2" gate="G$1" pin="2"/>
 <pinref part="LED2" gate="G$1" pin="C"/>
 <wire x1="226.06" y1="172.72" x2="226.06" y2="170.18" width="0.1524" layer="91"/>
 </segment>

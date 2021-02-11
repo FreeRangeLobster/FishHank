@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="2" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -18859,6 +18859,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="+3V5" library="supply1" deviceset="+3V3" device=""/>
 <part name="R_TEMP" library="rcl" deviceset="R-US_" device="0207/10" value="4.7K"/>
 <part name="OLED_DISPLAY" library="con-lstb" deviceset="MA04-1" device=""/>
+<part name="C_OLED" library="rcl" deviceset="C-US" device="025-024X044" value="0.1uF"/>
 <part name="GND5" library="SparkFun" deviceset="GND" device=""/>
 <part name="+3V6" library="supply1" deviceset="+3V3" device=""/>
 <part name="J_5V" library="con-molex" deviceset="22-23-2021" device="" value="Jumper"/>
@@ -18941,8 +18942,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="P+16" library="supply1" deviceset="+5V" device=""/>
 <part name="LED1" library="led" deviceset="LED" device="3MM"/>
 <part name="LED2" library="led" deviceset="LED" device="3MM"/>
-<part name="SA_1" library="rcl" deviceset="R-US_" device="0207/10" value="1k"/>
-<part name="SA_2" library="rcl" deviceset="R-US_" device="0207/10" value="1k"/>
+<part name="PR_5V1" library="rcl" deviceset="R-US_" device="0207/10" value="1k"/>
+<part name="PR_5V2" library="rcl" deviceset="R-US_" device="0207/10" value="1k"/>
 <part name="GND35" library="SparkFun" deviceset="GND" device=""/>
 <part name="GND36" library="SparkFun" deviceset="GND" device=""/>
 <part name="U$2" library="HankLibrariesV2" deviceset="BLUETOOTH" device=""/>
@@ -18959,20 +18960,20 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="+3V9" library="supply1" deviceset="+3V3" device=""/>
 <part name="+3V12" library="supply1" deviceset="+3V3" device=""/>
 <part name="P+17" library="supply1" deviceset="+5V" device=""/>
-<part name="LS21" library="rcl" deviceset="R-US_" device="0207/10" value="10K"/>
-<part name="LS22" library="rcl" deviceset="R-US_" device="0207/10" value="10K"/>
+<part name="RO1" library="rcl" deviceset="R-US_" device="0207/10" value="10K"/>
+<part name="RO2" library="rcl" deviceset="R-US_" device="0207/10" value="10K"/>
 <part name="Q2" library="adafruit" deviceset="MOSFET-N" device="REFLOW" value="BSS138"/>
 <part name="+3V10" library="supply1" deviceset="+3V3" device=""/>
 <part name="+3V13" library="supply1" deviceset="+3V3" device=""/>
 <part name="P+18" library="supply1" deviceset="+5V" device=""/>
-<part name="LS31" library="rcl" deviceset="R-US_" device="0207/10" value="10K"/>
-<part name="LS32" library="rcl" deviceset="R-US_" device="0207/10" value="10K"/>
+<part name="RO3" library="rcl" deviceset="R-US_" device="0207/10" value="10K"/>
+<part name="RO4" library="rcl" deviceset="R-US_" device="0207/10" value="10K"/>
 <part name="Q3" library="adafruit" deviceset="MOSFET-N" device="REFLOW" value="BSS138"/>
 <part name="+3V14" library="supply1" deviceset="+3V3" device=""/>
 <part name="+3V15" library="supply1" deviceset="+3V3" device=""/>
 <part name="P+19" library="supply1" deviceset="+5V" device=""/>
-<part name="LS11" library="rcl" deviceset="R-US_" device="0207/10" value="10K"/>
-<part name="LS12" library="rcl" deviceset="R-US_" device="0207/10" value="10K"/>
+<part name="RO5" library="rcl" deviceset="R-US_" device="0207/10" value="10K"/>
+<part name="RO6" library="rcl" deviceset="R-US_" device="0207/10" value="10K"/>
 <part name="I2C_BUS" library="con-lstb" deviceset="MA04-1" device=""/>
 <part name="R_TEMP1" library="rcl" deviceset="R-US_" device="0207/10" value="4.7K"/>
 <part name="R_TEMP2" library="rcl" deviceset="R-US_" device="0207/10" value="4.7K"/>
@@ -18997,7 +18998,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="U$14" library="con-lstb" deviceset="MA19-1" device=""/>
 <part name="U$15" library="HankLibrariesV2" deviceset="SD_CARD_READER" device=""/>
 <part name="FRAME1" library="frames" deviceset="DOCFIELD" device=""/>
-<part name="C_RTC1" library="rcl" deviceset="C-US" device="025-024X044" value="0.1uF"/>
 </parts>
 <sheets>
 <sheet>
@@ -19077,7 +19077,7 @@ Display - RTC - Spare I2C Bus</text>
 <wire x1="530.86" y1="314.96" x2="530.86" y2="0" width="0.1524" layer="97"/>
 <wire x1="530.86" y1="0" x2="0.1016" y2="0.0254" width="0.1524" layer="97"/>
 <wire x1="0.1016" y1="0.0254" x2="0" y2="314.96" width="0.1524" layer="97"/>
-<text x="228.6" y="5.08" size="2.54" layer="94">Change Log:
+<text x="294.64" y="2.54" size="2.54" layer="94">Change Log:
 1. Removed JLCJLC that was used by manufacturer
 2. Changed Positions of the labels on PCB to readable
 3. Changed the bluetooth pins
@@ -19207,10 +19207,11 @@ Display - RTC - Spare I2C Bus</text>
 <instance part="+3V5" gate="G$1" x="198.12" y="48.26"/>
 <instance part="R_TEMP" gate="G$1" x="198.12" y="33.02" rot="R90"/>
 <instance part="OLED_DISPLAY" gate="1" x="48.26" y="22.86" rot="R180"/>
+<instance part="C_OLED" gate="G$1" x="16.8148" y="22.1996" rot="MR0"/>
 <instance part="GND5" gate="1" x="27.94" y="15.24" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="25.4" y="12.7" size="1.778" layer="96" rot="MR0"/>
+<attribute name="VALUE" x="27.94" y="12.7" size="1.778" layer="96" rot="MR0"/>
 </instance>
-<instance part="+3V6" gate="G$1" x="17.78" y="33.02"/>
+<instance part="+3V6" gate="G$1" x="17.78" y="35.56"/>
 <instance part="J_5V" gate="-1" x="40.64" y="233.68" rot="R90"/>
 <instance part="J_5V" gate="-2" x="43.18" y="233.68" rot="R90"/>
 <instance part="P+10" gate="1" x="27.94" y="236.22"/>
@@ -19319,8 +19320,8 @@ Display - RTC - Spare I2C Bus</text>
 <instance part="P+16" gate="1" x="190.5" y="182.88"/>
 <instance part="LED1" gate="G$1" x="215.9" y="177.8"/>
 <instance part="LED2" gate="G$1" x="226.06" y="177.8"/>
-<instance part="SA_1" gate="G$1" x="215.9" y="165.1" rot="R90"/>
-<instance part="SA_2" gate="G$1" x="226.06" y="165.1" rot="R90"/>
+<instance part="PR_5V1" gate="G$1" x="215.9" y="165.1" rot="R90"/>
+<instance part="PR_5V2" gate="G$1" x="226.06" y="165.1" rot="R90"/>
 <instance part="GND35" gate="1" x="215.9" y="157.48" smashed="yes">
 <attribute name="VALUE" x="213.36" y="154.94" size="1.778" layer="96"/>
 </instance>
@@ -19341,20 +19342,20 @@ Display - RTC - Spare I2C Bus</text>
 <instance part="+3V9" gate="G$1" x="43.18" y="106.68"/>
 <instance part="+3V12" gate="G$1" x="33.02" y="106.68"/>
 <instance part="P+17" gate="1" x="60.96" y="106.68"/>
-<instance part="LS21" gate="G$1" x="33.02" y="99.06" rot="R90"/>
-<instance part="LS22" gate="G$1" x="60.96" y="99.06" rot="R90"/>
+<instance part="RO1" gate="G$1" x="33.02" y="99.06" rot="R90"/>
+<instance part="RO2" gate="G$1" x="60.96" y="99.06" rot="R90"/>
 <instance part="Q2" gate="G$1" x="45.72" y="76.2" rot="R270"/>
 <instance part="+3V10" gate="G$1" x="43.18" y="86.36"/>
 <instance part="+3V13" gate="G$1" x="33.02" y="86.36"/>
 <instance part="P+18" gate="1" x="60.96" y="86.36"/>
-<instance part="LS31" gate="G$1" x="33.02" y="78.74" rot="R90"/>
-<instance part="LS32" gate="G$1" x="60.96" y="78.74" rot="R90"/>
+<instance part="RO3" gate="G$1" x="33.02" y="78.74" rot="R90"/>
+<instance part="RO4" gate="G$1" x="60.96" y="78.74" rot="R90"/>
 <instance part="Q3" gate="G$1" x="45.72" y="116.84" rot="R270"/>
 <instance part="+3V14" gate="G$1" x="43.18" y="127"/>
 <instance part="+3V15" gate="G$1" x="33.02" y="127"/>
 <instance part="P+19" gate="1" x="60.96" y="127"/>
-<instance part="LS11" gate="G$1" x="33.02" y="119.38" rot="R90"/>
-<instance part="LS12" gate="G$1" x="60.96" y="119.38" rot="R90"/>
+<instance part="RO5" gate="G$1" x="33.02" y="119.38" rot="R90"/>
+<instance part="RO6" gate="G$1" x="60.96" y="119.38" rot="R90"/>
 <instance part="I2C_BUS" gate="1" x="167.64" y="25.4" rot="R180"/>
 <instance part="R_TEMP1" gate="G$1" x="149.86" y="38.1" rot="R90"/>
 <instance part="R_TEMP2" gate="G$1" x="157.48" y="38.1" rot="R90"/>
@@ -19394,7 +19395,6 @@ Display - RTC - Spare I2C Bus</text>
 <attribute name="SHEET" x="513.08" y="3.81" size="2.54" layer="94"/>
 <attribute name="DRAWING_NAME" x="439.42" y="21.59" size="2.54" layer="94"/>
 </instance>
-<instance part="C_RTC1" gate="G$1" x="17.78" y="25.4" rot="MR0"/>
 </instances>
 <busses>
 </busses>
@@ -19535,9 +19535,6 @@ Display - RTC - Spare I2C Bus</text>
 <wire x1="27.94" y1="17.78" x2="27.94" y2="20.32" width="0.1524" layer="91"/>
 <pinref part="GND5" gate="1" pin="GND"/>
 <label x="27.94" y="20.32" size="1.778" layer="95"/>
-<wire x1="27.94" y1="17.78" x2="17.78" y2="17.78" width="0.1524" layer="91"/>
-<wire x1="17.78" y1="17.78" x2="17.78" y2="20.32" width="0.1524" layer="91"/>
-<pinref part="C_RTC1" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <pinref part="GND8" gate="1" pin="GND"/>
@@ -19626,11 +19623,11 @@ Display - RTC - Spare I2C Bus</text>
 <pinref part="RI8" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="SA_1" gate="G$1" pin="1"/>
+<pinref part="PR_5V1" gate="G$1" pin="1"/>
 <pinref part="GND35" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="SA_2" gate="G$1" pin="1"/>
+<pinref part="PR_5V2" gate="G$1" pin="1"/>
 <pinref part="GND36" gate="1" pin="GND"/>
 </segment>
 <segment>
@@ -19816,6 +19813,17 @@ Display - RTC - Spare I2C Bus</text>
 <junction x="198.12" y="38.1"/>
 </segment>
 <segment>
+<wire x1="22.9108" y1="25.4508" x2="22.86" y2="22.86" width="0.1524" layer="91"/>
+<pinref part="OLED_DISPLAY" gate="1" pin="3"/>
+<wire x1="22.86" y1="22.86" x2="40.64" y2="22.86" width="0.1524" layer="91"/>
+<label x="27.94" y="22.86" size="1.778" layer="95"/>
+<pinref part="C_OLED" gate="G$1" pin="1"/>
+<wire x1="22.9108" y1="25.4508" x2="16.8148" y2="24.7396" width="0.1524" layer="91"/>
+<pinref part="+3V6" gate="G$1" pin="+3V3"/>
+<wire x1="16.8148" y1="24.7396" x2="17.78" y2="33.02" width="0.1524" layer="91"/>
+<junction x="16.8148" y="24.7396"/>
+</segment>
+<segment>
 <wire x1="119.38" y1="198.12" x2="119.38" y2="203.2" width="0.1524" layer="91"/>
 <pinref part="+3V11" gate="G$1" pin="+3V3"/>
 <pinref part="D_3V3" gate="G$1" pin="A"/>
@@ -19840,7 +19848,7 @@ Display - RTC - Spare I2C Bus</text>
 </segment>
 <segment>
 <pinref part="+3V12" gate="G$1" pin="+3V3"/>
-<pinref part="LS21" gate="G$1" pin="2"/>
+<pinref part="RO1" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <wire x1="43.18" y1="78.74" x2="43.18" y2="83.82" width="0.1524" layer="91"/>
@@ -19849,7 +19857,7 @@ Display - RTC - Spare I2C Bus</text>
 </segment>
 <segment>
 <pinref part="+3V13" gate="G$1" pin="+3V3"/>
-<pinref part="LS31" gate="G$1" pin="2"/>
+<pinref part="RO3" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <wire x1="43.18" y1="119.38" x2="43.18" y2="124.46" width="0.1524" layer="91"/>
@@ -19858,7 +19866,7 @@ Display - RTC - Spare I2C Bus</text>
 </segment>
 <segment>
 <pinref part="+3V15" gate="G$1" pin="+3V3"/>
-<pinref part="LS11" gate="G$1" pin="2"/>
+<pinref part="RO5" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <pinref part="+3V1" gate="G$1" pin="+3V3"/>
@@ -19876,16 +19884,6 @@ Display - RTC - Spare I2C Bus</text>
 <wire x1="149.86" y1="43.18" x2="157.48" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="+3V17" gate="G$1" pin="+3V3"/>
 <wire x1="157.48" y1="43.18" x2="157.48" y2="50.8" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="+3V6" gate="G$1" pin="+3V3"/>
-<pinref part="C_RTC1" gate="G$1" pin="1"/>
-<wire x1="17.78" y1="30.48" x2="17.78" y2="27.94" width="0.1524" layer="91"/>
-<pinref part="OLED_DISPLAY" gate="1" pin="3"/>
-<wire x1="22.86" y1="22.86" x2="40.64" y2="22.86" width="0.1524" layer="91"/>
-<label x="27.94" y="22.86" size="1.778" layer="95"/>
-<wire x1="17.78" y1="27.94" x2="22.86" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="22.86" y1="27.94" x2="22.86" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$11" class="0">
@@ -20067,15 +20065,15 @@ Display - RTC - Spare I2C Bus</text>
 </segment>
 <segment>
 <pinref part="P+17" gate="1" pin="+5V"/>
-<pinref part="LS22" gate="G$1" pin="2"/>
+<pinref part="RO2" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <pinref part="P+18" gate="1" pin="+5V"/>
-<pinref part="LS32" gate="G$1" pin="2"/>
+<pinref part="RO4" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <pinref part="P+19" gate="1" pin="+5V"/>
-<pinref part="LS12" gate="G$1" pin="2"/>
+<pinref part="RO6" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <wire x1="185.42" y1="109.22" x2="180.34" y2="109.22" width="0.1524" layer="91"/>
@@ -20444,7 +20442,7 @@ Display - RTC - Spare I2C Bus</text>
 <segment>
 <wire x1="50.8" y1="73.66" x2="60.96" y2="73.66" width="0.1524" layer="91"/>
 <pinref part="Q2" gate="G$1" pin="D"/>
-<pinref part="LS32" gate="G$1" pin="1"/>
+<pinref part="RO4" gate="G$1" pin="1"/>
 <wire x1="60.96" y1="73.66" x2="71.12" y2="73.66" width="0.1524" layer="91"/>
 <junction x="60.96" y="73.66"/>
 <label x="68.58" y="73.66" size="1.778" layer="95"/>
@@ -20705,7 +20703,7 @@ Display - RTC - Spare I2C Bus</text>
 <segment>
 <wire x1="50.8" y1="114.3" x2="60.96" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="Q3" gate="G$1" pin="D"/>
-<pinref part="LS12" gate="G$1" pin="1"/>
+<pinref part="RO6" gate="G$1" pin="1"/>
 <wire x1="60.96" y1="114.3" x2="71.12" y2="114.3" width="0.1524" layer="91"/>
 <junction x="60.96" y="114.3"/>
 <label x="68.58" y="114.3" size="1.778" layer="95"/>
@@ -20773,7 +20771,7 @@ Display - RTC - Spare I2C Bus</text>
 <segment>
 <wire x1="50.8" y1="93.98" x2="60.96" y2="93.98" width="0.1524" layer="91"/>
 <pinref part="Q1" gate="G$1" pin="D"/>
-<pinref part="LS22" gate="G$1" pin="1"/>
+<pinref part="RO2" gate="G$1" pin="1"/>
 <wire x1="60.96" y1="93.98" x2="71.12" y2="93.98" width="0.1524" layer="91"/>
 <junction x="60.96" y="93.98"/>
 <label x="68.58" y="93.98" size="1.778" layer="95"/>
@@ -20939,14 +20937,14 @@ Display - RTC - Spare I2C Bus</text>
 </net>
 <net name="N$6" class="0">
 <segment>
-<pinref part="SA_1" gate="G$1" pin="2"/>
+<pinref part="PR_5V1" gate="G$1" pin="2"/>
 <pinref part="LED1" gate="G$1" pin="C"/>
 <wire x1="215.9" y1="172.72" x2="215.9" y2="170.18" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="LED2" class="0">
 <segment>
-<pinref part="SA_2" gate="G$1" pin="2"/>
+<pinref part="PR_5V2" gate="G$1" pin="2"/>
 <pinref part="LED2" gate="G$1" pin="C"/>
 <wire x1="226.06" y1="172.72" x2="226.06" y2="170.18" width="0.1524" layer="91"/>
 </segment>
@@ -21129,7 +21127,7 @@ Display - RTC - Spare I2C Bus</text>
 <segment>
 <wire x1="25.4" y1="73.66" x2="33.02" y2="73.66" width="0.1524" layer="91"/>
 <pinref part="Q2" gate="G$1" pin="S"/>
-<pinref part="LS31" gate="G$1" pin="1"/>
+<pinref part="RO3" gate="G$1" pin="1"/>
 <wire x1="33.02" y1="73.66" x2="40.64" y2="73.66" width="0.1524" layer="91"/>
 <junction x="33.02" y="73.66"/>
 <label x="22.86" y="76.2" size="1.778" layer="95" rot="R180"/>
@@ -21145,7 +21143,7 @@ Display - RTC - Spare I2C Bus</text>
 <segment>
 <wire x1="25.4" y1="114.3" x2="33.02" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="Q3" gate="G$1" pin="S"/>
-<pinref part="LS11" gate="G$1" pin="1"/>
+<pinref part="RO5" gate="G$1" pin="1"/>
 <wire x1="33.02" y1="114.3" x2="40.64" y2="114.3" width="0.1524" layer="91"/>
 <junction x="33.02" y="114.3"/>
 <label x="22.86" y="116.84" size="1.778" layer="95" rot="R180"/>
@@ -21161,7 +21159,7 @@ Display - RTC - Spare I2C Bus</text>
 <segment>
 <wire x1="25.4" y1="93.98" x2="33.02" y2="93.98" width="0.1524" layer="91"/>
 <pinref part="Q1" gate="G$1" pin="S"/>
-<pinref part="LS21" gate="G$1" pin="1"/>
+<pinref part="RO1" gate="G$1" pin="1"/>
 <wire x1="33.02" y1="93.98" x2="40.64" y2="93.98" width="0.1524" layer="91"/>
 <junction x="33.02" y="93.98"/>
 <label x="22.86" y="96.52" size="1.778" layer="95" rot="R180"/>
