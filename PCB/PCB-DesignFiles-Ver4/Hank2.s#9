@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="2" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -18859,7 +18859,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="+3V5" library="supply1" deviceset="+3V3" device=""/>
 <part name="R_TEMP" library="rcl" deviceset="R-US_" device="0207/10" value="4.7K"/>
 <part name="OLED_DISPLAY" library="con-lstb" deviceset="MA04-1" device=""/>
-<part name="C_OLED" library="rcl" deviceset="C-US" device="025-024X044" value="0.1uF"/>
 <part name="GND5" library="SparkFun" deviceset="GND" device=""/>
 <part name="+3V6" library="supply1" deviceset="+3V3" device=""/>
 <part name="J_5V" library="con-molex" deviceset="22-23-2021" device="" value="Jumper"/>
@@ -18998,6 +18997,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="U$14" library="con-lstb" deviceset="MA19-1" device=""/>
 <part name="U$15" library="HankLibrariesV2" deviceset="SD_CARD_READER" device=""/>
 <part name="FRAME1" library="frames" deviceset="DOCFIELD" device=""/>
+<part name="C_RTC1" library="rcl" deviceset="C-US" device="025-024X044" value="0.1uF"/>
 </parts>
 <sheets>
 <sheet>
@@ -19077,7 +19077,7 @@ Display - RTC - Spare I2C Bus</text>
 <wire x1="530.86" y1="314.96" x2="530.86" y2="0" width="0.1524" layer="97"/>
 <wire x1="530.86" y1="0" x2="0.1016" y2="0.0254" width="0.1524" layer="97"/>
 <wire x1="0.1016" y1="0.0254" x2="0" y2="314.96" width="0.1524" layer="97"/>
-<text x="294.64" y="2.54" size="2.54" layer="94">Change Log:
+<text x="228.6" y="5.08" size="2.54" layer="94">Change Log:
 1. Removed JLCJLC that was used by manufacturer
 2. Changed Positions of the labels on PCB to readable
 3. Changed the bluetooth pins
@@ -19207,11 +19207,10 @@ Display - RTC - Spare I2C Bus</text>
 <instance part="+3V5" gate="G$1" x="198.12" y="48.26"/>
 <instance part="R_TEMP" gate="G$1" x="198.12" y="33.02" rot="R90"/>
 <instance part="OLED_DISPLAY" gate="1" x="48.26" y="22.86" rot="R180"/>
-<instance part="C_OLED" gate="G$1" x="16.8148" y="22.1996" rot="MR0"/>
 <instance part="GND5" gate="1" x="27.94" y="15.24" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="27.94" y="12.7" size="1.778" layer="96" rot="MR0"/>
+<attribute name="VALUE" x="25.4" y="12.7" size="1.778" layer="96" rot="MR0"/>
 </instance>
-<instance part="+3V6" gate="G$1" x="17.78" y="35.56"/>
+<instance part="+3V6" gate="G$1" x="17.78" y="33.02"/>
 <instance part="J_5V" gate="-1" x="40.64" y="233.68" rot="R90"/>
 <instance part="J_5V" gate="-2" x="43.18" y="233.68" rot="R90"/>
 <instance part="P+10" gate="1" x="27.94" y="236.22"/>
@@ -19395,6 +19394,7 @@ Display - RTC - Spare I2C Bus</text>
 <attribute name="SHEET" x="513.08" y="3.81" size="2.54" layer="94"/>
 <attribute name="DRAWING_NAME" x="439.42" y="21.59" size="2.54" layer="94"/>
 </instance>
+<instance part="C_RTC1" gate="G$1" x="17.78" y="25.4" rot="MR0"/>
 </instances>
 <busses>
 </busses>
@@ -19535,6 +19535,9 @@ Display - RTC - Spare I2C Bus</text>
 <wire x1="27.94" y1="17.78" x2="27.94" y2="20.32" width="0.1524" layer="91"/>
 <pinref part="GND5" gate="1" pin="GND"/>
 <label x="27.94" y="20.32" size="1.778" layer="95"/>
+<wire x1="27.94" y1="17.78" x2="17.78" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="17.78" x2="17.78" y2="20.32" width="0.1524" layer="91"/>
+<pinref part="C_RTC1" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <pinref part="GND8" gate="1" pin="GND"/>
@@ -19813,17 +19816,6 @@ Display - RTC - Spare I2C Bus</text>
 <junction x="198.12" y="38.1"/>
 </segment>
 <segment>
-<wire x1="22.9108" y1="25.4508" x2="22.86" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="OLED_DISPLAY" gate="1" pin="3"/>
-<wire x1="22.86" y1="22.86" x2="40.64" y2="22.86" width="0.1524" layer="91"/>
-<label x="27.94" y="22.86" size="1.778" layer="95"/>
-<pinref part="C_OLED" gate="G$1" pin="1"/>
-<wire x1="22.9108" y1="25.4508" x2="16.8148" y2="24.7396" width="0.1524" layer="91"/>
-<pinref part="+3V6" gate="G$1" pin="+3V3"/>
-<wire x1="16.8148" y1="24.7396" x2="17.78" y2="33.02" width="0.1524" layer="91"/>
-<junction x="16.8148" y="24.7396"/>
-</segment>
-<segment>
 <wire x1="119.38" y1="198.12" x2="119.38" y2="203.2" width="0.1524" layer="91"/>
 <pinref part="+3V11" gate="G$1" pin="+3V3"/>
 <pinref part="D_3V3" gate="G$1" pin="A"/>
@@ -19884,6 +19876,16 @@ Display - RTC - Spare I2C Bus</text>
 <wire x1="149.86" y1="43.18" x2="157.48" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="+3V17" gate="G$1" pin="+3V3"/>
 <wire x1="157.48" y1="43.18" x2="157.48" y2="50.8" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="+3V6" gate="G$1" pin="+3V3"/>
+<pinref part="C_RTC1" gate="G$1" pin="1"/>
+<wire x1="17.78" y1="30.48" x2="17.78" y2="27.94" width="0.1524" layer="91"/>
+<pinref part="OLED_DISPLAY" gate="1" pin="3"/>
+<wire x1="22.86" y1="22.86" x2="40.64" y2="22.86" width="0.1524" layer="91"/>
+<label x="27.94" y="22.86" size="1.778" layer="95"/>
+<wire x1="17.78" y1="27.94" x2="22.86" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="27.94" x2="22.86" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$11" class="0">

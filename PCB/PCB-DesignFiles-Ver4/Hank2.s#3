@@ -18974,12 +18974,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="LS11" library="rcl" deviceset="R-US_" device="0207/10" value="10K"/>
 <part name="LS12" library="rcl" deviceset="R-US_" device="0207/10" value="10K"/>
 <part name="I2C_BUS" library="con-lstb" deviceset="MA04-1" device=""/>
-<part name="R_TEMP1" library="rcl" deviceset="R-US_" device="0207/10" value="4.7K"/>
-<part name="R_TEMP2" library="rcl" deviceset="R-US_" device="0207/10" value="4.7K"/>
+<part name="I2CR1" library="rcl" deviceset="R-US_" device="0207/10" value="4.7K"/>
+<part name="I2CR2" library="rcl" deviceset="R-US_" device="0207/10" value="4.7K"/>
 <part name="+3V17" library="supply1" deviceset="+3V3" device=""/>
 <part name="P+20" library="supply1" deviceset="+5V" device=""/>
 <part name="SV2" library="con-lstb" deviceset="MA03-1" device=""/>
-<part name="U1" library="SparkFun-IC-Amplifiers" deviceset="LM358" device="" value="LM358"/>
+<part name="ASC" library="SparkFun-IC-Amplifiers" deviceset="LM358" device="" value="LM358"/>
 <part name="P+21" library="supply1" deviceset="+5V" device=""/>
 <part name="GND7" library="SparkFun" deviceset="GND" device=""/>
 <part name="RO7" library="rcl" deviceset="R-US_" device="0207/10" value="100k"/>
@@ -19356,14 +19356,14 @@ Display - RTC - Spare I2C Bus</text>
 <instance part="LS11" gate="G$1" x="33.02" y="119.38" rot="R90"/>
 <instance part="LS12" gate="G$1" x="60.96" y="119.38" rot="R90"/>
 <instance part="I2C_BUS" gate="1" x="167.64" y="25.4" rot="R180"/>
-<instance part="R_TEMP1" gate="G$1" x="149.86" y="38.1" rot="R90"/>
-<instance part="R_TEMP2" gate="G$1" x="157.48" y="38.1" rot="R90"/>
+<instance part="I2CR1" gate="G$1" x="149.86" y="38.1" rot="R90"/>
+<instance part="I2CR2" gate="G$1" x="157.48" y="38.1" rot="R90"/>
 <instance part="+3V17" gate="G$1" x="157.48" y="53.34"/>
 <instance part="P+20" gate="1" x="165.1" y="121.92"/>
 <instance part="SV2" gate="G$1" x="236.22" y="83.82"/>
-<instance part="U1" gate="G1" x="276.86" y="88.9"/>
-<instance part="U1" gate="G2" x="276.86" y="119.38"/>
-<instance part="U1" gate="G3" x="304.8" y="104.14"/>
+<instance part="ASC" gate="G1" x="276.86" y="88.9"/>
+<instance part="ASC" gate="G2" x="276.86" y="119.38"/>
+<instance part="ASC" gate="G3" x="304.8" y="104.14"/>
 <instance part="P+21" gate="1" x="254" y="81.28"/>
 <instance part="GND7" gate="1" x="243.84" y="78.74" smashed="yes">
 <attribute name="VALUE" x="241.3" y="76.2" size="1.778" layer="96"/>
@@ -19678,7 +19678,7 @@ Display - RTC - Spare I2C Bus</text>
 <pinref part="GND39" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G3" pin="P$V-"/>
+<pinref part="ASC" gate="G3" pin="P$V-"/>
 <pinref part="GND40" gate="1" pin="GND"/>
 </segment>
 </net>
@@ -19736,7 +19736,7 @@ Display - RTC - Spare I2C Bus</text>
 <pinref part="I2C_BUS" gate="1" pin="1"/>
 <wire x1="160.02" y1="30.48" x2="149.86" y2="30.48" width="0.1524" layer="91"/>
 <label x="142.24" y="30.48" size="1.778" layer="95"/>
-<pinref part="R_TEMP1" gate="G$1" pin="1"/>
+<pinref part="I2CR1" gate="G$1" pin="1"/>
 <wire x1="149.86" y1="30.48" x2="147.32" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="33.02" x2="149.86" y2="30.48" width="0.1524" layer="91"/>
 <junction x="149.86" y="30.48"/>
@@ -19763,7 +19763,7 @@ Display - RTC - Spare I2C Bus</text>
 <pinref part="I2C_BUS" gate="1" pin="2"/>
 <wire x1="160.02" y1="27.94" x2="157.48" y2="27.94" width="0.1524" layer="91"/>
 <label x="142.24" y="27.94" size="1.778" layer="95"/>
-<pinref part="R_TEMP2" gate="G$1" pin="1"/>
+<pinref part="I2CR2" gate="G$1" pin="1"/>
 <wire x1="157.48" y1="27.94" x2="149.86" y2="27.94" width="0.1524" layer="91"/>
 <wire x1="157.48" y1="33.02" x2="157.48" y2="27.94" width="0.1524" layer="91"/>
 <junction x="157.48" y="27.94"/>
@@ -19871,8 +19871,8 @@ Display - RTC - Spare I2C Bus</text>
 <junction x="139.7" y="25.4"/>
 </segment>
 <segment>
-<pinref part="R_TEMP1" gate="G$1" pin="2"/>
-<pinref part="R_TEMP2" gate="G$1" pin="2"/>
+<pinref part="I2CR1" gate="G$1" pin="2"/>
+<pinref part="I2CR2" gate="G$1" pin="2"/>
 <wire x1="149.86" y1="43.18" x2="157.48" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="+3V17" gate="G$1" pin="+3V3"/>
 <wire x1="157.48" y1="43.18" x2="157.48" y2="50.8" width="0.1524" layer="91"/>
@@ -20103,7 +20103,7 @@ Display - RTC - Spare I2C Bus</text>
 <wire x1="254" y1="109.22" x2="254" y2="111.76" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G3" pin="P$V+"/>
+<pinref part="ASC" gate="G3" pin="P$V+"/>
 <pinref part="P+23" gate="1" pin="+5V"/>
 </segment>
 </net>
@@ -21097,11 +21097,11 @@ Display - RTC - Spare I2C Bus</text>
 <wire x1="25.4" y1="292.1" x2="63.5" y2="292.1" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G1" pin="-IN"/>
+<pinref part="ASC" gate="G1" pin="-IN"/>
 <wire x1="269.24" y1="91.44" x2="269.24" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="269.24" y1="99.06" x2="287.02" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="287.02" y1="99.06" x2="287.02" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G1" pin="OUT"/>
+<pinref part="ASC" gate="G1" pin="OUT"/>
 <wire x1="294.64" y1="88.9" x2="287.02" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="287.02" y1="88.9" x2="284.48" y2="88.9" width="0.1524" layer="91"/>
 <label x="289.56" y="86.36" size="1.778" layer="95"/>
@@ -21115,12 +21115,12 @@ Display - RTC - Spare I2C Bus</text>
 <wire x1="25.4" y1="294.64" x2="63.5" y2="294.64" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G2" pin="-IN"/>
+<pinref part="ASC" gate="G2" pin="-IN"/>
 <wire x1="269.24" y1="121.92" x2="266.7" y2="121.92" width="0.1524" layer="91"/>
 <wire x1="266.7" y1="121.92" x2="266.7" y2="129.54" width="0.1524" layer="91"/>
 <wire x1="266.7" y1="129.54" x2="284.48" y2="129.54" width="0.1524" layer="91"/>
 <wire x1="284.48" y1="129.54" x2="284.48" y2="119.38" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G2" pin="OUT"/>
+<pinref part="ASC" gate="G2" pin="OUT"/>
 <wire x1="289.56" y1="119.38" x2="284.48" y2="119.38" width="0.1524" layer="91"/>
 <label x="287.02" y="119.38" size="1.778" layer="95"/>
 </segment>
@@ -21178,7 +21178,7 @@ Display - RTC - Spare I2C Bus</text>
 <pinref part="RO9" gate="G$1" pin="1"/>
 <pinref part="RO10" gate="G$1" pin="2"/>
 <wire x1="266.7" y1="116.84" x2="264.16" y2="116.84" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G2" pin="+IN"/>
+<pinref part="ASC" gate="G2" pin="+IN"/>
 <wire x1="269.24" y1="116.84" x2="266.7" y2="116.84" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -21187,7 +21187,7 @@ Display - RTC - Spare I2C Bus</text>
 <pinref part="RO8" gate="G$1" pin="1"/>
 <pinref part="RO7" gate="G$1" pin="2"/>
 <wire x1="264.16" y1="86.36" x2="261.62" y2="86.36" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G1" pin="+IN"/>
+<pinref part="ASC" gate="G1" pin="+IN"/>
 <wire x1="269.24" y1="86.36" x2="261.62" y2="86.36" width="0.1524" layer="91"/>
 </segment>
 </net>
