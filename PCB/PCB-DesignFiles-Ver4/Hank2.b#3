@@ -5578,6 +5578,27 @@ Picofuse, 19275 Wickmann</description>
 <text x="-2.54" y="3.048" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 <text x="-2.54" y="-3.302" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
+<package name="TO92-EBC">
+<description>&lt;b&gt;TO-92&lt;/b&gt; Pads In Line E B C from top&lt;p&gt;</description>
+<wire x1="-2.095" y1="-2.921" x2="2.095" y2="-2.921" width="0.127" layer="21"/>
+<wire x1="-2.413" y1="-0.1341" x2="2.413" y2="-0.1341" width="0.127" layer="21" curve="-129.583"/>
+<wire x1="1.136" y1="-1.397" x2="-1.136" y2="-1.397" width="0.127" layer="51"/>
+<wire x1="-2.413" y1="-0.1341" x2="-2.664" y2="-1.397" width="0.127" layer="51" curve="27.9376"/>
+<wire x1="-2.664" y1="-1.397" x2="-2.413" y2="-2.4059" width="0.127" layer="51" curve="22.4788"/>
+<wire x1="-1.404" y1="-1.397" x2="-2.664" y2="-1.397" width="0.127" layer="51"/>
+<wire x1="-2.4135" y1="-2.4059" x2="-2.095" y2="-2.921" width="0.127" layer="21" curve="13.0385"/>
+<wire x1="-1.136" y1="-1.397" x2="-1.404" y2="-1.397" width="0.127" layer="21"/>
+<wire x1="2.413" y1="-2.4059" x2="2.664" y2="-1.397" width="0.127" layer="51" curve="22.4788"/>
+<wire x1="2.664" y1="-1.397" x2="2.413" y2="-0.1341" width="0.127" layer="51" curve="27.9376"/>
+<wire x1="2.664" y1="-1.397" x2="1.404" y2="-1.397" width="0.127" layer="51"/>
+<wire x1="1.404" y1="-1.397" x2="1.136" y2="-1.397" width="0.127" layer="21"/>
+<wire x1="2.095" y1="-2.921" x2="2.4247" y2="-2.3818" width="0.127" layer="21" curve="13.6094"/>
+<pad name="C" x="2.54" y="-1.27" drill="0.8128" shape="long" rot="R90"/>
+<pad name="E" x="-2.54" y="-1.27" drill="0.8128" shape="long" rot="R90"/>
+<pad name="B" x="0" y="-1.27" drill="0.8128" shape="long" rot="R90"/>
+<text x="-2.54" y="1.778" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-2.54" y="-4.572" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+</package>
 </packages>
 </library>
 <library name="atmega328">
@@ -6672,6 +6693,7 @@ Please make sure your boards conform to these design rules.</description>
 <element name="U$14" library="con-lstb" package="MA19-1" value="MA19-1" x="26.67" y="43.815"/>
 <element name="U$15" library="HankLibrariesV2" package="SD_CARD_READER_FOOTPRINT" value="SD_CARD_READER" x="21.59" y="107.315" rot="R180"/>
 <element name="C_RTC1" library="rcl" package="C025-024X044" value="0.1uF" x="56.515" y="-17.145"/>
+<element name="T9" library="transistor" package="TO92-EBC" value="" x="-90.17" y="-75.565"/>
 </elements>
 <signals>
 <signal name="GND" class="1">
@@ -7923,6 +7945,15 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="U$3" pad="35"/>
 <contactref element="U$14" pad="16"/>
 <wire x1="40.65" y1="49.73" x2="40.64" y2="43.815" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="BASE">
+<contactref element="T9" pad="B"/>
+</signal>
+<signal name="COLECTOR">
+<contactref element="T9" pad="C"/>
+</signal>
+<signal name="EMITER">
+<contactref element="T9" pad="E"/>
 </signal>
 </signals>
 <errors>
