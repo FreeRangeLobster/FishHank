@@ -1,19 +1,27 @@
 # Description
-This embedded system is designed to control control devices used in a fish tank. Includes but is not limited to lights, filter pumps, air pumps, CO2 reactors, UV lights and others. The system is capable of controllng 8 channels 220V AC at max 2A. 
+This embedded system is designed to control control devices used in a fish tank, thies Includes but is not limited to lights, filter pumps, air pumps, CO2 reactors, UV lights and others. The system is capable of controllng 8 channels 220V AC up to 2A each 
 
-The system is also equiped with the following systems: SD card, Real time clock, Bluetooth connection, flash memory and temperature sensor. This devices are available to be connected to a IOT terminal, which could be a Raspberry pi or a ESP32 or a ST Nucleo. In this iteration it was selected an ESP32 WRoom 32.
+The system is also equiped with the following systems: 
+	-SD card
+	-Real time clock
+	-Bluetooth connection
+	-flash memory 
+	-temperature sensor. 
+	
+This devices are available to be connected to any IOT terminal, which could be a Raspberry pi or a ESP32 or a ST Nucleo. for this iteration it was selected an ESP32 WRoom 32.
 
 ## Weapons of choice
-Embedded System ESP32: Visual Studio Code with platform IO
-Aux IO Control syste : Visual Studio Code with platform IO
-Supervisory system   : Visual Studio .net C# and WPF
-Supervisory system   : Mosquitto and NodeRed- Running on Raspberry pi(Experimetal)
-PCB Development      : Eagle
+Embedded System ESP32	: Visual Studio Code with platform IO
+Aux IO Control syste 	: Visual Studio Code with platform IO
+Supervisory system   	: Visual Studio .net C# and WPF
+Supervisory system 		: Mosquitto and NodeRed- Running on Raspberry pi(Experimetal)
+PCB Development     	: Eagle
+Comms to 3rd party		: ESP32 TCP Server/Client
+Fast prototyping    	:Arduino IDE 1.6
 Source Control and housekeeping: GitHub 
-Fast prototyping    :Arduino IDE 1.6
 
 ## PCB BOM
-See parts schedule file ![Application](/Parts Schedule.ods)
+See parts schedule file ![Application](/PCB/PartsSchedule.ods)
 Format: ![Alt Text](url)
 
 ## Production Files
@@ -27,10 +35,10 @@ Developed using c#
 
 ## Images
 Schematic
-![Application](/Images/Schematic.png)
+![Application](/Images&Videos/Schematic.png)
 
 PCB
-![Application](/Images/PCB.png)
+![Application](/Images&Videos/PCB.png)
 Format: ![Alt Text](url)
 
 ## Libraries
@@ -94,11 +102,11 @@ Developed to test the SSRs and User Inputs
 |DONE|17|Test using Bluetooth|
 |DONE|18|Test Application|
 ||19|Add the leds to the NodeRed|
-||20|Top acrilic cover to test mains|
+|DONE|20|Top acrilic cover to test mains|
 ||21|Modify and update PCB layout and components-See notes in logbook|
 |DONE|22|Tidy up code, files and merge to master|
 |DONE|24|Double check and record GPIOs schedule ESP32-DevKit| 
-||25||
+||25|Get enclosure out of fishtank and replace components|
 ||26||
 ||27||
 ||28||
@@ -159,9 +167,9 @@ D Delete Memory
 | ------ | ------ | ------ |
 ||1|Remove JLCJLCJCL, manufacturer disregarded the notes |
 ||2|Git webpage is not legible, find a better place|
-||3|Bluetooth pinout is back to front in the eagle pcb library|
+|DONE|3|Bluetooth pinout is back to front in the eagle pcb library|
 ||4|Transistor not BCE, evaluate to use another one- Wrong footprint|
-||5|SSR Output changed to 150ohm for a 10K resistor, so far is working fine|
+|DONE|5|SSR Output changed to 150ohm for a 10K resistor, so far is working fine|
 ||6|Breakout connector pin 1 and 2 to be renamed. INT1-> 5V, INT2->3V|
 ||7|Footprint of SSR to be adjusted|
 ||8|Add level converters, BSS138|
@@ -172,6 +180,7 @@ D Delete Memory
 ||13|Remove Flash memory|
 ||14|SD Card Feed 5V|
 ||15|Add Auto/Manual trhough the level converter|
+|DONE|16|SD Card back to front|
 
   
 ### Cheatsheet
