@@ -1,19 +1,27 @@
 # Description
-This embedded system is designed to control control devices used in a fish tank. Includes but is not limited to lights, filter pumps, air pumps, CO2 reactors, UV lights and others. The system is capable of controllng 8 channels 220V AC at max 2A. 
+This embedded system is designed to control control devices used in a fish tank, thies Includes but is not limited to lights, filter pumps, air pumps, CO2 reactors, UV lights and others. The system is capable of controllng 8 channels 220V AC up to 2A each 
 
-The system is also equiped with the following systems: SD card, Real time clock, Bluetooth connection, flash memory and temperature sensor. This devices are available to be connected to a IOT terminal, which could be a Raspberry pi or a ESP32 or a ST Nucleo. In this iteration it was selected an ESP32 WRoom 32.
+The system is also equiped with the following systems: 
+	-SD card
+	-Real time clock
+	-Bluetooth connection
+	-flash memory 
+	-temperature sensor. 
+	
+This devices are available to be connected to any IOT terminal, which could be a Raspberry pi or a ESP32 or a ST Nucleo. for this iteration it was selected an ESP32 WRoom 32.
 
 ## Weapons of choice
-Embedded System ESP32: Visual Studio Code with platform IO
-Aux IO Control syste : Visual Studio Code with platform IO
-Supervisory system   : Visual Studio .net C# and WPF
-Supervisory system   : Mosquitto and NodeRed- Running on Raspberry pi(Experimetal)
-PCB Development      : Eagle
+Embedded System ESP32	: Visual Studio Code with platform IO
+Aux IO Control syste 	: Visual Studio Code with platform IO
+Supervisory system   	: Visual Studio .net C# and WPF
+Supervisory system 		: Mosquitto and NodeRed- Running on Raspberry pi(Experimetal)
+PCB Development     	: Eagle
+Comms to 3rd party		: ESP32 TCP Server/Client
+Fast prototyping    	:Arduino IDE 1.6
 Source Control and housekeeping: GitHub 
-Fast prototyping    :Arduino IDE 1.6
 
 ## PCB BOM
-See parts schedule file ![Application](/Parts Schedule.ods)
+See parts schedule file ![Application](/PCB/PartsSchedule.ods)
 Format: ![Alt Text](url)
 
 ## Production Files
@@ -27,10 +35,10 @@ Developed using c#
 
 ## Images
 Schematic
-![Application](/Images/Schematic.png)
+![Application](/Images&Videos/Schematic.png)
 
 PCB
-![Application](/Images/PCB.png)
+![Application](/Images&Videos/PCB.png)
 Format: ![Alt Text](url)
 
 ## Libraries
