@@ -21,7 +21,7 @@ Fast prototyping    	:Arduino IDE 1.6
 Source Control and housekeeping: GitHub 
 
 ## PCB BOM
-See parts schedule file ![PartSchedule](/PCB/PartsSchedule.ods)
+See parts schedule file ![:octocat:](/PCB/PartsSchedule.ods)
 
 
 ## Production Files
